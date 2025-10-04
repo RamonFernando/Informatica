@@ -1,0 +1,42 @@
+- Prácticas: Cadena de Prototipos 1
+Crea un objeto denominado auto, con las propiedades marca y modelo, y asígnale a estas 
+propiedades algún valor. Luego, dentro de la función prototipos(), crea una instancia auto1 que se 
+base en el prototipo auto. Se pide que, en la misma función, se imprima en consola el contenido de la 
+propiedad proto de la instancia auto1, que como vimos, va a contener la referencia a su prototipo.
+
+- Prácticas: Cadena de Prototipos 2
+Crea un objeto denominado estudiante, con las propiedades nombre, apellido y legajo. Y luego, dentro 
+de la función prototipos(), crea una instancia estudiante1 que se base en el prototipo estudiante. Se pide 
+que, en la misma función, se imprima en consola el contenido de la propiedad proto de la instancia estudiante1, 
+que como vimos, va a contener la referencia a su prototipo.
+
+- Prácticas: Cadena de Prototipos 3
+Crea un constructor Futbolista, con las propiedades nombre, equipo y posicion. Y luego, dentro de la función prototipos(), 
+cree una instancia futbolista1 mediante el constructor antes definido con los siguientes datos: "Lionel Messi", "PSG", 
+"Delantero". Se pide que, en la misma función, se imprima en consola el resultado de ejecutar el método valueOf() de la 
+instancia futbolista1.
+
+- Prácticas: Cadena de Prototipos 4
+Crea un constructor Pelicula, con las propiedades titulo, director y duracion. Y luego, dentro de la función prototipos(), 
+crea una instancia pelicula1 mediante el constructor antes definido con los siguientes datos: "Jurassic Park", "Steven Spielberg", 
+127. Se pide que, en la misma función, se imprima en consola el resultado de ejecutar el método valueOf() de la instancia pelicula1 .
+
+- Prácticas: Constructor en Prototipos 1
+Crea un constructor Empleado, con las propiedades nombre, antiguedad y sueldo. Luego se solicita crear la instancia 
+empleado1 utilizando el constructor Empleado antes declarado. Y por último, crea otra instancia empleado2, pero ahora 
+utilizando como objeto prototipo empleado1 para poner en práctica el funcionamiento de la cadena de prototipos.
+
+- Prácticas: Constructor en Prototipos 2
+Crea un constructor Restaurante, con las propiedades nombre, direccion y ciudad. Luego se solicita crear la instancia 
+restaurante1 utilizando el constructor Restaurante antes declarado. Y por último, crea otra instancia restaurante2, pero ahora 
+utilizando como objeto prototipo restaurante1 para poner en práctica el funcionamiento de la cadena de prototipos.
+
+- Prácticas: Modificar Prototipos 1
+Dado el constructor Videojuego y la instancia videojuego1 ya declarados, se pide agregar una función al objeto prototipo 
+Videojuego, de forma que se herede de forma dinámica a la instancia videojuego1 a través de prototype. La función se debe 
+llamar play(), y debe imprimir en consola: "[nombre del videojuego] ha sido iniciado"
+
+- Prácticas: Modificar Prototipos 2
+Dado el constructor Cancion y la instancia cancion1 ya declarados, se pide agregar una función al objeto prototipo 
+Cancion, de forma que se herede de forma dinámica a la instancia cancion1 a través de prototype. La función se debe 
+llamar stop(), y debe imprimir en consola: "[nombre de la cancion] en pausa"

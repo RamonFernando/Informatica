@@ -1,0 +1,7 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\8_POO\8_Interfaces\IVolador\bin\Debug\IVolador.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\8_POO\8_Interfaces\IVolador\bin\Debug\IVolador.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\8_POO\8_Interfaces\IVolador\bin\Debug\IVolador.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\8_POO\8_Interfaces\IVolador\obj\Debug\IVolador.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\8_POO\8_Interfaces\IVolador\obj\Debug\IVolador.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\8_POO\8_Interfaces\IVolador\obj\Debug\IVolador.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\8_POO\8_Interfaces\IVolador\obj\Debug\IVolador.pdb

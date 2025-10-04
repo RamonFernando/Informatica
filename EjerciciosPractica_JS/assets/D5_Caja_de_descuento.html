@@ -1,0 +1,44 @@
+<!-- - Prácticas: Tomar decisiones 3
+Programe la función calcular, donde si el valor del parámetro cantidad es mayor a 10, entonces la variable precio debe ser 
+igual a 50 y en caso contrario (cantidad es menor o igual a 10), la variable precio debe ser igual a 80.
+
+- Prácticas: Tomar decisiones 4
+En base al ejercicio anterior, programe ahora la función calcular para definir la siguiente lógica.
+Si la cantidad es mayor a 10, la variable precio debe ser igual a 50.
+Si la cantidad es menor a 5, la variable precio debe ser igual a 100.
+Entre 5 y 10, el precio debe ser igual a 80.-->
+<!DOCTYPE html>
+<html lang="en-es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caja registradora</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <h2>Caja registradora</h2>
+    <input type="number" id="inputCantidad" placeholder="Escriba la cantidad">
+    <button type="button" onclick="mostrar()">Calcular</button>
+    <p id="textoSalida"></p>
+    <script>
+        function mostrar(){
+            let elementoCantidad = document.getElementById("inputCantidad");
+            let cantidad = elementoCantidad.value;
+
+            let elementoSalida = document.getElementById("textoSalida");
+            elementoSalida.textContent = "Precio = " + calcular(cantidad); // llamamos a la función (calcular) y pasamos por parametro la cantidad
+            }
+        function calcular(parNumero){ // Recive el parámetro parNumero en el input que define la variable precio
+            let precio = 0;
+            if (parNumero > 10){ 
+                precio = 50;    
+            }else if(parNumero >= 5 && parNumero <= 10){
+                precio = 80;
+            }else if(parNumero < 5){
+                precio = 100;
+            }
+            return precio; // retorna el precio a la funcion mostrar
+    }
+    </script>
+</body>
+</html>

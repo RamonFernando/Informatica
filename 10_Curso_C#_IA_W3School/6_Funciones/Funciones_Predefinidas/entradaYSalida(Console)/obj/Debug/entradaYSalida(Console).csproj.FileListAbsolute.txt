@@ -1,0 +1,7 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\6_Funciones\Funciones_Predefinidas\entradaYSalida(Console)\bin\Debug\entradaYSalida(Console).exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\6_Funciones\Funciones_Predefinidas\entradaYSalida(Console)\bin\Debug\entradaYSalida(Console).exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\6_Funciones\Funciones_Predefinidas\entradaYSalida(Console)\bin\Debug\entradaYSalida(Console).pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\6_Funciones\Funciones_Predefinidas\entradaYSalida(Console)\obj\Debug\entradaYSalida(Console).csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\6_Funciones\Funciones_Predefinidas\entradaYSalida(Console)\obj\Debug\entradaYSalida(Console).csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\6_Funciones\Funciones_Predefinidas\entradaYSalida(Console)\obj\Debug\entradaYSalida(Console).exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\6_Funciones\Funciones_Predefinidas\entradaYSalida(Console)\obj\Debug\entradaYSalida(Console).pdb

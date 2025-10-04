@@ -1,0 +1,7 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\9_Archivos\CrearLeerEliminarT\bin\Debug\CrearLeerEliminarT.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\9_Archivos\CrearLeerEliminarT\bin\Debug\CrearLeerEliminarT.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\9_Archivos\CrearLeerEliminarT\bin\Debug\CrearLeerEliminarT.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\9_Archivos\CrearLeerEliminarT\obj\Debug\CrearLeerEliminarT.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\9_Archivos\CrearLeerEliminarT\obj\Debug\CrearLeerEliminarT.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\9_Archivos\CrearLeerEliminarT\obj\Debug\CrearLeerEliminarT.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\9_Archivos\CrearLeerEliminarT\obj\Debug\CrearLeerEliminarT.pdb

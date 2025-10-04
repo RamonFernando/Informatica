@@ -1,0 +1,7 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\7_Excepciones\EjemploManejoMultiple\bin\Debug\EjemploManejoMultiple.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\7_Excepciones\EjemploManejoMultiple\bin\Debug\EjemploManejoMultiple.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\7_Excepciones\EjemploManejoMultiple\bin\Debug\EjemploManejoMultiple.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\7_Excepciones\EjemploManejoMultiple\obj\Debug\EjemploManejoMultiple.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\7_Excepciones\EjemploManejoMultiple\obj\Debug\EjemploManejoMultiple.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\7_Excepciones\EjemploManejoMultiple\obj\Debug\EjemploManejoMultiple.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\7_Excepciones\EjemploManejoMultiple\obj\Debug\EjemploManejoMultiple.pdb

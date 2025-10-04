@@ -1,0 +1,16 @@
+
+
+<div id="miDiv" style="width: 200px; height: 100px; background-color: lightblue;">
+    Haz clic derecho aquí
+</div>
+
+<script>
+
+    // Se activa al hacer clic derecho, mostrando el menú contextual.
+    let div = document.getElementById("miDiv");
+
+    div.addEventListener("contextmenu", (event) => {
+        event.preventDefault(); // Evita el menú contextual predeterminado
+        alert("¡Menú contextual desactivado!");
+    });
+</script>

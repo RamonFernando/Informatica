@@ -1,0 +1,94 @@
+** Prácticas: Funciones 1 **
+----------------------------
+function ejercicioFunciones(){
+    alert("Hola mundo");
+}
+
+** Prácticas: Funciones 2 **
+----------------------------
+let resultado;
+function suma(){
+    resultado = 15 + 19;
+}
+
+** Prácticas: Return 1 **
+-------------------------
+function mostrarResultado() {
+    let resultado = sumar();
+    alert(resultado);
+}
+
+function sumar() {
+    var resultado = 15 + 19;
+    return resultado;
+}
+
+** Prácticas: Return 2 **
+-------------------------
+function mostrarFecha() {
+    alert(obtenerFecha());
+}
+function obtenerFecha(){
+    var fecha = new Date();
+    return fecha.toLocaleDateString('es-Es');
+    
+}
+
+** Prácticas: Parámetros 1 **
+-----------------------------
+function suma (num1, num2){
+    let resultado = num1 + num2;
+    alert(resultado);
+    return resultado;
+    
+}
+
+** Prácticas: Parámetros 1 **
+-----------------------------
+function mostrarMensaje(mensaje){
+    alert(mensaje);
+    return mensaje;
+}
+
+** Prácticas: Hoja de script **
+-------------------------------
+<!DOCTYPE html>
+    <head>
+        <title>Hoja de script</title>
+        <script src="miScript.js"></script>
+    </head>
+    <body>
+        
+    </body>
+</html>
+
+** Prácticas: Math 1 **
+-----------------------
+let potencia;
+potencia = Math.pow(2,4);
+
+** Prácticas: Math 2 **
+-----------------------
+let raiz;
+raiz = Math.sqrt(64);
+
+** Prácticas: Redondeo 1 **
+---------------------------
+let redondeo;
+redondeo = Math.round(6.7241569844);
+
+** Prácticas: Redondeo 2 **
+---------------------------
+let piso;
+piso = Math.floor(6.7241569844);
+
+** Prácticas: Random 1 **
+-------------------------
+
+let aleatorio;
+aleatorio = Math.floor(Math.random() * (51-10) + 10);
+
+** Prácticas: Random 2 **
+-------------------------
+let aleatorio;
+aleatorio = Math.floor(Math.random() * (101-50) + 50);

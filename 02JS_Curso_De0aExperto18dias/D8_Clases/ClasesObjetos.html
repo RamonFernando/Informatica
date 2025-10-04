@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clases</title>
+</head>
+<body>
+    <h2>Objetos</h2>
+    <script>
+        let perro = {nombre: 'Simba',
+            raza: 'Shih Tzu',
+            edad: 4,
+            ladrar(){
+                console.log("Guau");
+            },
+            saludar(){
+                console.log("Hola, me llamo " + this.nombre);
+            }
+        }
+
+        let perro2 = {nombre: 'Reina',
+            raza: 'Caniche',
+            edad: 15,
+            ladrar(){
+                console.log("Guau");
+            },
+            saludar(){
+                console.log("Hola, me llamo " + this.nombre);
+            }
+        }
+
+    function cunplirAnios(){
+        perro.edad = perro.edad + 1; 
+    }
+    
+    perro["colorOjos"] = 'marron';
+
+    
+    </script>
+</body>
+</html>

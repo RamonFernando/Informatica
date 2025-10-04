@@ -1,0 +1,7 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\8_POO\7_Clases_Metodos_Abstractos\Figura\bin\Debug\Figura.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\8_POO\7_Clases_Metodos_Abstractos\Figura\bin\Debug\Figura.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\8_POO\7_Clases_Metodos_Abstractos\Figura\bin\Debug\Figura.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\8_POO\7_Clases_Metodos_Abstractos\Figura\obj\Debug\Figura.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\8_POO\7_Clases_Metodos_Abstractos\Figura\obj\Debug\Figura.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\8_POO\7_Clases_Metodos_Abstractos\Figura\obj\Debug\Figura.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\8_POO\7_Clases_Metodos_Abstractos\Figura\obj\Debug\Figura.pdb

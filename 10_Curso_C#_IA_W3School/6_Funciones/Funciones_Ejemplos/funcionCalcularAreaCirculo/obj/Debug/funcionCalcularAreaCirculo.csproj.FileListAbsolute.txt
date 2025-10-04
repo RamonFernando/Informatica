@@ -1,0 +1,7 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\6_Funciones\Funciones_Ejemplos\funcionCalcularAreaCirculo\bin\Debug\funcionCalcularAreaCirculo.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\6_Funciones\Funciones_Ejemplos\funcionCalcularAreaCirculo\bin\Debug\funcionCalcularAreaCirculo.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\6_Funciones\Funciones_Ejemplos\funcionCalcularAreaCirculo\bin\Debug\funcionCalcularAreaCirculo.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\6_Funciones\Funciones_Ejemplos\funcionCalcularAreaCirculo\obj\Debug\funcionCalcularAreaCirculo.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\6_Funciones\Funciones_Ejemplos\funcionCalcularAreaCirculo\obj\Debug\funcionCalcularAreaCirculo.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\6_Funciones\Funciones_Ejemplos\funcionCalcularAreaCirculo\obj\Debug\funcionCalcularAreaCirculo.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\6_Funciones\Funciones_Ejemplos\funcionCalcularAreaCirculo\obj\Debug\funcionCalcularAreaCirculo.pdb

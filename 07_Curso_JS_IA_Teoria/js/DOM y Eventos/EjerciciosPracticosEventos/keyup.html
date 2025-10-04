@@ -1,0 +1,12 @@
+
+
+<input type="text" id="miInput" placeholder="Escribe algo">
+
+<script>
+    let input = document.getElementById("miInput");
+
+    // Se activa cuando se suelta una tecla.
+    input.addEventListener("keyup", (event) => {
+        console.log(`Soltaste la tecla: ${event.key}`);
+    });
+</script>

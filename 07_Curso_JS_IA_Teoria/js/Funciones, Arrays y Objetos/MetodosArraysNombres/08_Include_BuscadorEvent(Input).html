@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador con includes</title>
+    <style>
+        body {
+            background-color: rgb(167, 148, 124);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        #lista li {
+            margin: 5px 0;
+            list-style: none;
+        }
+        #lista{
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Buscador de elementos</h2>
+    <input type="text" id="buscador" placeholder="Escribe para buscar...">
+    <div id="listaArray">
+        <ul id="lista">
+            <li>Manzana</li>
+            <li>Banana</li>
+            <li>Cereza</li>
+            <li>Durazno</li>
+            <li>Frutilla</li>
+            <li>Pera</li>
+            <li>Sandía</li>
+        </ul>
+    </div>
+
+    <script>
+        // JavaScript para el buscador
+        const inputBuscador = document.getElementById("buscador");
+        const lista = document.getElementById("lista");
+        const items = Array.from(lista.getElementsByTagName("li"));
+
+        inputBuscador.addEventListener("input", () => {
+            const texto = inputBuscador.value.toLowerCase(); // Convierte a minúsculas para búsqueda insensible a mayúsculas
+
+            items.forEach(item => {
+                const textoElemento = item.textContent.toLowerCase(); // Texto del elemento en minúsculas
+                if (textoElemento.includes(texto)) {
+                    item.style.display = ""; // Mostrar elemento si coincide
+                } else {
+                    item.style.display = "none"; // Ocultar elemento si no coincide
+                }
+            });
+        });
+    </script>
+</body>
+</html>

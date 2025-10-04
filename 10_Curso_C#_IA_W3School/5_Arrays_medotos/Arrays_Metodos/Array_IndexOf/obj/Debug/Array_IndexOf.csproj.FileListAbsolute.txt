@@ -1,0 +1,7 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\5_Arrays_medotos\Arrays_Metodos\Array_IndexOf\bin\Debug\Array_IndexOf.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\5_Arrays_medotos\Arrays_Metodos\Array_IndexOf\bin\Debug\Array_IndexOf.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\5_Arrays_medotos\Arrays_Metodos\Array_IndexOf\bin\Debug\Array_IndexOf.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\5_Arrays_medotos\Arrays_Metodos\Array_IndexOf\obj\Debug\Array_IndexOf.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\5_Arrays_medotos\Arrays_Metodos\Array_IndexOf\obj\Debug\Array_IndexOf.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\5_Arrays_medotos\Arrays_Metodos\Array_IndexOf\obj\Debug\Array_IndexOf.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\5_Arrays_medotos\Arrays_Metodos\Array_IndexOf\obj\Debug\Array_IndexOf.pdb

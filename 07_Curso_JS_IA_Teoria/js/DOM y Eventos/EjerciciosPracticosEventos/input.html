@@ -1,0 +1,15 @@
+
+
+<input type="text" id="miInput" placeholder="Escribe algo">
+<p id="resultado"></p>
+
+<script>
+
+    // Se activa cada vez que el usuario escribe en un campo de texto.
+    let input = document.getElementById("miInput");
+    let resultado = document.getElementById("resultado");
+
+    input.addEventListener("input", () => {
+        resultado.textContent = `Has escrito: ${input.value}`;
+    });
+</script>

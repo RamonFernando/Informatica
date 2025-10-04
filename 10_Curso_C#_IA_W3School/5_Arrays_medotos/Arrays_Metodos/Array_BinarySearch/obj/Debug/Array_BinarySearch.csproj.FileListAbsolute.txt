@@ -1,0 +1,7 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\5_Arrays_medotos\Arrays_Metodos\Array_BinarySearch\bin\Debug\Array_BinarySearch.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\5_Arrays_medotos\Arrays_Metodos\Array_BinarySearch\bin\Debug\Array_BinarySearch.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\5_Arrays_medotos\Arrays_Metodos\Array_BinarySearch\bin\Debug\Array_BinarySearch.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\5_Arrays_medotos\Arrays_Metodos\Array_BinarySearch\obj\Debug\Array_BinarySearch.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\5_Arrays_medotos\Arrays_Metodos\Array_BinarySearch\obj\Debug\Array_BinarySearch.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\5_Arrays_medotos\Arrays_Metodos\Array_BinarySearch\obj\Debug\Array_BinarySearch.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\5_Arrays_medotos\Arrays_Metodos\Array_BinarySearch\obj\Debug\Array_BinarySearch.pdb

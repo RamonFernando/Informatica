@@ -1,0 +1,75 @@
+<!-- 
+ 10.- Crea un programa que lea los precios de hasta cien productos y los guarde en un array llamado 
+compra. Mientras los precios se van pidiendo al usuario, si éste introduce el valor 0, el programa 
+entenderá que se ha terminado la compra, y mostrará todos los precios introducidos hasta el 
+momento (no las posiciones vacías). -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Gill Sans MT';
+            background-color: #7b7b7a;
+            padding: 20px;
+            color: #ffffff;
+        }
+        .boton{
+            color: #7b7b7a;
+            border-radius: 0.3em;
+            padding: .5em 1em;
+            border: none;
+            background-color: #ffffff;
+            cursor: pointer;
+        }
+        #resultado{
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicios</h2>
+    <p>Arrays Incompletos</p>
+    <ul id="resultado"></ul>
+        <script>
+            let compra = [];
+            let precio = 0;
+            let i = 0;
+            do{
+                precio = prompt("Introduce el precio: " + (i+1));
+                while(precio == "" || precio == null){
+                    precio = prompt("Introduce el precio: " + (i+1));
+                }
+                if(precio == 0) break; // Si el precio es 0, se sale del bucle
+                
+                compra.push(precio);
+                i++;
+            }while (i < 100 && precio != 0);
+
+            // alert("Precios introducidos: " + mostrarCompra());
+            document.write("Precios introducidos: [ " + mostrarCompra() + " ]");
+
+            function mostrarCompra(){
+                let lista = document.getElementById("resultado");
+                lista.innerHTML = "";
+                
+                for(let i = 0; i < compra.length; i++){
+                    
+                    if(compra[i] != 0){
+                        let li = document.createElement("li");
+                        li.innerHTML = "Precio " + (i+1) + ": " + compra[i];
+                        lista.appendChild(li);
+                    }
+                }
+                // return compra.slice(0, i);
+                // return compra.toString();
+                return compra.join(" - ");
+            }
+            
+        </script>
+    <p>FIN</p>
+</body>
+</html>

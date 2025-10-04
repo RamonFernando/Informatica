@@ -1,0 +1,20 @@
+
+
+<div id="miDiv" style="width: 200px; height: 100px; background-color: lightblue;">
+    Mantén presionado el ratón aquí
+</div>
+
+<script>
+
+    let div = document.getElementById("miDiv");
+
+    //mousedown: Ocurre cuando se presiona un botón del ratón.
+    div.addEventListener("mousedown", () => {
+        div.style.backgroundColor = "yellow";
+    });
+
+    // mouseup: Ocurre cuando se suelta el botón del ratón.
+    div.addEventListener("mouseup", () => {
+        div.style.backgroundColor = "lightblue";
+    });
+</script>

@@ -1,0 +1,48 @@
+<!-- 2.- Vamos a perfeccionar la aplicación anterior pidiendo un nombre de usuario y una contraseña 
+para permitir el acceso al ordenador. 
+El programa guardará el nombre de usuario y la contraseña necesarias en las constantes 
+NOMBRE_REQUERIDO, PASSWORD_REQUERIDO.  -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Gill Sans MT';
+            background-color: #ac9776;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicios 2</h2>
+    <p>Ingreso de usuario</p>
+        <script>
+            // Entrada de datos
+            let NOMBRE_REQUERIDO = "ramon";
+            let PASSWORD_REQUERIDO = "1234";
+            let nombre, password;
+            
+            // Procesamiento
+            nombre = prompt("Introduce tu nombre de usuario");
+            if (nombre === NOMBRE_REQUERIDO) {
+                password = prompt("Introduce tu contraseña");
+                if (password === PASSWORD_REQUERIDO) {
+                    console.log("Acceso permitido");
+                    alert("Acceso permitido");
+                }else {
+                    console.log("Password incorrecto, Acceso denegado");
+                    alert("Password incorrecto, Acceso denegado");
+                }
+            }else {
+                console.log("Usuario incorrecto, Acceso denegado");
+                alert("Usuario incorrecto, Acceso denegado");
+            }
+        </script>
+
+    <p>FIN</p>
+</body>
+</html>

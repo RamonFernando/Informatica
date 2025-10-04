@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+    <head>
+        <Title>Temporizador</Title>
+    </head>
+    <body>
+        <input type="number" id="tiempoElegido" placeholder="Escribe el tiempo">   <!-- var1 -->
+        <button onclick="comenzarTiempo()">Alarma</button> <!-- f1 -->
+        <h1 id="textoAlarma" style="color:red">APAGADO</h1> <!-- var2 -->
+
+        <script> 
+            let elementoSegundos = document.getElementById("tiempoElegido"); /* var1 */
+            let elementoTextoAlarma = document.getElementById("textoAlarma");/* var2 */
+
+            function comenzarTiempo(){ /* f1 */
+                setTimeout(tiempoCumplido, 1000 * elementoSegundos.value); /* f1 y var1 */
+            }
+
+            function tiempoCumplido(){ /* f2 */
+                elementoTextoAlarma.textContent = "ENCENDIDO"; /* var2 */
+                elementoTextoAlarma.style.color = "green"; /* var2 */
+            }
+        </script>
+
+    </body>
+</html> 

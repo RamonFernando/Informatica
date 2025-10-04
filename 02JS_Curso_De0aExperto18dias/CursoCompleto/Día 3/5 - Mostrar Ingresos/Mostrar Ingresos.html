@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio</title>
+</head>
+<body style="text-align: center; background-color: burlywood; font-family: 'Gill Sans MT'">
+    <h1 style="color: cadetblue;">Ingresos</h1>
+    <h3>Nombre de Usuario</h3>
+    <input type="text" id="nombre" placeholder="Ingresa tu nombre">
+    <button onclick="mostrarNombre()">Ingresar</button>
+
+    <p id="salida">Tu nombre es...</p>
+
+    <script>
+        function mostrarNombre() {
+            let nombre = document.getElementById("nombre").value;
+            let salida = document.getElementById("salida");
+            salida.textContent = "Tu nombre es " + nombre.toUpperCase();
+             
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promedio Notas</title>
+</head>
+<body>
+
+    <h3>Promedio de notas</h3>
+    <p>Ingrese por consola las notas y calcula el promedio: </p>
+    <p id="promedio"></p>
+
+    <script>
+        let nota1 = parseFloat(prompt("Ingrese la nota 1: "));
+        let nota2 = parseFloat(prompt("Ingrese la nota 2: "));
+        let nota3 = parseFloat(prompt("Ingrese la nota 3: "));
+        let promedioNotas = (nota1 + nota2 + nota3) / 3;
+        
+        
+        console.log("El promedio es: " + promedioNotas);
+        document.getElementById("promedio").innerHTML = "El promedio es: " + promedioNotas.toFixed(2);
+    </script>
+    
+</body>
+</html>

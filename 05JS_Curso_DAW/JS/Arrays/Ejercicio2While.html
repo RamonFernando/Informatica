@@ -1,0 +1,36 @@
+<!-- Ejercicio 2
+ 2.- Crea un array de Strings llamado meses cuyos valores sean los nombres de los doce meses del 
+año. Haz que después se muestren todos los valores mediante un bucle while. -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Gill Sans MT';
+            background-color: #ac9776;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicios</h2>
+        <script>
+            let meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+            let i = 0;
+            let mensaje = "Meses del año: \n";
+            document.write("<h3>Meses del año</h3>");
+            while(i < meses.length){
+                document.write(meses[i] + "<br>");
+                mensaje += meses[i] + "\n";
+                i++;
+            }
+            alert(mensaje);
+        </script>
+
+    <p>FIN</p>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!-- Ejercicio5
+ 5.- Diseña una aplicación donde un usuario pueda elegir el idioma de una frase de saludo. En primer
+ lugar se mostrará un menú:
+ (1) Francés
+ (2) Inglés
+ (3) Alemán
+ (4) Italiano
+ El usuario escribirá un número entero entre 1 y 4 para señalar qué opción quiere y, a continuación, 
+aparecerá la frase "Buenos días" en el idioma que corresponda (puedes usar Google translator). Si 
+escribe otro número, el mensaje se mostrará en español.
+HOLA DESDE LA TABLET
+ Utiliza la instrucción switch.-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <style>
+        body{s
+            text-align: center;
+            font-family: 'Gill Sans MT';
+            background-color: #ac9776;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicios 5</h2>
+    <p>...</p>
+        <script>
+            alert( "Menu de Idiomas\n(1) Francés\n(2) Inglés\n(3) Alemán\n(4) Italiano");
+            let idioma = parseInt(prompt("Elige un idioma"));
+            switch(idioma){
+                case 1:
+                    alert("Buenos días");
+                    break;
+                case 2:
+                    alert("Good morning");
+                    break;
+                case 3:
+                    alert("Guten Morgen");
+                    break;
+                case 4:
+                    alert("Buongiorno");
+                    break;
+                default:
+                    alert("Buenos días");
+                break;
+            }
+        </script>
+
+    <p>FIN</p>
+</body>
+</html>

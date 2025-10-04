@@ -1,0 +1,67 @@
+- Prácticas: Objetos 1
+Crea un objeto llamado automovil, con las siguientes propiedades y métodos:
+marca: Ford
+modelo: Fiesta
+anio: 2015
+arrancar(): Debe mostrar en consola el mensaje "En marcha".
+
+- Crea un objeto llamado polo, con las siguientes propiedades y métodos:
+marca: Lacoste
+color: Azul
+talle: L
+fabricar(): Debe mostrar en consola el mensaje "Polo fabricado".
+
+- Prácticas: Objetos 3
+Dado el objeto automóvil ya creado, implementar la función modificarAnio, que modifique el año del objeto por el año 2018.
+
+- Prácticas: Objetos 4
+Implementar la función agregarPropiedad, para que le agregue al objeto polo, la propiedad o atributo genero y 
+lo inicialice como 'Masculino'
+
+- Prácticas: This 1
+En el método informacion() del objeto automóvil, agregar las referencias this para los dos atributos utilizados allí.
+
+- Prácticas: This 2
+En el método fabricar() del objeto polo, agregar la referencia this para el atributo utilizado allí.
+
+- Prácticas: Constructores 1
+Crea un constructor para el objeto Automovil e inicializa las propiedades/atributos con los siguientes valores:
+marca: Ford
+modelo: Fiesta
+anio: 2015
+arrancar(): Debe mostrar en consola el mensaje "En marcha"
+
+- Prácticas: Constructores 2
+Crea un constructor para el objeto Polo e inicializa las propiedades/atributos con los siguientes valores:
+marca: Lacoste
+color: Azul
+talle: L
+fabricar(): Debe mostrar en consola el mensaje "Polo fabricado"
+
+- Prácticas: Constructores con parámetros 1
+Crea un constructor para el objeto Automovil con parámetros para definir los atributos: marca, modelo y anio.
+
+- Prácticas: Constructores con parámetros 2
+Crea un constructor para el objeto Polo con parámetros para definir los atributos: marca, color y talle.
+
+- Prácticas: Otros objetos 1
+Crear el objeto automovil, con los siguientes atributos, pero partiendo del objeto Object():
+marca: Ford
+modelo: Fiesta
+anio: 2015
+
+- Prácticas: Otros objetos 2
+Dado el objeto automovil1, crear una copia del mismo objeto llamado automovil2.
+
+- Prácticas: Loop For In 1
+Implementar la función mostrarInfo(), que utilizando un Loop For In, debe imprimir en consola las propiedades/atributos del objeto automovil con el siguiente formato:
+marca: Ford
+modelo: Fiesta
+anio: 2015
+
+- Prácticas: Loop For In 2 
+Implementar la función mostrarInfo(), que utilizando un Loop For In, debe imprimir en consola las propiedades/atributos del objeto polo con el siguiente formato:
+marca: Lacoste
+color: Azul
+talle: L
+

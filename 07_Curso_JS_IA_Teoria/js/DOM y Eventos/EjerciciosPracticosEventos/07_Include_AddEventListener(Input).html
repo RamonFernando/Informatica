@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador con includes</title>
+    <style>
+        body {
+            background-color: rgb(167, 148, 124);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        #lista li {
+            margin: 5px 0;
+            list-style: none;
+        }
+        #lista{
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Buscador de elementos</h2>
+    <input type="text" id="buscador" placeholder="Escribe para buscar...">
+    <ul id="lista">
+        <li>Manzana</li>
+        <li>Banana</li>
+        <li>Cereza</li>
+        <li>Durazno</li>
+        <li>Frutilla</li>
+        <li>Pera</li>
+        <li>Sandía</li>
+    </ul>
+
+    <script>
+        // Obtenemos el elemento del input
+        const inputBuscador = document.getElementById("buscador"); //2
+        const lista = document.getElementById("lista");
+        const ArrayItems = Array.from(lista.getElementsByTagName("li")); //3 Convierte los elementos de la lista en un array
+
+        // Agregamos el evento al input
+        inputBuscador.addEventListener("input", () => {//2
+            const texto = inputBuscador.value.toLowerCase(); //1 Convierte a minúsculas para búsqueda insensible a mayúsculas
+
+            ArrayItems.forEach(item => {//3
+                const textoElemento = item.textContent.toLowerCase(); //1 Texto del elemento en minúsculas
+                if (textoElemento.includes(texto)) { //2
+                    item.style.display = ""; // Mostrar elemento si coincide
+                } else {
+                    item.style.display = "none"; // Ocultar elemento si no coincide
+                }
+            });
+        });
+    </script>
+</body>
+</html>

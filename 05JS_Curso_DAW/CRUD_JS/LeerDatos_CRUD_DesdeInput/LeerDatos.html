@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Ejercicios</title>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Leer datos</h1>
+        <form id="readForm">
+            <input type="text" id="elementoTexto" name="elementoTexto" placeholder="Introducir texto"><br><br>
+            <button type="button" onclick="leerTexto()">Mostrar</button>
+            <button type="button" onclick="agregarElemento()">Agregar</button>
+            <button type="button" onclick="actualizarElemento()">Actualizar</button>
+            <button type="button" onclick="borrarElemento()" class="delete">Borrar</button>
+        </form>
+    </div>
+    <div class="container">
+        <ol id="resultado">Resultados de la lista</ol>
+    </div>
+    <script src="LeerDatos.js"></script>
+</html>

@@ -1,0 +1,111 @@
+/* Fondo general, centrado vertical y horizontal */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor principal */
+.container {
+    width: 100%;
+    max-width: 400px;
+    background-color: #ffffff;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+.container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+/* Área principal del formulario */
+.container-main {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-right: 20px;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="number"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Botón */
+button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Textos de salida */
+#saludo, #informacion, #promedio, #error {
+    color: #333;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+#saludo {
+    color: #007bff;
+}
+
+#error {
+    color: #ff4400;
+}
+
+/* Formulario centrado */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    gap: 15px;
+}
+
+/* Ajuste de inputs y botón al mismo ancho */
+.formulario input,
+.formulario button {
+    width: 100%;
+    max-width: 300px;
+}
+
+/* Ajuste de inputs y botón al mismo ancho en dispositivos pequeños */
+@media (max-width: 600px) {
+    .formulario input,
+    .formulario button {
+        max-width: 100%;
+    }
+}

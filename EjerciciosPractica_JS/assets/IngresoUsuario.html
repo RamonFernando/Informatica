@@ -1,0 +1,31 @@
+<!-- Prácticas: Ingresos de usuario 1
+Crear una etiqueta input de tipo texto y cuyo id sea inputTexto. Además crear 
+una etiqueta button, cuyo atributo onclick apunte a una función 
+denominada mostrarTexto() -->
+<!DOCTYPE html>
+<html lang="en-es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Ingresa tu nombre</h2>
+    <input type="text" id="inputTexto" placeholder="Nombre">
+    <button type="button" id="boton" onclick="mostrarTexto()">Ingresar</button>
+    <p type="text" id="textoSalida">Tu nombre es</p>
+    <script>
+        function mostrarTexto() {
+            // Obtenemos el valor del input
+            let texto = document.getElementById("inputTexto").value;
+
+            // Mostramos el texto
+            let textoSalida = document.getElementById("textoSalida");
+            textoSalida.textContent = "Tu nombre es " + texto.toUpperCase();
+
+            alert("Tu nombre es " + document.getElementById("inputTexto").value.toUpperCase());
+            }
+    </script>
+</body>
+</html>

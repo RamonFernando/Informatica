@@ -1,0 +1,12 @@
+Length (Propiedad): Obtiene la longitud del array.
+Array.Sort(): Ordena los elementos.
+Array.Reverse(): Invierte el orden de los elementos.
+Array.Clear(): Limpia (pone a valor predeterminado) un rango de elementos.
+Array.IndexOf(): Obtiene la primera posición de un elemento.
+Array.LastIndexOf(): Obtiene la última posición de un elemento.
+Array.BinarySearch(): Búsqueda binaria en un array ordenado.
+Array.Resize<T>(): Redimensiona el array conservando los datos.
+Array.Copy() / CopyTo(): Copia elementos a otro array.
+Clone(): Crea una copia superficial del array.
+Array.ForEach<T>(): Aplica una acción a cada elemento.
+Array.Exists(), Array.Find(), Array.FindAll(), Array.TrueForAll(): Métodos de búsqueda usando predicados.

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/styleContent.css">
+    <title>Ingresos3</title>
+</head>
+<body>
+    <div class="containerText">
+        <h2 class="title">Ingresa tu Nombre</h2>
+        <main class="container-main">
+            
+            <div class="inputText">
+                <label for="inputTexto" class="label">Nombre</label>
+                <input type="text" id="inputTexto" placeholder="Ingresa tu nombre">
+            </div>
+            <div class="inputText">
+                <label for="inputEdad" class="label">Edad</label>
+                <input type="text" id="inputEdad" placeholder="Ingresa tu edad">
+            </div>
+            <div class="inputText">
+                <label for="textArea" class="label">Texto</label>
+                <textarea type="text" id="textArea" class="textArea" placeholder="Ingresa tu comentario"></textarea>
+            </div>
+            <div class="inputText">
+                <button type="button" id="boton" class="boton" onclick="mostrarTexto()">Ingresar</button>
+            </div>
+            
+
+            <p id="respuesta" class="textAnswer"></p>
+        </main>
+    </div>
+
+    <script>
+
+        function mostrarTexto(){
+            // Obtener el valor del input
+            let elemento = document.getElementById("inputTexto").value;
+            let elemento2 = document.getElementById("inputEdad").value;
+            let elemento3 = document.getElementById("textArea").value;
+            // Mostrar el texto
+        }
+
+        function obtenerEdad(){e
+            // Obtener el valor del input
+            let elementoEdad = document.getElementById("inputEdad").value;
+
+            // Mostrar el texto
+            let edad = Number(elementoEdad); // Convertir el valor de elementoEdad a un número
+            let elementoRespuesta = document.getElementById("respuesta");
+            elementoRespuesta.textContent = edad;
+        }
+        function validarEdad(edad){
+            let mayorEdad = false;
+            obtenerEdad();
+            if (obtenerEdad != "" || obtenerEdad != null & obtenerEdad != Number){ {
+                if (edad >= 18){
+                mayorEdad = true;
+            }else{
+                mayorEdad = false;
+            }
+            }
+        }
+    }
+    </script>
+</body>
+</html>

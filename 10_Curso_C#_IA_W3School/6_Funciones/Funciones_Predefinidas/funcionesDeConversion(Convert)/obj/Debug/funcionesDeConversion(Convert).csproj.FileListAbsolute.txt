@@ -1,0 +1,7 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\6_Funciones\Funciones_Predefinidas\funcionesDeConversion(Convert)\bin\Debug\funcionesDeConversion(Convert).exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\6_Funciones\Funciones_Predefinidas\funcionesDeConversion(Convert)\bin\Debug\funcionesDeConversion(Convert).exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\6_Funciones\Funciones_Predefinidas\funcionesDeConversion(Convert)\bin\Debug\funcionesDeConversion(Convert).pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\6_Funciones\Funciones_Predefinidas\funcionesDeConversion(Convert)\obj\Debug\funcionesDeConversion(Convert).csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\6_Funciones\Funciones_Predefinidas\funcionesDeConversion(Convert)\obj\Debug\funcionesDeConversion(Convert).csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\6_Funciones\Funciones_Predefinidas\funcionesDeConversion(Convert)\obj\Debug\funcionesDeConversion(Convert).exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\6_Funciones\Funciones_Predefinidas\funcionesDeConversion(Convert)\obj\Debug\funcionesDeConversion(Convert).pdb

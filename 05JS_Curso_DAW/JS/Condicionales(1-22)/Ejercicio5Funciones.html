@@ -1,0 +1,46 @@
+<!-- Ejercicio 5
+ 5.- Crea un programa que pregunte un número de mes. Si el número introducido está entre 1 y 12, 
+mostrará un mensaje de aceptación: "Mes correcto". De lo contrario, se mostrará un mensaje de 
+error: "Mes no válido". -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Gill Sans MT';
+            background-color: #ac9776;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicios 5</h2>
+    <p>...</p>
+        <script>
+            while(true){
+                let numeroMes = parseInt(prompt("Introduce un número de mes"));
+                // Le pasamos el numero introducido en el prompt a la funcion como argumento
+                if(esMesValido(numeroMes)){ //Comprueba si el ems es correcto devolviendo un booleano
+                    alert("Mes correcto");
+                    break;
+                }else{
+                    alert("Mes no valido");
+                }
+            }
+            // Funcion para validar el mes entre 1 y 12 y devolver true o false
+            function esMesValido(mes) {
+                if (mes >= 1 && mes <= 12)
+                    mes = true;
+                else
+                    mes = false;
+                return mes;
+            }
+        </script>
+
+    <p>FIN</p>
+</body>
+</html>

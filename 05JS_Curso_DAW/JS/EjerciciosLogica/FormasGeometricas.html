@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Gill Sans MT';
+            background-color: #7b7b7a;
+            padding: 20px;
+            color: #ffffff;
+        }
+        .boton{
+            color: #7b7b7a;
+            border-radius: 0.3em;
+            padding: .5em 1em;
+            border: none;
+            background-color: #ffffff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicios</h2>
+
+    <p>Triangulo</p>
+    <script>
+        char = "*"; // Variable global
+    </script>
+    <script>
+        let numero = parseInt(prompt("Introduce un número (Triangulo) "));
+        for(let i = 0; i < numero; i++){
+                document.write(char);
+            for(let j = 1 ; j <= i; j++){
+            document.write(char);
+            }
+            document.write("<br>");
+        }
+    </script>
+    
+    <p>Arbol de navidad</p>
+    <script>
+        let numero2 = parseInt(prompt("Introduce un número (Arbol de navidad) "));
+        for(let i = 0; i < numero2; i++){
+            (i == 0)? document.write(""): document.write(char);
+            for(let j = 1 ; j <= i; j++){
+                document.write("-;");
+            }
+            document.write(char);
+            document.write("<br>");
+        }
+    </script>
+
+    <p>Triangulo invertido</p>
+    <script>
+        let numero3 = parseInt(prompt("Introduce un número (Triangulo invertido) "));
+        for(let i = numero3; i >= 1; i--){
+            for(let j = 1 ; j <= i; j++){
+                document.write(char);
+            }
+            document.write("<br>");
+        }
+    </script>
+    <p>Cuadrado</p>
+    <script>
+        let numero4 = parseInt(prompt("Introduce un número (Cuadrado)"));
+        for(let i = 0; i < numero4; i++){
+            
+            for(let j = 0; j < numero4; j++){
+                document.write(char + " ");
+            }
+            document.write("<br>");
+        }
+    </script>
+    
+    <p>Rectangulo</p>
+    <script>
+        
+        let numero5 = parseInt(prompt("Introduce un número (Rectangulo)"));
+        for(let i = 0; i < numero5; i++){
+            for(let j = 0; j < (numero5)*2; j++){
+                document.write(char + " ");
+            }
+            document.write("<br>");
+        }
+    </script>
+
+    <p>FIN</p>
+</body>
+</html>

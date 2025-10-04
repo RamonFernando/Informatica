@@ -1,0 +1,38 @@
+<!-- Ejercicio 4
+ 4.- Crea un array llamado companyeros con 4 posiciones y ve asignando a cada una de ellas el 
+nombre de uno de los cuatro compañeros más cercanos a tu sitio. Haz que después se muestren todos los valores 
+mediante un bucle for. -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Gill Sans MT';
+            background-color: #ac9776;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicios</h2>
+    <p>Arrays de alumnos</p>
+        <script>
+            let mensaje = "";
+            let companyeros = ["Roberto", "Juan", "Maria", "Pedro"];
+            // Mostrar la posició del array donde se encuentra "Maria"
+            let posicion = alert("Metodo indexOf: Maria se encuentra en la posició: " + (companyeros.indexOf("Maria") + " del array.")); 
+            
+            for (let i = 0; i < companyeros.length; i++){
+                document.write("El alumno que se encuentra en la posició " + i + " es " + companyeros[i] + "<br>");
+                mensaje += "El alumno que se encuentra en la posició " + i + " es " + companyeros[i] + "\n";
+            }
+            alert(mensaje);
+        </script>
+
+    <p>FIN</p>
+</body>
+</html>

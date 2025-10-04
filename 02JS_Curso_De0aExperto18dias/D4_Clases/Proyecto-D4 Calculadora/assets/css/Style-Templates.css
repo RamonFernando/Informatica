@@ -1,0 +1,157 @@
+/* Tamaño (62.5% - 10px = 1rem) */
+/* Orientacion del codigo: Tamaño del box(flex), Orientacion(center), 
+Bordes(Margin y Padding) Modificadores(texto y colores) */
+/* $telefono: 480px; $tablet: 768px; $desktop: 992px; $desktopXL: 1200px; */
+:root{
+    /* Custom properties */
+    --fuenteHeading: 'PT Sans', sans-serif;
+    --fuenteParrafos: 'Open Sans', sans-serif;
+    --fuenteMonospace: 'Inconsolata', monospace;
+    --fuenteMonserrat: 'Montserrat', sans-serif;
+}
+html {
+    box-sizing: border-box; /* Evita el padding y el border alrededor de los elementos HTML y los elementos de la hoja de estilos de CSS se adaptan al tamaño del contenedor. */
+    font-size: 62.5%; /* 1 rem = 10px */    
+}
+*, *:before, *:after {
+    box-sizing: inherit; /* Hace que el padding y el border se hereden de los elementos HTML y los elementos de la hoja de estilos de CSS. */
+    /* margin: 0; padding: 0; */
+}
+/** Globales **/
+.container {
+    width: min(90%, 120rem); /* minimo 90% max-width: 120rem*/
+    margin: 0 auto;
+}
+.container-body{
+    /*max-width: 120rem !important; /* ancho maximo del contenedor */
+    margin: 0 auto !important;
+    height: 100% !important; /* alto de la imagen 100% de la pantalla */
+}
+a {
+    text-decoration: none; /* Quita subrayados */
+}
+ul{
+    list-style: none;
+}
+h1, h2, h3, h4, h5 {
+    font-family: var(--fuenteHeading);
+    line-height: 1.2; /* La propiedad .line-height define la cantidad de espacio por encima y por debajo de los elementos en línea */
+}
+h1 {
+    font-size: 4.8rem;
+}
+h2 {
+    font-size: 4rem;
+}
+h3 {
+    font-size: 3.2rem;
+}
+h4 {
+    font-size: 2.8rem;
+}
+p {
+    font-size: 2rem;
+}
+
+/** Utilidades **/
+.bg-header{
+    background-position: center center; /* posicionar la imagen al centro */
+    background-repeat: no-repeat; /* no se repita la imagen */
+    background-size: cover; /* adaptar la imagen al tamaño del contenedor */
+    height: 60rem; /* alto de la imagen*/
+}
+
+.etiquetas-h {
+    font-family: var(--fuenteHeading);
+    line-height: 1.2; /* espacio entre las lineas de texto*/
+}
+.no-margin {
+    margin: 0;
+}
+.no-padding {
+    padding: 0;
+}
+.centrar-texto {
+    text-align: center;
+}
+.border-radius{
+    border-radius: 0.3rem; /* borde redondeado */ 
+}
+.scale1-04{ /* Hace que el elemento se agrande al pasar el mouse */
+    &:hover{
+        scale: 1.04;
+    }
+}
+.scalex1-1{
+    &:hover{
+        scale: 1.1;
+    }
+}
+.hand-hover{
+    &:hover{
+        cursor: pointer;
+    }
+}
+.transition-time-05ms{ /* Tiempo de transicion */
+    transition: 0.5s;
+}
+.transition-time-03ms{ /* Tiempo de transicion */
+    transition: 0.3s;
+}
+.max-width-100{
+    max-width: 100%; /* ancho maximo 100% */
+}
+.transition-cursor-img {
+    transition: 0.5s; /* tiempo de transicion */
+    &:hover{
+        cursor: pointer; /* cursor: tipo de cursor (mano) sale al pasar el mouse por encima */
+        scale: 1.03;
+    }
+}
+.align-left{
+    text-align: left;
+}
+.align-right{
+    text-align: right;
+}
+.align-center{
+    text-align: center;
+}
+.align-justify{
+    text-align: justify;
+}
+.hspace{
+    margin: 1rem;
+}
+.hspace-top{
+    margin-top: 1rem;
+}
+.hspace-bottom{
+    margin: 1rem;
+}
+.hspace-left{
+    margin-left: 1rem;
+}
+.hspace-right{
+    margin-right: 1rem;
+}
+.target{
+    /*target: _blank; Para que aparezca el enlace en una nueva pestaña */
+    /*target: _self; Para que aparezca el enlace en la misma pestaña */
+    /*target: _parent; Para que aparezca el enlace en el mismo nivel */
+}
+/** BODY **/
+BODY{
+    /*grid-template-areas: 'header header header',
+                         'main main main',
+                         'main main main',
+                         'footer footer footer';*/
+
+    margin: 0;
+    padding: 0;
+    font-family: var(--fuenteParrafos);
+    font-size: 1.6rem; /* tamaño de fuente */
+    line-height: 2; /*interlineado: Espacio entre el texto y la linea */
+    letter-spacing: 0.5px; /*espacio entre letras*/
+    /*background-color: var(--blanco);*/
+}

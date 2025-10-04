@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gestión de Camas Mejorada</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+      body {
+        background: linear-gradient(135deg, #e3f2fd 0%, #fce4ec 100%);
+        font-family: 'Roboto', sans-serif;
+      }
+      h2 {
+        color: #0d6efd;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+      }
+      .bed {
+        width: clamp(48px, 6vw, 64px);
+        height: clamp(48px, 6vw, 64px);
+        margin: 6px;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        user-select: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        color: white;
+        border: 2px solid transparent;
+        position: relative;
+      }
+      .bed.free {
+        background-color: #20c997;
+      }
+      .bed.occupied {
+        background-color: #e83e8c;
+      }
+      .bed:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        transform: translateY(-3px);
+        border-color: #ffc107;
+      }
+      .bed.occupied:hover {
+        border-color: #f8d7da;
+      }
+      .box {
+        border: 1px solid #dee2e6;
+        padding: 15px 20px;
+        border-radius: 15px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+      .box:hover {
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+      }
+      .box-title {
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: #343a40;
+        font-size: 1.1rem;
+        user-select: none;
+      }
+      .bed-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .contador {
+        font-weight: 700;
+        font-size: 1.05rem;
+        color: #495057;
+        user-select: none;
+        margin-top: 10px;
+      }
+      select.form-select, input.form-control {
+        max-width: 240px;
+        margin-bottom: 14px;
+        user-select: none;
+        border-radius: 10px;
+      }
+      button.reset-btn {
+        font-weight: 600;
+        border-radius: 10px;
+        background-color: #ffc107;
+        border: none;
+        color: #212529;
+      }
+      button.reset-btn:hover {
+        background-color: #e0a800;
+      }
+      button#downloadReportBtn {
+        font-weight: 700;
+        font-size: 1.1rem;
+        padding: 12px 28px;
+        border-radius: 10px;
+        background-color: #198754;
+        border: none;
+        color: white;
+      }
+      button#downloadReportBtn:hover {
+        background-color: #146c43;
+      }
+      .hidden {
+        display: none !important;
+      }
+      .card {
+        border-radius: 16px;
+        background: #ffffff;
+        border: none;
+      }
+      input#busquedaCama {
+        max-width: 320px;
+        margin: 0 auto 24px auto;
+        display: block;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container py-5">
+      <h2 class="text-center mb-5 fw-bold">🛏️ Gestión de Camas Hospitalarias</h2>
+      <input type="number" placeholder="🔎 Buscar cama por número" id="busquedaCama" class="form-control" />
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card p-4 shadow-sm">
+            <h4 class="mb-3 text-primary">🏠 Habitación A</h4>
+            <select class="form-select" id="filtroA" aria-label="Filtro Habitación A">
+              <option value="todas">Mostrar todas</option>
+              <option value="libres">Solo libres</option>
+              <option value="ocupadas">Solo ocupadas</option>
+            </select>
+            <div id="habitacionA"></div>
+            <div id="contadorA" class="contador"></div>
+            <button class="btn reset-btn mt-3" onclick="resetHabitacion('A')">
+              🔄 Resetear habitación A
+            </button>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card p-4 shadow-sm">
+            <h4 class="mb-3 text-danger">🏠 Habitación B</h4>
+            <select class="form-select" id="filtroB" aria-label="Filtro Habitación B">
+              <option value="todas">Mostrar todas</option>
+              <option value="libres">Solo libres</option>
+              <option value="ocupadas">Solo ocupadas</option>
+            </select>
+            <div id="habitacionB"></div>
+            <div id="contadorB" class="contador"></div>
+            <button class="btn reset-btn mt-3" onclick="resetHabitacion('B')">
+              🔄 Resetear habitación B
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <button class="btn" id="downloadReportBtn" onclick="descargarReporte()">
+          📄 Descargar reporte de ocupación (PDF)
+        </button>
+      </div>
+    </div>
+
+    <script>
+      const camasPorHabitacion = 12;
+
+      function generarCamas(habitacionId) {
+        const contenedor = document.getElementById(`habitacion${habitacionId}`);
+        contenedor.classList.add("bed-container");
+        contenedor.innerHTML = "";
+
+        for (let i = 1; i <= camasPorHabitacion; i++) {
+          const cama = document.createElement("div");
+          cama.className = "bed free";
+          cama.textContent = i;
+          cama.dataset.estado = "libre";
+          cama.onclick = () => alternarEstadoCama(cama);
+          contenedor.appendChild(cama);
+        }
+
+        actualizarContador(habitacionId);
+      }
+
+      function alternarEstadoCama(cama) {
+        cama.classList.toggle("occupied");
+        cama.classList.toggle("free");
+        cama.dataset.estado = cama.classList.contains("occupied") ? "ocupada" : "libre";
+        const habitacionId = cama.parentElement.id.replace("habitacion", "");
+        actualizarContador(habitacionId);
+      }
+
+      function actualizarContador(habitacionId) {
+        const camas = document.querySelectorAll(`#habitacion${habitacionId} .bed`);
+        const libres = [...camas].filter(c => c.dataset.estado === "libre").length;
+        const ocupadas = [...camas].filter(c => c.dataset.estado === "ocupada").length;
+        document.getElementById(`contador${habitacionId}`).textContent =
+          `🟢 Libres: ${libres} | 🔴 Ocupadas: ${ocupadas}`;
+      }
+
+      function resetHabitacion(habitacionId) {
+        const camas = document.querySelectorAll(`#habitacion${habitacionId} .bed`);
+        camas.forEach(cama => {
+          cama.classList.remove("occupied");
+          cama.classList.add("free");
+          cama.dataset.estado = "libre";
+        });
+        actualizarContador(habitacionId);
+      }
+
+      function aplicarFiltro(habitacionId, filtro) {
+        const camas = document.querySelectorAll(`#habitacion${habitacionId} .bed`);
+        camas.forEach(cama => {
+          cama.classList.remove("hidden");
+          const estado = cama.dataset.estado;
+          if (filtro === "libres" && estado !== "libre") cama.classList.add("hidden");
+          else if (filtro === "ocupadas" && estado !== "ocupada") cama.classList.add("hidden");
+        });
+      }
+
+      function configurarFiltros() {
+        document.getElementById("filtroA").onchange = e => aplicarFiltro("A", e.target.value);
+        document.getElementById("filtroB").onchange = e => aplicarFiltro("B", e.target.value);
+      }
+
+      function configurarBusqueda() {
+        document.getElementById("busquedaCama").addEventListener("input", function () {
+          const valor = this.value.trim();
+          document.querySelectorAll(".bed").forEach(bed => {
+            bed.classList.remove("hidden");
+            if (valor && bed.textContent !== valor) {
+              bed.classList.add("hidden");
+            }
+          });
+        });
+      }
+
+      function descargarReporte() {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+
+        const getEstado = (habitacionId) => {
+          const camas = document.querySelectorAll(`#habitacion${habitacionId} .bed`);
+          const libres = [...camas].filter(c => c.dataset.estado === "libre").length;
+          const ocupadas = [...camas].filter(c => c.dataset.estado === "ocupada").length;
+          return `Habitación ${habitacionId} - Libres: ${libres} | Ocupadas: ${ocupadas}`;
+        };
+
+        doc.setFontSize(16);
+        doc.text("📄 Reporte de Ocupación de Camas", 10, 20);
+        doc.setFontSize(12);
+        doc.text(getEstado("A"), 10, 40);
+        doc.text(getEstado("B"), 10, 50);
+        doc.save("reporte_ocupacion.pdf");
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        generarCamas("A");
+        generarCamas("B");
+        configurarFiltros();
+        configurarBusqueda();
+      });
+    </script>
+  </body>
+</html>

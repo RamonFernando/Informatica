@@ -1,0 +1,1099 @@
+¡Claro! A continuación, te proporcionaré un ejemplo completo de cómo implementar un sistema de inicio de sesión utilizando el patrón Modelo-Vista-Controlador (MVC) en PHP, integrando **phpMyAdmin** para la gestión de la base de datos. Este ejemplo está orientado a principiantes y te guiará paso a paso en el proceso.
+
+---
+
+### **Índice:**
+
+1. [Introducción al MVC y phpMyAdmin](#introduccion)
+2. [Estructura del proyecto](#estructura)
+3. [Configuración del entorno y creación de la base de datos con phpMyAdmin](#configuracion)
+4. [Creación del Modelo](#modelo)
+5. [Creación de las Vistas](#vistas)
+6. [Creación de los Controladores](#controladores)
+7. [Configuración del enrutamiento](#enrutamiento)
+8. [Ejecución y prueba de la aplicación](#ejecucion)
+9. [Consideraciones de seguridad y buenas prácticas](#seguridad)
+
+---
+
+<a name="introduccion"></a>
+### **1. Introducción al MVC y phpMyAdmin**
+
+#### **Modelo-Vista-Controlador (MVC)**
+
+El patrón MVC es una forma de organizar tu aplicación en tres componentes principales:
+
+- **Modelo (Model):** Gestiona los datos y la lógica de negocio. Interactúa con la base de datos.
+- **Vista (View):** Presenta la información al usuario. Es la interfaz de usuario.
+- **Controlador (Controller):** Maneja las solicitudes del usuario, interactúa con el Modelo y selecciona la Vista adecuada.
+
+#### **phpMyAdmin**
+
+phpMyAdmin es una herramienta basada en web que permite administrar fácilmente bases de datos MySQL. Te permite crear bases de datos, tablas, insertar datos, ejecutar consultas, y más, a través de una interfaz gráfica.
+
+<a name="estructura"></a>
+### **2. Estructura del proyecto**
+
+Organizaremos nuestro proyecto con la siguiente estructura de carpetas:
+
+```
+login_mvc/
+├── index.php
+├── app/
+│   ├── controllers/
+│   │   └── UserController.php
+│   ├── models/
+│   │   └── User.php
+│   └── views/
+│       ├── login.php
+│       ├── register.php
+│       └── protected.php
+├── core/
+│   ├── Database.php
+└── assets/
+    └── css/
+        └── styles.css
+```
+
+- **index.php:** Punto de entrada de la aplicación.
+- **app/controllers:** Contiene los controladores.
+- **app/models:** Contiene los modelos.
+- **app/views:** Contiene las vistas.
+- **core:** Contiene clases esenciales como la conexión a la base de datos.
+- **assets:** Archivos estáticos como CSS y JavaScript.
+
+<a name="configuracion"></a>
+### **3. Configuración del entorno y creación de la base de datos con phpMyAdmin**
+
+#### **3.1. Configuración del entorno**
+
+1. **Instalar XAMPP (o similar):**
+   - Descarga e instala XAMPP desde [https://www.apachefriends.org/es/index.html](https://www.apachefriends.org/es/index.html).
+   - Asegúrate de que Apache y MySQL estén en ejecución desde el panel de control de XAMPP.
+
+2. **Crear la carpeta del proyecto:**
+   - Navega a la carpeta `htdocs` en la instalación de XAMPP (generalmente en `C:\xampp\htdocs`).
+   - Crea una nueva carpeta llamada `login_mvc`.
+
+#### **3.2. Creación de la base de datos con phpMyAdmin**
+
+1. **Acceder a phpMyAdmin:**
+   - Abre tu navegador web y ve a [http://localhost/phpmyadmin](http://localhost/phpmyadmin).
+
+2. **Crear una nueva base de datos:**
+   - Haz clic en "Nueva" en el panel izquierdo.
+   - En "Crear base de datos", escribe `login_mvc` como nombre de la base de datos.
+   - Selecciona el cotejamiento `utf8_general_ci`.
+   - Haz clic en "Crear".
+
+3. **Crear la tabla `users`:**
+   - En el panel izquierdo, selecciona la base de datos `login_mvc`.
+   - Haz clic en "SQL" en la barra superior para ejecutar una consulta SQL.
+   - Copia y pega el siguiente código SQL y haz clic en "Continuar":
+
+     ```sql
+     CREATE TABLE users (
+         id INT AUTO_INCREMENT PRIMARY KEY,
+         username VARCHAR(50) NOT NULL UNIQUE,
+         email VARCHAR(100) NOT NULL UNIQUE,
+         password VARCHAR(255) NOT NULL
+     );
+     ```
+
+4. **Verificar la creación de la tabla:**
+   - Después de ejecutar el código SQL, deberías ver un mensaje de éxito.
+   - En el panel izquierdo, expande la base de datos `login_mvc` y asegúrate de que la tabla `users` aparezca.
+
+<a name="modelo"></a>
+### **4. Creación del Modelo**
+
+El Modelo es responsable de interactuar con la base de datos.
+
+#### **4.1. Crear el archivo `User.php` en `app/models/`**
+
+1. **Crear la carpeta `models`:**
+   - Dentro de `login_mvc/app/`, crea una carpeta llamada `models`.
+
+2. **Crear el archivo `User.php`:**
+   - Dentro de `models`, crea un archivo llamado `User.php`.
+
+3. **Agregar el siguiente código a `User.php`:**
+
+   ```php
+   <?php
+   // app/models/User.php
+
+   class User {
+       private $db;
+       private $table = 'users';
+
+       public function __construct($dbConnection) {
+           $this->db = $dbConnection;
+       }
+
+       // Registrar nuevo usuario
+       public function register($username, $email, $password) {
+           $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+           $query = "INSERT INTO $this->table (username, email, password) VALUES (?, ?, ?)";
+           $stmt = $this->db->prepare($query);
+           return $stmt->execute([$username, $email, $hashedPassword]);
+       }
+
+       // Iniciar sesión de usuario
+       public function login($username, $password) {
+           $query = "SELECT * FROM $this->table WHERE username = ?";
+           $stmt = $this->db->prepare($query);
+           $stmt->execute([$username]);
+           $user = $stmt->fetch(PDO::FETCH_ASSOC);
+           if ($user && password_verify($password, $user['password'])) {
+               return $user;
+           }
+           return false;
+       }
+
+       // Verificar si el usuario o email ya existen
+       public function userExists($username, $email) {
+           $query = "SELECT * FROM $this->table WHERE username = ? OR email = ?";
+           $stmt = $this->db->prepare($query);
+           $stmt->execute([$username, $email]);
+           return $stmt->fetch(PDO::FETCH_ASSOC);
+       }
+   }
+   ```
+
+**Explicación:**
+
+- **Constructor:** Inicializa la conexión a la base de datos.
+- **register():** Registra un nuevo usuario, hash de contraseña y guarda en la base de datos.
+- **login():** Verifica las credenciales del usuario y devuelve los datos si son correctos.
+- **userExists():** Comprueba si el nombre de usuario o correo electrónico ya están registrados.
+
+<a name="vistas"></a>
+### **5. Creación de las Vistas**
+
+Las Vistas son responsables de presentar la interfaz al usuario.
+
+#### **5.1. Crear la carpeta `views`**
+
+- Dentro de `login_mvc/app/`, crea una carpeta llamada `views`.
+
+#### **5.2. Crear `register.php` en `app/views/`**
+
+1. **Crear el archivo `register.php`:**
+
+   - Dentro de `views`, crea un archivo llamado `register.php`.
+
+2. **Agregar el siguiente código a `register.php`:**
+
+   ```html
+   <!-- app/views/register.php -->
+   <!DOCTYPE html>
+   <html>
+   <head>
+       <title>Registro</title>
+       <link rel="stylesheet" href="assets/css/styles.css">
+   </head>
+   <body>
+       <h2>Registro de Usuario</h2>
+       <form action="index.php?action=register" method="POST">
+           <label>Nombre de usuario:</label><br>
+           <input type="text" name="username" required><br><br>
+           
+           <label>Correo electrónico:</label><br>
+           <input type="email" name="email" required><br><br>
+           
+           <label>Contraseña:</label><br>
+           <input type="password" name="password" required><br><br>
+           
+           <button type="submit">Registrarse</button>
+       </form>
+       <p>¿Ya tienes una cuenta? <a href="index.php?action=login">Inicia sesión aquí</a></p>
+   </body>
+   </html>
+   ```
+
+#### **5.3. Crear `login.php` en `app/views/`**
+
+1. **Crear el archivo `login.php`:**
+
+   - Dentro de `views`, crea un archivo llamado `login.php`.
+
+2. **Agregar el siguiente código a `login.php`:**
+
+   ```html
+   <!-- app/views/login.php -->
+   <!DOCTYPE html>
+   <html>
+   <head>
+       <title>Iniciar Sesión</title>
+       <link rel="stylesheet" href="assets/css/styles.css">
+   </head>
+   <body>
+       <h2>Iniciar Sesión</h2>
+       <form action="index.php?action=login" method="POST">
+           <label>Nombre de usuario:</label><br>
+           <input type="text" name="username" required><br><br>
+           
+           <label>Contraseña:</label><br>
+           <input type="password" name="password" required><br><br>
+           
+           <button type="submit">Iniciar Sesión</button>
+       </form>
+       <p>¿No tienes una cuenta? <a href="index.php?action=register">Regístrate aquí</a></p>
+   </body>
+   </html>
+   ```
+
+#### **5.4. Crear `protected.php` en `app/views/`**
+
+1. **Crear el archivo `protected.php`:**
+
+   - Dentro de `views`, crea un archivo llamado `protected.php`.
+
+2. **Agregar el siguiente código a `protected.php`:**
+
+   ```html
+   <!-- app/views/protected.php -->
+   <!DOCTYPE html>
+   <html>
+   <head>
+       <title>Página Protegida</title>
+       <link rel="stylesheet" href="assets/css/styles.css">
+   </head>
+   <body>
+       <h2>Bienvenido, <?php echo htmlspecialchars($username); ?>!</h2>
+       <p>Esta es una página protegida.</p>
+       <a href="index.php?action=logout">Cerrar Sesión</a>
+   </body>
+   </html>
+   ```
+
+**Nota:** Usamos `htmlspecialchars()` para evitar ataques XSS al mostrar el nombre de usuario.
+
+<a name="controladores"></a>
+### **6. Creación de los Controladores**
+
+Los Controladores manejan las solicitudes del usuario y coordinan el Modelo y la Vista.
+
+#### **6.1. Crear la carpeta `controllers`**
+
+- Dentro de `login_mvc/app/`, crea una carpeta llamada `controllers`.
+
+#### **6.2. Crear `UserController.php` en `app/controllers/`**
+
+1. **Crear el archivo `UserController.php`:**
+
+   - Dentro de `controllers`, crea un archivo llamado `UserController.php`.
+
+2. **Agregar el siguiente código a `UserController.php`:**
+
+   ```php
+   <?php
+   // app/controllers/UserController.php
+
+   require_once 'app/models/User.php';
+
+   class UserController {
+       private $db;
+       private $userModel;
+
+       public function __construct($dbConnection) {
+           $this->db = $dbConnection;
+           $this->userModel = new User($this->db);
+       }
+
+       // Acción de registro
+       public function register() {
+           if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+               // Procesar el formulario
+               $username = $_POST['username'];
+               $email = $_POST['email'];
+               $password = $_POST['password'];
+
+               if ($this->userModel->userExists($username, $email)) {
+                   echo "El nombre de usuario o correo electrónico ya están en uso.";
+               } else {
+                   if ($this->userModel->register($username, $email, $password)) {
+                       echo "Registro exitoso. <a href='index.php?action=login'>Inicia sesión aquí</a>.";
+                   } else {
+                       echo "Error en el registro.";
+                   }
+               }
+           } else {
+               // Mostrar el formulario de registro
+               require 'app/views/register.php';
+           }
+       }
+
+       // Acción de inicio de sesión
+       public function login() {
+           if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+               // Procesar el formulario
+               $username = $_POST['username'];
+               $password = $_POST['password'];
+
+               $user = $this->userModel->login($username, $password);
+
+               if ($user) {
+                   session_start();
+                   $_SESSION['user_id'] = $user['id'];
+                   $_SESSION['username'] = $user['username'];
+                   header("Location: index.php?action=protected");
+                   exit();
+               } else {
+                   echo "Nombre de usuario o contraseña incorrectos.";
+               }
+           } else {
+               // Mostrar el formulario de inicio de sesión
+               require 'app/views/login.php';
+           }
+       }
+
+       // Acción para mostrar la página protegida
+       public function protectedPage() {
+           session_start();
+           if (!isset($_SESSION['user_id'])) {
+               header("Location: index.php?action=login");
+               exit();
+           }
+           $username = $_SESSION['username'];
+           require 'app/views/protected.php';
+       }
+
+       // Acción para cerrar sesión
+       public function logout() {
+           session_start();
+           $_SESSION = array();
+           session_destroy();
+           header("Location: index.php?action=login");
+           exit();
+       }
+   }
+   ```
+
+**Explicación:**
+
+- **register():** Maneja el registro de usuarios. Si es una solicitud POST, procesa el formulario; de lo contrario, muestra el formulario de registro.
+- **login():** Maneja el inicio de sesión. Si es una solicitud POST, procesa el formulario; de lo contrario, muestra el formulario de inicio de sesión.
+- **protectedPage():** Verifica si el usuario está autenticado y muestra la página protegida.
+- **logout():** Cierra la sesión y redirige al usuario al formulario de inicio de sesión.
+
+<a name="enrutamiento"></a>
+### **7. Configuración del enrutamiento**
+
+#### **7.1. Crear `index.php` en la raíz del proyecto**
+
+1. **Crear el archivo `index.php`:**
+
+   - En la carpeta `login_mvc/`, crea un archivo llamado `index.php`.
+
+2. **Agregar el siguiente código a `index.php`:**
+
+   ```php
+   <?php
+   // index.php
+
+   require_once 'core/Database.php';
+   require_once 'app/controllers/UserController.php';
+
+   // Conexión a la base de datos
+   $database = new Database();
+   $dbConnection = $database->getConnection();
+
+   // Crear instancia del controlador
+   $userController = new UserController($dbConnection);
+
+   // Enrutamiento básico
+   $action = isset($_GET['action']) ? $_GET['action'] : 'login';
+
+   switch ($action) {
+       case 'register':
+           $userController->register();
+           break;
+       case 'login':
+           $userController->login();
+           break;
+       case 'protected':
+           $userController->protectedPage();
+           break;
+       case 'logout':
+           $userController->logout();
+           break;
+       default:
+           echo "Acción no válida.";
+           break;
+   }
+   ```
+
+**Explicación:**
+
+- **require_once:** Incluye las clases necesarias.
+- **Conexión a la base de datos:** Crea una instancia de la conexión a la base de datos.
+- **Instancia del controlador:** Crea una instancia de `UserController`.
+- **Enrutamiento:** Utiliza el parámetro `action` en la URL para determinar qué método del controlador llamar.
+
+#### **7.2. Crear `Database.php` en `core/`**
+
+1. **Crear la carpeta `core`:**
+
+   - En `login_mvc/`, crea una carpeta llamada `core`.
+
+2. **Crear el archivo `Database.php`:**
+
+   - Dentro de `core/`, crea un archivo llamado `Database.php`.
+
+3. **Agregar el siguiente código a `Database.php`:**
+
+   ```php
+   <?php
+   // core/Database.php
+
+   class Database {
+       private $host = 'localhost';
+       private $db_name = 'login_mvc';
+       private $username = 'root';
+       private $password = '';
+       private $conn;
+
+       // Obtener la conexión a la base de datos
+       public function getConnection() {
+           $this->conn = null;
+
+           try {
+               $this->conn = new PDO(
+                   "mysql:host=" . $this->host . ";dbname=" . $this->db_name,
+                   $this->username,
+                   $this->password
+               );
+               // Establecer el modo de error de PDO a excepción
+               $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+           } catch(PDOException $exception) {
+               echo "Error de conexión: " . $exception->getMessage();
+           }
+
+           return $this->conn;
+       }
+   }
+   ```
+
+**Explicación:**
+
+- **getConnection():** Establece y devuelve la conexión a la base de datos utilizando PDO.
+- **Parámetros de conexión:** Asegúrate de que los parámetros (`host`, `db_name`, `username`, `password`) coincidan con tu configuración.
+
+<a name="ejecucion"></a>
+### **8. Ejecución y prueba de la aplicación**
+
+#### **8.1. Iniciar Apache y MySQL**
+
+- Abre el panel de control de XAMPP y asegúrate de que **Apache** y **MySQL** estén en ejecución.
+
+#### **8.2. Acceder a la aplicación en el navegador**
+
+- Abre tu navegador web y ve a [http://localhost/login_mvc/index.php](http://localhost/login_mvc/index.php)
+
+#### **8.3. Probar el registro de usuario**
+
+1. **Registrar un nuevo usuario:**
+   - Haz clic en "Regístrate aquí" si estás en la página de inicio de sesión.
+   - Completa el formulario de registro con un nombre de usuario, correo electrónico y contraseña.
+   - Haz clic en "Registrarse".
+
+2. **Verificar el registro:**
+   - Deberías ver un mensaje de éxito indicando que el registro fue exitoso.
+   - Puedes verificar en **phpMyAdmin** que el nuevo usuario aparece en la tabla `users`.
+
+#### **8.4. Probar el inicio de sesión**
+
+1. **Iniciar sesión con el usuario registrado:**
+   - Vuelve a [http://localhost/login_mvc/index.php](http://localhost/login_mvc/index.php?action=login)
+   - Ingresa el nombre de usuario y contraseña que acabas de registrar.
+   - Haz clic en "Iniciar Sesión".
+
+2. **Verificar el acceso a la página protegida:**
+   - Si las credenciales son correctas, deberías ser redirigido a la página protegida.
+   - Deberías ver un mensaje de bienvenida con tu nombre de usuario.
+
+#### **8.5. Probar el cierre de sesión**
+
+1. **Cerrar sesión:**
+   - En la página protegida, haz clic en "Cerrar Sesión".
+
+2. **Verificar la redirección:**
+   - Deberías ser redirigido al formulario de inicio de sesión.
+   - Si intentas acceder nuevamente a la página protegida sin iniciar sesión, serás redirigido al formulario de inicio de sesión.
+
+<a name="seguridad"></a>
+### **9. Consideraciones de seguridad y buenas prácticas**
+
+- **Validación y sanitización de entradas:**
+  - Utiliza `htmlspecialchars()` al mostrar datos del usuario para prevenir ataques XSS.
+  - Valida y sanitiza los datos del formulario antes de procesarlos.
+
+- **Preparación de sentencias SQL:**
+  - Utiliza `prepare` y `execute` con PDO para prevenir inyecciones SQL.
+
+- **Almacenamiento de contraseñas:**
+  - Nunca almacenes contraseñas en texto plano.
+  - Utiliza `password_hash()` para almacenar contraseñas y `password_verify()` para verificar.
+
+- **Gestión de sesiones:**
+  - Inicia la sesión con `session_start()` antes de usar variables de sesión.
+  - Al cerrar sesión, destruye la sesión correctamente.
+
+- **Uso de HTTPS:**
+  - En un entorno de producción, utiliza HTTPS para encriptar la comunicación.
+
+- **Manejo de errores:**
+  - No muestres mensajes de error detallados al usuario.
+  - Utiliza registros de errores (logs) para almacenar detalles técnicos.
+
+- **Configuración de la base de datos:**
+  - En un entorno de producción, no uses el usuario `root` sin contraseña.
+  - Crea un usuario específico para tu aplicación con permisos limitados.
+
+---
+
+**¡Felicidades!** Has implementado un sistema de inicio de sesión utilizando el patrón MVC en PHP, integrando phpMyAdmin para la gestión de la base de datos. Este ejercicio te ayuda a comprender cómo organizar una aplicación web de manera estructurada y cómo utilizar herramientas como phpMyAdmin para facilitar el desarrollo.
+
+**¿Qué sigue?**
+
+- **Agregar funcionalidades adicionales:**
+  - Recuperación de contraseñas.
+  - Edición del perfil de usuario.
+  - Validaciones más robustas en los formularios.
+
+- **Mejorar la seguridad:**
+  - Implementar tokens CSRF.
+  - Utilizar variables de sesión más seguras.
+
+- **Aprender frameworks:**
+  - Considera aprender frameworks PHP como **Laravel** o **Symfony** para proyectos más grandes.
+
+Si tienes más preguntas o necesitas ayuda adicional, ¡no dudes en preguntar!
+
+¡Claro! Agregar funcionalidades adicionales como **recuperación de contraseñas** y **edición del perfil de usuario** mejorará tu aplicación 
+y brindará una mejor experiencia a los usuarios. A continuación, te guiaré paso a paso para implementar estas funcionalidades en el ejercicio anterior.
+
+---
+
+### **Índice:**
+
+1. [Recuperación de contraseñas](#recuperacion-de-contrasenas)
+   - 1.1. [Descripción general](#descripcion-general)
+   - 1.2. [Configuración de correo electrónico en PHP](#configuracion-email)
+   - 1.3. [Actualización de la base de datos](#actualizacion-bd)
+   - 1.4. [Creación de la Vista: Formulario de solicitud de restablecimiento](#vista-formulario-solicitud)
+   - 1.5. [Creación del Controlador: Procesar solicitud de restablecimiento](#controlador-procesar-solicitud)
+   - 1.6. [Creación de la Vista: Formulario de restablecimiento de contraseña](#vista-formulario-restablecimiento)
+   - 1.7. [Creación del Controlador: Procesar restablecimiento de contraseña](#controlador-procesar-restablecimiento)
+
+2. [Edición del perfil de usuario](#edicion-perfil-usuario)
+   - 2.1. [Descripción general](#descripcion-general-perfil)
+   - 2.2. [Actualización de la Vista: Página protegida con enlace a editar perfil](#actualizacion-vista-protegida)
+   - 2.3. [Creación de la Vista: Formulario de edición de perfil](#vista-formulario-edicion)
+   - 2.4. [Creación del Controlador: Procesar actualización de perfil](#controlador-procesar-actualizacion)
+
+3. [Consideraciones de seguridad y buenas prácticas](#consideraciones-seguridad)
+
+---
+
+<a name="recuperacion-de-contrasenas"></a>
+## **1. Recuperación de contraseñas**
+
+### <a name="descripcion-general"></a>1.1. **Descripción general**
+
+La funcionalidad de recuperación de contraseñas permite a los usuarios restablecer su contraseña en caso de que la hayan olvidado. Generalmente, este proceso implica:
+
+1. El usuario solicita restablecer su contraseña proporcionando su correo electrónico.
+2. Se genera un **token seguro** y se envía un enlace de restablecimiento al correo electrónico del usuario.
+3. El usuario hace clic en el enlace, que lo lleva a una página donde puede establecer una nueva contraseña.
+4. El token es validado y la contraseña se actualiza en la base de datos.
+
+### <a name="configuracion-email"></a>1.2. **Configuración de correo electrónico en PHP**
+
+Para enviar correos electrónicos desde PHP, puedes utilizar la función `mail()`. Sin embargo, esta función tiene limitaciones y es recomendable usar una librería como **PHPMailer** o **SwiftMailer** para manejar el envío de correos de manera más robusta.
+
+En este ejemplo, usaremos **PHPMailer**.
+
+#### **Instalación de PHPMailer**
+
+1. **Usar Composer (recomendado):**
+
+   - Si tienes Composer instalado, navega a tu carpeta de proyecto `login_mvc` y ejecuta:
+
+     ```bash
+     composer require phpmailer/phpmailer
+     ```
+
+   - Esto creará una carpeta `vendor/` con PHPMailer y un archivo `composer.json`.
+
+2. **Sin Composer:**
+
+   - Descarga PHPMailer desde [GitHub](https://github.com/PHPMailer/PHPMailer).
+   - Copia la carpeta `src/` en tu proyecto, por ejemplo, en `login_mvc/vendor/phpmailer/phpmailer/src`.
+
+#### **Configuración del correo saliente**
+
+Necesitas configurar un servidor SMTP para enviar correos. Puedes usar servicios como Gmail (con limitaciones), pero para este ejemplo usaremos Gmail.
+
+**Nota importante:** Gmail ha desactivado el acceso de "apps menos seguras". Para usar Gmail, necesitas configurar una **contraseña de aplicación** y habilitar la autenticación de dos factores.
+
+**Alternativa:** Utiliza un servicio de correo como **SendGrid**, **Mailgun**, o configura un servidor SMTP local.
+
+Por simplicidad, asumiremos que tienes acceso a un servidor SMTP funcional.
+
+### <a name="actualizacion-bd"></a>1.3. **Actualización de la base de datos**
+
+Necesitamos agregar una tabla o campos adicionales para almacenar el token de restablecimiento y su fecha de expiración.
+
+#### **Agregar una nueva tabla `password_resets`**
+
+Ejecuta el siguiente SQL en phpMyAdmin:
+
+```sql
+CREATE TABLE password_resets (
+    email VARCHAR(100) NOT NULL,
+    token VARCHAR(255) NOT NULL,
+    expires_at DATETIME NOT NULL
+);
+```
+
+**Explicación:**
+
+- **email:** El correo electrónico del usuario que solicitó el restablecimiento.
+- **token:** Un token único que se enviará al usuario.
+- **expires_at:** Fecha y hora de expiración del token.
+
+### <a name="vista-formulario-solicitud"></a>1.4. **Creación de la Vista: Formulario de solicitud de restablecimiento**
+
+#### **Crear `forgot_password.php` en `app/views/`**
+
+```html
+<!-- app/views/forgot_password.php -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recuperar Contraseña</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <h2>Recuperar Contraseña</h2>
+    <form action="index.php?action=forgot_password" method="POST">
+        <label>Correo electrónico:</label><br>
+        <input type="email" name="email" required><br><br>
+        
+        <button type="submit">Enviar Enlace de Restablecimiento</button>
+    </form>
+    <p>¿Recordaste tu contraseña? <a href="index.php?action=login">Inicia sesión aquí</a></p>
+</body>
+</html>
+```
+
+### <a name="controlador-procesar-solicitud"></a>1.5. **Creación del Controlador: Procesar solicitud de restablecimiento**
+
+#### **Actualizar `UserController.php`**
+
+Agrega el siguiente método al controlador:
+
+```php
+// app/controllers/UserController.php
+
+// Al inicio, añade el uso de PHPMailer si usas Composer
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+public function forgotPassword() {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $email = $_POST['email'];
+
+        // Verificar si el email existe en la base de datos
+        $user = $this->userModel->getUserByEmail($email);
+        if ($user) {
+            // Generar un token seguro
+            $token = bin2hex(random_bytes(50));
+            $expires_at = date("Y-m-d H:i:s", strtotime('+1 hour'));
+
+            // Guardar el token en la base de datos
+            $this->userModel->storePasswordResetToken($email, $token, $expires_at);
+
+            // Enviar el correo electrónico con el enlace de restablecimiento
+            $resetLink = 'http://localhost/login_mvc/index.php?action=reset_password&token=' . $token;
+
+            // Configurar PHPMailer
+            $mail = new PHPMailer(true);
+            try {
+                // Configuración del servidor SMTP
+                $mail->isSMTP();
+                $mail->Host = 'smtp.tuServidor.com'; // Cambia esto
+                $mail->SMTPAuth = true;
+                $mail->Username = 'tuCorreo@dominio.com'; // Cambia esto
+                $mail->Password = 'tuContraseña'; // Cambia esto
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+                $mail->Port = 587;
+
+                // Remitente y destinatario
+                $mail->setFrom('tuCorreo@dominio.com', 'Tu Nombre'); // Cambia esto
+                $mail->addAddress($email);
+
+                // Contenido del correo
+                $mail->isHTML(true);
+                $mail->Subject = 'Restablecimiento de Contraseña';
+                $mail->Body    = "Haz clic en el siguiente enlace para restablecer tu contraseña: <a href='$resetLink'>$resetLink</a>";
+
+                $mail->send();
+                echo 'Se ha enviado un enlace de restablecimiento a tu correo electrónico.';
+            } catch (Exception $e) {
+                echo "Error al enviar el correo: {$mail->ErrorInfo}";
+            }
+        } else {
+            echo "No existe una cuenta con ese correo electrónico.";
+        }
+    } else {
+        require 'app/views/forgot_password.php';
+    }
+}
+```
+
+#### **Explicación:**
+
+- **Generación del token:** Usamos `random_bytes` para generar un token seguro.
+- **Almacenamiento del token:** Guardamos el token y la fecha de expiración en la base de datos.
+- **Envío del correo:** Usamos PHPMailer para enviar el enlace de restablecimiento al correo del usuario.
+- **Enlace de restablecimiento:** Contiene el token como parámetro GET.
+
+#### **Actualizar el enrutamiento en `index.php`**
+
+Agrega el nuevo caso en el switch:
+
+```php
+case 'forgot_password':
+    $userController->forgotPassword();
+    break;
+```
+
+### <a name="vista-formulario-restablecimiento"></a>1.6. **Creación de la Vista: Formulario de restablecimiento de contraseña**
+
+#### **Crear `reset_password.php` en `app/views/`**
+
+```html
+<!-- app/views/reset_password.php -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Restablecer Contraseña</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <h2>Restablecer Contraseña</h2>
+    <form action="index.php?action=reset_password&token=<?php echo htmlspecialchars($token); ?>" method="POST">
+        <label>Nueva Contraseña:</label><br>
+        <input type="password" name="password" required><br><br>
+        
+        <label>Confirmar Nueva Contraseña:</label><br>
+        <input type="password" name="confirm_password" required><br><br>
+        
+        <button type="submit">Restablecer Contraseña</button>
+    </form>
+</body>
+</html>
+```
+
+### <a name="controlador-procesar-restablecimiento"></a>1.7. **Creación del Controlador: Procesar restablecimiento de contraseña**
+
+#### **Agregar método al controlador `UserController.php`**
+
+```php
+public function resetPassword() {
+    $token = $_GET['token'];
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $password = $_POST['password'];
+        $confirm_password = $_POST['confirm_password'];
+
+        if ($password !== $confirm_password) {
+            echo "Las contraseñas no coinciden.";
+            return;
+        }
+
+        // Verificar el token
+        $passwordReset = $this->userModel->verifyPasswordResetToken($token);
+
+        if ($passwordReset) {
+            // Actualizar la contraseña del usuario
+            $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+            $this->userModel->updatePassword($passwordReset['email'], $hashedPassword);
+
+            // Eliminar el token
+            $this->userModel->deletePasswordResetToken($token);
+
+            echo "Tu contraseña ha sido restablecida. <a href='index.php?action=login'>Inicia sesión aquí</a>.";
+        } else {
+            echo "Token inválido o expirado.";
+        }
+    } else {
+        require 'app/views/reset_password.php';
+    }
+}
+```
+
+#### **Explicación:**
+
+- **Validación del token:** Verificamos que el token existe y no ha expirado.
+- **Actualización de la contraseña:** Actualizamos la contraseña del usuario en la base de datos.
+- **Eliminación del token:** Para que no pueda usarse de nuevo.
+
+#### **Actualizar el enrutamiento en `index.php`**
+
+Agrega el nuevo caso en el switch:
+
+```php
+case 'reset_password':
+    $userController->resetPassword();
+    break;
+```
+
+### **Actualización del Modelo `User.php`**
+
+Añade los siguientes métodos al modelo:
+
+```php
+// Obtener usuario por correo electrónico
+public function getUserByEmail($email) {
+    $query = "SELECT * FROM $this->table WHERE email = ?";
+    $stmt = $this->db->prepare($query);
+    $stmt->execute([$email]);
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+// Almacenar token de restablecimiento de contraseña
+public function storePasswordResetToken($email, $token, $expires_at) {
+    $query = "INSERT INTO password_resets (email, token, expires_at) VALUES (?, ?, ?)";
+    $stmt = $this->db->prepare($query);
+    return $stmt->execute([$email, $token, $expires_at]);
+}
+
+// Verificar token de restablecimiento de contraseña
+public function verifyPasswordResetToken($token) {
+    $query = "SELECT * FROM password_resets WHERE token = ? AND expires_at > NOW()";
+    $stmt = $this->db->prepare($query);
+    $stmt->execute([$token]);
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+// Actualizar contraseña del usuario
+public function updatePassword($email, $hashedPassword) {
+    $query = "UPDATE $this->table SET password = ? WHERE email = ?";
+    $stmt = $this->db->prepare($query);
+    return $stmt->execute([$hashedPassword, $email]);
+}
+
+// Eliminar token de restablecimiento
+public function deletePasswordResetToken($token) {
+    $query = "DELETE FROM password_resets WHERE token = ?";
+    $stmt = $this->db->prepare($query);
+    return $stmt->execute([$token]);
+}
+```
+
+---
+
+<a name="edicion-perfil-usuario"></a>
+## **2. Edición del perfil de usuario**
+
+### <a name="descripcion-general-perfil"></a>2.1. **Descripción general**
+
+La funcionalidad de edición del perfil permite a los usuarios actualizar su información personal, como el nombre de usuario, correo electrónico y contraseña.
+
+### <a name="actualizacion-vista-protegida"></a>2.2. **Actualización de la Vista: Página protegida con enlace a editar perfil**
+
+Modifica `protected.php` para incluir un enlace a la edición del perfil:
+
+```html
+<!-- app/views/protected.php -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Página Protegida</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <h2>Bienvenido, <?php echo htmlspecialchars($username); ?>!</h2>
+    <p>Esta es una página protegida.</p>
+    <a href="index.php?action=edit_profile">Editar Perfil</a> | 
+    <a href="index.php?action=logout">Cerrar Sesión</a>
+</body>
+</html>
+```
+
+### <a name="vista-formulario-edicion"></a>2.3. **Creación de la Vista: Formulario de edición de perfil**
+
+#### **Crear `edit_profile.php` en `app/views/`**
+
+```html
+<!-- app/views/edit_profile.php -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Perfil</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <h2>Editar Perfil</h2>
+    <form action="index.php?action=edit_profile" method="POST">
+        <label>Nombre de usuario:</label><br>
+        <input type="text" name="username" value="<?php echo htmlspecialchars($user['username']); ?>" required><br><br>
+        
+        <label>Correo electrónico:</label><br>
+        <input type="email" name="email" value="<?php echo htmlspecialchars($user['email']); ?>" required><br><br>
+        
+        <label>Nueva Contraseña (dejar en blanco si no desea cambiarla):</label><br>
+        <input type="password" name="password"><br><br>
+        
+        <button type="submit">Actualizar Perfil</button>
+    </form>
+    <p><a href="index.php?action=protected">Volver a la página protegida</a></p>
+</body>
+</html>
+```
+
+### <a name="controlador-procesar-actualizacion"></a>2.4. **Creación del Controlador: Procesar actualización de perfil**
+
+#### **Agregar método al controlador `UserController.php`**
+
+```php
+public function editProfile() {
+    session_start();
+    if (!isset($_SESSION['user_id'])) {
+        header("Location: index.php?action=login");
+        exit();
+    }
+    $userId = $_SESSION['user_id'];
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $username = $_POST['username'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        // Validar que el nombre de usuario o email no estén en uso por otros usuarios
+        $existingUser = $this->userModel->userExistsById($username, $email, $userId);
+        if ($existingUser) {
+            echo "El nombre de usuario o correo electrónico ya están en uso por otro usuario.";
+            return;
+        }
+
+        // Si se ingresó una nueva contraseña, hashéala
+        if (!empty($password)) {
+            $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+        } else {
+            $hashedPassword = null; // No actualizar contraseña
+        }
+
+        // Actualizar el perfil
+        $this->userModel->updateProfile($userId, $username, $email, $hashedPassword);
+
+        // Actualizar la sesión
+        $_SESSION['username'] = $username;
+
+        echo "Perfil actualizado exitosamente. <a href='index.php?action=protected'>Volver</a>";
+    } else {
+        // Obtener datos del usuario
+        $user = $this->userModel->getUserById($userId);
+        require 'app/views/edit_profile.php';
+    }
+}
+```
+
+#### **Explicación:**
+
+- **Verificación de sesión:** Aseguramos que el usuario esté autenticado.
+- **Procesamiento del formulario:** Validamos y actualizamos los datos.
+- **Actualización de la sesión:** Si se cambia el nombre de usuario, actualizamos la sesión.
+- **Visualización del formulario:** Si es una solicitud GET, mostramos el formulario con los datos actuales.
+
+#### **Actualizar el enrutamiento en `index.php`**
+
+Agrega el nuevo caso en el switch:
+
+```php
+case 'edit_profile':
+    $userController->editProfile();
+    break;
+```
+
+### **Actualización del Modelo `User.php`**
+
+Añade los siguientes métodos al modelo:
+
+```php
+// Obtener usuario por ID
+public function getUserById($id) {
+    $query = "SELECT * FROM $this->table WHERE id = ?";
+    $stmt = $this->db->prepare($query);
+    $stmt->execute([$id]);
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+// Verificar si el nombre de usuario o email están en uso por otro usuario
+public function userExistsById($username, $email, $userId) {
+    $query = "SELECT * FROM $this->table WHERE (username = ? OR email = ?) AND id != ?";
+    $stmt = $this->db->prepare($query);
+    $stmt->execute([$username, $email, $userId]);
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+// Actualizar perfil del usuario
+public function updateProfile($id, $username, $email, $hashedPassword = null) {
+    if ($hashedPassword) {
+        $query = "UPDATE $this->table SET username = ?, email = ?, password = ? WHERE id = ?";
+        $params = [$username, $email, $hashedPassword, $id];
+    } else {
+        $query = "UPDATE $this->table SET username = ?, email = ? WHERE id = ?";
+        $params = [$username, $email, $id];
+    }
+    $stmt = $this->db->prepare($query);
+    return $stmt->execute($params);
+}
+```
+
+---
+
+<a name="consideraciones-seguridad"></a>
+## **3. Consideraciones de seguridad y buenas prácticas**
+
+- **Seguridad en la recuperación de contraseñas:**
+  - Asegúrate de que los tokens sean únicos y difíciles de adivinar.
+  - Los tokens deben tener una fecha de expiración corta (ej. 1 hora).
+  - No reveles información sobre si el correo existe o no en el sistema.
+
+- **Protección contra ataques de fuerza bruta:**
+  - Implementa límites en la cantidad de solicitudes de restablecimiento por IP o por usuario.
+  - Considera agregar CAPTCHA en los formularios.
+
+- **Validación y sanitización de entradas:**
+  - Siempre sanitiza y valida los datos recibidos del usuario.
+  - Usa `htmlspecialchars()` al mostrar datos en las vistas.
+
+- **Actualización del perfil:**
+  - Verifica que los nuevos datos no entren en conflicto con otros usuarios.
+  - Requiere la contraseña actual para cambios sensibles (opcional).
+
+- **Configuración del correo electrónico:**
+  - No incluyas credenciales sensibles en el código fuente.
+  - Usa variables de entorno o archivos de configuración seguros.
+
+---
+
+**¡Listo!** Has agregado con éxito las funcionalidades de recuperación de contraseñas y edición del perfil de usuario a tu aplicación PHP con el patrón MVC.
+
+**¿Qué sigue?**
+
+- **Implementar protección CSRF:** Añade tokens CSRF a tus formularios para prevenir ataques de falsificación de solicitudes.
+- **Mejorar la experiencia de usuario:**
+  - Añade mensajes de éxito y error más amigables.
+  - Implementa validaciones en el frontend usando JavaScript.
+- **Seguridad adicional:**
+  - Usa HTTPS para encriptar la comunicación.
+  - Configura cabeceras de seguridad.
+
+Si tienes más preguntas o necesitas ayuda adicional con alguna parte específica, ¡no dudes en preguntar!

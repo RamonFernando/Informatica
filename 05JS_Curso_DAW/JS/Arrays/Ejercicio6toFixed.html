@@ -1,0 +1,46 @@
+<!-- Ejercicio6toFixed.html 
+ 6.- Escribe un programa que pida por consola los precios de diez productos y los guarde en un array. 
+Haz que después se muestren todos los valores mediante un bucle for. -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Gill Sans MT';
+            background-color: #7b7b7a;
+            padding: 20px;
+            color: #ffffff;
+        }
+        .boton{
+            color: #7b7b7a;
+            border-radius: 0.3em;
+            padding: .5em 1em;
+            border: none;
+            background-color: #ffffff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicios</h2>
+    <script>
+        let precios = new Array(10);
+        for (let i = 0; i < precios.length; i++) {
+            precios[i] = parseFloat(prompt("Introduce el precio del producto " + (i + 1)));
+        }
+        let total = 0;
+        document.write("<p>Los precios introducidos son:</p>");
+        for(let j = 0; j < precios.length; j++){
+            document.write("<p>El precio del producto " + (j + 1) + " es: " + precios[j].toFixed(2) + " €</p>");
+            total += precios[j];
+        }
+        document.write("<p>El precio total es: " + total + " €</p>");
+        
+    </script>
+    <p>FIN</p>
+</body>
+</html>

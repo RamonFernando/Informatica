@@ -1,0 +1,7 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\8_POO\4_Herencia\EjemploHerencia\bin\Debug\EjemploHerencia.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\8_POO\4_Herencia\EjemploHerencia\bin\Debug\EjemploHerencia.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\8_POO\4_Herencia\EjemploHerencia\bin\Debug\EjemploHerencia.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\8_POO\4_Herencia\EjemploHerencia\obj\Debug\EjemploHerencia.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\8_POO\4_Herencia\EjemploHerencia\obj\Debug\EjemploHerencia.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\8_POO\4_Herencia\EjemploHerencia\obj\Debug\EjemploHerencia.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\8_POO\4_Herencia\EjemploHerencia\obj\Debug\EjemploHerencia.pdb

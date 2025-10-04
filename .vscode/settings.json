@@ -1,0 +1,10 @@
+{
+    "java.project.sourcePaths": [
+        ".",
+        "algoritmos-Java\\package"
+    ],
+    "java.project.referencedLibraries": [],
+    "git.ignoreLimitWarning": true,
+    "C_Cpp.errorSquiggles": "disabled",
+    "liveServer.settings.port": 5501
+}

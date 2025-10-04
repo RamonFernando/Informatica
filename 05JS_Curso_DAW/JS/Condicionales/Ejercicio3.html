@@ -1,0 +1,38 @@
+<!-- Ejercicio3 
+ 3.- Queremos diseñar un programa que solicite un número al usuario y le resultadoponda "Es impar" o 
+"No es impar". Utiliza para ello la notación ? en lugar de if asignando a una variable de tipo String 
+el resultadoultado y mostrando después esta variable. -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Gill Sans MT';
+            background-color: #ac9776;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicios 3</h2>
+    <p>Login</p>
+        <script>
+            let numero = parseInt(prompt("Introduce un número"));
+            // Le pasamos el numero introducido en el prompt a la funcion como argumento
+            esImpar(numero);
+            
+            function esImpar(numero) {
+                // Operador ternario que comprueba si es par o impar
+                let resultado = numero % 2 == 0 ? "Es numero " + numero + " es par" : "El numero " + numero + " es impar";
+                console.log(resultado);
+                alert(resultado);
+            }
+        </script>
+
+    <p>FIN</p>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!-- Ejercicio3
+3.- Crea una aplicación que calcule una lista con las potencias de 3 menores que 12000. Haz que en 
+cada pasada del bucle se muestre el exponente y el valor de la potencia. Utiliza un bucle do-while.-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Gill Sans MT';
+            background-color: #ac9776;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicios</h2>
+    <p>...</p>
+        <script>
+            let base = 0;
+            let exponente = 1;
+            let resultado = 1;
+
+            base = prompt("Introduce la potencia de un numero (resultado menor que 12000)");
+            do{
+                resultado = Math.pow(base,exponente);
+                if(resultado < 12000){
+                    mensaje = document.write(base + " ^ " + exponente + " = " + resultado + "<br>")
+                }
+                exponente++;
+            }while(resultado < 12000);
+        </script>
+
+    <p>FIN</p>
+</body>
+</html>

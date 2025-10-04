@@ -1,0 +1,20 @@
+pablo moto;8
+mirian hernandez;9
+blas mario;6
+Pamela Anderson;3
+Maite Danese;9
+Ramon Perez;9
+ramon;8
+Ana;6
+pepe;7.5
+pedri;9.5
+ramon;10
+RFPA;9.5
+Lida Maria;10
+Paula;6
+Maria;4
+Genesis;7
+Cesar;6
+Wilfredo;9.5
+Rebeca;7
+Sara;6.5

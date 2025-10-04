@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Ingresos2</title>
+</head>
+<body>
+    <h2>Ingresa tu nombre</h2>
+    <input type="text" id="inputTexto" placeholder="Ingresa tu nombre">
+    <button type="button" id="boton" onclick="mostrarTexto()">Ingresar</button>
+
+    <p type="text" id="textoSalida">?</p>
+
+    <script>
+        function mostrarTexto(){
+            // Obtener el valor del input
+            let elementoTexto = document.getElementById("inputTexto");
+            
+            // Mostrar el texto 
+            let elementoSalida = document.getElementById("textoSalida"); // Obtenemos el elemento de salida
+            let mensaje = "Tu nombre es " + elementoTexto.value.toUpperCase(); // Creamos la variable con el mensaje
+            elementoSalida.textContent = mensaje; // Mostramos el mensaje
+             
+        }
+    </script>
+    
+</body>
+</html>

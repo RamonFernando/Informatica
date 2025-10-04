@@ -1,0 +1,41 @@
+<!-- 1.- Queremos crear una aplicación que controle el acceso a un ordenador pidiendo una clave de 
+acceso.
+El programa pedirá una cadena de caracteres al usuario. La comparará con la cadena "java8" y si 
+son iguales, escribirá "Acceso permitido". En caso contrario escribirá "Acceso denegado". 
+Para guardar la clave "java8" utiliza una constante llamada CLAVE_REQUERIDA. -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Gill Sans MT';
+            background-color: #ac9776;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicios 1</h2>
+    <p>Ingresa clave de acceso</p>
+        <script>
+            
+            // Entrada de datos
+            const CLAVE_ACCESO = "java8";
+            let password = prompt("Introduce la clave de acceso");
+            
+            // Procesamiento
+            if (password === CLAVE_ACCESO) {
+                alert("Acceso permitido");
+            } else {
+                alert("Acceso denegado");
+            }
+
+        </script>
+
+    <p>FIN</p>
+</body>
+</html>

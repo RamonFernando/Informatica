@@ -1,0 +1,61 @@
+Clasificación Detallada de las Lecciones
+
+Lección 1: Introducción a JavaScript
+Contenido: Variables, tipos de datos, operaciones básicas, consola, ejecución básica.
+Nivel (1-100): 10
+Categoría: Principiante
+Descripción del Nivel: Introducción básica: te familiarizas con conceptos fundamentales del lenguaje.
+
+Lección 2: Funciones, Arrays y Objetos
+Contenido: Funciones básicas y flecha, métodos de arrays (map, filter, reduce), objetos básicos.
+Nivel (1-100): 20
+Categoría: Principiante
+Descripción del Nivel: Aprende a usar funciones y estructuras comunes para manejar datos y lógica básica.
+
+Lección 3: Estructuras de Control
+Contenido: if, else, switch, bucles (for, while), ejemplos prácticos.
+Nivel (1-100): 30
+Categoría: Principiante
+Descripción del Nivel: Control de flujo en aplicaciones simples. Aprende cómo decidir y repetir en código.
+
+Lección 4: Manejo del DOM
+Contenido: Manipular elementos HTML con JavaScript (document.querySelector, eventos, dinámicas básicas).
+Nivel (1-100): 40
+Categoría: Principiante-Intermedio
+Descripción del Nivel: Introducción a la interacción con páginas web dinámicas.
+
+Lección 5: Promesas y async/await
+Contenido: Manejar asincronía, promesas, y el uso práctico de async/await.
+Nivel (1-100): 50
+Categoría: Intermedio
+Descripción del Nivel: Trabaja con código que depende de operaciones que tardan, como llamadas a APIs.
+
+Lección 6: Clases y POO
+Contenido: Programación orientada a objetos: clases, herencia, encapsulación, métodos.
+Nivel (1-100): 60
+Categoría: Intermedio Alto
+Descripción del Nivel: Aprende conceptos avanzados de organización y reutilización de código.
+
+Lección 7: Módulos y Import/Export
+Contenido: Separar código en archivos con import/export, organización de proyectos.
+Nivel (1-100): 70
+Categoría: Intermedio Alto
+Descripción del Nivel: Estructura proyectos grandes de manera eficiente y profesional.
+
+Lección 8: Node.js Básico
+Contenido: Introducción al backend con Node.js, cómo crear un servidor básico.
+Nivel (1-100): 80
+Categoría: Junior
+Descripción del Nivel: Inicia en el desarrollo del lado del servidor, creando aplicaciones básicas.
+
+Lección 9: APIs y HTTP
+Contenido: Conexión con APIs externas, métodos HTTP (GET, POST), manejo de errores.
+Nivel (1-100): 90
+Categoría: Junior-Mid
+Descripción del Nivel: Interacción avanzada con servicios web y manejo profesional de respuestas de red.
+
+Lección 10: Patrones de Diseño
+Contenido: Implementación de patrones comunes (Singleton, Factory, etc.) en proyectos.
+Nivel (1-100): 100
+Categoría: Mid-Senior
+Descripción del Nivel: Nivel profesional para crear software escalable y mantenible.

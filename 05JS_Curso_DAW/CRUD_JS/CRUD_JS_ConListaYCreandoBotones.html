@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD con Lista Estilizada</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+        }
+
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input {
+            width: 60%;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Lista de elementos */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            margin-bottom: 10px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilo para el texto del elemento */
+        li span {
+            flex-grow: 1; /* Ocupa el espacio disponible */
+        }
+
+        /* Botones dentro de la lista */
+        .boton-actualizar, .boton-eliminar {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-left: 10px; /* Espaciado entre botones */
+        }
+
+        .boton-actualizar {
+            background-color: #f1c40f;
+            color: white;
+        }
+
+        .boton-actualizar:hover {
+            background-color: #d4ac0d;
+        }
+
+        .boton-eliminar {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        .boton-eliminar:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <h1>CRUD con Lista Estilizada</h1>
+
+    <!-- Campo de entrada y botón para crear nuevos elementos -->
+    <input type="text" id="entradaElemento" placeholder="Escribe un elemento..." />
+    <button onclick="crearElemento()">Agregar</button>
+
+    <!-- Lista donde se mostrarán los elementos -->
+    <h2>Lista de Elementos</h2>
+    <ul id="listaElementos"></ul>
+
+    <script>
+        // Declaramos un arreglo para almacenar los elementos
+        let elementos = [];
+
+        // Función para crear un nuevo elemento
+        function crearElemento() {
+            const entrada = document.getElementById("entradaElemento");
+            const nuevoElemento = entrada.value.trim(); // Eliminamos espacios en blanco
+
+            if (nuevoElemento) {
+                // Agregamos el nuevo elemento al arreglo
+                elementos.push(nuevoElemento);
+                entrada.value = ""; // Limpiamos el campo de entrada
+                renderizarLista(); // Mostramos la lista actualizada
+            } else {
+                alert("Por favor, escribe un elemento.");
+            }
+        }
+
+        // Función para mostrar los elementos en la lista
+        function renderizarLista() {
+            const listaElementos = document.getElementById("listaElementos");
+            listaElementos.innerHTML = ""; // Limpiamos la lista actual
+
+            elementos.forEach((elemento, indice) => {
+                // Creamos un elemento <li>
+                const li = document.createElement("li");
+
+                // Creamos un <span> para el texto del elemento
+                const span = document.createElement("span");
+                span.textContent = elemento;
+
+                // Creamos un botón de actualizar
+                const botonActualizar = document.createElement("button");
+                botonActualizar.textContent = "Actualizar";
+                botonActualizar.className = "boton-actualizar";
+                botonActualizar.onclick = () => actualizarElemento(indice);
+
+                // Creamos un botón de eliminar
+                const botonEliminar = document.createElement("button");
+                botonEliminar.textContent = "Eliminar";
+                botonEliminar.className = "boton-eliminar";
+                botonEliminar.onclick = () => eliminarElemento(indice);
+
+                // Agregamos el texto y botones al <li>
+                li.appendChild(span);
+                li.appendChild(botonActualizar);
+                li.appendChild(botonEliminar);
+
+                // Agregamos el <li> a la lista
+                listaElementos.appendChild(li);
+            });
+        }
+
+        // Función para actualizar un elemento
+        function actualizarElemento(indice) {
+            const nuevoElemento = prompt("Actualiza el elemento:", elementos[indice]);
+
+            if (nuevoElemento !== null && nuevoElemento.trim() !== "") {
+                elementos[indice] = nuevoElemento.trim();
+                renderizarLista(); // Actualizamos la lista
+            } else {
+                alert("El campo no puede estar vacío.");
+            }
+        }
+
+        // Función para eliminar un elemento
+        function eliminarElemento(indice) {
+            if (confirm("¿Estás seguro de eliminar este elemento?")) {
+                elementos.splice(indice, 1); // Eliminamos el elemento
+                renderizarLista(); // Actualizamos la lista
+            }
+        }
+    </script>
+</body>
+</html>

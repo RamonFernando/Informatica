@@ -1,0 +1,176 @@
+** Prácticas: Consola 1 **
+--------------------------
+function saludar() {
+    let mensaje = 'Hola mundo';
+    console.log(mensaje);
+}
+
+** Prácticas: Consola 2 **
+--------------------------
+function calcular(num1, num2) {
+    let resultado = num1 + num2;
+    console.log(resultado);
+}
+
+** Prácticas: Loop For 1 **
+---------------------------
+<!DOCTYPE html>
+    <head>
+        <title>Loop For 1</title>
+    </head>
+    <body>
+        <script>
+            function testLoop() {
+                for(x=0; x<=5; x++){
+                    document.write('<p>Vuelta ' + x + '</p>');
+                }
+            }
+        </script>
+    </body>
+</html>
+
+** Prácticas: Loop For 2 **
+---------------------------
+<!DOCTYPE html>
+    <head>
+        <title>Loop For 2</title>
+    </head>
+    <body>
+        <script>
+            function testLoop() {
+               for(x=1; x<=3; x++){
+                   document.write('<p>Vuelta ' + x + '</p>');
+               }     
+            }
+        </script>
+    </body>
+</html>
+
+** Prácticas: Loop For 3 **
+---------------------------
+let suma = 0;
+
+function testLoop() {
+   for(let x=1; x<5; x++){
+       suma = (suma + x);
+   }
+}
+
+** Prácticas: Loop For 4 **
+---------------------------
+function testLoop(numero) {
+    for (let i = 0; i <= 10; i++) {
+        
+        console.log(numero*i);
+    }
+}
+
+** Prácticas: Loop Do While 1 **
+--------------------------------
+function testLoop(vueltas){
+    let contador = 0;
+    do{
+        console.log("Vuelta " + contador);
+        contador++;
+    }while(contador < vueltas);
+}
+
+** Prácticas: Loop Do While 2 **
+--------------------------------
+function testLoop(numero) {
+    let contador = 1;
+    do{
+        
+        console.log(numero * contador);
+        contador++;
+    }while(contador <= 10);
+}
+
+** Prácticas: Loop While 1 **
+-----------------------------
+function testLoop(vueltas){
+    let contador = 0;
+    while(contador <= vueltas){
+        console.log("Vuelta " + contador);
+        contador++;
+    }
+}
+
+** Prácticas: Loop While 2 **
+-----------------------------
+function testLoop(parametro) {
+    
+   while(parametro < 10){
+        console.log(parametro);
+        parametro++;
+   }
+}
+
+** Prácticas: Loop For Of 1 **
+------------------------------
+let miArray = [5, 9, 6, 4, 8];
+let suma = 0;
+
+function testLoop() {
+    
+    for(let num of miArray){
+    suma = suma + num;
+    }
+}
+** Prácticas: Loop For Of 2 **
+------------------------------
+let miArray = ['Mensaje 1', 'Mensaje 2', 'Mensaje 3'];
+
+function testLoop() {
+    for(let num of miArray){
+        console.log(num);
+    }    
+}
+
+** Prácticas: Break & Continue 1 **
+-----------------------------------
+let miArray = ['A', 'A', 'B', 'A', 'B', 'B', 'A'];
+
+function testLoop() {
+    for(let letra of miArray) {
+        if (letra != 'B') {
+            console.log(letra);
+            
+        }else{
+            break;
+        }
+        
+    }
+}
+
+** Prácticas: Break & Continue 2 **
+-----------------------------------
+let miArray = [9, 5, 6, 2, 7];
+
+function testLoop() {
+    for (let numero of miArray) {
+        
+        if(numero > 5){
+            console.log(numero);
+        }else{
+            continue;
+        }
+        
+    }
+}
+
+** Prácticas: Etiquetas 1 **
+----------------------------
+let miArray = [[2,4,5],[3,0,6],[9,4,7]];
+
+function testLoop() {
+    miEtiqueta:
+    for (let array of miArray){
+        for (let numero of array) {
+            console.log(numero);
+            if (numero === 0) {
+                break miEtiqueta;
+            }
+        }   
+    }
+}

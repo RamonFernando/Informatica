@@ -1,0 +1,67 @@
+<!-- Propiedad	Uso Principal
+.value	Para leer o escribir valores en elementos de formulario (<input>, <textarea>).
+.textContent	Para leer o escribir texto sin formato en elementos genéricos.
+.innerText	Para leer o escribir texto visible respetando el estilo visual.
+.innerHTML	Para leer o escribir contenido HTML, incluidas etiquetas HTML internas.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos de .value, .textContent, .innerText, .innerHTML</title>
+</head>
+<body>
+    <h1>Demostración de Propiedades en JavaScript</h1>
+
+    <!-- Ejemplo de .value -->
+    <h2>.value (Campos de formulario)</h2>
+    <input id="nombre" value="Juan" placeholder="Ingresa tu nombre">
+    <button onclick="mostrarValue()">Mostrar .value</button>
+    <p id="resultadoValue"></p>
+
+    <!-- Ejemplo de .textContent -->
+    <h2>.textContent (Contenido de texto bruto)</h2>
+    <div id="textContentExample">Hola, <strong>Mundo</strong></div>
+    <button onclick="mostrarTextContent()">Mostrar .textContent</button>
+    <p id="resultadoTextContent"></p>
+
+    <!-- Ejemplo de .innerText -->
+    <h2>.innerText (Texto visible)</h2>
+    <div id="innerTextExample" style="display:none;">Este texto está oculto</div>
+    <button onclick="mostrarInnerText()">Mostrar .innerText</button>
+    <p id="resultadoInnerText"></p>
+
+    <!-- Ejemplo de .innerHTML -->
+    <h2>.innerHTML (Contenido HTML completo)</h2>
+    <div id="innerHTMLExample"><strong>Hola</strong>, <em>Mundo</em></div>
+    <button onclick="mostrarInnerHTML()">Mostrar .innerHTML</button>
+    <p id="resultadoInnerHTML"></p>
+
+    <script>
+        // .value
+        function mostrarValue() {
+            const nombre = document.getElementById('nombre');
+            document.getElementById('resultadoValue').textContent = `El valor es: "${nombre.value}"`;
+        }
+
+        // .textContent
+        function mostrarTextContent() {
+            const elemento = document.getElementById('textContentExample');
+            document.getElementById('resultadoTextContent').textContent = `El texto es: "${elemento.textContent}"`;
+        }
+
+        // .innerText
+        function mostrarInnerText() {
+            const elemento = document.getElementById('innerTextExample');
+            document.getElementById('resultadoInnerText').textContent = `El texto visible es: "${elemento.innerText}"`;
+        }
+
+        // .innerHTML
+        function mostrarInnerHTML() {
+            const elemento = document.getElementById('innerHTMLExample');
+            document.getElementById('resultadoInnerHTML').textContent = `El contenido HTML es: "${elemento.innerHTML}"`;
+        }
+    </script>
+</body>
+</html>

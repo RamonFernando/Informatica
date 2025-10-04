@@ -1,0 +1,94 @@
+<h3>1.2 Tipos de Datos y Variables</h3>
+<ul>
+    <li>Tipos de datos b&aacute;sicos (<code>int</code>, <code>float</code>, <code>double</code>, <code>char</code>, <code>bool</code>, <code>string</code>).</li>
+    <li>Declaraci&oacute;n, inicializaci&oacute;n y asignaci&oacute;n de variables.</li>
+    <li>Constantes y literales.</li>
+</ul>
+
+<h3>1.3 Operadores</h3>
+<ul>
+    <li><strong>Aritm&eacute;ticos:</strong> <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code>.</li>
+    <li><strong>Relacionales:</strong> <code>==</code>, <code>!=</code>, <code><</code>, <code>></code>, <code><=</code>, <code>>=</code>.</li>
+    <li><strong>L&oacute;gicos:</strong> <code>&&</code>, <code>||</code>, <code>!</code>.</li>
+    <li><strong>Asignaci&oacute;n y operadores compuestos:</strong> <code>=</code>, <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>.</li>
+    <li><strong>Operador ternario:</strong> <code>condicion ? valorSiVerdadero : valorSiFalso</code>.</li>
+</ul>
+
+<h3>1.4 Estructuras de Control</h3>
+<ul>
+    <li><strong>Condicionales:</strong> <code>if</code>, <code>else</code>, <code>else if</code>, <code>switch</code>.</li>
+    <li><strong>Bucles:</strong> <code>for</code>, <code>while</code>, <code>do...while</code>, <code>foreach</code>.</li>
+</ul>
+
+<div class="ejercicios">
+    <h4>Ejercicios Pr&aacute;cticos</h4>
+    <ul>
+        <li>Escribe un programa que solicite al usuario dos n&uacute;meros y muestre la suma, resta, multiplicaci&oacute;n y divisi&oacute;n de ambos.</li>
+        <li>Implementa un sistema de evaluaci&oacute;n que determine si una persona es mayor o menor de edad seg&uacute;n la edad ingresada.</li>
+        <li>Crea un bucle que imprima los primeros 10 n&uacute;meros pares.</li>
+        <li>Dise&ntilde;a un programa que permita ingresar d&iacute;as de la semana y muestre un mensaje personalizado para cada d&iacute;a utilizando <code>switch</code>.</li>
+        <li>Usa un array para almacenar 5 nombres y luego rec&oacute;rrelos con un <code>foreach</code> para mostrarlos en consola.</li>
+    </ul>
+</div>
+
+<h2>M&oacute;dulo 2: Colecciones y Arrays</h2>
+<h3>2.1 Arrays</h3>
+<ul>
+    <li>Declaraci&oacute;n, inicializaci&oacute;n y manipulaci&oacute;n.</li>
+    <li>Iteraci&oacute;n con bucles.</li>
+</ul>
+
+<h3>2.2 Colecciones en C#</h3>
+<ul>
+    <li>Introducci&oacute;n a <code>List</code>, <code>Dictionary</code>, <code>Queue</code>, <code>Stack</code>.</li>
+    <li>Operaciones b&aacute;sicas: agregar, eliminar, buscar.</li>
+</ul>
+
+<h3>2.3 LINQ (Consulta Integrada)</h3>
+<ul>
+    <li>Introducci&oacute;n a LINQ.</li>
+    <li>Operaciones b&aacute;sicas: <code>Where</code>, <code>Select</code>, <code>OrderBy</code>, <code>GroupBy</code>.</li>
+</ul>
+
+<div class="ejercicios">
+    <h4>Ejercicios Pr&aacute;cticos</h4>
+    <ul>
+        <li>Crea un programa que solicite 10 n&uacute;meros al usuario, los almacene en un array y luego imprima el array en orden inverso.</li>
+        <li>Escribe un programa que utilice <code>Array.Sort</code> para ordenar un array de palabras ingresadas por el usuario y las muestre en orden alfab&eacute;tico.</li>
+        <li>Dise&ntilde;a un programa que use una <code>List</code> para almacenar nombres de personas y permita al usuario agregar, eliminar y listar los nombres.</li>
+        <li>Implementa una consulta LINQ que agrupe una lista de cadenas seg&uacute;n su longitud.</li>
+    </ul>
+</div>
+
+<h2>M&oacute;dulo 3: Programaci&oacute;n Orientada a Objetos (POO)</h2>
+<h3>3.1 Clases y Objetos</h3>
+<ul>
+    <li>Conceptos b&aacute;sicos de clase y objeto.</li>
+    <li>Declaraci&oacute;n de clases, creaci&oacute;n de objetos y uso de m&eacute;todos.</li>
+</ul>
+
+<h3>3.2 Encapsulaci&oacute;n</h3>
+<ul>
+    <li>Uso de modificadores de acceso: <code>public</code>, <code>private</code>, <code>protected</code>.</li>
+    <li>Propiedades con <code>get</code> y <code>set</code> para controlar el acceso a los datos.</li>
+</ul>
+
+<h3>3.3 Herencia</h3>
+<ul>
+    <li>Extender una clase base para reutilizar c&oacute;digo.</li>
+</ul>
+
+<h3>3.4 Polimorfismo</h3>
+<ul>
+    <li>Uso de m&eacute;todos sobrescritos (<code>override</code>) y clases abstractas.</li>
+</ul>
+
+<div class="ejercicios">
+    <h4>Ejercicios Pr&aacute;cticos</h4>
+    <ul>
+        <li>Crea una clase <code>Vehiculo</code> con propiedades como <code>Marca</code> y <code>Modelo</code> y un m&eacute;todo <code>Conducir</code>. Luego, crea clases derivadas como <code>Coche</code> y <code>Moto</code> que implementen un comportamiento adicional.</li>
+        <li>Implementa un sistema de figuras geom&eacute;tricas donde cada figura (c&iacute;rculo, rect&aacute;ngulo, tri&aacute;ngulo) herede de una clase base <code>Figura</code> y sobrescriba un m&eacute;todo <code>CalcularArea</code>.</li>
+        <li>Crea una clase <code>CuentaBancaria</code> con m&eacute;todos para depositar y retirar dinero, asegurando que no se pueda retirar m&aacute;s del saldo disponible.</li>
+    </ul>
+</div>
+</main>

@@ -1,0 +1,39 @@
+<!-- Escribir el código necesario para hacer que la funcion sumar() 
+ resuelva la siguiente suma (15 + 19) y retorne el resultado
+de la misma, para que sea utilizada por la función mostrarResultado(). -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Suma</title>
+</head>
+<body>
+    <h2>Suma</h2>
+    <p>Escribe dos números</p>
+    <p>Ejemplo: 15 + 19 = <spam id="EjSalida">?</spam></p>
+    <input type="text" id="inputSuma" placeholder="Numero 1"> <p>+</p>
+    <input type="text" id="inputSuma2" placeholder="Numero 2"> <p>=</p>
+    <input type="text" id="inputResultado" placeholder="Resultado"><p></p>
+    <button type="button" id="botonSuma" onclick="sumar()">Sumar</button> 
+    
+<script>
+        function sumar() {
+            // Obtener el valor de los inputs (id)
+            let num1 = document.getElementById("inputSuma").value;
+            let num2 = document.getElementById("inputSuma2").value;
+            
+            // Resultado de la suma
+            let elementoResultado = document.getElementById("inputResultado");
+            let resultado = Number(num1) + Number(num2);
+            elementoResultado.value = resultado;
+            
+            // Resultado de la suma de ejemplo
+            let elementoSalida = document.getElementById("EjSalida");
+            let Ejresultado = Number(15) + Number(19);
+            elementoSalida.textContent = Ejresultado;
+        }
+    </script>
+</body>
+</html>

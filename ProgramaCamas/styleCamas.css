@@ -1,0 +1,113 @@
+body {
+        background: linear-gradient(135deg, #e3f2fd 0%, #fce4ec 100%);
+        font-family: 'Roboto', sans-serif;
+      }
+      h2 {
+        color: #0d6efd;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+      }
+      .bed {
+        width: clamp(48px, 6vw, 64px);
+        height: clamp(48px, 6vw, 64px);
+        margin: 6px;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        user-select: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        color: white;
+        border: 2px solid transparent;
+        position: relative;
+      }
+      .bed.free {
+        background-color: #20c997;
+      }
+      .bed.occupied {
+        background-color: #e83e8c;
+      }
+      .bed:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        transform: translateY(-3px);
+        border-color: #ffc107;
+      }
+      .bed.occupied:hover {
+        border-color: #f8d7da;
+      }
+      .box {
+        border: 1px solid #dee2e6;
+        padding: 15px 20px;
+        border-radius: 15px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+      .box:hover {
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+      }
+      .box-title {
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: #343a40;
+        font-size: 1.1rem;
+        user-select: none;
+      }
+      .bed-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .contador {
+        font-weight: 700;
+        font-size: 1.05rem;
+        color: #495057;
+        user-select: none;
+        margin-top: 10px;
+      }
+      select.form-select, input.form-control {
+        max-width: 240px;
+        margin-bottom: 14px;
+        user-select: none;
+        border-radius: 10px;
+      }
+      button.reset-btn {
+        font-weight: 600;
+        border-radius: 10px;
+        background-color: #ffc107;
+        border: none;
+        color: #212529;
+      }
+      button.reset-btn:hover {
+        background-color: #e0a800;
+      }
+      button#downloadReportBtn {
+        font-weight: 700;
+        font-size: 1.1rem;
+        padding: 12px 28px;
+        border-radius: 10px;
+        background-color: #198754;
+        border: none;
+        color: white;
+      }
+      button#downloadReportBtn:hover {
+        background-color: #146c43;
+      }
+      .hidden {
+        display: none !important;
+      }
+      .card {
+        border-radius: 16px;
+        background: #ffffff;
+        border: none;
+      }
+      input#busquedaCama {
+        max-width: 320px;
+        margin: 0 auto 24px auto;
+        display: block;
+        border-radius: 10px;
+      }

@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Acumulador_Aggregate
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {   
+            // Metodo Aggregate funciona como el metodo reduce en JS
+            // Acumula el valor de los elementos de un array
+            int[] numeros = { 1, 2, 3, 4, 5 };
+            int suma = numeros.Aggregate((acumulador, elemento) => acumulador + elemento);
+            Console.WriteLine($"La suma de los elementos es: {suma}");
+
+            Console.ReadKey();
+        }
+    }
+}

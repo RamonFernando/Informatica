@@ -1,0 +1,169 @@
+--------------------------
+** Prácticas: Objetos 1 **
+--------------------------
+let automovil = {
+    marca: "Ford",
+    modelo: "Fiesta",
+    anio:2015,
+    arrancar(){
+        console.log("En marcha");
+    }
+}
+
+--------------------------
+** Prácticas: Objetos 2 **
+--------------------------
+let polo = {
+    marca: "Lacoste",
+    color: "Azul",
+    talle: "L",
+    fabricar(){
+        console.log("Polo fabricado");
+    }
+}
+
+--------------------------
+** Prácticas: Objetos 3 **
+--------------------------
+let automovil = { 
+    marca: 'Ford', 
+    modelo: 'Fiesta', 
+    anio: 2015, 
+    arrancar() { console.log("En marcha") }
+};
+
+function modificarAnio() {
+    automovil.anio = 2018;
+}
+--------------------------
+** Prácticas: Objetos 4 **
+--------------------------
+let polo = { 
+    marca: 'Lacoste', 
+    color: 'Azul', 
+    talle: 'L', 
+    fabricar() { console.log("Polo fabricado") }
+};
+
+function agregarPropiedad() {
+    polo["genero"] = 'Masculino';
+}
+
+-----------------------
+** Prácticas: This 1 **
+-----------------------
+let automovil = { 
+    marca: 'Ford', 
+    modelo: 'Fiesta', 
+    anio: 2015, 
+    informacion() { console.log("Marca: " + this.marca + ", Modelo: " + this.modelo) }
+};
+-----------------------
+** Prácticas: This 2 **
+-----------------------
+let polo = { 
+    marca: 'Lacoste', 
+    color: 'Azul', 
+    talle: 'L', 
+    fabricar() { console.log("Polo " + this.marca + " fabricado") }
+};
+
+--------------------------------
+** Prácticas: Constructores 1 **
+--------------------------------
+function Automovil(){
+    this.marca = "Ford",
+    this.modelo = "Fiesta",
+    this.anio = 2015,
+    this.arrancar = function(){
+        console.log("En marcha");
+    }
+}
+
+--------------------------------
+** Prácticas: Constructores 2 **
+--------------------------------
+function Polo(){
+    this.marca = "Lacoste",
+    this.color = "Azul",
+    this.talle = "L",
+    this.fabricar = function(){
+        console.log("Polo fabricado");
+    }
+}
+
+-----------------------------------------------
+** Prácticas: Constructores con parámetros 1 **
+-----------------------------------------------
+function Automovil(marca,modelo,anio){
+    this.marca = marca,
+    this.modelo = modelo,
+    this.anio = anio;
+}
+
+-----------------------------------------------
+** Prácticas: Constructores con parámetros 2 **
+-----------------------------------------------
+function Polo(marca,color,talle){
+    this.marca = marca,
+    this.color = color,
+    this.talle = talle;
+}
+
+--------------------------------
+** Prácticas: Otros objetos 1 **
+--------------------------------
+let automovil = new Object();
+automovil.marca = "Ford";
+automovil.modelo = "Fiesta";
+automovil.anio = 2015;
+
+--------------------------------
+** Prácticas: Otros objetos 2 **
+--------------------------------
+let automovil1 = { 
+    marca: 'Ford', 
+    modelo: 'Fiesta', 
+    anio: 2015, 
+    arrancar() { console.log("En marcha") }
+};
+
+let automovil2 = Object.create(automovil1);
+
+--------------------------------
+** Prácticas: Otros objetos 2 **
+--------------------------------
+let automovil = { 
+    marca: 'Ford', 
+    modelo: 'Fiesta', 
+    anio: 2015
+};
+
+------------------------------
+** Prácticas: Loop For In 1 **
+------------------------------
+let automovil = { 
+    marca: 'Ford', 
+    modelo: 'Fiesta', 
+    anio: 2015
+};
+
+function mostrarInfo() {
+    for(let i in automovil){
+        console.log(i + ": " + automovil[i]);
+    }
+}
+------------------------------
+** Prácticas: Loop For In 2 **
+------------------------------
+let polo = { 
+    marca: 'Lacoste', 
+    color: 'Azul', 
+    talle: 'L', 
+};
+
+function mostrarInfo() {
+    for(let i in polo){
+        console.log(i + ": " + polo[i]);
+    }
+}

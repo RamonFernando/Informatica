@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calificacion Notas</title>
+</head>
+<body>
+
+    <h2>Calificacion Notas</h2>
+    <p>Ingrese por consola las notas y calcula la calificacion: </p>
+    <p id="calificacion"></p>
+    <p id="promedio"></p>
+    <script>
+        let nota1 = parseFloat(prompt("Ingrese la nota 1: "));
+        let nota2 = parseFloat(prompt("Ingrese la nota 2: "));
+        let nota3 = parseFloat(prompt("Ingrese la nota 3: "));
+        while(nota1 < 0 || nota1 > 10 || isNaN(nota1) || nota1 == "" || nota2 < 0 || nota2 > 10 || isNaN(nota2) || nota2 == "" || nota3 < 0 || nota3 > 10 || isNaN(nota3) || nota3 == ""){
+            alert("Las notas deben estar entre 0 y 10");
+            nota1 = parseFloat(prompt("Ingrese la nota 1: "));
+            nota2 = parseFloat(prompt("Ingrese la nota 2: "));
+            nota3 = parseFloat(prompt("Ingrese la nota 3: "));
+        }
+        let promedioNotas = (nota1 + nota2 + nota3) / 3;
+        
+
+        let promedio = document.getElementById("promedio").innerHTML = "El promedio es: " + promedioNotas.toFixed(2);
+        let calificacion = document.getElementById("calificacion");
+
+        // agregando color
+        if (promedioNotas >= 9) {
+            calificacion.innerHTML = "Sobresaliente";
+            calificacion.style.color = "blue";
+        } else if (promedioNotas >= 7) {
+            calificacion.innerHTML = "Notable";
+            calificacion.style.color = "green";
+        } else if (promedioNotas >= 6) {
+            calificacion.innerHTML = "Bien";
+            calificacion.style.color = "yellow";
+            
+        } else if (promedioNotas >= 5) {
+            calificacion.innerHTML = "Suficiente";
+            calificacion.style.color = "orange";
+        } else {
+            calificacion.innerHTML = "Insuficiente";
+            calificacion.style.color = "red";
+        }
+    </script>
+</body>
+</html>

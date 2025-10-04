@@ -1,0 +1,49 @@
+<!-- Ejercicio 5 
+  5.- Diseña un programa que invente un número aleatorio. A continuación pedirá al usuario que lo 
+adivine. Si el usuario falla, entonces el programa le dará otra oportunidad. Una vez que el usuario 
+adivina el número o falla tres veces, el programa termina. 
+Utiliza un bucle do-while.-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Gill Sans MT';
+            background-color: #ac9776;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicios</h2>
+    <p>...</p>
+        <script>
+            
+            let numero_secreto = Math.round(Math.random()*10);
+            let num = prompt("Introduce un numero");
+            let contador = 1;
+            do{
+                if(num == numero_secreto){
+                    alert("Has acertado al intento " + contador);
+                    break;
+                }else{
+                    if(contador < 3){
+                        alert("Has fallado te quedan " + (3 - contador) + " intentos");
+                    num = prompt("Introduce un numero");
+                    contador++;
+                    }else{
+                        alert("Has perdido el numero era " + numero_secreto);
+                        break;
+                    }
+                }
+            }while(contador < 4)
+        </script>
+
+    <p>FIN</p>
+</body>
+</html>

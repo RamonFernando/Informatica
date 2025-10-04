@@ -1,0 +1,21 @@
+- Prácticas: Clases 1
+Crear una clase Mesa que define mediante su constructor las propiedades: alto, ancho y largo. Utilizar 
+la Declaración de Clase para definirlo.
+
+- Prácticas: Clases 2
+Crear una clase TV que define mediante su constructor las propiedades: marca y pulgadas. Utilizar la 
+Expresión de Clase Anónima para definirlo.
+
+- Prácticas: Subclases 1
+Dada la clase Persona ya definida, crear la subclase Empleado (que hereda de Persona) pero que agrega 
+la propiedad: legajo.
+
+- Prácticas: Subclases 2
+Dada la clase Medico ya definida, crear la subclase Cirujano (que hereda de Medico) pero que agrega 
+la propiedad: cantOperaciones.
+
+- Prácticas: Getters y Setters 1
+Dada la clase Ciudad, agregue los métodos get y set para las propiedades nombre, pais y cantHabitantes.
+
+- Prácticas: Getters y Setters 2
+Dada la clase Colegio, agregue los métodos get y set para las propiedades nombre, direccion y cantAlumnos.

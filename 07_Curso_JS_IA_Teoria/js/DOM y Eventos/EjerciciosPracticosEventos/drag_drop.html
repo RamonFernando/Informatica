@@ -1,0 +1,25 @@
+
+<div id="drag" draggable="true" style="width: 100px; height: 100px; background-color: red;"></div>
+<div id="drop" style="width: 200px; height: 200px; border: 1px dashed black; margin-top: 20px;">
+    Arrastra el cuadro aquí
+</div>
+
+<script>
+
+    // Permite arrastrar y soltar elementos.
+    let drag = document.getElementById("drag");
+    let drop = document.getElementById("drop");
+
+    drag.addEventListener("dragstart", () => {
+        console.log("Comenzaste a arrastrar.");
+    });
+
+    drop.addEventListener("dragover", (event) => {
+        event.preventDefault(); // Necesario para permitir el drop
+    });
+
+    drop.addEventListener("drop", () => {
+        drop.style.backgroundColor = "lightgreen";
+        console.log("Elemento soltado.");
+    });
+</script>

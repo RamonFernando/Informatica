@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Gill Sans MT';
+            background-color: #7b7b7a;
+            padding: 20px;
+            color: #ffffff;
+        }
+        .boton{
+            color: #7b7b7a;
+            border-radius: 0.3em;
+            padding: .5em 1em;
+            border: none;
+            background-color: #ffffff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicios</h2>
+    <p>Create li</p>
+    <form action="create.html" method="post">
+        <label for="inputTextoNombre">Nombre:</label>
+        <input type="text" name="inputTextoNombre" id="inputTextoNombre" placeholder="Introduce el Nombre" required><br><br>
+        
+        <label for="inputTexto">Apelllido</label>
+        <input type="text" name="inputTextoApellido" id="inputTextoApellido" placeholder="Introduce el Apellido" required><br><br>
+        
+        <label for="inputTextoEdad">Edad</label>
+        <input type="text" name="inputTextoEdad" id="inputTextoEdad" placeholder="Introduce la Edad" required><br><br>
+        
+        <button type="button" class="boton" value="Enviar" onclick="mostrarLista()">Enviar</button>
+        <button type="button" class="boton" value="Enviar" onclick="agregarPersona()">Agregar</button>
+        <button type="button" class="boton" value="Enviar" onclick="mostrarPersonas()">Mostrar Personas</button>
+        <button type="button" class="boton" value="Enviar" onclick="crearLista()">Creando Lista</button>
+    </form>
+    <ol id="textoSalida">Lista</ol>
+    <script src="create.js"></script>
+    <p>FIN</p>
+</body>
+</html>

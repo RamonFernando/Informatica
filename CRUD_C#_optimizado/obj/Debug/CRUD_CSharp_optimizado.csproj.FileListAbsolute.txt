@@ -1,0 +1,14 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\CRUD_CSharp_optimizado\bin\Debug\CRUD_CSharp_optimizado.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\CRUD_CSharp_optimizado\bin\Debug\CRUD_CSharp_optimizado.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\CRUD_CSharp_optimizado\bin\Debug\CRUD_CSharp_optimizado.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\CRUD_CSharp_optimizado\obj\Debug\CRUD_CSharp_optimizado.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\CRUD_CSharp_optimizado\obj\Debug\CRUD_CSharp_optimizado.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\CRUD_CSharp_optimizado\obj\Debug\CRUD_CSharp_optimizado.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\CRUD_CSharp_optimizado\obj\Debug\CRUD_CSharp_optimizado.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\CRUD_C#_optimizado\bin\Debug\CRUD_CSharp_optimizado.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\CRUD_C#_optimizado\bin\Debug\CRUD_CSharp_optimizado.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\CRUD_C#_optimizado\bin\Debug\CRUD_CSharp_optimizado.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\CRUD_C#_optimizado\obj\Debug\CRUD_CSharp_optimizado.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\CRUD_C#_optimizado\obj\Debug\CRUD_CSharp_optimizado.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\CRUD_C#_optimizado\obj\Debug\CRUD_CSharp_optimizado.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\CRUD_C#_optimizado\obj\Debug\CRUD_CSharp_optimizado.pdb

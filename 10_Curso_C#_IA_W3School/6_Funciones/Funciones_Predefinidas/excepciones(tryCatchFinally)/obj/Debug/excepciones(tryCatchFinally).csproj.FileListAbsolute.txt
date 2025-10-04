@@ -1,0 +1,7 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\6_Funciones\Funciones_Predefinidas\excepciones(tryCatchFinally)\bin\Debug\excepciones(tryCatchFinally).exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\6_Funciones\Funciones_Predefinidas\excepciones(tryCatchFinally)\bin\Debug\excepciones(tryCatchFinally).exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\6_Funciones\Funciones_Predefinidas\excepciones(tryCatchFinally)\bin\Debug\excepciones(tryCatchFinally).pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\6_Funciones\Funciones_Predefinidas\excepciones(tryCatchFinally)\obj\Debug\excepciones(tryCatchFinally).csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\6_Funciones\Funciones_Predefinidas\excepciones(tryCatchFinally)\obj\Debug\excepciones(tryCatchFinally).csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\6_Funciones\Funciones_Predefinidas\excepciones(tryCatchFinally)\obj\Debug\excepciones(tryCatchFinally).exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\6_Funciones\Funciones_Predefinidas\excepciones(tryCatchFinally)\obj\Debug\excepciones(tryCatchFinally).pdb

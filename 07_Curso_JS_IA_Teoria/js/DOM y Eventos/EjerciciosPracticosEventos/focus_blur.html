@@ -1,0 +1,20 @@
+
+
+<input type="text" id="miInput" placeholder="Escribe algo">
+<p id="mensaje"></p>
+
+<script>
+    let input = document.getElementById("miInput");
+    let mensaje = document.getElementById("mensaje");
+
+    // focus: Se activa cuando un elemento, como un campo de texto, obtiene el foco.
+    input.addEventListener("focus", () => {
+        mensaje.textContent = "El campo está activo.";
+    });
+
+
+    // blur: Se activa cuando el elemento pierde el foco.
+    input.addEventListener("blur", () => {
+        mensaje.textContent = "El campo perdió el foco.";
+    });
+</script>

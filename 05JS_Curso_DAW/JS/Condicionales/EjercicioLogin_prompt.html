@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Gill Sans MT';
+            background-color: #ac9776;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicios</h2>
+    <p>Aplicacion Login</p>
+    <script>
+
+        // Variables
+        let usuario_REQUERIDO = "ramon";
+        let PASSWORD_REQUERIDO = "1234";
+        let usuario, password;
+        let contador = 1;
+        let contador2 = 0;
+
+        // Entrada de datos
+        usuario = prompt("Introduce tu nombre de usuario");
+        
+        // funcion que valida el acceso del usuario
+        acceso(usuario, password);
+        
+        // funcion para validar el acceso
+        function acceso(usuario, password) {
+            if(usuario === usuario_REQUERIDO){
+                password = prompt("Introduce tu contraseña");
+                if(password === PASSWORD_REQUERIDO){
+                    console.log("Acceso permitido");
+                    alert("Acceso permitido");
+                }else{
+                    validarDatoPassword(password);
+                    }
+                }else{
+                    validarDatoUsuario(usuario);
+                }
+            }
+
+    // Comparamos con el usuario requerido
+    function validarDatoUsuario(usuario) {
+        // si es distinto volvemos a pedir el usuario con un maximo de 3 intentos
+        while(usuario !== usuario_REQUERIDO){
+            usuario = prompt("Usuario incorrecto o no registrado. Introduce un usuario valido").toLowerCase();
+            if(contador == 3){ // 
+                console.log("Has excedido el numero de intentos. Acceso denegado");
+                alert("Has excedido el numero de intentos. Acceso denegado");
+                break;
+            }
+            // Comparamos con el usuario requerido si es igual llamamos a la funcion validarDatoPassword
+            if(usuario === usuario_REQUERIDO){
+                validarDatoPassword(password);
+            }
+            contador++;
+        }
+    }
+    
+    // Comparamos con el password requerido
+    function validarDatoPassword(password) {
+        for(contador2; contador2 < 3; contador2++){
+            password = prompt("Password incorrecto, Introduce tu contraseña");
+            if(password === PASSWORD_REQUERIDO){
+                console.log("Acceso permitido");
+                alert("Acceso permitido");
+                break;
+            }
+        }
+        if(contador2 == 3){
+            console.log("Has excedido el numero de intentos. Acceso denegado");
+            alert("Has excedido el numero de intentos. Acceso denegado");
+        }
+    }
+    </script>
+
+    <p>FIN</p>
+</body>
+</html>

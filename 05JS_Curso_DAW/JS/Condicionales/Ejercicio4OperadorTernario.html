@@ -1,0 +1,53 @@
+<!-- Ejercicio4
+ 4.- Un profesor quiere una aplicación que muestre las notas de un examen con diferente color según
+ este esquema:
+ • Nota < 4: Rojo.
+ • 4 <= Nota < 5: Verde.
+ • Nota >= 5: Azul.
+ El programa pedirá una nota (puede tener decimales) y devolverá el nombre del color a usar. Utiliza
+ las instrucciones if y else if. -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Gill Sans MT';
+            background-color: #ac9776;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicios 4</h2>
+    <p>...</p>
+        <script>
+            let nota = parseFloat(prompt("Introduce una nota"));
+            validarNota(nota);
+            function validarNota(nota) {
+                // Si la nota es mayor o igual a 0 y menor o igual a 10 se ejecuta
+                if(nota == null || isNaN(nota) || nota == ""){
+                    alert("Error: La nota debe estar entre 0 y 10");
+                    nota = parseFloat(prompt("Introduce una nota"));
+                }
+                if(nota >= 0 && nota <= 10){
+                    let color = (nota < 4) ? "rojo" : (nota < 5) ? "verde" : "azul";
+                    alert(`La nota es ${nota} y el color es ${color}`);
+                }else{
+                    // Mientras que la nota sea menor a 0 o mayor a 10 se repite el prompt
+                    while(nota < 0 || nota > 10){
+                        alert("Error: La nota debe estar entre 0 y 10");
+                        nota = parseFloat(prompt("Introduce una nota"));
+                    }
+                }
+                // Si la nota es null o esta vacia se ejecuta validarNota directamente
+                validarNota(nota);
+            }
+        </script>e
+
+    <p>FIN</p>
+</body>
+</html>

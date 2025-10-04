@@ -1,0 +1,66 @@
+- Prácticas: Consola 1
+Dentro de la función saludar(), imprimir en la consola el mensaje 'Hola mundo'
+
+- Prácticas: Consola 2
+Dentro de la función calcular, imprimir en consola el resultado de sumar los dos números que recibe por parámetro.
+
+- Prácticas: Loop For 1
+Implementa un Loop For, dentro de la función testLoop() ya declarada, que cumpla 5 iteraciones inicializando a la 
+variable x en 0 y que en cada vuelta de ciclo (iteración), escriba en nuestro código html (document.write) etiquetas 
+<p> cuyo contenido de la etiqueta sea Vuelta 0, Vuelta 1, Vuelta 2, etc. Es decir, el texto Vuelta concatenado con el 
+valor de la variable x del ciclo.
+
+- Prácticas: Loop For 2
+Ahora, en un ejercicio muy similar al anterior pero modificando las condiciones del ciclo, se pide:
+Implementar un Loop For, dentro de la función testLoop() ya declarada, que cumpla 3 iteraciones inicializando a la 
+variable x en 1 y que en cada vuelta de ciclo (iteración), escriba en nuestro código html (document.write) etiquetas 
+<p> cuyo contenido de la etiqueta sea Vuelta 1, Vuelta 2, Vuelta 3. Es decir, el texto Vuelta concatenado con el valor
+de la variable x del ciclo.
+
+- Prácticas: Loop For 3
+Dentro de la función testLoop(), implemente un Loop For cuya variable x asociada este inicializada en 1 y la condicion 
+que se debe cumplir para que el ciclo se siga ejecutando es que dicha variable sea menor a 5. Esto quiere decir, que el 
+ciclo va a cumplir con 4 vueltas (iteraciones).
+En cada vuelta del ciclo, se debe ir acumulando en la variable suma, el valor de la variable x. Ten en cuenta que estamos 
+diciendo "acumular", lo que significa que debes sumar el valor que ya contiene la variabla suma, más el valor de x y 
+ese resultado asignarlo a suma.
+
+- Prácticas: Loop For 4
+Implemente en la función testLoop, un Loop For que imprima en la consola la tabla de multiplicar (hasta el 10) del 
+numero pasado por parámetro. Es decir, que si por parámetro se pasa el numero 8, en la consola se debe imprimir:
+8
+16
+24 ...
+
+- Prácticas: Loop While 1
+Implemente la función testLoop, donde debe utilizar un Loop While que itere tantas veces como lo indique el parámetro 
+vueltas y que imprima en la consola en cada iteración el número de vuelta de la siguiente forma: Vuelta 0, Vuelta 1, etc. 
+Utilice la variable contador para ir contando la cantidad de vueltas que va dando el ciclo.
+
+- Prácticas: Loop While 2
+Implementar la funcion testLoop, utilizando un Loop While cuya condición verifique que el ciclo itere mientras el 
+parámetro sea menor a 10. Mientras eso suceda, en cada ciclo se deberá imprimir en consola el valor actual del parametro 
+y luego incrementar el valor del parametro en uno.
+
+- Prácticas: Loop For Of 1
+Implementar en la función testLoop, un Loop For Of que recorra miArray y en cada vuelta del ciclo, vaya acumulando en 
+la variable suma el valor de los numeros contenidos en el array. Se pide acumular, lo que indica que debo sumar el 
+valor que ya contiene la variable suma, más el valor del elemento que estoy recorriendo y ese resultado asignarlo a suma.
+
+- Prácticas: Loop For Of 2
+Implementar la función testLoop, que mediante la utilización de un Loop For Of, recorra mi Array e imprima en consola 
+cada uno de los elementos que contiene el array.
+
+- Prácticas: Break & Continue 1
+Modifique el Loop For Of de la función testLoop, para que ante la primer letra 'B' que encuentre dentro del array, 
+corte el ciclo con la instrucción break.
+
+- Prácticas: Break & Continue 2
+Modifique el Loop For Of, dentro de la función testLoop, para que imprima en la consola el elemento del array solo si 
+este es mayor a 5. Utilice la palabra clave continue.
+
+- Prácticas: Etiquetas 1
+En la variable miArray tenemos un array donde cada uno de sus elementos es otro array. Observa el código desarrollado 
+en la función testLoop (que recorre esta variable en profundidad mediante dos ciclos for), y agrega una etiqueta 
+denominada miEtiqueta con el objetivo de cortar AMBOS ciclos con la instrucción break en caso de que algun array 
+contenga un valor igual a 0.

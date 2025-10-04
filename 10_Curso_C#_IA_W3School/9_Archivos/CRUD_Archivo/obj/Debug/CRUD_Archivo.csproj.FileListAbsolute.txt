@@ -1,0 +1,7 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\9_Archivos\CRUD_Archivo\bin\Debug\CRUD_Archivo.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\9_Archivos\CRUD_Archivo\bin\Debug\CRUD_Archivo.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\9_Archivos\CRUD_Archivo\bin\Debug\CRUD_Archivo.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\9_Archivos\CRUD_Archivo\obj\Debug\CRUD_Archivo.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\9_Archivos\CRUD_Archivo\obj\Debug\CRUD_Archivo.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\9_Archivos\CRUD_Archivo\obj\Debug\CRUD_Archivo.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\9_Archivos\CRUD_Archivo\obj\Debug\CRUD_Archivo.pdb

@@ -1,0 +1,7 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\5_Arrays_medotos\Arrays_Metodos\Ejemplo_Replace_linq\bin\Debug\Ejemplo_Replace_linq.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\5_Arrays_medotos\Arrays_Metodos\Ejemplo_Replace_linq\bin\Debug\Ejemplo_Replace_linq.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\5_Arrays_medotos\Arrays_Metodos\Ejemplo_Replace_linq\bin\Debug\Ejemplo_Replace_linq.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\5_Arrays_medotos\Arrays_Metodos\Ejemplo_Replace_linq\obj\Debug\Ejemplo_Replace_linq.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\5_Arrays_medotos\Arrays_Metodos\Ejemplo_Replace_linq\obj\Debug\Ejemplo_Replace_linq.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\5_Arrays_medotos\Arrays_Metodos\Ejemplo_Replace_linq\obj\Debug\Ejemplo_Replace_linq.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\5_Arrays_medotos\Arrays_Metodos\Ejemplo_Replace_linq\obj\Debug\Ejemplo_Replace_linq.pdb

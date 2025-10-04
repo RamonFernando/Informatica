@@ -1,0 +1,198 @@
+:root {
+
+    /** Colors **/
+
+    /* Colores Primarios */
+    /** Amarillo **/
+    --amarillo: #f9f871;
+    --amarilloClaro: #ffff00;
+    --amarilloOscuro: #ffd700;
+    --amarilloAzufre: #edff21;
+    --crema: #ffffbf;
+    --amarilloSalmuera: #e9e46e;
+    --amarilloAmarillo: #ffff99;
+    --amarilloGris: #d3d3d3;
+    --amarilloAzul: #b3d9ff;
+    --amarilloCeleste: #b3d9ff;
+
+    --amarilloIcterine: #fcf75e;
+    --amarilloOxido: #ad7d3b;
+    --amarilloBus: #edb546;
+    --amarilloNapoles: #eccd6a;
+    --amarilloIndio: #f5973d;
+    --amarilloWattyl: #e3e1c2;
+    --amarilloRenault: #f08a0c;
+    --amarilloBenjaminMoore: #fdda66; 
+   
+     /** Rojo **/
+    --rojo: #dc3545;
+    --rojoClaro: #dc3545;
+
+    --rojoToscano: #79443b;
+    --rojoVeneciano: #9b5e4f;
+    --rojoNaranja: #ff4000;
+    --rojoCedro: #85443e;
+    --rojoBromo: #8c574c; 
+    --rojoBermellon: #a3323d;
+    --rojoAllende: #b77169;
+    --rojoFalun: #7c342b;
+    --rojoPersa: #c81d11;
+    --rojoPurpura: #e40078;
+
+    /** Azul **/
+    --azul: #007bff;
+    --azulOscuro: #0069d9;
+    --azulMedio: #0d6efd;
+    --azulClaro: #17a2b8;
+    --azulGris: #6c757d;
+    --azulCian: #00ffff;
+    --azulCeleste: #5bc0de;
+    --azulCafe: #5f9ea0;
+    --azulAnciano: #8892c6;
+
+    --azulOseano: #1d334a;
+    --azulMajorelle: #5564eb;
+    --azulBrandeis: #0061a9;
+    --azulCobalto: #333c87;
+    --azulColumbia: #d1ebf7;
+    --azulUltramar: #0a497b;
+    --azulPetroleo:  #084d6e;
+    --azulAreado: #b8cad4;
+    
+    
+    /* Colores Secundarios */
+    /** Naranja **/
+    --naranja: #ff8f00;
+    --naranjaClaro: #ff9900;
+    --naranjaMedio: #ffa500;
+    --naranjaOscuro: #f57c00;
+
+    --rojoNaranja: #ff4000;
+    --naranjaKaki: #e25f23;
+    --naranjaValencia: #bc8169;
+    --naranjaMaroma: #f6834f;
+    --naranjaRustik: #b17269;
+    --naranjaHolanda: #b27e5e;
+    --naranjaSanguineo: #cb2821;
+    --naranjaSalmon: #e55137;
+
+    /** Verde **/
+    --verde: #28a745;
+    --verdeMedio: #28a745;
+    --verdeOscuro: #218838;
+    --verdeCafe: #8fbc8f;
+
+    --verdeLimon: #bfff00;
+    --verdeAmarillo: #c6ce00;
+    --verdeKaki: #798933;
+    --verdeFluorescente: #ccff33;
+    --verdeAnis: #c2f732;
+    --verdeGazon: #3a9d23;
+    --verdeCeniza: #5f7f7a;
+    --verdeTurcoaz: #1ffed8;
+    --verdeCchartruse: #c2f732;
+
+    /** Violeta **/
+    --violeta: #6f42c1;
+    --violetaClaro: #6610f2;
+    --violetaMedio: #5a31a4;
+    --violetaOscuro: #4c2889;
+    
+    --violetaPerlado: #8673a1;
+    --violetaqueimado: #a396a7;
+    --violetaVapor: #c4b1c2;
+    --violetaCalifa: #756a7b;
+    --violetaTalavera: #747296;
+    --violetaSeñales: #924e7d;
+    --violetaPurpura: #4a192c;
+    --violetaVermelho: #d02090;
+    --violetaAfricana: #c28dc0;
+
+    /* Escalas deGrises (blanco, negro y gris) */
+    /* Blanco */
+    --blanco: #ffffff;
+    --blancoHumo: #f5f5f5;
+
+    --blancoCinc: #fafbfd;
+    --blancoNevada: #c7bda7;
+    --blancoTrafico: #f6f6f6; 
+    --aluminioBlanco: #a5a5a5;
+    --blancoPerla: #eae6ca;
+    --blancoGrisaceo: #e7ebda;
+    --blancoSeñales: #f4f4f4;
+    --blancoNavajo: #ebe1c9;
+    --blancoCielo: #e9e4d6;
+    
+
+    /* Negro */
+    --negro: #000000;
+    --negroGris: #333333;
+    --negroCielo: #333333;
+
+    --negroHumo: #1c0d02;
+    --negroBujia: #2d3323;
+    --negroIntenso: #0a0a0a;
+    --negroSeñales: #282828;
+    --negroGrafico: #1c1c1c;
+    --negroTrafico: #1e1e1e;
+    --comexNegroBarro: #282828;
+    --comexNegroMonte: #225558;
+
+    /* Gris */
+    --gris: #757575;
+    --grisClaro: #e1e1e1;
+    --grisMedio: #9e9e9e;
+    --grisOscuro: #555555;
+    --grisDavy: #555555;
+
+    --grisFrio: #82a1b1;
+    --grisBakelite: #c8cbca;
+    --grisVerte: #83877a;
+    --grisTourterelle: #c2c3c1;
+    --aroGris: #444333;
+    --grisFalaise: #b2babb;
+    --grisPorcelaine: #c4c9c7;
+
+    /* Colores Terciarios */
+    /* Morado */
+    --morado: #572364;
+
+    /* Purpura */
+    --purpura: #6f42c1;
+
+    /* Rosado */
+    --rosa: #e91e63;
+    --rosaClaro: #ff1493;
+    --rosaMedio: #ff69b4;
+    --rosaOscuro: #ff1493;
+    --rosaVioleta: #8b008b;
+    --rosaSalmon: #ff69b4;
+    --rosaAzul: #b0c4de;
+    --rosaGris: #d8bfd8;
+
+    /* Marron */
+    --marron: #795548;
+    --marronClaro: #8d6e63;
+
+    --marronBrenner: #775140;
+    --marronTarn: #8b7973;
+    --marronGoa-Dorval: #65503e;
+    --marronMiddland-Dorval: #515250;
+    --marronArmangac-JonOne: #886f72;
+    --marronCanari-JonOne: #806c63;
+    --marronProvence-JonOne: #58443b;
+    --MarronYL: #7f674e;
+    --marronSombraOscudaDeNaranja: #582900;
+    --marronValsparPaint: #79615b;
+
+
+    /* Otros colores */
+    --gold: #ffd700;
+    --amatista: #898ac0;
+    --indigo: #4b0082;
+    --zafiro: #6576b4;
+    --fuchsia: #ff00ff;
+    --leonado: #cd5700;
+    --ambar: #ff7e00;
+    --pardoNaranjo: #a65e2e;
+}

@@ -1,0 +1,7 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\8_POO\2_Constructores\constructorBasico\bin\Debug\constructorBasico.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\8_POO\2_Constructores\constructorBasico\bin\Debug\constructorBasico.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\8_POO\2_Constructores\constructorBasico\bin\Debug\constructorBasico.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\8_POO\2_Constructores\constructorBasico\obj\Debug\constructorBasico.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\8_POO\2_Constructores\constructorBasico\obj\Debug\constructorBasico.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\8_POO\2_Constructores\constructorBasico\obj\Debug\constructorBasico.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\8_POO\2_Constructores\constructorBasico\obj\Debug\constructorBasico.pdb

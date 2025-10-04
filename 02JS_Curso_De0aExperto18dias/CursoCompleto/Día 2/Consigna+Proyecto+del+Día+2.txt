@@ -1,0 +1,18 @@
+Hoy has aprendido las bases de CSS, y tienes todo lo necesario para que pasemos a ver JavaScript desde mañana.
+
+Pero antes vamos a poner en práctica lo aprendido, retomando el proyecto del día de ayer (tu biografía), y haciendo que pase a verse genial, aplicando estilos visuales que hasta ahora no tiene nada de eso.
+
+La consigna es que agregues a todas las hojas de tu documento las etiquetas de enlace a una hoja de estilo, en la que vas a aplicar todo lo que hemos visto el día de hoy.
+
+Quiero que tu tarea incorpore los siguientes requisitos:
+- Vas a crear a menos 2 clases distintas a las que les darás un estilo particular
+- Vas a crear tantas etiquetas div como creas necesarias, procurando agrupar conjuntos de elementos a los que les darás su propio estilo.
+- Vas a reemplazar todas las etiquetas de formato HTML (como negritas, cursivas, etc.) por etiquetas SPAN, a las que les darás un nombre de clase que te permita pasarle un estilo.
+- Vas a usar los 3 tipos de selectores básicos que hemos visto (de tipo, clase y de ID) y también selectores de atributo, de pseudo-clase y de pseudo-elemento.
+- Y por último vas a incluir, en cualquiera de esos selectores mencionados, al menos un combinador.
+
+Este proyecto no es para nada complejo, pero exige creatividad, por lo que no hay una sola forma de hacerlo. Vas a necesitar tiempo para pensar, diseñar, y aplicar tus ideas.
+
+Para que tengas una guía de trabajo, al terminar esta lección encontrarás una especie de cuestionario, que en realidad no es para que respondas preguntas, sino para que puedas seguir paso a paso (y con algunas ayudas) el proceso de solución de este proyecto. Entonces el próximo paso es que abras ese cuestionario, y sigas las indicaciones de apoyo.
+
+Mientras tanto yo me voy a aplicar estilo a mi propia biografía, y te espero al final del día.

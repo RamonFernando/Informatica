@@ -1,0 +1,57 @@
+<!-- Ejercicio 7
+ 7.- Juego de adivinar el número secreto. El ordenador nos preguntará un número del 1 al 10. Si 
+coincide con el número secreto (que habrás codificado como una constante entera) nos felicitará. Si 
+no, nos dirá que hemos fallado. -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Gill Sans MT';
+            background-color: #ac9776;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicios</h2>
+    <p>...</p>
+        <script>
+            const NUMERO_SECRETO = parseInt(Math.round(Math.random()*9 + 1)); // 1 - 10
+            let num = prompt("Introduce un numero, si quieres salir introduce si").toLocaleLowerCase();
+            let contador = 1;
+            let varFinal = "si";
+            
+            while(num != varFinal){
+                do{
+                    // num = parseInt(num);
+                    if(num == NUMERO_SECRETO){
+                        alert("Has acertado al intento " + contador);
+                        break;
+                    }else{
+                        if(num == varFinal){
+                            break;
+                        }else{
+                            if(contador < 3){
+                                alert("Has fallado te quedan " + (3 - contador) + " intentos");
+                                num = prompt("Introduce un numero");
+                                contador++;
+                            }else{
+                                alert("Has perdido el numero era " + NUMERO_SECRETO);
+                                break;
+                            }
+                        }
+                    }
+                }while(contador < 4);
+                
+            break;
+            }
+            alert("Saliendo del programa...");
+        </script>
+    <p>FIN</p>
+</body>
+</html>

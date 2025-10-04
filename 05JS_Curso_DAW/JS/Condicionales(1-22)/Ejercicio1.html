@@ -1,0 +1,31 @@
+<!-- Ejercicio 1 
+ 1.- Crea un programa que pida la temperatura de un reactor nuclear. Si ésta supera los 120ºC, se 
+mostrará en pantalla el mensaje: "TEMPERATURA DEL REACTOR CRÍTICA. ¡CORRED, 
+INSENSATOS! "-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Gill Sans MT';
+            background-color: #ac9776;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicios</h2>
+    <p>...</p>
+        <script>
+            let temperatura = parseFloat(prompt("Introduce la temperatura del reactor nuclear (en °C):"));
+            let mensaje = (temperatura > 120) ? "TEMPERATURA DEL REACTOR CRÍTICA. ¡CORRED, INSENSATOS!" : "La temperatura del reactor es segura.";
+            alert(mensaje);
+        </script>
+
+    <p>FIN</p>
+</body>
+</html>

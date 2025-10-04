@@ -1,0 +1,17 @@
+
+
+<select id="miSelect" title="miSelect">
+    <option value="rojo">Rojo</option>
+    <option value="verde">Verde</option>
+    <option value="azul">Azul</option>
+</select>
+
+<script>
+
+    // Se activa cuando el usuario cambia el valor de un campo (como un desplegable o un campo de texto).
+    // Se usa con select, textarea y input[type="text"] y checkbox
+    let select = document.getElementById("miSelect");
+    select.addEventListener("change", () => {
+        alert("Has seleccionado: " + select.value);
+    });
+</script>

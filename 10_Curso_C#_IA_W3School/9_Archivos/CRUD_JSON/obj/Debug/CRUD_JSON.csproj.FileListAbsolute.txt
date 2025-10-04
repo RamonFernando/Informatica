@@ -1,0 +1,2 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\9_Archivos\CRUD_JSON\obj\Debug\CRUD_JSON.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\9_Archivos\CRUD_JSON\obj\Debug\CRUD_JSON.csproj.CoreCompileInputs.cache

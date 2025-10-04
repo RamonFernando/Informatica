@@ -1,0 +1,7 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\7_Excepciones\TryCatch_Finally_Throw\bin\Debug\TryCatch_Finally_Throw.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\7_Excepciones\TryCatch_Finally_Throw\bin\Debug\TryCatch_Finally_Throw.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\7_Excepciones\TryCatch_Finally_Throw\bin\Debug\TryCatch_Finally_Throw.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\7_Excepciones\TryCatch_Finally_Throw\obj\Debug\TryCatch_Finally_Throw.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\7_Excepciones\TryCatch_Finally_Throw\obj\Debug\TryCatch_Finally_Throw.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\7_Excepciones\TryCatch_Finally_Throw\obj\Debug\TryCatch_Finally_Throw.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\7_Excepciones\TryCatch_Finally_Throw\obj\Debug\TryCatch_Finally_Throw.pdb

@@ -1,0 +1,7 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\5_Arrays_medotos\Arrays_Metodos\Array_Clear\bin\Debug\Array_Clear.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\5_Arrays_medotos\Arrays_Metodos\Array_Clear\bin\Debug\Array_Clear.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\5_Arrays_medotos\Arrays_Metodos\Array_Clear\bin\Debug\Array_Clear.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\5_Arrays_medotos\Arrays_Metodos\Array_Clear\obj\Debug\Array_Clear.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\5_Arrays_medotos\Arrays_Metodos\Array_Clear\obj\Debug\Array_Clear.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\5_Arrays_medotos\Arrays_Metodos\Array_Clear\obj\Debug\Array_Clear.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\5_Arrays_medotos\Arrays_Metodos\Array_Clear\obj\Debug\Array_Clear.pdb

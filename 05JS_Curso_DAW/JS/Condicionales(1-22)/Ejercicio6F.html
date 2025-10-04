@@ -1,0 +1,53 @@
+<!-- Ejercicio 6
+ 6.- Crea una aplicación que pregunte el precio de un producto y el número de unidades compradas. 
+Si el coste de la compra es mayor de 75 €, se le hará un 15% de descuento. En caso contrario, se le 
+hará sólo un 5% de descuento. -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Gill Sans MT';
+            background-color: #ac9776;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicios 6</h2>
+    <p>...</p>
+        <script>
+            let unidades = parseInt(prompt("Introduce las unidades del proyecto:"));
+            let precioProducto = parseFloat(prompt("Introduce el precio del producto:"));
+            
+            if(precioTotal(unidades, precioProducto) > 75)
+                alert("El precio total con descuento del 15% (" + descuento15(unidades,precioProducto) +  ") es: " + precioTotal(unidades, precioProducto) + " €");
+            else
+                alert("El precio total con descuento del 5% (" + descuento5(unidades,precioProducto) +  ") es: " + precioTotal(unidades, precioProducto) + " €");
+
+            function precioTotal(unidades, precio){
+                let precioTotal = unidades * precio;
+                if(precioTotal > 75)
+                    precioTotal =  precioTotal - (precioTotal * 0.15);
+                else
+                    precioTotal = precioTotal * 0.95;
+                return precioTotal;
+            }
+
+            function descuento15(unidades, precio){
+                let descuento = (unidades * precio)*0.15;
+                return descuento;
+            }
+            function descuento5(unidades, precio){
+                let descuento = (unidades * precio)*0.05;
+                return descuento;
+            }
+        </script>
+
+    <p>FIN</p>
+</body>
+</html>

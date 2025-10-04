@@ -1,0 +1,58 @@
+- Prácticas: JSON 1
+Escriba en formato JSON (dentro de los corchetes de la variable json1), la 
+siguiente información sobre una película:
+
+titulo -> Titanic
+
+director -> James Cameron
+
+lanzamiento -> 1997
+
+duracion -> 134
+
+actores (array) -> Leonardo DiCaprio y Kate Winslet
+
+premioOscar -> true
+
+
+- Prácticas: JSON 2
+Escriba en formato JSON (dentro de los corchetes de la variable json1), la siguiente 
+información sobre un colegio:
+
+nombre-> Collegium
+
+direccion (objeto)
+
+calle -> Calle Publica 123
+
+ciudad -> Buenos Aires
+
+cantEstudiantes -> 3
+
+estudiantes (array) -> Pedro Picapiedra, Pablo Marmol y Vilma Picapiedra
+
+
+- Prácticas: Datos en JSON 1
+Dado el archivo auxiliar datos.json, obtener los datos de dicho archivo utilizando
+XMLHttpRequest y asigne cada campo a la variable correspondiente ya declarada.
+
+- Prácticas: Datos en JSON 2
+Dado el archivo auxiliar datos.json, obtener los datos de dicho archivo utilizando
+XMLHttpRequest y asigne cada campo a la variable correspondiente ya declarada.
+
+- Prácticas: Fetch 1
+Dado el archivo auxiliar datos.json, obtener los datos de dicho archivo utilizando
+fetch y asigne cada campo a la variable correspondiente ya declarada.
+
+- Prácticas: Fetch 2
+Dado el archivo auxiliar datos.json, obtener los datos de dicho archivo utilizando
+fetch y asigne cada campo a la variable correspondiente ya declarada.
+
+- Prácticas: Catch 1
+Dado el código ya desarrollado en el ejercicio Fetch 1, agregar el elemento catch
+para capturar posibles errores e imprimir en consola el error.
+
+- Prácticas: Catch 2
+Dado el código ya desarrollado en el ejercicio Fetch 2, agregar el elemento catch
+para capturar posibles errores y mostrar en un alert el error.
+

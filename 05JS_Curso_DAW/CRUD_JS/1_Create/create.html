@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Ejercicios</title>
+   <style>
+         body{
+            text-align: center;
+            font-family: 'Gill Sans MT';
+            background-color: #7b7b7a;
+            padding: 20px;
+            color: #ffffff;
+         }
+         .boton{
+            color: #7b7b7a;
+            border-radius: 0.3em;
+            padding: .5em 1em;
+            border: none;
+            background-color: #ffffff;
+            cursor: pointer;
+         }
+   </style>
+</head>
+<body>
+   <h2>Ejercicios</h2>
+   <p>Autos</p>
+   <form>
+      <label for="marca">Marca: </label>
+      <input type="text" id="marca" name="marca" placeholder="Introduce la marca" required><br><br>
+      <label for="modelo">Modelo: </label>
+      <input type="text" id="modelo" name="modelo" placeholder="Introduce el modelo" required><br><br>
+      <label for="anio">Anio: </label>
+      <input type="number" id="anio" name="anio" placeholder="Introduce el anio" required><br><br>
+      <label for="color">Color: </label>
+      <input type="text" id="color" name="color" placeholder="Introduce el color" required><br><br>
+      <label for="titular">Titular: </label>
+      <input type="text" id="titular" name="titular" placeholder="Introduce el titular" required><br><br>
+      <button type="submit" class="boton" value="Enviar" onclick="createAuto()" >Enviar</button><br><br>
+   </form>
+
+      <ol id="mostrarAutos"></ol>
+   <script>
+
+      function Automovil(marca, modelo, anio, color, titular) {
+            this.marca = marca;
+            this.modelo = modelo;
+            this.anio = anio;
+            this.color = color;
+            this.titular = titular;
+            
+      }
+      let automovil1 = new Automovil('Ford', 'Focus', 2015, 'Rojo', 'Matias Perez');
+      let automovil2 = new Automovil('Chevrolet', 'Camaro', 2018, 'Amarillo', 'Silvina Marquez');
+      /*let automovil3 = new Automovil('Toyota', 'Corolla', 2021, 'Blanco', 'Carlos Garcia');
+      let automovil4 = new Automovil('Volkswagen', 'Jetta', 2020, 'Negro', 'Pedro Sanchez');
+      let automovil5 = new Automovil('Honda', 'Civic', 2019, 'Azul', 'Eva Maria Gonzalez');
+      let automovil6 = new Automovil('Mazda', 'MX-5', 2022, 'Gris', 'Luis Perales');
+      let automovil7 = new Automovil('Nissan', 'Altima', 2017, 'Blanco', 'Ana Mendoza');
+      let automovil8 = new Automovil('Subaru', 'Impreza', 2016, 'Negro', 'Ricardo Gomez');
+      let automovil9 = new Automovil('Kia', 'Sportage', 2023, 'Azul', 'Sofia Ramirez');
+      let automovil10 = new Automovil('Hyundai', 'Elantra', 2018, 'Gris', 'Pedro Garcia');*/
+
+        // let automoviles = [automovil1, automovil2, automovil3, automovil4, automovil5, automovil6, automovil7, automovil8, automovil9, automovil10];
+      let automoviles = [automovil1, automovil2];
+      
+        // Mostrando array
+      function mostrarAutos(){
+         let mensaje = document.getElementById("mostrarAutos");
+         mensaje.innerHTML = ""; // Limpia el parrafo
+         for (let automovil of automoviles) {
+            const listaAutos = document.createElement("li");
+            mensaje.appendChild(listaAutos);
+            listaAutos.textContent = (`marca: ${automovil.marca}, 
+                                    modelo: ${automovil.modelo}, 
+                                    anio: ${automovil.anio}, 
+                                    color: ${automovil.color}, 
+                                    titular: ${automovil.titular}`);
+         }
+      }
+      mostrarAutos();
+
+         // let nuevoAuto = new Automovil('Lamborghini', 'Huracan', 2020, 'Negro', 'Luis Alcover');
+         // Añadir auto
+      function createAuto() {
+            event.preventDefault();
+            let marca = document.getElementById("marca").value;
+            let modelo = document.getElementById("modelo").value;
+            let anio = document.getElementById("anio").value;
+            let color = document.getElementById("color").value;
+            let titular = document.getElementById("titular").value;
+            let autoNuevo = new Automovil(marca, modelo, anio, color, titular);
+            automoviles.push(autoNuevo);
+            alert("Auto creado con exito");
+            mostrarAutos();
+      }
+      
+      
+      // alert(mostrarAutos());document.write(mensaje);
+      
+
+
+   </script>
+   <p>FIN</p>
+</body>
+</html>

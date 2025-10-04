@@ -1,0 +1,7 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\5_Arrays_medotos\Arrays_Metodos\Array_Resize\bin\Debug\Array_Resize.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\5_Arrays_medotos\Arrays_Metodos\Array_Resize\bin\Debug\Array_Resize.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\5_Arrays_medotos\Arrays_Metodos\Array_Resize\bin\Debug\Array_Resize.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\5_Arrays_medotos\Arrays_Metodos\Array_Resize\obj\Debug\Array_Resize.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\5_Arrays_medotos\Arrays_Metodos\Array_Resize\obj\Debug\Array_Resize.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\5_Arrays_medotos\Arrays_Metodos\Array_Resize\obj\Debug\Array_Resize.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\5_Arrays_medotos\Arrays_Metodos\Array_Resize\obj\Debug\Array_Resize.pdb

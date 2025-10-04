@@ -1,0 +1,13 @@
+
+
+<input type="text" id="miInput" placeholder="Escribe algo">
+
+<script>
+    let input = document.getElementById("miInput");
+
+
+    // Se activa cuando se presiona una tecla (pero está siendo reemplazado por keydown).
+    input.addEventListener("keypress", (event) => {
+        console.log(`Presionaste la tecla: ${event.key}`);
+    });
+</script>

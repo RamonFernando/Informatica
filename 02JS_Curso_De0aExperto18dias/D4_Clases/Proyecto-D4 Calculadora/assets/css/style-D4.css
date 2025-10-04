@@ -1,0 +1,82 @@
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  body{
+    background: linear-gradient(90deg, rgb(168, 165, 211) 0%, rgb(232, 232, 235) 65%) !important;
+  }
+  span{
+    color: #4461e0;
+  }
+  .container-body{
+    padding-top: 4rem;
+  }
+
+  .box-math{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    padding: 2rem;
+    width: 100%;
+
+  }
+
+  .box-top{
+    display: grid;
+    justify-content: center;
+    padding-top: 2rem;
+    width: 100%;
+    height: 100%;
+    
+  }
+  .box-input{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+    justify-content: center;
+    width: 100%;
+    padding: 2rem 4rem;
+  }
+  .box-operaciones{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    width: 100%;
+    padding: 0 2rem;
+    
+  }
+  .box-operaciones_Logicas{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    padding: 2rem;
+    width: 100%;
+  }
+.box-resultado{
+    padding: 0 4rem;
+}
+.container-box{
+  width: 100%;
+}
+.footer {
+  bottom: 0px;
+}
+
+/** INPUTS */
+.input-numero, .input-resultado{
+  font-size: 2rem !important;
+
+}
+
+/** BOTONES */
+.buttonEnd{
+  font-size: 2rem !important;
+  align-items: center center !important;
+  padding: 1rem 2rem!important;
+  margin: 0 2rem !important;
+}
+.btn-m1{
+  margin-bottom: 2rem !important;
+}

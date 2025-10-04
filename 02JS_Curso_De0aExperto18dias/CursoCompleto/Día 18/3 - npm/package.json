@@ -1,0 +1,16 @@
+{
+  "name": "3---npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "3---npm": "file:",
+    "mongodb": "^5.5.0"
+  }
+}

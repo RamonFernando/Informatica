@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumar</title>
+</head>
+<body style="text-align: center; background-color: rgb(231, 223, 212); font-family: 'Gill Sans MT'">
+    <h2 style="color: rgb(64, 66, 133);">Sumar</h2>
+
+    <input type="number" id="num1" > +
+    <input type="number" id="num2"> =
+    <input type="number" id="resultado" placeholder="resultado">
+     
+
+    <button type="button"  id="sumar" onclick="sumar()">Sumar</button>
+    
+    <script>
+        function sumar(){
+            let elementoNum1 = document.getElementById("num1").value;
+            let num1 = Number(elementoNum1);
+            let elementoNum2 = document.getElementById("num2").value;
+            let num2 = Number(elementoNum2);
+            
+            let varResultado = document.getElementById("resultado");
+            varResultado.value = (num1 + num2);
+        }
+        </script>
+</body>
+</html>

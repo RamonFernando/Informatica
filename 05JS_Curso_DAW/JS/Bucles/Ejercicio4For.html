@@ -1,0 +1,40 @@
+<!-- Ejercicio 4 
+  4.- Utiliza un bucle for para preguntar 5 veces por un número entero, y al final devolver la frase 
+"Has fallado"-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Gill Sans MT';
+            background-color: #ac9776;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicios</h2>
+    <p>...</p>
+        <script>
+            let numero_secreto = Math.round(Math.random()*2);
+            let num = prompt("Introduce un numero");
+            for(let i = 0; i < 5; i++){
+                
+                if(i < 4){
+                    // Operador Ternario
+                    (num == numero_secreto)? alert("Has acertado al " + (i+1) + " intento"): 
+                    alert("Has fallado te quedan " + (4 - i) + " intento"); 
+                    num = prompt("Introduce un numero");
+                }else{
+                    alert("Has perdido, fin del juego");
+                }
+            }
+        </script>
+
+    <p>FIN</p>
+</body>
+</html>

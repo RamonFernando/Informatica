@@ -1,0 +1,38 @@
+.container-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.divEdad{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body{
+    background: linear-gradient(90deg, rgb(168, 165, 211) 0%, rgb(232, 232, 235) 65%) !important;
+}
+span{
+    color: #4461e0;
+}
+.label{
+    font-size: 2rem !important;
+    margin-right: 2rem !important;
+}
+.input-type{
+    font-size: 2rem !important;
+    width: 10rem !important;
+    
+}
+.navegacion__enlace{
+    text-decoration: none;
+}
+
+/** BOTONES */
+.buttonEnd{
+    font-size: 1.4rem !important;
+    align-items: center center !important;
+    padding: 0.6rem 1.5rem !important;
+    margin: 0 2rem !important;
+  }

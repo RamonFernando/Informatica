@@ -1,0 +1,7 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\1_Sintaxis\Array_Bucles_For\bin\Debug\Array_Bucles_For.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\1_Sintaxis\Array_Bucles_For\bin\Debug\Array_Bucles_For.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\1_Sintaxis\Array_Bucles_For\bin\Debug\Array_Bucles_For.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\1_Sintaxis\Array_Bucles_For\obj\Debug\Array_Bucles_For.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\1_Sintaxis\Array_Bucles_For\obj\Debug\Array_Bucles_For.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\1_Sintaxis\Array_Bucles_For\obj\Debug\Array_Bucles_For.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\1_Sintaxis\Array_Bucles_For\obj\Debug\Array_Bucles_For.pdb

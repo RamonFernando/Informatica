@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo</title>
+</head>
+<body>
+
+    
+    <h1>Hola Mundo</h1>
+    
+    <input type="text" id="nombre" placeholder="Ingresa tu nombre">
+    <button type="button" class="boton" onclick="llamadaFuncion()">Llamada</button>
+    <h2 id="respuesta"></h2>
+    <script>
+        function llamadaFuncion() {
+            // Hacemos los pasos para obtener los ID de los elementos HTML
+            let elementoNombre = document.getElementById("nombre");
+            let varNombre = elementoNombre.value; // obtenemos el valor del input
+            // obtenemos id de la etiqueta respuesta 
+            let respuesta = document.getElementById("respuesta");
+            
+            // Hacer esto da un error
+            //let respuesta = elementoRespuesta;
+            // varNombre = respuesta; 
+            // respuesta.textContent = "Hola " + varNombre; // Hola [object HTMLHeadingElement] (no encuentra el elemento HTML)
+            
+            // Mostrar Mensaje
+            respuesta.textContent = "Hola " + varNombre;
+
+            // Llamada por etiqueta
+            document.querySelector(".respuesta").innerHTML = "";
+
+            // Llamada por consola
+            console.log("");
+
+            // Llamada por alerta (cuadro de dialogo)
+            alert("");
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\7_Excepciones\ExcepcionControlada_when\bin\Debug\ExcepcionControlada_when.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\7_Excepciones\ExcepcionControlada_when\bin\Debug\ExcepcionControlada_when.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\7_Excepciones\ExcepcionControlada_when\bin\Debug\ExcepcionControlada_when.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\7_Excepciones\ExcepcionControlada_when\obj\Debug\ExcepcionControlada_when.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\7_Excepciones\ExcepcionControlada_when\obj\Debug\ExcepcionControlada_when.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\7_Excepciones\ExcepcionControlada_when\obj\Debug\ExcepcionControlada_when.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\7_Excepciones\ExcepcionControlada_when\obj\Debug\ExcepcionControlada_when.pdb

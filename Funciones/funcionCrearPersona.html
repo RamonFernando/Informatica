@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Persona</title>
+</head>
+<body>
+    <input id="nombre" placeholder="Nombre">
+    <input id="apellido" placeholder="Apellido">
+    <button onclick="crearPersona()">Crear Persona</button>
+
+    <script>
+        // Clase Persona
+        class Persona {
+            constructor(nombre, apellido) {
+                this.nombre = nombre;
+                this.apellido = apellido;
+            }
+        }
+
+        // Función para crear una persona
+        function crearPersona() {
+            const nombre = document.getElementById('nombre');
+            const apellido = document.getElementById('apellido');
+
+            // Crear una instancia de Persona
+            const persona = new Persona(nombre.value, apellido.value);
+
+            console.log(persona); // Imprimir el objeto en consola
+        }
+    </script>
+</body>
+</html>

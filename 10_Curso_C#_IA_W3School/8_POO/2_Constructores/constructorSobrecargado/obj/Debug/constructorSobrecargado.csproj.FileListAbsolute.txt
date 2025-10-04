@@ -1,0 +1,7 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\8_POO\2_Constructores\constructorSobrecargado\bin\Debug\constructorSobrecargado.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\8_POO\2_Constructores\constructorSobrecargado\bin\Debug\constructorSobrecargado.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\8_POO\2_Constructores\constructorSobrecargado\bin\Debug\constructorSobrecargado.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\8_POO\2_Constructores\constructorSobrecargado\obj\Debug\constructorSobrecargado.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\8_POO\2_Constructores\constructorSobrecargado\obj\Debug\constructorSobrecargado.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\8_POO\2_Constructores\constructorSobrecargado\obj\Debug\constructorSobrecargado.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\8_POO\2_Constructores\constructorSobrecargado\obj\Debug\constructorSobrecargado.pdb

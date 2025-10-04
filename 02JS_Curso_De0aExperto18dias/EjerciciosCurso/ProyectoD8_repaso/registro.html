@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="registro.js"></script>
+    <link rel="stylesheet" href="registro.css">
+    <title>Document</title>
+</head>
+<body>
+    <body>        
+        <h2>Registro de Empleados</h2>
+        <hr>
+        <p>Legajo</p>
+        <input type="text" id="txtDNI" placeholder="DNI" required>
+        <p>Nombre</p>        
+        <input type="text" id="txtNombre" placeholder="Nombre">
+        <p>Apellido</p>
+        <input type="text" id="txtApellido" placeholder="Apellido">
+        <p>Fecha de nacimiento</p>
+        <input type="text" id="txtNacimiento" placeholder="dd/mm/aaaa">
+        <p>Cargo</p>
+        <input type="text" id="txtCargo" placeholder="Cargo">
+        <br>
+        <br>
+        <button onclick="agregarEmpleado()">Cargar empleado</button>
+        <br>
+        <br>
+        <button onclick="mostrarEmpleados()">Mostrar empleados</button>
+        <br>
+        <br>
+        <button onclick="agregarEmpleadoPlus()">Agregar empleado Plus</button>
+        <p id="empleados"></p>
+    </body>
+</body>
+</html>

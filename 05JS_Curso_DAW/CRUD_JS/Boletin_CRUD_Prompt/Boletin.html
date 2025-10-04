@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boletín Estudiantil</title>
+        <link rel="stylesheet" href="boletin.css">
+        <script src="boletin.js"></script>
+        <script src="CRUD.js"></script>
+</head>
+<body>
+    <body onload="listarNotas()">
+        <div class="logo">
+            <img src="logo.jpg" alt ="logo"/>
+            <h2>Bienvenido a tu boletín estudiantil</h2>
+        </div>
+
+        <div class="estudiante">
+            <h3>Alumno: Ramón Fernando</h3>
+        </div>
+
+        <h4>Notas:</h4>
+        <ol id="listaNotas">
+        </ol>
+
+        <div class="info">
+            <h4>Promedio: <span id="promedio"></span></h4>
+            <button onclick="calcularPromedio()">Calcular promedio</button>
+
+            <h4>Nota más alta: <span id="nota"></span></h4>
+            <button onclick="notaMasAlta()">Buscar nota más alta</button>
+
+            <h4>¿Hubo algún aplazo? <span id="aplazo"></span></h4>
+            <button onclick="haySuspenso()">Consultar aplazo</button>
+
+            <h4>Agregar nota:</h4>
+            <button onclick="agregarNota()">Agregar</button>
+
+            <h4>Modificar nota:</h4>
+            <button onclick="modificarNota()">Modificar</button>
+
+            <h4>Eliminar nota:</h4>
+            <button onclick="eliminarNota()">Eliminar</button>
+        </div>
+    </body>
+</body>
+</html>

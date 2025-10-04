@@ -1,0 +1,37 @@
+<!-- Ejercicio 2
+ 2.- Escribe un programa que pregunte el precio de un producto. Si vale más de 80 €, le hará un 
+descuento del 10%. Se mostrará en pantalla el precio final. -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Gill Sans MT';
+            background-color: #ac9776;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicios</h2>
+    <p>...</p>
+        <script>
+            let precioProducto = parseFloat(prompt("Introduce el precio del producto:"));
+            let descuento = 0;
+            let precioFinal = precioProducto - descuento;
+            if(precioProducto > 80){
+                descuento = precioProducto * 0.1;
+                precioFinal = precioProducto - descuento;
+                alert("El precio final del producto es: " + precioFinal);
+            }else{
+                alert("El precio del producto es: " + precioFinal);
+            }
+        </script>
+
+    <p>FIN</p>
+</body>
+</html>

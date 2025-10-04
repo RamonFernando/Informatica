@@ -1,0 +1,7 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\8_POO\5_Modificadores_Acceso\ModificadoresAcceso\bin\Debug\ModificadoresAcceso.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\8_POO\5_Modificadores_Acceso\ModificadoresAcceso\bin\Debug\ModificadoresAcceso.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\8_POO\5_Modificadores_Acceso\ModificadoresAcceso\bin\Debug\ModificadoresAcceso.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\8_POO\5_Modificadores_Acceso\ModificadoresAcceso\obj\Debug\ModificadoresAcceso.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\8_POO\5_Modificadores_Acceso\ModificadoresAcceso\obj\Debug\ModificadoresAcceso.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\8_POO\5_Modificadores_Acceso\ModificadoresAcceso\obj\Debug\ModificadoresAcceso.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\8_POO\5_Modificadores_Acceso\ModificadoresAcceso\obj\Debug\ModificadoresAcceso.pdb

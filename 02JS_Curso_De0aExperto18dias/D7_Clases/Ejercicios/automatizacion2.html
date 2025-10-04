@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Practicas</title>
+    </head>
+    <body onload="generarContenido()">
+        <div id="contenido">
+            
+        </div>
+        <script>
+            function generarContenido() {
+            let content, label, input;// v1, v2, v3
+            content = document.getElementById("contenido");// v1
+            
+            label = document.createElement("label");// v2
+            label.setAttribute("for", "txtInput");// v2
+            label.innerText = "Label 1";// v2  
+
+
+            input = document.createElement("input");// v3
+            input.setAttribute("id", "txtInput");// v3
+            input.setAttribute("type","number");// v3
+            input.setAttribute("value", 0); // v3
+
+            content.appendChild(label); // v1(v2)
+            content.appendChild(input); // v1(v3)
+
+
+            return content; // v1
+            }
+        </script>
+    </body>
+</html>
+<html lang="en">

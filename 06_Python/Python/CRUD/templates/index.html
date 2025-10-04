@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD en Python</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <header>
+        <h1>CRUD con Python y Flask</h1>
+    </header>
+    <main class="container">
+        <h2>Gestión de Nombres</h2>
+        <form id="form-nombre">
+            <input type="text" id="nombre-input" placeholder="Introduce un nombre">
+            <button type="submit">Agregar</button>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-nombres">
+                <!-- Los nombres se insertarán aquí dinámicamente -->
+            </tbody>
+        </table>
+    </main>
+    <script src="../static/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\09_Curso_C#\09_Curso_C#\bin\Debug\09_Curso_C#.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\09_Curso_C#\09_Curso_C#\bin\Debug\09_Curso_C#.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\09_Curso_C#\09_Curso_C#\bin\Debug\09_Curso_C#.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\09_Curso_C#\09_Curso_C#\obj\Debug\09_Curso_C#.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\09_Curso_C#\09_Curso_C#\obj\Debug\09_Curso_C#.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\09_Curso_C#\09_Curso_C#\obj\Debug\09_Curso_C#.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\09_Curso_C#\09_Curso_C#\obj\Debug\09_Curso_C#.pdb

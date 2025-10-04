@@ -1,0 +1,509 @@
+### Curso de C#: Desde Principiante hasta Junior (Nivel FP Superior DAW)
+
+---
+
+### **Módulo 1: Fundamentos de C#**
+
+#### **1.1 Introducción al Lenguaje C#:**
+
+- Historia y características principales.
+- Instalación de Visual Studio / Visual Studio Code.
+- Estructura de un programa en C#.
+- Primer programa: Hola Mundo en C#.
+
+#### **1.2 Tipos de Datos y Variables:**
+
+- Tipos de datos básicos (`int`, `float`, `double`, `char`, `bool`, `string`).
+- Declaración, inicialización y asignación de variables.
+- Constantes y literales.
+
+#### **1.3 Operadores:**
+
+- **Aritméticos:**
+  - `+`, `-`, `*`, `/`, `%`.
+  - Ejemplo: `int suma = 5 + 3;`
+- **Relacionales:**
+  - `==`, `!=`, `<`, `>`, `<=`, `>=`.
+  - Ejemplo: `bool esMayor = 10 > 5;`
+- **Lógicos:**
+  - `&&`, `||`, `!`.
+  - Ejemplo: `bool resultado = (5 > 3) && (10 > 7);`
+- **Asignación y operadores compuestos:**
+  - `=`, `+=`, `-=`, `*=`, `/=`.
+  - Ejemplo: `int acumulador = 5; acumulador += 3;`
+- **Operador ternario:**
+  - `condicion ? valorSiVerdadero : valorSiFalso`.
+  - Ejemplo: `string mensaje = (edad >= 18) ? "Mayor de edad" : "Menor de edad";`
+
+#### **1.4 Estructuras de Control:**
+
+- **Condicionales:**
+  - `if`, `else`, `else if`.
+    - Ejemplo:
+      ```csharp
+      if (edad >= 18)
+      {
+          Console.WriteLine("Eres mayor de edad");
+      }
+      else
+      {
+          Console.WriteLine("Eres menor de edad");
+      }
+      ```
+  - `switch`.
+    - Ejemplo:
+      ```csharp
+      switch (dia)
+      {
+          case 1:
+              Console.WriteLine("Lunes");
+              break;
+          case 2:
+              Console.WriteLine("Martes");
+              break;
+          default:
+              Console.WriteLine("Otro día");
+              break;
+      }
+      ```
+- **Bucles:**
+  - `for`.
+    - Ejemplo:
+      ```csharp
+      for (int i = 0; i < 5; i++)
+      {
+          Console.WriteLine("Iteración: " + i);
+      }
+      ```
+  - `while`.
+    - Ejemplo:
+      ```csharp
+      int contador = 0;
+      while (contador < 5)
+      {
+          Console.WriteLine("Contador: " + contador);
+          contador++;
+      }
+      ```
+  - `do...while`.
+    - Ejemplo:
+      ```csharp
+      int numero;
+      do
+      {
+          Console.WriteLine("Introduce un número positivo:");
+          numero = int.Parse(Console.ReadLine());
+      } while (numero < 0);
+      ```
+  - `foreach`.
+    - Ejemplo:
+      ```csharp
+      string[] nombres = { "Ana", "Luis", "Carlos" };
+      foreach (string nombre in nombres)
+      {
+          Console.WriteLine("Nombre: " + nombre);
+      }
+      ```
+
+#### **Ejercicios prácticos:**
+
+1. Escribe un programa que solicite al usuario dos números y muestre la suma, resta, multiplicación y división de ambos.
+2. Implementa un sistema de evaluación que determine si una persona es mayor o menor de edad según la edad ingresada.
+3. Crea un bucle que imprima los primeros 10 números pares.
+4. Diseña un programa que permita ingresar días de la semana y muestre un mensaje personalizado para cada día utilizando `switch`.
+5. Usa un array para almacenar 5 nombres y luego recórrelos con un `foreach` para mostrarlos en consola.
+
+---
+
+### **Módulo 2: Colecciones y Arrays**
+
+#### **2.1 Arrays:**
+
+- Declaración, inicialización y manipulación.
+- Iteración con bucles.
+
+#### **2.1.1 Métodos de Arrays en C#:**
+
+- **Length:** Devuelve la longitud del array.
+
+  - Ejemplo:
+    ```csharp
+    int[] numeros = { 1, 2, 3, 4, 5 };
+    Console.WriteLine("Longitud: " + numeros.Length);
+    ```
+
+- **Sort:** Ordena los elementos del array.
+
+  - Ejemplo:
+    ```csharp
+    int[] numeros = { 5, 3, 8, 1, 2 };
+    Array.Sort(numeros);
+    Console.WriteLine(string.Join(", ", numeros));
+    ```
+
+- **Reverse:** Invierte el orden de los elementos del array.
+
+  - Ejemplo:
+    ```csharp
+    int[] numeros = { 1, 2, 3, 4, 5 };
+    Array.Reverse(numeros);
+    Console.WriteLine(string.Join(", ", numeros));
+    ```
+
+- **IndexOf:** Encuentra el índice de un elemento en el array.
+
+  - Ejemplo:
+    ```csharp
+    int[] numeros = { 10, 20, 30, 40 };
+    int indice = Array.IndexOf(numeros, 30);
+    Console.WriteLine("Índice: " + indice);
+    ```
+
+- **Clear:** Limpia los elementos del array (los establece en su valor predeterminado).
+
+  - Ejemplo:
+    ```csharp
+    int[] numeros = { 1, 2, 3, 4 };
+    Array.Clear(numeros, 1, 2); // Limpia los elementos en índices 1 y 2
+    Console.WriteLine(string.Join(", ", numeros));
+    ```
+
+- **Copy:** Copia elementos de un array a otro.
+
+  - Ejemplo:
+    ```csharp
+    int[] origen = { 1, 2, 3 };
+    int[] destino = new int[3];
+    Array.Copy(origen, destino, 3);
+    Console.WriteLine(string.Join(", ", destino));
+    ```
+
+- **Resize:** Cambia el tamaño de un array.
+
+  - Ejemplo:
+    ```csharp
+    int[] numeros = { 1, 2, 3 };
+    Array.Resize(ref numeros, 5);
+    numeros[3] = 4;
+    numeros[4] = 5;
+    Console.WriteLine(string.Join(", ", numeros));
+    ```
+
+- **Exists:** Verifica si al menos un elemento cumple con una condición.
+
+  - Ejemplo:
+    ```csharp
+    int[] numeros = { 1, 2, 3, 4, 5 };
+    bool existe = Array.Exists(numeros, n => n > 3);
+    Console.WriteLine("Existe un número mayor a 3: " + existe);
+    ```
+
+- **Find:** Encuentra el primer elemento que cumple con una condición.
+
+  - Ejemplo:
+    ```csharp
+    int[] numeros = { 1, 2, 3, 4, 5 };
+    int encontrado = Array.Find(numeros, n => n > 3);
+    Console.WriteLine("Primer número mayor a 3: " + encontrado);
+    ```
+
+- **FindAll:** Encuentra todos los elementos que cumplen con una condición.
+
+  - Ejemplo:
+    ```csharp
+    int[] numeros = { 1, 2, 3, 4, 5 };
+    int[] encontrados = Array.FindAll(numeros, n => n > 2);
+    Console.WriteLine("Números mayores a 2: " + string.Join(", ", encontrados));
+    ```
+
+- **BinarySearch:** Busca un elemento en un array ordenado y devuelve su índice.
+
+  - Ejemplo:
+    ```csharp
+    int[] numeros = { 1, 2, 3, 4, 5 };
+    int indice = Array.BinarySearch(numeros, 4);
+    Console.WriteLine("Índice de 4: " + indice);
+    ```
+
+#### **2.2 Colecciones en C#:**
+
+- Introducción a `List`, `Dictionary`, `Queue`, `Stack`.
+- Operaciones básicas: agregar, eliminar, buscar.
+- Iteración con `foreach`.
+
+#### **2.3 LINQ (Consulta Integrada):**
+
+- Introducción a LINQ.
+- Operaciones básicas: `Where`, `Select`, `OrderBy`, `GroupBy`.
+
+#### **Ejercicios prácticos:**
+
+1. **Arrays:**
+
+   - Crea un programa que solicite 10 números al usuario, los almacene en un array y luego imprima el array en orden inverso.
+   - Implementa una función que reciba un array de enteros y devuelva la suma de todos sus elementos.
+
+2. **Métodos de Arrays:**
+
+   - Escribe un programa que utilice `Array.Sort` para ordenar un array de palabras ingresadas por el usuario y las muestre en orden alfabético.
+   - Usa `Array.FindAll` para filtrar los números pares de un array y mostrar los resultados.
+
+3. **Colecciones:**
+
+   - Diseña un programa que use una `List` para almacenar nombres de personas y permita al usuario agregar, eliminar y listar los nombres.
+   - Crea un diccionario (`Dictionary`) para almacenar nombres como clave y edades como valor. Implementa opciones para buscar una edad por nombre.
+
+4. **LINQ:**
+
+   - Dado un array de números, utiliza LINQ para seleccionar solo aquellos mayores a 50 y mostrar el resultado.
+   - Implementa una consulta LINQ que agrupe una lista de cadenas según su longitud.
+
+---
+
+### **Módulo 3: Programación Orientada a Objetos (POO)**
+
+#### **3.1 Clases y Objetos:**
+
+- Conceptos básicos de clase y objeto.
+- Declaración de clases, creación de objetos y uso de métodos.
+  - Ejemplo:
+    ```csharp
+    public class Persona
+    {
+        public string Nombre { get; set; }
+        public int Edad { get; set; }
+
+        public void Presentarse()
+        {
+            Console.WriteLine($"Hola, me llamo {Nombre} y tengo {Edad} años.");
+        }
+    }
+
+    Persona persona = new Persona { Nombre = "Juan", Edad = 30 };
+    persona.Presentarse();
+    ```
+
+#### **3.2 Encapsulación:**
+
+- Uso de modificadores de acceso: `public`, `private`, `protected`.
+- Propiedades con `get` y `set` para controlar el acceso a los datos.
+  - Ejemplo:
+    ```csharp
+    public class CuentaBancaria
+    {
+        private decimal saldo;
+
+        public decimal Saldo
+        {
+            get { return saldo; }
+            private set { saldo = value; }
+        }
+
+        public void Depositar(decimal monto)
+        {
+            if (monto > 0)
+                Saldo += monto;
+        }
+    }
+
+    CuentaBancaria cuenta = new CuentaBancaria();
+    cuenta.Depositar(100);
+    Console.WriteLine("Saldo actual: " + cuenta.Saldo);
+    ```
+
+#### **3.3 Herencia:**
+
+- Extender una clase base para reutilizar código.
+  - Ejemplo:
+    ```csharp
+    public class Animal
+    {
+        public string Nombre { get; set; }
+
+        public void Comer()
+        {
+            Console.WriteLine($"{Nombre} está comiendo.");
+        }
+    }
+
+    public class Perro : Animal
+    {
+        public void Ladrar()
+        {
+            Console.WriteLine($"{Nombre} está ladrando.");
+        }
+    }
+
+    Perro perro = new Perro { Nombre = "Rex" };
+    perro.Comer();
+    perro.Ladrar();
+    ```
+
+#### **3.4 Polimorfismo:**
+
+- Uso de métodos sobrescritos (`override`) y clases abstractas.
+  - Ejemplo:
+    ```csharp
+    public abstract class Forma
+    {
+        public abstract void Dibujar();
+    }
+
+    public class Circulo : Forma
+    {
+        public override void Dibujar()
+        {
+            Console.WriteLine("Dibujando un círculo.");
+        }
+    }
+
+    public class Rectangulo : Forma
+    {
+        public override void Dibujar()
+        {
+            Console.WriteLine("Dibujando un rectángulo.");
+        }
+    }
+
+    Forma forma = new Circulo();
+    forma.Dibujar();
+    ```
+
+#### **Ejercicios prácticos:**
+
+1. Crea una clase `Vehiculo` con propiedades como `Marca` y `Modelo` y un método `Conducir`. Luego, crea clases derivadas como `Coche` y `Moto` que implementen un comportamiento adicional.
+2. Diseña una clase `Empleado` con propiedades como `Nombre` y `Salario`. Añade una clase `Gerente` que herede de `Empleado` y tenga una propiedad adicional `Departamento`.
+3. Implementa un sistema de figuras geométricas donde cada figura (círculo, rectángulo, triángulo) herede de una clase base `Figura` y sobrescriba un método `CalcularArea`.
+4. Crea una clase `CuentaBancaria` con métodos para depositar y retirar dinero, asegurando que no se pueda retirar más del saldo disponible.
+5. Diseña un programa que gestione una lista de personas utilizando una clase `Persona` con métodos para agregar, buscar y mostrar personas.
+
+### **Módulo 4: Manejo de Archivos y Excepciones**
+
+#### **4.1 Manejo de Archivos:**
+
+- **Lectura y escritura de archivos de texto:**
+
+  - Leer datos de un archivo usando `StreamReader`.
+  - Escribir datos en un archivo usando `StreamWriter`.
+  - Ejemplo:
+    ```csharp
+    using (StreamWriter sw = new StreamWriter("archivo.txt"))
+    {
+        sw.WriteLine("Hola, mundo!");
+    }
+
+    using (StreamReader sr = new StreamReader("archivo.txt"))
+    {
+        string contenido = sr.ReadToEnd();
+        Console.WriteLine(contenido);
+    }
+    ```
+
+- **Manipulación de archivos y directorios:**
+
+  - Crear, mover y eliminar archivos usando la clase `File`.
+  - Crear y listar directorios con la clase `Directory`.
+  - Ejemplo:
+    ```csharp
+    string rutaArchivo = "archivoEjemplo.txt";
+    if (!File.Exists(rutaArchivo))
+    {
+        File.WriteAllText(rutaArchivo, "Contenido inicial");
+    }
+    File.AppendAllText(rutaArchivo, "\nLínea adicional");
+    string contenido = File.ReadAllText(rutaArchivo);
+    Console.WriteLine(contenido);
+    ```
+
+#### **4.2 Excepciones:**
+
+- **Manejo básico con `try`, `catch`, `finally`:**
+
+  - Capturar excepciones comunes como `FileNotFoundException` o `IOException`.
+  - Usar `finally` para liberar recursos.
+  - Ejemplo:
+    ```csharp
+    try
+    {
+        string contenido = File.ReadAllText("archivoInexistente.txt");
+        Console.WriteLine(contenido);
+    }
+    catch (FileNotFoundException e)
+    {
+        Console.WriteLine("Archivo no encontrado: " + e.Message);
+    }
+    finally
+    {
+        Console.WriteLine("Finalizando operación de archivo.");
+    }
+    ```
+
+- **Creación de excepciones personalizadas:**
+
+  - Definir y lanzar excepciones específicas para escenarios particulares.
+  - Ejemplo:
+    ```csharp
+    public class MiExcepcion : Exception
+    {
+        public MiExcepcion(string mensaje) : base(mensaje) { }
+    }
+
+    try
+    {
+        throw new MiExcepcion("Esto es un error personalizado.");
+    }
+    catch (MiExcepcion e)
+    {
+        Console.WriteLine("Excepción personalizada capturada: " + e.Message);
+    }
+    ```
+
+#### **Ejercicios prácticos:**
+
+1. Escribe un programa que cree un archivo llamado `log.txt` y registre en él todas las operaciones de lectura y escritura realizadas.
+2. Diseña un programa que lea un archivo de texto, cuente la cantidad de palabras y muestre el resultado en consola.
+3. Implementa un sistema de manejo de directorios donde el usuario pueda listar, crear y eliminar carpetas según su elección.
+4. Escribe un programa que intente leer un archivo inexistente, capture la excepción y registre el error en un archivo de log.
+5. Crea una excepción personalizada para validar que un archivo tenga más de 100 caracteres y lánzala si no cumple el requisito.
+
+4.1 Manejo de Archivos:
+
+Lectura y escritura en archivos de texto (StreamReader, StreamWriter).
+
+Manipulación de archivos y directorios (File, Directory).
+
+4.2 Excepciones:
+
+Manejo básico con try, catch, finally.
+
+Creación de excepciones personalizadas.
+
+
+Módulo 5: Programación Avanzada
+
+5.1 Delegados y Eventos:
+
+Introducción a los delegados.
+
+Manejo de eventos.
+
+5.2 Programación Asíncrona:
+
+Introducción a async y await.
+
+Tareas y paralelismo básico.
+
+5.3 Interfaces Gráficas (GUI):
+
+Introducción a Windows Forms o WPF.
+
+Creación de aplicaciones básicas.
+
+Módulo 6: Proyecto Final
+
+6.1 Sistema de Gestión:
+
+Creación de una aplicación completa con una interfaz gráfica básica.
+
+Implementación de un CRUD (Create, Read, Update, Delete) usando archivos o colecciones.
+

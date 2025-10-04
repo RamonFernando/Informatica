@@ -1,0 +1,50 @@
+<!--
+13.- Crea un programa que rellene un array llamado potencias con las primeras 20 potencias de 2. 
+Haz que después se muestren todos los valores mediante un bucle while.
+ -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Gill Sans MT';
+            background-color: #7b7b7a;
+            padding: 20px;
+            color: #ffffff;
+        }
+        .boton{
+            color: #7b7b7a;
+            border-radius: 0.3em;
+            padding: .5em 1em;
+            border: none;
+            background-color: #ffffff;
+            cursor: pointer;
+        }
+        #resultado{
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicios</h2>
+    <p>...</p>
+        <script>
+            let potencias = [];
+            let numero = 2;
+            i = 1;
+            while(i <= 20){
+                potencias[i] = Math.pow(numero, i);
+                i++;
+            }
+            document.write("Las primeras 20 potencias de 2 son: <br>");
+            for(i = 1; i < potencias.length; i++){
+                document.write(numero + "^" + i + " = " + potencias[i] + "<br>");
+            }
+        </script>
+    <p>FIN</p>
+</body>
+</html>

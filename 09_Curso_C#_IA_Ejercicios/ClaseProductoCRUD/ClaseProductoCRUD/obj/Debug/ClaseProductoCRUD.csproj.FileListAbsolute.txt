@@ -1,0 +1,2 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\09_Curso_C#\ClaseProductoCRUD\ClaseProductoCRUD\obj\Debug\ClaseProductoCRUD.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\09_Curso_C#\ClaseProductoCRUD\ClaseProductoCRUD\obj\Debug\ClaseProductoCRUD.csproj.CoreCompileInputs.cache

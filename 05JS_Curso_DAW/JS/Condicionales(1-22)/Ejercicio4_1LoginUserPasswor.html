@@ -1,0 +1,58 @@
+<!-- Ejercicio 4
+4.- Crea un programa que pida al usuario una contraseña. Si escribe "1234" el programa responderá 
+"Acceso concedido.". -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Gill Sans MT';
+            background-color: #ac9776;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicios</h2>
+    <p>...</p>
+        <script>
+            let NOMBRE_USUARIO = "ramon";
+            let PASSWORD = 1234;
+            
+            let usuario = prompt("Introduce tu usuario:");
+            while(true){
+                let i = 0;
+                if(usuario === NOMBRE_USUARIO){
+                    let password = parseInt(prompt("Introduce tu password:"));
+                    if(password === PASSWORD){
+                        alert("Acceso concedido");
+                        break;
+                    }else{
+                        alert("Entramos al while de comprobacion de password");
+                        while(i < 4 && password !== PASSWORD){
+                            
+                            if(i == 3){
+                                alert("Has excedido el numero de intentos. Acceso denegado");
+                                break;
+                            }
+                            alert("Password incorrecto" + " Quedan " + (3 - i) + " intentos");
+                            password = parseInt(prompt("Introduce tu password correctamente:"));
+                            i++;
+                        }
+                        alert("Salimos del while y terminamos el programa");
+                        break;
+                    }
+                }else{
+                    alert("Usuario incorrecto");
+                    usuario = prompt("Introduce tu usuario:");
+                }
+            }
+        </script>
+
+    <p>FIN</p>
+</body>
+</html>

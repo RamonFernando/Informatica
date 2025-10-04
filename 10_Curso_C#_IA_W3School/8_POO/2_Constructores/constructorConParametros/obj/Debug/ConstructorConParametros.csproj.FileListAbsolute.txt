@@ -1,0 +1,7 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\8_POO\2_Constructores\ConstructorConParametros\bin\Debug\ConstructorConParametros.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\8_POO\2_Constructores\ConstructorConParametros\bin\Debug\ConstructorConParametros.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\8_POO\2_Constructores\ConstructorConParametros\bin\Debug\ConstructorConParametros.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\8_POO\2_Constructores\ConstructorConParametros\obj\Debug\ConstructorConParametros.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\8_POO\2_Constructores\ConstructorConParametros\obj\Debug\ConstructorConParametros.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\8_POO\2_Constructores\ConstructorConParametros\obj\Debug\ConstructorConParametros.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\8_POO\2_Constructores\ConstructorConParametros\obj\Debug\ConstructorConParametros.pdb

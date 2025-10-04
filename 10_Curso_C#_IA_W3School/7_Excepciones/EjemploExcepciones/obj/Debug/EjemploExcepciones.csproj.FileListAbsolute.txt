@@ -1,0 +1,7 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\7_Excepciones\EjemploExcepciones\bin\Debug\EjemploExcepciones.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\7_Excepciones\EjemploExcepciones\bin\Debug\EjemploExcepciones.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\7_Excepciones\EjemploExcepciones\bin\Debug\EjemploExcepciones.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\7_Excepciones\EjemploExcepciones\obj\Debug\EjemploExcepciones.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\7_Excepciones\EjemploExcepciones\obj\Debug\EjemploExcepciones.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\7_Excepciones\EjemploExcepciones\obj\Debug\EjemploExcepciones.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\7_Excepciones\EjemploExcepciones\obj\Debug\EjemploExcepciones.pdb

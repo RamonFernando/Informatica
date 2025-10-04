@@ -1,0 +1,7 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\1_Sintaxis\Clases_CalcCirculo\bin\Debug\Clases_CalcCirculo.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\1_Sintaxis\Clases_CalcCirculo\bin\Debug\Clases_CalcCirculo.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\1_Sintaxis\Clases_CalcCirculo\bin\Debug\Clases_CalcCirculo.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\1_Sintaxis\Clases_CalcCirculo\obj\Debug\Clases_CalcCirculo.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\1_Sintaxis\Clases_CalcCirculo\obj\Debug\Clases_CalcCirculo.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\1_Sintaxis\Clases_CalcCirculo\obj\Debug\Clases_CalcCirculo.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\1_Sintaxis\Clases_CalcCirculo\obj\Debug\Clases_CalcCirculo.pdb

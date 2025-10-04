@@ -1,0 +1,7 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\08_Curso_C#_Udemy\CursoUdemy_01-18_Yo\03_Metodos\DesafioMetodos\bin\Debug\DesafioMetodos.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\08_Curso_C#_Udemy\CursoUdemy_01-18_Yo\03_Metodos\DesafioMetodos\bin\Debug\DesafioMetodos.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\08_Curso_C#_Udemy\CursoUdemy_01-18_Yo\03_Metodos\DesafioMetodos\bin\Debug\DesafioMetodos.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\08_Curso_C#_Udemy\CursoUdemy_01-18_Yo\03_Metodos\DesafioMetodos\obj\Debug\DesafioMetodos.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\08_Curso_C#_Udemy\CursoUdemy_01-18_Yo\03_Metodos\DesafioMetodos\obj\Debug\DesafioMetodos.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\08_Curso_C#_Udemy\CursoUdemy_01-18_Yo\03_Metodos\DesafioMetodos\obj\Debug\DesafioMetodos.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\08_Curso_C#_Udemy\CursoUdemy_01-18_Yo\03_Metodos\DesafioMetodos\obj\Debug\DesafioMetodos.pdb

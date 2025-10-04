@@ -1,0 +1,35 @@
+<!-- Ejercicio 3
+ 3.- Crea un array llamado densidades con las densidades (en g/cm3) de los nueve (sí, nueve) 
+planetas del Sistema Solar. Haz que después se muestren todos los valores mediante un bucle for.-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Gill Sans MT';
+            background-color: #ac9776;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicio 3S</h2>
+        <script>
+            let mensaje = "Planetas del sistema solar con sus respectivas densidades g/cm3: \n";
+            
+            let densidadesPlanetas = [0.330, 4.87, 5.97, 0.642, 1.27, 0.687, 1.64, 5.43, 10.7];
+            let planetas = ["Mercurio", "Venus", "Tierra", "Marte", "Jupiter", "Saturno", "Urano", "Neptuno", "Pluton"];
+            for(let i = 0; i < densidadesPlanetas.length; i++){
+                document.write(planetas[i] + ": " + densidadesPlanetas[i] + "<br>");
+                mensaje += planetas[i] + ": " + densidadesPlanetas[i] + "\n";
+            }
+            alert(mensaje); 
+        </script>
+
+    <p>FIN</p>
+</body>
+</html>

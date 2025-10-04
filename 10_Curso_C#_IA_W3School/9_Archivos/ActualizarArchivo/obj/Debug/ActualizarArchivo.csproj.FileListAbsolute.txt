@@ -1,0 +1,7 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\9_Archivos\ActualizarArchivo\bin\Debug\ActualizarArchivo.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\9_Archivos\ActualizarArchivo\bin\Debug\ActualizarArchivo.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\9_Archivos\ActualizarArchivo\bin\Debug\ActualizarArchivo.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\9_Archivos\ActualizarArchivo\obj\Debug\ActualizarArchivo.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\9_Archivos\ActualizarArchivo\obj\Debug\ActualizarArchivo.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\9_Archivos\ActualizarArchivo\obj\Debug\ActualizarArchivo.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\9_Archivos\ActualizarArchivo\obj\Debug\ActualizarArchivo.pdb

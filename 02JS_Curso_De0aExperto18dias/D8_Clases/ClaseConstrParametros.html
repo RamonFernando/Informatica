@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conbstructores con Parametros</title>
+</head>
+<body>
+    <h2>Constructores con Parametros</h2>
+    <script>
+        function Perro(raza, edad){
+            this.patas = 4;
+            this.raza = raza;
+            this.edad = edad;
+            this.ladrar = function(){
+                console.log("Guau");
+            };
+        };
+        let simba = new Perro("Shih Tzu", 4);
+        let reina = new Perro("Caniche", 15);
+        let batu = new Perro("Cruza", 8);
+
+        console.log(simba, reina, batu);
+
+       function Empleado(nombre, apellidos, edad, cargo) {
+            this.nombre = nombre;
+            this.apellidos = apellidos;
+            this.edad = edad;
+            this.cargo = cargo;
+            this.presentarse = function () {
+                //console.log("Mi nombre es " + this.nombre + " " + this.apellidos + ", soy " + this.cargo + ", y tengo " + this.edad + " años de edad");
+                console.log(`Mi nombre es ${this.nombre} ${this.apellidos}, soy ${this.cargo}, y tengo ${this.edad} años de edad`);
+            };
+        };
+
+        let empleado1 = new Empleado("Javier","Perez", 35, "Gerente de Marketing");
+        let empleado2 = new Empleado("Maria","Gonzalez", 30, "Programadora");
+        let empleado3 = new Empleado("Luis","Martinez", 28, "Programador");
+
+        console.log(empleado1,empleado2,empleado3);
+        console.log(empleado1.presentarse());
+    </script>
+</body>
+</html>

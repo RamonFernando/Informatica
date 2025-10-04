@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35431.28
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrearLeerEliminarT", "CrearLeerEliminarT.csproj", "{BA261257-A2B6-4CBC-A2BE-5E639E38E30B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA261257-A2B6-4CBC-A2BE-5E639E38E30B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA261257-A2B6-4CBC-A2BE-5E639E38E30B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA261257-A2B6-4CBC-A2BE-5E639E38E30B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA261257-A2B6-4CBC-A2BE-5E639E38E30B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2D8C408C-C08F-43E8-8470-1CEA170AF871}
+	EndGlobalSection
+EndGlobal

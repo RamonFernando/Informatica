@@ -1,0 +1,302 @@
+------------------------
+** Prácticas: Label 1 **
+------------------------
+<!DOCTYPE html>
+    <head>
+        <title>Label 1</title>
+    </head>
+    <body>
+        <label for="txtNombre">Nombre</label>
+        <input type="text" id="txtNombre">
+        
+        
+    </body>
+</html>
+
+------------------------
+** Prácticas: Label 2 **
+------------------------
+<!DOCTYPE html>
+    <head>
+        <title>Label 2</title>
+    </head>
+    <body>
+        <label for="txtEdad">Edad</label>
+        <input type="text" id="txtEdad">
+        
+    </body>
+</html>
+
+------------------------
+** Prácticas: Array 1 **
+------------------------
+let array = [6, 8, 4, 9, 1];
+
+function obtenerUltimoNumero() {
+        
+        console.log(array.pop());
+}
+
+------------------------
+** Prácticas: Array 2 **
+------------------------
+let array = [6, 8, 4, 9, 1, 6, 7];
+
+function cantidadDeElementos() {
+    console.log(array.length);
+}
+
+------------------------
+** Prácticas: Array 3 **
+------------------------
+let notas = [6, 9, 7, 5, 1, 5, 4, 3];
+
+function promedio() {
+    let total = 0;
+    for(let num of notas){
+        total += num;
+    }
+    console.log(total / notas.length);
+}
+
+------------------------
+** Prácticas: Array 4 **
+------------------------
+let notas = [6, 9, 7, 5, 1, 5, 4];
+
+function menorNota() {
+    let notaMin=notas[0];
+    for(let nota of notas){
+        if(nota < notaMin){
+            notaMin = nota;
+        }
+    }
+    console.log(notaMin);
+}
+
+---------------------------------
+** Prácticas: Automatización 1 **
+---------------------------------
+<!DOCTYPE html>
+    <head>
+        <title>Automatización 1</title>
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <div id="contenido">
+            <script>
+                function generarContenido() {
+    let content = document.getElementById("contenido");
+    
+    let parrafo = document.createElement("p");
+    parrafo.innerText = "Parrafo 1"
+    
+    let input = document.createElement("input");
+    input.setAttribute("type", "text");
+    input.setAttribute("id", "txtInput");
+    
+    content.appendChild(parrafo);
+    content.appendChild(input);
+    
+    return content;
+}
+            </script>
+        </div>
+    </body>
+</html>
+
+---------------------------------
+** Prácticas: Automatización 2 **
+---------------------------------
+<!DOCTYPE html>
+    <head>
+        <title>Automatización 2</title>
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <script>
+            function generarContenido() {
+    let content = document.getElementById("contenido");
+    
+    let label = document.createElement("label");
+    label.setAttribute("for", "txtInput");
+    label.innerText = "Label 1";
+    
+    
+    let input = document.createElement("input");
+    input.setAttribute("id", "txtInput");
+    input.setAttribute("type", "number");
+    input.setAttribute("value", 0);
+    
+    content.appendChild(label);
+    content.appendChild(input);
+    
+    return content;
+}
+            
+        </script>
+    </body>
+</html>
+
+---------------------------------
+** Prácticas: Automatización 3 **
+---------------------------------
+<!DOCTYPE html>
+    <head>
+        <title>Automatización 3</title>
+        <script src="script3.js" defer></script>
+    </head>
+    <body>
+        <div id="contenido">
+            
+        </div>
+    </body>
+</html>
+
+script3.js
+function generarContenido(numero) {
+    let content = document.getElementById("contenido");
+    
+    let label = document.createElement("label");
+    label.setAttribute("for", "txtInput" + numero);
+    label.innerText = "Label " + numero;
+    
+    
+    let input = document.createElement("input");
+    input.setAttribute("id", "txtInput" + numero);
+    input.setAttribute("type", "number");
+    input.setAttribute("value", 0);
+    
+    content.appendChild(label);
+    content.appendChild(input);
+    
+    return content;
+}
+---------------------------------
+** Prácticas: Automatización 4 **
+---------------------------------
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body onload="repetirContenido(3)">
+    <div id="contenido">
+      <script>
+        function repetirContenido(veces) {
+          for (let i = 0; i <= veces; i++) generarContenido(i);
+        }
+
+        function generarContenido(numero) {
+          let content = document.getElementById("contenido");
+
+          let label = document.createElement("label");
+          label.setAttribute("for", "txtInput" + numero);
+          label.innerText = "Label " + numero;
+
+          let input = document.createElement("input");
+          input.setAttribute("id", "txtInput" + numero);
+          input.setAttribute("type", "number");
+          input.setAttribute("value", 0);
+
+          content.appendChild(label);
+          content.appendChild(input);
+
+          return content;
+        }
+      </script>
+    </div>
+  </body>
+</html>
+
+---------------------------------
+** Prácticas: Automatización 5 **
+---------------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatizacion5</title>
+    <script src="script5.js"></script>
+</head>
+<body>
+    <div id="contenido">
+        <p>
+            <label for="txtInput1">Campo 1</label>
+            <input id="txtInput1" type="number" value=115>
+        </p>
+        <p>
+            <label for="txtInput2">Campo 2</label>
+            <input id="txtInput2" type="number" value=98>
+        </p>
+        <p>
+            <label for="txtInput3">Campo 3</label>
+            <input id="txtInput3" type="number" value=47>
+        </p>
+    </div>
+</body>
+</html>
+
+script5.js
+function automatizarSuma() {
+    let sumaTotal = 0;
+    let contenido = document.getElementById("contenido");
+    for(let suma of contenido.children){
+        sumaTotal += Number(suma.children[1].value);
+    }
+}
+---------------------------------
+** Prácticas: Automatización 6 **
+---------------------------------
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Automatizacion6</title>
+  </head>
+  <body>
+    <div id="contenido">
+      <p>
+        <label for="txtInput1">Label 1</label>
+        <input id="txtInput1" type="number" value="84" />
+      </p>
+      <p>
+        <label for="txtInput2">Label 2</label>
+        <input id="txtInput2" type="number" value="35" />
+      </p>
+      <p>
+        <label for="txtInput3">Label 3</label>
+        <input id="txtInput3" type="number" value="69" />
+      </p>
+    </div>
+    <button type="button" onclick="automatizarSuma()">Sumar</button>
+    <button type="button" onclick="reset()">Reset</button>
+    <p id="txtSuma">Respuesta</p>
+    <script>
+        let sumaTotal = 0;
+      function automatizarSuma() {
+        
+        let contenido = document.getElementById("contenido");
+        for (let suma of contenido.children) {
+          sumaTotal += Number(suma.children[1].value);
+        }
+        mostrarSuma();
+      }
+      function mostrarSuma() {
+        let txtSuma = document.getElementById("txtSuma");
+        txtSuma.textContent = "Suma total: " + sumaTotal;
+        return txtSuma;
+      }
+      function reset() {
+        let reset = document.getElementById("txtSuma");
+        sumaTotal = 0;
+        reset.textContent = "Suma total: " + sumaTotal;
+        
+      }
+    </script>
+  </body>
+</html>

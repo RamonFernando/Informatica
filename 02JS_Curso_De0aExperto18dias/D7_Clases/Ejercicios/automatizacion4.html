@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body onload="repetirContenido(5)">
+    <div id="contenido">
+      
+    </div>
+    <script>
+      function repetirContenido(veces) {
+        for (let i = 1; i <= veces; i++){
+          generarContenido(i);
+          } }
+
+      function generarContenido(numero) {
+        let content = document.getElementById("contenido");
+
+        let label = document.createElement("label");
+        label.setAttribute("for", "txtInput" + numero);
+        label.innerText = "Label " + numero;
+
+        let input = document.createElement("input");
+        input.setAttribute("id", "txtInput" + numero);
+        input.setAttribute("type", "number");
+        input.setAttribute("value", 0);
+
+        content.appendChild(label);
+        content.appendChild(input);
+
+        return content;
+      }
+    </script>
+  </body>
+</html>

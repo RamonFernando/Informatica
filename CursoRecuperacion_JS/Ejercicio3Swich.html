@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Gill Sans MT';
+            background-color: #7b7b7a;
+            padding: 20px";
+        }
+    </style>
+</head>
+<body>
+    <h2>Dias de la semana</h2>
+    <p>Ingresa un número del 1 al 7 para obtener el dia de la semana</p>
+    <p>Aquí se muestra el resultado en colores para saber el volumen de trabajo</p>
+    <p id ="dia"></p>
+    <p>El volumen de trabajo es:  <span id ="trabajo"></span></p>
+    
+    <script>
+        let num = parseInt(prompt("Ingrese un numero del 1 al 7 para obtener el dia de la semana"));
+        let dia = document.getElementById("dia");
+        let trabajo = document.getElementById("trabajo");
+        
+        switch(num){
+            case 1:
+                dia.innerHTML = "El dia de la semana es: Lunes";
+                trabajo.innerHTML = "Bajo";
+                trabajo.style.color = "red";
+                break;
+            case 2:
+                dia.innerHTML = "El dia de la semana es: Martes";
+                trabajo.innerHTML = "Es dia Libre";
+                trabajo.style.color = "blue";
+                break;
+            case 3:
+                dia.innerHTML = "El dia de la semana es: Miercoles";
+                trabajo.innerHTML = "Bajo";
+                trabajo.style.color = "red";
+                break;
+            case 4:
+                dia.innerHTML = "El dia de la semana es: Jueves";
+                trabajo.innerHTML = "Medio";
+                trabajo.style.color = "yellow";
+                break;
+            case 5:
+                dia.innerHTML = "El dia de la semana es: Viernes";
+                trabajo.innerHTML = "Alto";
+                trabajo.style.color = "green";
+                break;
+            case 6:
+                dia.innerHTML = "El dia de la semana es: Sabado";
+                trabajo.innerHTML = "Alto";
+                trabajo.style.color = "green";
+                break;
+            case 7:
+                dia.innerHTML = "El dia de la semana es: Domingo";
+                trabajo.innerHTML = "Medio";
+                trabajo.style.color = "yellow";
+                break;
+            default:
+                document.write("No es un dia de la semana");
+        }
+    </script>
+</body>
+</html>

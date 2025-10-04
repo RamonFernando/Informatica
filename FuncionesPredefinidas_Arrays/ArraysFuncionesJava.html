@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métodos de Arrays en Java</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h3 {
+            color: #2c3e50;
+        }
+        code {
+            background-color: #ecf0f1;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Métodos de Arrays en Java</h1>
+
+    <h3>Manipulación de elementos</h3>
+    <p><strong>Agregar elementos a una lista</strong>: Usando <code>add(elemento)</code> en una lista.</p>
+    <pre>
+import java.util.ArrayList;
+import java.util.List;
+
+List<Integer> numeros = new ArrayList<>();
+numeros.add(1); // [1]
+numeros.add(2); // [1, 2]
+numeros.add(3); // [1, 2, 3]
+    </pre>
+
+    <p><strong>Eliminar elementos</strong>: Usando <code>remove()</code>.</p>
+    <pre>
+numeros.remove(1); // Elimina el elemento en el índice 1. Lista: [1, 3]
+    </pre>
+
+    <p><strong>Reemplazar un elemento</strong>: Usando <code>set(index, elemento)</code>.</p>
+    <pre>
+numeros.set(1, 99); // [1, 99]
+    </pre>
+
+    <h3>Acceso y búsqueda</h3>
+    <p><strong>Obtener un elemento</strong>: Usando <code>get(index)</code>.</p>
+    <pre>
+int numero = numeros.get(0); // 1
+    </pre>
+
+    <p><strong>Buscar un elemento</strong>: Usando <code>indexOf(elemento)</code>.</p>
+    <pre>
+int indice = numeros.indexOf(99); // 1
+    </pre>
+
+    <p><strong>Comprobar si existe un elemento</strong>: Usando <code>contains(elemento)</code>.</p>
+    <pre>
+boolean existe = numeros.contains(99); // true
+    </pre>
+
+    <h3>Iteración</h3>
+    <p><strong>Usando un bucle <code>for</code></strong>:</p>
+    <pre>
+for (int num : numeros) {
+    System.out.println(num);
+}
+    </pre>
+
+    <p><strong>Usando <code>forEach</code>:</strong></p>
+    <pre>
+numeros.forEach(num -> System.out.println(num));
+    </pre>
+
+    <h3>Filtrado y transformación</h3>
+    <p><strong>Filtrar elementos</strong>: Usando streams.</p>
+    <pre>
+import java.util.stream.Collectors;
+
+List<Integer> pares = numeros.stream()
+                             .filter(num -> num % 2 == 0)
+                             .collect(Collectors.toList()); // [2, 4]
+    </pre>
+
+    <p><strong>Transformar elementos</strong>: Usando <code>map</code>.</p>
+    <pre>
+List<Integer> dobles = numeros.stream()
+                              .map(num -> num * 2)
+                              .collect(Collectors.toList()); // [2, 4, 6]
+    </pre>
+
+    <h3>Orden y manipulación avanzada</h3>
+    <p><strong>Ordenar</strong>: Usando <code>sort</code>.</p>
+    <pre>
+import java.util.Collections;
+
+Collections.sort(numeros); // Ordena en orden ascendente.
+    </pre>
+
+    <p><strong>Invertir el orden</strong>: Usando <code>reverse</code>.</p>
+    <pre>
+Collections.reverse(numeros); // Invierte el orden.
+    </pre>
+
+    <p><strong>Combinar listas</strong>: Usando <code>addAll</code>.</p>
+    <pre>
+List<Integer> otrosNumeros = new ArrayList<>();
+otrosNumeros.add(4);
+numeros.addAll(otrosNumeros); // [1, 2, 3, 4]
+    </pre>
+
+    <h3>Clonación y creación</h3>
+    <p><strong>Copiar un array</strong>: Usando <code>Arrays.copyOf</code>.</p>
+    <pre>
+import java.util.Arrays;
+
+int[] numeros = {1, 2, 3, 4};
+int[] copia = Arrays.copyOf(numeros, numeros.length);
+    </pre>
+
+    <p><strong>Convertir un array a lista</strong>: Usando <code>Arrays.asList</code>.</p>
+    <pre>
+List<Integer> lista = Arrays.asList(1, 2, 3);
+    </pre>
+
+    <p><strong>Verificar si una colección está vacía</strong>: Usando <code>isEmpty</code>.</p>
+    <pre>
+boolean estaVacia = numeros.isEmpty(); // false
+    </pre>
+
+    <p><strong>Obtener tamaño</strong>: Usando <code>size</code>.</p>
+    <pre>
+int tamaño = numeros.size(); // 4
+    </pre>
+</body>
+</html>

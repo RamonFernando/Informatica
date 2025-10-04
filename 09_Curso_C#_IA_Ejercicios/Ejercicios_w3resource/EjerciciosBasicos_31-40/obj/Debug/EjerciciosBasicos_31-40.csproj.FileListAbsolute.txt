@@ -1,0 +1,7 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\09_Curso_C#_IA_Ejercicios\Ejercicios_w3resource\EjerciciosBasicos_31-40\bin\Debug\EjerciciosBasicos_31-40.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\09_Curso_C#_IA_Ejercicios\Ejercicios_w3resource\EjerciciosBasicos_31-40\bin\Debug\EjerciciosBasicos_31-40.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\09_Curso_C#_IA_Ejercicios\Ejercicios_w3resource\EjerciciosBasicos_31-40\bin\Debug\EjerciciosBasicos_31-40.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\09_Curso_C#_IA_Ejercicios\Ejercicios_w3resource\EjerciciosBasicos_31-40\obj\Debug\EjerciciosBasicos_31-40.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\09_Curso_C#_IA_Ejercicios\Ejercicios_w3resource\EjerciciosBasicos_31-40\obj\Debug\EjerciciosBasicos_31-40.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\09_Curso_C#_IA_Ejercicios\Ejercicios_w3resource\EjerciciosBasicos_31-40\obj\Debug\EjerciciosBasicos_31-40.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\09_Curso_C#_IA_Ejercicios\Ejercicios_w3resource\EjerciciosBasicos_31-40\obj\Debug\EjerciciosBasicos_31-40.pdb

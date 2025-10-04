@@ -1,0 +1,15 @@
+
+
+<div id="miDiv" style="width: 200px; height: 200px; border: 1px solid black;">
+    Mueve el ratón aquí
+</div>
+
+<script>
+
+    // Se activa cuando el ratón se mueve dentro de un elemento.
+    let div = document.getElementById("miDiv");
+
+    div.addEventListener("mousemove", (event) => {
+        div.textContent = `Posición: (${event.clientX}, ${event.clientY})`;
+    });
+</script>

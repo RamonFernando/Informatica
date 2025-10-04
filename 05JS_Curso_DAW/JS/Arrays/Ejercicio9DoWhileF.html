@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Gill Sans MT';
+            background-color: #ac9776;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicios</h2>
+    
+        <script>
+        // Creamos un array vacío para guardar la pregunta y las respuestas
+        let test = [];
+
+        // Función para leer entradas en el navegador
+        function leerEntrada(mensaje) {
+            return prompt(mensaje);
+        }
+        let mensaje = "";
+        mensaje = document.write("Enunciado de la pregunta: <br>");
+        // Capturamos la pregunta
+        do {
+            var pregunta = leerEntrada("Introduce el enunciado de la pregunta:");
+        } while (!pregunta); // Repetir mientras la entrada esté vacía
+        test.push(pregunta); // Agregamos la pregunta al array
+
+        // Capturamos las cuatro respuestas
+        for (let i = 0; i < 4; i++) {
+            let respuesta = "";
+            do {
+                respuesta = leerEntrada(`Introduce la opción ${(i + 1)}:`);
+            } while (!respuesta); // Repetir mientras la entrada esté vacía
+            test.push(respuesta); // Agregamos la respuesta al array
+        }
+
+        // Mostramos la pregunta y las opciones en formato de tipo test
+        const opciones = ['a', 'b', 'c', 'd'];
+        
+
+        mensaje = document.write(`${test[0]}<br>`); // La pregunta
+
+        // Mostramos las respuestas
+        
+        for (let i = 1; i <= 4; i++) {
+            mensaje = document.write(`${opciones[i - 1]}) ${test[i]}<br>`);
+            mensaje += `${opciones[i - 1]}) ${test[i]}<br>`;
+        }
+        // Capturamos la respuesta correcta
+        mensaje += document.write("Respuesta correcta: " + leerEntrada("Introduce la respuesta correcta:"));
+    </script>
+    
+    <p>FIN</p>
+</body>
+</html>

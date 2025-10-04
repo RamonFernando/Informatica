@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métodos de Arrays en JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h3 {
+            color: #2c3e50;
+        }
+        code {
+            background-color: #ecf0f1;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Métodos de Arrays en JavaScript</h1>
+
+    <h3>Manipulación de elementos</h3>
+    <p><strong>push(elemento)</strong>: Agrega uno o más elementos al final del array.</p>
+    <pre>
+let numeros = [1, 2, 3];
+numeros.push(4); // [1, 2, 3, 4]
+    </pre>
+
+    <p><strong>pop()</strong>: Elimina y devuelve el último elemento del array.</p>
+    <pre>
+let numeros = [1, 2, 3];
+let eliminado = numeros.pop(); // eliminado: 3, array: [1, 2]
+    </pre>
+
+    <p><strong>unshift(elemento)</strong>: Agrega uno o más elementos al inicio del array.</p>
+    <pre>
+let numeros = [2, 3];
+numeros.unshift(1); // [1, 2, 3]
+    </pre>
+
+    <p><strong>shift()</strong>: Elimina y devuelve el primer elemento del array.</p>
+    <pre>
+let numeros = [1, 2, 3];
+let eliminado = numeros.shift(); // eliminado: 1, array: [2, 3]
+    </pre>
+
+    <p><strong>splice(posición, cantidad, elementos)</strong>: Modifica el array eliminando, reemplazando o insertando elementos.</p>
+    <pre>
+let numeros = [1, 2, 3, 4];
+numeros.splice(1, 2, 99); // [1, 99, 4]
+    </pre>
+
+    <h3>Acceso y búsqueda</h3>
+    <p><strong>indexOf(elemento)</strong>: Devuelve el índice de la primera aparición de un elemento; -1 si no existe.</p>
+    <pre>
+let numeros = [1, 2, 3];
+let indice = numeros.indexOf(2); // 1
+    </pre>
+
+    <p><strong>lastIndexOf(elemento)</strong>: Devuelve el índice de la última aparición de un elemento.</p>
+    <pre>
+let numeros = [1, 2, 3, 2];
+let indice = numeros.lastIndexOf(2); // 3
+    </pre>
+
+    <p><strong>includes(elemento)</strong>: Verifica si el array contiene un elemento (devuelve true o false).</p>
+    <pre>
+let numeros = [1, 2, 3];
+let existe = numeros.includes(2); // true
+    </pre>
+
+    <h3>Iteración</h3>
+    <p><strong>forEach(función)</strong>: Ejecuta una función por cada elemento del array.</p>
+    <pre>
+let numeros = [1, 2, 3];
+numeros.forEach(num => console.log(num));
+    </pre>
+
+    <p><strong>map(función)</strong>: Crea un nuevo array con el resultado de aplicar una función a cada elemento.</p>
+    <pre>
+let numeros = [1, 2, 3];
+let dobles = numeros.map(num => num * 2); // [2, 4, 6]
+    </pre>
+
+    <h3>Filtrado y transformación</h3>
+    <p><strong>filter(función)</strong>: Crea un nuevo array con los elementos que cumplen una condición.</p>
+    <pre>
+let numeros = [1, 2, 3, 4];
+let pares = numeros.filter(num => num % 2 === 0); // [2, 4]
+    </pre>
+
+    <p><strong>reduce(función, valorInicial)</strong>: Reduce el array a un único valor acumulado.</p>
+    <pre>
+let numeros = [1, 2, 3, 4];
+let suma = numeros.reduce((acumulado, num) => acumulado + num, 0); // 10
+    </pre>
+
+    <p><strong>find(función)</strong>: Devuelve el primer elemento que cumple con la condición.</p>
+    <pre>
+let numeros = [1, 2, 3, 4];
+let encontrado = numeros.find(num => num > 2); // 3
+    </pre>
+
+    <p><strong>findIndex(función)</strong>: Devuelve el índice del primer elemento que cumple con la condición.</p>
+    <pre>
+let numeros = [1, 2, 3, 4];
+let indice = numeros.findIndex(num => num > 2); // 2
+    </pre>
+
+    <h3>Orden y manipulación avanzada</h3>
+    <p><strong>sort(función)</strong>: Ordena los elementos del array.</p>
+    <pre>
+let numeros = [3, 1, 4];
+numeros.sort((a, b) => a - b); // [1, 3, 4]
+    </pre>
+
+    <p><strong>reverse()</strong>: Invierte el orden de los elementos.</p>
+    <pre>
+let numeros = [1, 2, 3];
+numeros.reverse(); // [3, 2, 1]
+    </pre>
+
+    <p><strong>concat(array2)</strong>: Combina dos o más arrays.</p>
+    <pre>
+let numeros1 = [1, 2];
+let numeros2 = [3, 4];
+let combinado = numeros1.concat(numeros2); // [1, 2, 3, 4]
+    </pre>
+
+    <p><strong>join(separador)</strong>: Convierte los elementos del array en una cadena, separados por el valor dado.</p>
+    <pre>
+let numeros = [1, 2, 3];
+let texto = numeros.join('-'); // "1-2-3"
+    </pre>
+
+    <h3>Clonación y creación</h3>
+    <p><strong>slice(inicio, fin)</strong>: Crea una copia de una porción del array.</p>
+    <pre>
+let numeros = [1, 2, 3, 4];
+let subArray = numeros.slice(1, 3); // [2, 3]
+    </pre>
+
+    <p><strong>Array.from(iterable)</strong>: Crea un array a partir de un iterable.</p>
+    <pre>
+let cadena = '123';
+let numeros = Array.from(cadena); // ['1', '2', '3']
+    </pre>
+
+    <p><strong>Array.isArray(objeto)</strong>: Verifica si una variable es un array.</p>
+    <pre>
+let numeros = [1, 2, 3];
+let esArray = Array.isArray(numeros); // true
+    </pre>
+</body>
+</html>

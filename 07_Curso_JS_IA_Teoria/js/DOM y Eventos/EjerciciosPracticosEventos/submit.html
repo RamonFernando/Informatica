@@ -1,0 +1,17 @@
+
+
+<form id="miFormulario">
+    <input type="text" placeholder="Tu nombre" required>
+    <button type="submit">Enviar</button>
+</form>
+
+<script>
+
+    // Se activa cuando se envía un formulario.
+    let formulario = document.getElementById("miFormulario");
+    formulario.addEventListener("submit", (event) => {
+        event.preventDefault(); // Evita que la página se recargue
+        alert("Formulario enviado");
+    });
+
+</script>

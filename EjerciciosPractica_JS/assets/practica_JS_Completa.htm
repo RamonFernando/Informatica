@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/styleContent.css">
+    <title>Usuarios</title>
+</head>
+<body>
+
+   <div class="container">
+    <div class="container-box">
+        <div class="container-main">
+            <h2>Practica de JS completa</h2>
+        <h4>Ingresa tu nombre y apellido</h4>
+        <input type="text" id="inputTexto" placeholder="Ingresa tu nombre">
+        <input type="text" id="inputTexto2" placeholder="Ingresa tu apellido">
+        <button type="button" id="boton" onclick="mostrarTexto()">Ingresar</button>
+        <p type="text" id="textoSalida">Informacion del Usuario</p>
+        <p type="text" id="informacion"></p>
+    
+        <h3>Suma</h3>
+        <p>Escribe dos números</p>
+        <p>Ejemplo: 15 + 19 = <spam id="EjSalida">?</spam></p>
+        <input type="text" id="num1" placeholder="Numero 1"> <p>+</p>
+        <input type="text" id="num2" placeholder="Numero 2">
+        <p type="text" id="resultado" placeholder="Resultado">Resultado</p>
+        <button type="button" id="botonSuma" onclick="suma()">Sumar</button>
+        
+        <h3>Contador</h3>
+        <input type="text" id="inputContador" placeholder="Ingresa un numero">
+        <button type="button" id="botonContador" onclick="contar()">Contar</button>
+        <div type="text" id="contador">
+            <p>Iteraciones</p>
+        </div>
+        <p type="text" id="numeroIteraciones">Numero de Iteraciones</p>
+
+
+
+        <button type="button" id="botonRefrescar" onclick="refrescar()" >Refrescar</button>
+        </div> <!-- container-main-->
+    </div> <!-- container-box-->
+   </div> <!-- container-->
+
+
+    <script>
+        function mostrarTexto(){
+            let nombre = document.getElementById("inputTexto").value;
+            let apellido = document.getElementById("inputTexto2").value;
+            let salida = document.getElementById("textoSalida");
+            let salida2 = document.getElementById("informacion");
+            salida.textContent = "Tu nombre es " + nombre + " y tu apellido es " + apellido;
+            salida2.textContent = "Tu nombre y apellido son: " + nombre.toUpperCase() + " " + apellido.toUpperCase();
+        }
+        function suma(){
+            let num1 = document.getElementById("num1").value; // Obtenemos el valor del input "num1").value;
+            let num2 = document.getElementById("num2").value; // Obtenemos el valor del input "num2").value;
+            let suma = Number(num1) + Number(num2);
+            let resultado = document.getElementById("resultado");  // Obtenemos el valor del input "resultado").value;
+            resultado.textContent = "El resultado es: " + num1 + " + " + num2 + " = " + suma;
+        }
+
+        function contar(){
+            
+            
+            let num = document.getElementById("inputContador").value;
+            let num2 = document.getElementById("contador"); 
+            let contador = 0;
+            for(let i = 1; i <= num; i++){
+                contador++;
+                
+                let contadorIt = document.createElement("p");
+                contadorIt.innerText = contador + " iteracion";
+                num2.appendChild(contadorIt);
+                let resultado = document.getElementById("numeroIteraciones");
+                resultado.textContent = "Número de iteraciones: " + i;
+
+                /** Nota falta refrescar el contador para que no se repitan las 
+                iteracciones y se muestra la panmtalla en blanco */
+            }
+        }
+        function refrescar(){
+            location.reload();
+        }
+    </script>
+
+    
+</body>
+</html>

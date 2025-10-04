@@ -1,0 +1,3 @@
+Línea 1: Este es el inicio del archivo.
+Línea 2: Este texto se agregó después.
+Línea 3: Y este también.

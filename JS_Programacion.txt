@@ -1,0 +1,33 @@
+** Java Script **
+Arrays methods
+Ejemplo Array: miArray['cero','uno','dos','tres','cuatro','cinco'];
+
+.indexOf(); Compara y encuentra una posicion determinada comparando el parametro con los elementos del array hasta que uno sea igual
+                  y devuelve la posicion en la que se encuentra 
+            Ejemplo: miArray.indexOf('tres'); devuelve la posicion: 2.
+.lastIndexOf(); Devuelve la ultima posicion de un string.
+
+.pop();     Elimina la ultima posicion del array y devuelve su valor al metodo que lo ha llamado (muestra el ultimo valor)
+            Ejemplo: miArray.pop(); elimina el parametro 'cinco' por ser el ultimo.
+
+.push();    Agrega a la ultima posicion del array un parametro
+            Ejemplo miArray.push('seis') recorre el array y cuando encuentra una posicion vacia al final agrega 'seis'.
+            el array se veria asi.  miArray['cero','uno','dos','tres','cuatro','cinco','seis'];
+
+.shift();   Elimina la primera posicion del array 
+            Ejemplo: miArray.shift(); elimina el parametro 'uno' por ser el primero.
+
+.unshift(); Agrega a la primera posicion del array un parametro 
+            Ejemplo: miArray.unshift('uno'); agrega a la posicion 0 (primera posicion del array) el parametro 'uno'.
+
+.splace();  Elimina varios parametros apartir de una posicion que le pases en el método.
+            Ejemplo: miArray.splace(2, 3); busca la posicion 2 del array y apartir de ahí elimina 3 parametros
+            Se vera asi el array: miArray['cero','uno','dos'];
+
+.forEach(); Este parametro es para pasarle una funcion sin nombre que no devuelve nada y 
+            pasarle un parametro y lo que queremos que haga la funcion para que el array lo ejecute
+            Ejemplo 1: miArray.forEach(funcion(numero){console.log(numero)});
+            Mostrara por consola: miArray['cero','uno','dos','tres','cuatro','cinco']; todos los elementos del array
+            Ejemplo 2:  miArray.forEach(funcion(numero, index){console.log(index + ": " + numero)});
+            Mostrara miArray: 0: 'cero', 1: 'uno', 2: 'dos', 3: 'tres', 4: 'cuatro', 5: 'cinco'; 
+            muestra la posicion del index y el valor del parametro.

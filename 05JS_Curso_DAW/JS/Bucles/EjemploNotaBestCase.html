@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Gill Sans MT';
+            background-color: #ac9776;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicios</h2>
+    <p>...</p>
+        <script>
+            var salir = "si";
+            while(salir){
+                var nota = prompt("Introduce una nota");
+                if(nota > 1 && nota <= 10){
+                    var color = (nota < 4) ? "rojo" : (nota < 6) ? "verde" : "azul";
+                    alert(`La nota es ${nota} y el color es ${color}`);
+                    
+                }else{
+                    if (nota == salir){
+                        break;
+                    }
+                    alert("Error: La nota debe estar entre 1 y 10");
+                }
+            }
+        </script>
+
+    <p>FIN</p>
+</body>
+</html>

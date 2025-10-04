@@ -1,0 +1,30 @@
+---------------------------- LA TOSCANA PIZZERIA ------------------------------------
+1. Configuración Inicial
+Base de Datos: Para organizar toda la información, como los pedidos, el menú, y la información de los usuarios. Usaríamos MySQL como sistema de base de datos.
+Conexión a la Base de Datos: Conectar PHP con la base de datos para enviar o recibir datos, como agregar un nuevo pedido o mostrar el menú.
+
+2. Gestión del Menú
+Archivo menu.php: Este código permite a un administrador agregar, editar o eliminar pizzas del menú.
+Cada pizza tiene un nombre, descripción y precio.
+La información se guarda en la base de datos, y luego el archivo muestra el menú completo de pizzas.
+
+3. Sistema de Pedidos
+Archivo order.php: Aquí el cliente puede hacer pedidos en línea.
+Se envían datos como el número de pizzas y el identificador del cliente a la base de datos, que guarda cada pedido como "pendiente" hasta que sea preparado y entregado.
+Este archivo también puede mostrar una lista de pedidos anteriores para que el cliente pueda ver su historial de pedidos.
+
+4. Autenticación de Usuarios
+Este paso permite que los usuarios puedan registrarse y iniciar sesión:
+
+Registro de Usuarios (register.php): El cliente crea una cuenta ingresando un nombre de usuario y contraseña. La contraseña se guarda de forma segura en la base de datos para que solo el cliente pueda acceder a su cuenta.
+Inicio de Sesión (login.php): El cliente ingresa sus credenciales para entrar a su cuenta. Si los datos coinciden, el cliente tiene acceso a realizar pedidos o ver su historial.
+
+5. Integración de Pago
+Para recibir pagos, se suele conectar el backend a servicios como Stripe o PayPal, que permiten pagos en línea seguros.
+
+6. Panel de Administración
+El panel de administración permite al personal de la pizzería:
+
+Revisar y gestionar pedidos.
+Actualizar el menú, añadiendo o retirando pizzas.
+Ver reservas si se permite comer en el local.

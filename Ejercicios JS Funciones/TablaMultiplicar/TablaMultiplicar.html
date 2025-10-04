@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="TablaMultiplicar.css" type="text/css">
+    <title>Calculadora y Tabla</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Tabla de Multiplicar y Calculadora</h1>
+        <form action="" method="post" class="formulario">
+            <input type="number" id="num1" placeholder="Ingrese un número">
+            <input type="number" id="num2" placeholder="Ingrese otro número">
+            <button type="button" class="boton" onclick="sumar()">Sumar</button>
+            <button type="button" class="boton" onclick="restar()">Restar</button>
+            <button type="button" class="boton" onclick="multiplicar()">Multiplicar</button>
+            <button type="button" class="boton" onclick="dividir()">Dividir</button>
+            <button type="button" class="boton" onclick="mostrarTabla()">Tabla de Multiplicar</button>
+            <button type="button" class="boton" onclick="limpiarResultados()">Limpiar Resultados</button>
+        </form>
+        <div id="resultado"></div>
+    </div>
+    
+    <script src="TablaMultiplicar.js"></script>
+</body>
+</html>

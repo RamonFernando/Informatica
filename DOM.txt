@@ -1,0 +1,51 @@
+** Java Script **
+DOM: Document object model (arbol geniologico de una pagina web)
+
+DOM:
+document
+Etiquetas: HTML - 1(head - body), 2(main - footer), 3(div - section - article - aside), 4(h1 -  p - span)
+
+Identificadores: 
+- Nota: Referentes al document ejemplo: document.getElementById();
+getElementById(); Este elemento hace referencia al Id (identificador)
+getElementByClassName(); Este elemento hace referencia a la clase.
+getElementTagName(); Hace referencia al nombre de la etiqueta.
+querySelectorOld(); Este selecciona todos los elementos dentro del parentesis ();
+
+Eventos:
+- Nota: todos los eventos se agregan con .addEventListener(); 
+onClick(); Este elemento activa la funcion que le pases dentro del parametro en el HTML Ej: <button onClick = funcion_click_en_JS();></button>
+click(); Evento de escucha que hace referencia al click de algun elemento 
+Ej: miVariable_Btn.addEventListener("click", funcion_click_en_JS());
+scroll();
+keyDown();
+keyUp();
+keypress();
+mouse(); 
+focus(); hace referencia donde esta apuntando el tabulador o el puntero del mouse.
+play();
+reset('es-Es') o ('es-En');
+setTimeOut();
+time();
+
+Agregar clases: al DOM por referencia
+classList.add(); Agregar una clase
+classList.remove();
+
+Escribir en el HTML 
+.innerHTML /* nos permite acceder al código HTML comprendido entre las etiquetas de apertura y cierre que definen el nodo (div) y modificarlo si lo deseamos */
+.textContent /* devuelve el contenido de texto puro del elemento, sin tener en cuenta ninguna etiqueta HTML o estilo CSS */
+.value() devuelve un array con los valores correspondientes a las propiedades enumerables de un objeto (para los input devuelve su valor)
+document.write(); // Esto es para escribir en el html
+prompt() // Es un método del objeto Window de JavaScript que se usa para mostrar un cuadro de diálogo con un mensaje que solicita al usuario que ingrese algún texto o información.
+
+Ejemplos de funciones
+function mostrarResultado(resultado) {
+    let component = document.getElementById("resultado"); // Obtiene el id del html
+    component.value = resultado; /*devuelve el valor de component*/
+}
+function mostrarResultado() {
+    let component = document.getElementById("obtenerResultado"); // Obtiene el valor mostrarResultado buscando en el html la etiqueta con el mismo id
+    let componentMostrar = document.getElementById("mostrarResultado"); // Muestra el resultado en el html en la etiqueta con el mismo id
+    component.value = mostrarResultado; /*devuelve el valor de component y lo asigna a la variable mostrarResultado*/
+}

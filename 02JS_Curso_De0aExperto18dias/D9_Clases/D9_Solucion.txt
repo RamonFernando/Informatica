@@ -1,0 +1,98 @@
+---------------------------------------
+** Prácticas: Cadena de Prototipos 1 **
+---------------------------------------
+let auto = {marca: 'VW',modelo: 'Polo'};
+
+function prototipos() { 
+    let auto1 = Object.create(auto);
+    console.log(auto1.__proto__);
+}
+---------------------------------------
+** Prácticas: Cadena de Prototipos 2 **
+---------------------------------------
+let estudiante = {nombre: 'Ramon', apellido: 'Perez', legajo: 1059196};
+
+function prototipos() {
+    let estudiante1 = Object.create(estudiante);
+    console.log(estudiante1.__proto__);
+}
+---------------------------------------
+** Prácticas: Cadena de Prototipos 3 **
+---------------------------------------
+function Futbolista(nombre, equipo, posicion){
+    this.nombre = nombre;
+    this.equipo = equipo;
+    this.posicion = posicion;
+    
+}
+
+function prototipos() {
+    let futbolista1 = new Futbolista("Lionel Messi", "PSG", "Delantero");
+    console.log(futbolista1.valueOf());
+}
+---------------------------------------
+** Prácticas: Cadena de Prototipos 4 **
+---------------------------------------
+function Pelicula(titulo, director, duracion){
+    this.titulo = titulo;
+    this.director = director;
+    this.duracion = duracion;
+}
+
+function prototipos() {
+    let pelicula1 = new Pelicula("Jurassic Park", "Steven Spielberg", 127);
+    console.log(pelicula1.valueOf());
+}
+--------------------------------------------
+** Prácticas: Constructor en Prototipos 1 **
+--------------------------------------------
+function Empleado(nombre, antiguedad, sueldo){
+    this.nombre = nombre;
+    this.antiguedad = antiguedad;
+    this.sueldo = sueldo;
+}
+
+let empleado1 = new Empleado("Ramon Perez", 5, 2200);
+let empleado2 = Object.create(empleado1);
+
+--------------------------------------------
+** Prácticas: Constructor en Prototipos 2 **
+--------------------------------------------
+function Restaurante(nombre, direccion, ciudad){
+    this.nombre = nombre;
+    this.direccion = direccion;
+    this.ciudad = ciudad;
+}
+
+let restaurante1 = new Restaurante("La Toscana", "Plaza Catalana 13", "Barcelona");
+let restaurante2 = Object.create(restaurante1);
+
+---------------------------------------
+** Prácticas: Modificar Prototipos 1 **
+---------------------------------------
+function Videojuego(nombre, empresa, anioLanzamiento) {
+    this.nombre = nombre;
+    this.empresa = empresa;
+    this.anioLanzamiento = anioLanzamiento;
+}
+
+let videojuego1 = new Videojuego('Mario Bros', 'Nintendo', 1983);
+
+Videojuego.prototype.play = function(){
+    console.log(this.nombre + " ha sido iniciado");
+}
+
+---------------------------------------
+** Prácticas: Modificar Prototipos 1 **
+---------------------------------------
+function Cancion(nombre, autor, album) {
+    this.nombre = nombre;
+    this.autor = autor;
+    this.album = album;
+}
+ 
+let cancion1 = new Cancion('Take on Me', 'a-ha', 'Hunting High and Low');
+ 
+Cancion.prototype.stop = function () {
+    console.log(this.nombre + " en pausa");
+}

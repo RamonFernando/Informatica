@@ -1,0 +1,7 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\8_POO\2_Constructores\ConstructoresPropiedad(this)\DiferenciarPropParametros\bin\Debug\DiferenciarPropParametros.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\8_POO\2_Constructores\ConstructoresPropiedad(this)\DiferenciarPropParametros\bin\Debug\DiferenciarPropParametros.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\8_POO\2_Constructores\ConstructoresPropiedad(this)\DiferenciarPropParametros\bin\Debug\DiferenciarPropParametros.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\8_POO\2_Constructores\ConstructoresPropiedad(this)\DiferenciarPropParametros\obj\Debug\DiferenciarPropParametros.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\8_POO\2_Constructores\ConstructoresPropiedad(this)\DiferenciarPropParametros\obj\Debug\DiferenciarPropParametros.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\8_POO\2_Constructores\ConstructoresPropiedad(this)\DiferenciarPropParametros\obj\Debug\DiferenciarPropParametros.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\8_POO\2_Constructores\ConstructoresPropiedad(this)\DiferenciarPropParametros\obj\Debug\DiferenciarPropParametros.pdb

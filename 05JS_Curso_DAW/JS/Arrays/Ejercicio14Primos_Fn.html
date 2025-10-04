@@ -1,0 +1,97 @@
+<!--
+ /**
+ * 14.- Escribe un programa que rellene un array llamado primos con los 100 primeros números 
+ * primos. Recuerda que un número entero es primo si no puede dividirse por ninguno que no sea 1 o 
+ * él mismo. Los primeros números primos son:  2, 3, 5, 7, 11, 13, 17, 19, 23, 29, ...
+ */-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Gill Sans MT';
+            background-color: #7b7b7a;
+            padding: 20px;
+            color: #ffffff;
+        }
+        .boton{
+            color: #7b7b7a;
+            border-radius: 0.3em;
+            padding: .5em 1em;
+            border: none;
+            background-color: #ffffff;
+            cursor: pointer;
+        }
+        #resultado{
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Ejercicios 14 </h2>
+        <p>Ejercicios Arrays U3 PDF 5 Ejercicios de array 1</p>
+        <form action="Ejercicio14Primos_Fn.html" method="post">
+            <label for="cantidad">Cantidad de primos:</label><br>
+            <input type="number" id="cantidad" placeholder="Introduce la cantidad" required><br><br>
+            <button type="button" class="boton" value="Enviar" onclick="mostrar()">Calcular</button>
+        </form>
+        <ol id="resultado">Resultado</ol>
+    </div>
+    <script>
+        // let primos = [];
+
+        // Funcion que muestra la cantidad de números primos deseados en el html
+        function mostrar() {
+
+            let cantidad = document.getElementById("cantidad").value;   // obtenemos la cantidad por el input del html
+            let primos = mostrarPrimos(cantidad);                       // obtenemos la cantidad de primos mediante la funcion mostrarPrimos y lo guardamos en un array
+
+            let ol = document.getElementById("resultado");  // Obtenemos el id del html donde mostraremos los primos
+            ol.innerHTML = "";                              // limpiamos la lista para que al calcular nuevos primos no se repitan
+
+            for (let i = 0; i < cantidad; i++) {
+                let li = document.createElement("li");
+                li.innerHTML = primos[i];
+                ol.appendChild(li);
+            }
+        }
+        
+        // Funcion que comprueba si un numero es primo
+        function esPrimo(num) {
+            if(num <= 1){   // Los numeros menores o iguales a 1 no son primos
+                return false;
+            }
+
+            for (let i = 2; i < Math.sqrt(num); i++) {  // Comprobar si el numero es primo dividiendo por 2 hasta num
+                if(num % i == 0){
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // Funcion que retorna y calcula la cantidad de primos deseados introducidas por parametro
+        function mostrarPrimos(cantidad) {
+
+            let num = 2; // Es el primer numero primo
+            let numerosPrimos = [];
+            
+            while (numerosPrimos.length <= cantidad) { // Mientras la longitud del array sea menor o igual a la cantidad de primos deseados
+                
+                if(esPrimo(num)){
+                    numerosPrimos.push(num); // Agregamos el numero primo a la ultima posicion del array
+                }
+                num++;
+            }
+            return numerosPrimos;
+        }
+    </script>
+
+    <p>FIN</p>
+</body>
+</html>

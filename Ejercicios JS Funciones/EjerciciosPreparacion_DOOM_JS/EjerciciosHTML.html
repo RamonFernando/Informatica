@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="scripts.js"></script> <!-- Usar defer para asegurar que se cargue después del HTML -->
+    <title>Ejercicios</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Ejercicios</h2>
+        <main class="container-main">
+            <!-- No es necesario usar method ni action si no vas a enviar el formulario -->
+            <form onsubmit="event.preventDefault(); saludar();">
+                <input type="text" placeholder="Ingresa tu nombre" id="inputNombre" required>
+                <input type="number" placeholder="Ingresa tu edad" id="inputEdad" required>
+                <input type="number" placeholder="Ingresa tu nota 1" id="inputNota" required>
+                <input type="number" placeholder="Ingresa tu nota 2" id="inputNota2" required>
+                <input type="number" placeholder="Ingresa tu nota 3" id="inputNota3" required>
+                <button type="submit">Saludar</button>
+                <button type="submit" onclick="mostrarPromedio()">Promedio</button>
+            </form>
+            <p id="saludo"></p>
+            <p id="informacion">Información</p>
+            <p id="promedio"></p>
+            <p id="error"></p>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+- Prácticas: Label 1
+Declare una etiqueta label que contenga el texto "Nombre" y la cual deberá estar asociada (mediante el atributo for) 
+al input txtNombre.
+- Prácticas: Label 2
+Declare una etiqueta label que contenga el texto "Edad" y la cual deberá estar asociada al input txtEdad.
+
+- Prácticas: Array 1
+Implementar la función obtenerUltimoNumero(), donde deberá imprimir en consola el ultimo registro del array ya declarado, 
+utilizando uno de los métodos vistos.
+
+- Prácticas: Array 2
+Implementar la función cantidadDeElementos(), donde deberá imprimir en consola la cantidad de elementos que contiene el 
+array ya declarado, utilizando uno de los métodos vistos.
+
+- Prácticas: Array 3
+En la función ya declarada, calcule el promedio de notas del array e imprima en consola el resultado del calculo realizado.
+
+- Prácticas: Array 4
+En la función ya declarada, obtenga la menor nota del array e imprima en consola la misma.
+
+- Prácticas: Automatización 1
+En el archivo script.js, programe la función generarContenido() que agregue elementos HTML mediante código 
+JavaScript. Se debe agregar, en el div con ID contenido, una etiqueta <p> con el texto "Parrafo 1" y además 
+agregar una etiqueta <input> con el ID txtInput y el atributo type igual a text
+
+- Prácticas: Automatización 2
+En el archivo script.js, programe la función generarContenido() que agregue elementos HTML mediante código 
+JavaScript. Se debe agregar, en el div con ID contenido, una etiqueta <label> con el texto "Label 1" y una 
+etiqueta <input> con el ID txtInput. El label debe contar con el atributo for que lo vincule con txtInput y al 
+input agregarle el atributo type igual a number y un atributo valor igual a 0.
+
+- Prácticas: Automatización 3
+Adapta la función generarContenido, para que utilizando el parámetro numero, el input que se genera 
+(y su correspondiente label asociado) utilice este parámetro para definir su ID. Es decir, que si el parámetro numero 
+es 3, el ID del input generado deberá ser txtInput3 y además el label se debe asociar a ese ID del input y el texto 
+que muestra debe decir Label 3.
+El objetivo de esto, sería que luego se pueda generar código de forma repetitiva como se vio en la última clase y que 
+los nombres de los campos se generen de forma dinámica.
+
+- Prácticas: Automatización 4
+Implementar la función repetirContenido, para que dado el parámetro veces genere esa misma cantidad de elemento 
+llamando a la función generarContenido ya declarada. Es decir que si el parámetro veces es igual a 5, se deberán 
+generar (mediante la función generarContenido) 5 elementos input con sus respectivos label.
+
+- Prácticas: Automatización 5
+Haciendo uso de lo visto en la clase anterior, implementar la función automatizarSuma() que debe calcular y guardar 
+el resultado de sumar el contenido de los inputs en la variable sumaTotal. Para ello, hacer uso de la propiedad 
+children vista y tener en cuenta que la estructura de elementos en nuestra página HTML es la siguiente:
+
+<div id="contenido">
+1. <p>
+    a <label>
+    b <input>
+
+- Prácticas: Automatización 6
+Haciendo uso de lo visto en la clase anterior, implementar la función automatizarSuma() que debe calcular y guardar 
+el resultado de sumar el contenido de los inputs en la variable sumaTotal. Para ello, hacer uso de la propiedad children 
+vista y tener en cuenta que la estructura de elementos en nuestra página HTML es la siguiente:
+
+<div id="contenido">
+1. <p>
+    a <input>
+Tener en cuenta, que este ejercicio es muy similar al anterior pero se modifico la estructura de elementos de nuestra 
+página HTML y cambio el índice para acceder a los elementos input.

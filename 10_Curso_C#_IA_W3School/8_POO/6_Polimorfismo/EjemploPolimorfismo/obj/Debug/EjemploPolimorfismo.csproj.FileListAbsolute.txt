@@ -1,0 +1,7 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\8_POO\6_Polimorfismo\EjemploPolimorfismo\bin\Debug\EjemploPolimorfismo.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\8_POO\6_Polimorfismo\EjemploPolimorfismo\bin\Debug\EjemploPolimorfismo.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\8_POO\6_Polimorfismo\EjemploPolimorfismo\bin\Debug\EjemploPolimorfismo.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\8_POO\6_Polimorfismo\EjemploPolimorfismo\obj\Debug\EjemploPolimorfismo.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\8_POO\6_Polimorfismo\EjemploPolimorfismo\obj\Debug\EjemploPolimorfismo.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\8_POO\6_Polimorfismo\EjemploPolimorfismo\obj\Debug\EjemploPolimorfismo.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\8_POO\6_Polimorfismo\EjemploPolimorfismo\obj\Debug\EjemploPolimorfismo.pdb

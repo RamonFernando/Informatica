@@ -1,0 +1,43 @@
+** ------------------------------------------ ENUNCIADO DIA 9 ----------------------------------------- **
+Hoy hemos conocido una parte fundamental de como funciona internamente JavaScript en torno a los objetos: los prototipos.
+
+Entonces, para el proyecto del día de hoy vamos a practicar cómo manipular objetos y sus instancias a través de los prototipos. Para eso te propongo crear un Registro de Automóviles. Debes crear una página HTML con su respectivo archivo JS asociado, en el cual deberías hacer lo siguiente:
+
+1. Crear un constructor para un objeto automóvil que debe contar con las siguientes propiedades: marca, modelo, color, anio y titular.
+2. A partir de este constructor, vas a crear 3 instancias de automóvil pasando los datos de cada uno por parámetro.
+3. A partir del prototipo del objeto Automóvil, vamos a crear 3 métodos que (por las dependencias entre objetos) estarán disponibles para las 3 instancias de automóviles ya creadas. Estos métodos serán los siguientes:
+	• venderAutomovil(): que recibe por parámetro un nuevo titular, y con eso actualiza la propiedad correspondiente.
+	• verAuto(): que devuelve un string con la información del Automóvil, con el formato 'Marca Modelo - Anio - Titular'
+	• encender(). Este método muestra en un alert el mensaje "El automóvil esta en marcha".
+	
+Una vez hecho esto, y para poner a prueba el funcionamiento de los prototipos, quiero que en la pagina HTML agregues un botón que llame (de la forma que prefieras) a una función para mostrar en pantalla los datos de los automóviles registrados (instancias) haciendo uso del método verAuto() que ya hemos declarado.
+
+Como siempre, a continuación te dejo un cuestionario paso a paso como ayuda. Te recomiendo mantenerlo abierto mientras realizas el proyecto para poder guiarte con él a lo largo de todo el camino.
+
+Te deseo éxitos para este proyecto, y te estoy esperando del otro lado.
+
+** ------------------------------------------ Pasos a Seguir: ----------------------------------------- **
+Pregunta 1:
+Para comenzar, en nuestra página HTML vamos a agregar un botón que luego llamará a una función para mostrar la información de los automóviles. Y además agregamos una etiqueta <ul> donde vamos a listar esta información ya mencionada.
+
+Si necesitas refrescar este concepto, repasa las lecciones del Dia 1
+
+Pregunta 2:
+Luego en nuestro archivo JS vamos a comenzar por crear nuestro constructor Automóvil, para las propiedades marca, modelo, color, anio y titular.
+
+Si necesitas refrescar este concepto, repasa la lección Constructores.
+
+Pregunta 3:
+Ahora vamos a crear tres instancias utilizando el constructor Automovil. Puedes introducir los datos que desees. Como ayuda para luego desarrollar la función de mostrar la información de los automóviles, te recomiendo crear un array que contenga a las tres instancias recién creadas.
+
+Si necesitas refrescar este concepto, repasa la lección Parámetros de Constructores.
+
+Pregunta 4:
+Ahora, mediante la propiedad prototype del objeto prototipo Automovil vamos a agregar tres funciones.  Estas funciones son: venderAutomovil (que recibe un nuevo dueño por parametro y actualiza la propiedad titular), verAuto (que va a retonar el resultado de concatenar las propiedades del automovil con el formato: Marca Modelo - Año - Titular) y por ultimo, enceder (que va a mostrar en un alert el mensaje "El automovil esta en marcha").
+
+Si necesitas refrescar este concepto, repasa la lección Modificar Prototipos.
+
+Pregunta 5:
+Por último, vamos a desarrollar la función que va a mostrar en nuestra pagina HTML (al presionar el botón), la información de los automóviles. Dicha función, mediante un loop For Of va a recorrer el array que contiene las instancias de auto y en cada vuelta del ciclo, va a crear un elemento <li> (document.createElement), en donde se va a mostrar el resultado de la función verAuto() de la instancia y se va a adjuntar al elemento <ul> que declaramos en nuestra página (appendChild).
+
+Si necesitas refrescar este concepto, repasa la lección Loop For Of

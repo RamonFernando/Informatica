@@ -1,0 +1,7 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\6_Funciones\Funciones_Predefinidas\funcionesArrays\bin\Debug\funcionesArrays.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\6_Funciones\Funciones_Predefinidas\funcionesArrays\bin\Debug\funcionesArrays.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\6_Funciones\Funciones_Predefinidas\funcionesArrays\bin\Debug\funcionesArrays.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\6_Funciones\Funciones_Predefinidas\funcionesArrays\obj\Debug\funcionesArrays.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\6_Funciones\Funciones_Predefinidas\funcionesArrays\obj\Debug\funcionesArrays.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\6_Funciones\Funciones_Predefinidas\funcionesArrays\obj\Debug\funcionesArrays.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_W3School\6_Funciones\Funciones_Predefinidas\funcionesArrays\obj\Debug\funcionesArrays.pdb

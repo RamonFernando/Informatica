@@ -1,0 +1,64 @@
+<!-- - Prácticas: Switch 1
+Dado el array frutas, programe la función calcular, la cual utilizando 
+un switch y el parámetro fruta, asigne a la 
+variable precio los siguientes valores según corresponda:
+Manzana: 15
+Naranja: 20
+Banana: 25 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array de Frutas</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <h2>Array de Frutas</h2>
+    <input type="number" id="inputFruta" placeholder="Fruta" min="1" max="3">
+    <p>Manzana 1</p>
+    <p>Naranja 2</p>
+    <p>Banana 3</p>
+    <button type="button" onclick="mostrarFruta()">Ingresar</button>
+    <p id="textoSalida">Precio: </p>
+
+    <script>
+        
+        // let frutas = ['manzana', 'naranja', 'banana'];
+        
+        function mostrarFruta() {
+            // Obtener datos
+        let elementoFruta = document.getElementById("inputFruta");
+        let fruta = elementoFruta.value;
+        
+        // Mostrar datos
+        let elementoSalida = document.getElementById("textoSalida");
+        
+        if (calcularPrecio(fruta) == "Fruta no encontrada") {
+            elementoSalida.textContent = calcularPrecio(fruta);
+        }else{
+            elementoSalida.textContent = calcularPrecio(fruta) + "€";
+        }
+    }
+    function calcularPrecio(parFruta) {
+        let precio = 0;
+        let mensaje = "Fruta no encontrada";
+        switch (parFruta) {
+        case "1":
+            precio = 15;
+            break;
+        case "2":
+            precio = 20;
+            break;
+        case "3":
+            precio = 25;
+            break;
+        default: 
+            precio = mensaje;
+            break;
+    }
+    return precio;
+} 
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!-- 
+ 11.- Crea un programa que almacene las órdenes que debe seguir un robot en un array de 1000 
+elementos. Las órdenes son palabras escritas por el usuario en la consola como: 
+• izquierda 
+• derecha 
+• arriba 
+• abajo 
+• matar 
+El programa parará de pedir órdenes cuando el usuario escriba "ejecutar". Entonces mostrará la lista 
+de comandos que debe seguir el robot.-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Gill Sans MT';
+            background-color: #7b7b7a;
+            padding: 20px;
+            color: #ffffff;
+        }
+        .boton{
+            color: #7b7b7a;
+            border-radius: 0.3em;
+            padding: .5em 1em;
+            border: none;
+            background-color: #ffffff;
+            cursor: pointer;
+        }
+        #resultado{
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicios</h2>
+    <p>Arrays incompletos</p>
+    <p>Ordenes</p>
+    <p id="resultado"></p>
+    <script>
+        i = 0;
+        let instrucciones = [];
+        const EJECUTAR = "ejecutar";
+        do {
+            let ordenes = prompt("Introduce la " + (i+1) + "º órden:  ejecutar para finalizar");
+            
+            // Validaciones
+            // Comprueba que la orden no este vacia ni sea null
+            while(ordenes == null || ordenes == ""){
+                ordenes = prompt("Introduce la " + (i+1) + "º órden:  ejecutar para finalizar");
+            }
+            // Comprueba que la orden no se repita
+            while(instrucciones.includes(ordenes)){
+                alert("Ya has introducido esa orden");
+                ordenes = prompt("Introduce la " + (i+1) + "º órden:  ejecutar para finalizar");
+                i--;
+            }
+            // Si la orden es ejecutar sale del bucle
+            if (ordenes == EJECUTAR) break;
+            
+            // Agregamos las a la ultima posicion del array de ordenes
+            instrucciones.push(ordenes);
+            i++;
+        } while (i < 1000);
+        
+        mostrarInstrucciones();
+        
+        function mostrarInstrucciones() {
+            
+            if (instrucciones.length === 0) {
+                let orden = document.getElementById("resultado");
+                orden.textContent = "No has introducido ninguna orden";
+            }else{
+                for (let i = 0; i < instrucciones.length; i++) {
+                    // Si el array de instrucciones no esta vacio muestra las instrucciones
+                    document.write("<p>" + (i + 1) + ": " + instrucciones[i] + "</p>");
+                }
+            }
+        }
+    </script>
+    <p>FIN</p>
+</body>
+</html>

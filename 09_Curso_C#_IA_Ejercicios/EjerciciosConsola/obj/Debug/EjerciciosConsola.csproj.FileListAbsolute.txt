@@ -1,0 +1,14 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\09_Curso_C#\EjerciciosConsola\bin\Debug\EjerciciosConsola.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\09_Curso_C#\EjerciciosConsola\bin\Debug\EjerciciosConsola.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\09_Curso_C#\EjerciciosConsola\bin\Debug\EjerciciosConsola.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\09_Curso_C#\EjerciciosConsola\obj\Debug\EjerciciosConsola.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\09_Curso_C#\EjerciciosConsola\obj\Debug\EjerciciosConsola.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\09_Curso_C#\EjerciciosConsola\obj\Debug\EjerciciosConsola.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\09_Curso_C#\EjerciciosConsola\obj\Debug\EjerciciosConsola.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\09_Curso_C#_IA\EjerciciosConsola\bin\Debug\EjerciciosConsola.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\09_Curso_C#_IA\EjerciciosConsola\bin\Debug\EjerciciosConsola.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\09_Curso_C#_IA\EjerciciosConsola\bin\Debug\EjerciciosConsola.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\09_Curso_C#_IA\EjerciciosConsola\obj\Debug\EjerciciosConsola.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\09_Curso_C#_IA\EjerciciosConsola\obj\Debug\EjerciciosConsola.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\09_Curso_C#_IA\EjerciciosConsola\obj\Debug\EjerciciosConsola.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\09_Curso_C#_IA\EjerciciosConsola\obj\Debug\EjerciciosConsola.pdb

@@ -1,0 +1,70 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.containerText{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.container-main{
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid rgb(62, 59, 59);
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+.container-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+}
+
+.inputText {
+    width: 100%;
+    padding: 0.5rem;
+}
+
+.boton{
+    padding: 0.5rem 1rem;
+    background-color: rgb(30, 30, 136);
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    transition: 0.5s;
+
+}
+.title{
+    color: rgb(30, 30, 136);
+}
+
+input, textarea, button {
+    width: 90%;
+    margin: 0.2rem 0;
+}
+.label{
+    color: rgb(62, 59, 59);
+    font-size: 1.6rem !important;
+}
+
+#boton{
+    &:hover{
+        cursor: pointer;
+        background-color: rgb(94, 94, 210);
+        transition: 0.5s;
+    }
+}

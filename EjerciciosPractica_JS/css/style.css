@@ -1,0 +1,52 @@
+html {
+    box-sizing: border-box; /* Evita el padding y el border alrededor de los elementos HTML y los elementos de la hoja de estilos de CSS se adaptan al tamaño del contenedor. */
+    font-size: 62.5%; /* 1 rem = 10px */    
+}
+*, *:before, *:after {
+    box-sizing: inherit; /* Hace que el padding y el border se hereden de los elementos HTML y los elementos de la hoja de estilos de CSS. */
+    /* margin: 0; padding: 0; */
+}
+body{
+    background-color: rgb(179, 212, 223);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /*text-align: center;*/
+}
+    
+/** Globales **/
+.container {
+    width: min(90%, 120rem); /* minimo 90% max-width: 120rem*/
+    margin: 0 auto;
+}
+.container-body{
+    /*max-width: 120rem !important; /* ancho maximo del contenedor */
+    margin: 0 auto !important;
+    height: 100% !important; /* alto de la imagen 100% de la pantalla */
+}
+a {
+    text-decoration: none; /* Quita subrayados */
+}
+ul{
+    list-style: none;
+}
+h1, h2, h3, h4, h5 {
+    font-family: var(--fuenteHeading);
+    line-height: 1.2; /* La propiedad .line-height define la cantidad de espacio por encima y por debajo de los elementos en línea */
+}
+h1 {
+    font-size: 3.6rem;
+}
+h2 {
+    font-size: 3.2rem;
+}
+h3 {
+    font-size: 2.8rem;
+}
+h4 {
+    font-size: 2.4rem;
+}
+h5 {
+    font-size: 1.8rem;
+}
+p {
+    font-size: 1.6rem;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Automatizacion6</title>
+  </head>
+  <body>
+    <div id="contenido">
+      <p> <!-- p1 -->
+        <label for="txtInput1">Label 1</label>
+        <input id="txtInput1" type="number" value="84" />
+      </p>
+      <p>
+        <label for="txtInput2">Label 2</label>
+        <input id="txtInput2" type="number" value="35" />
+      </p>
+      <p><!-- p2 -->
+        <label for="txtInput3">Label 3</label>
+        <input id="txtInput3" type="number" value="69" />
+      </p>
+    </div> <!-- contenido -->
+    <button type="button" onclick="automatizarSuma()">Sumar</button>
+    <button type="button" onclick="reset()">Reset</button>
+    <p id="txtSuma">Respuesta</p>
+    
+    <script>
+        let sumaTotal = 0;
+      function automatizarSuma() {
+        
+        let contenido = document.getElementById("contenido");
+        for (let suma of contenido.children) {
+          sumaTotal += Number(suma.children[1].value);
+        }
+        mostrarSuma();
+      }
+      function mostrarSuma() {
+        let txtSuma = document.getElementById("txtSuma");
+        txtSuma.textContent = "Suma total: " + sumaTotal;
+        return txtSuma;
+      }
+      function reset() {
+        let reset = document.getElementById("txtSuma");
+        sumaTotal = 0;
+        reset.textContent = "Suma total: " + sumaTotal;
+        
+      }
+    </script>
+  </body>
+</html>

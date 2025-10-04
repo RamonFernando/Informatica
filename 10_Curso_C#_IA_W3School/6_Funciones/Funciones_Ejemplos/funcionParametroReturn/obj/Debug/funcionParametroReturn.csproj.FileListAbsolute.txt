@@ -1,0 +1,7 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\6_Funciones\Funciones_Ejemplos\funcionParametroReturn\bin\Debug\funcionParametroReturn.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\6_Funciones\Funciones_Ejemplos\funcionParametroReturn\bin\Debug\funcionParametroReturn.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\6_Funciones\Funciones_Ejemplos\funcionParametroReturn\bin\Debug\funcionParametroReturn.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\6_Funciones\Funciones_Ejemplos\funcionParametroReturn\obj\Debug\funcionParametroReturn.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\6_Funciones\Funciones_Ejemplos\funcionParametroReturn\obj\Debug\funcionParametroReturn.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\6_Funciones\Funciones_Ejemplos\funcionParametroReturn\obj\Debug\funcionParametroReturn.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\10_Curso_C#_IA_Teoria\6_Funciones\Funciones_Ejemplos\funcionParametroReturn\obj\Debug\funcionParametroReturn.pdb

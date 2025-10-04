@@ -1,0 +1,54 @@
+<!-- 
+ 12.- Escribe una aplicación que cree un array de 100 posiciones llamado matriculas y rellene todas 
+las posiciones con el valor por defecto "sinmatricula". Haz que después se muestren todos los 
+valores mediante un bucle for. -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Gill Sans MT';
+            background-color: #7b7b7a;
+            padding: 20px;
+            color: #ffffff;
+        }
+        .boton{
+            color: #7b7b7a;
+            border-radius: 0.3em;
+            padding: .5em 1em;
+            border: none;
+            background-color: #ffffff;
+            cursor: pointer;
+        }
+        #resultado{
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicios</h2>
+    <p>...</p>
+    <script>
+        let matriculas = new Array(100);
+        for(i = 0; i < matriculas.length; i++){
+            matriculas[i] = "sinmatricula";
+        }
+        for(i = 0; i < matriculas.length; i++){
+            document.write((i+1) + ": " + matriculas[i] + "<br>");
+        }
+    </script>
+    <hr>
+    <script>
+        matriculas = new Array(100);
+        matriculas.fill("sinmatricula");
+        matriculas.forEach((matriculas, i) => {
+            document.write((i+1) + ": " + matriculas + "<br>");
+        });
+    </script>
+    <p>FIN</p>
+</body>
+</html>

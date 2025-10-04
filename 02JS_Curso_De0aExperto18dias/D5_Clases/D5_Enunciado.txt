@@ -1,0 +1,48 @@
+- Prácticas: Pensamiento Booleano 1
+Asigne a la variable bool, el resultado de comparar si 35 es mayor a 30.
+
+- Prácticas: Pensamiento Booleano 2
+Implementar la funcion esMayorDeEdad, donde debe asignar a la variable bool el valor resultante de comprobar 
+si la edad recibida por parámetro es igual o mayor a 18.
+
+- Prácticas: Operadores lógicos 1
+Implementar la función validar, para que valide si la edad pasada como parámetro esta entre 10 y 15 años. Guardar el 
+resultado en la variable bool.
+
+- Prácticas: Operadores lógicos 2
+Implementar la función validar, que valide si la edad enviada por parámetro es igual a 10 o igual a 20. Guardar el 
+resultado en la variable bool;
+
+- Prácticas: Tomar decisiones 1
+Programar la función decision, donde si el valor del parámetro mostrar es igual a 1, muestre en un alert el mensaje 
+"Hola mundo"
+
+- Prácticas: Tomar decisiones 2
+Programar la función actualizar, que si el parámetro cambiar sea igual a 1, actualice la variable contenido y le asigne el 
+valor del parámetro cambiar.
+
+- Prácticas: Tomar decisiones 3
+Programe la función calcular, donde si el valor del parámetro cantidad es mayor a 10, entonces la variable precio debe ser 
+igual a 50 y en caso contrario (cantidad es menor o igual a 10), la variable precio debe ser igual a 80.
+
+- Prácticas: Tomar decisiones 4
+En base al ejercicio anterior, programe ahora la función calcular para definir la siguiente lógica.
+Si la cantidad es mayor a 10, la variable precio debe ser igual a 50.
+Si la cantidad es menor a 5, la variable precio debe ser igual a 100.
+Entre 5 y 10, el precio debe ser igual a 80.
+
+- Prácticas: Switch 1
+Dado el array frutas, programe la función calcular, la cual utilizando un switch y el parámetro fruta, asigne a la 
+variable precio los siguientes valores según corresponda:
+Manzana: 15
+Naranja: 20
+Banana: 25
+
+- Prácticas: Switch 2
+Programa la función mostrar, en donde según el parámetro opcion (cuyo valor es de tipo número) muestre un mensaje en 
+un alert de la siguiente forma:
+Si el parámetro opcion es igual a 1 mostrar "Buenos días"
+Si el parámetro opcion es igual a 2 mostrar "Buenas tardes"
+Si el parámetro opcion es igual a 3 mostrar "Buenas noches"
+
+- 

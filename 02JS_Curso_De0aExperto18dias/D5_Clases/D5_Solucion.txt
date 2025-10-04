@@ -1,0 +1,115 @@
+** Prácticas: Pensamiento Booleano 1 **
+---------------------------------------
+
+let bool = 35 > 30;
+
+** Prácticas: Pensamiento Booleano 2 **
+---------------------------------------
+let bool;
+
+function esMayorDeEdad(edad){
+    bool = (edad >= 18);
+}
+
+** Prácticas: Operadores lógicos 1 **
+-------------------------------------
+
+let bool;
+
+function validar(edad) {
+    bool = edad >= 10 && edad <= 15;
+}
+
+** Prácticas: Operadores lógicos 2 **
+-------------------------------------
+let bool;
+
+function validar(edad) {
+    bool = edad == 10 || edad == 20;
+}
+
+** Prácticas: Tomar decisiones 1 **
+-----------------------------------
+function decision(mostrar) {
+    if (mostrar == 1) {
+        alert('Hola mundo');
+    } 
+}
+
+** Prácticas: Tomar decisiones 2 **
+-----------------------------------
+let contenido = 0;
+
+function actualizar(cambiar) {
+    if(cambiar == 1){
+        contenido = cambiar;
+    }
+}
+
+** Prácticas: Tomar decisiones 3 **
+-----------------------------------
+let precio = 0;
+
+function calcular(cantidad) {
+    if(cantidad > 10){
+        precio = 50;
+    }
+    if(cantidad <= 10){
+        precio = 80;
+    }
+}
+
+** Prácticas: Tomar decisiones 4 **
+-----------------------------------
+let precio = 0;
+
+function calcular(cantidad) {
+    if (cantidad > 10) {
+        precio = 50;
+    } else {
+        if (cantidad < 5) {
+            precio = 100;
+        } else {
+            if(cantidad >=5 && cantidad <= 10){
+                precio = 80;
+            }
+        }
+    }
+}
+
+** Prácticas: Switch 1 **
+-------------------------
+let precio = 0;
+let frutas = ['manzana', 'naranja', 'banana'];
+
+function calcular(fruta) {
+    
+    switch (fruta) {
+        case 'manzana':
+            precio = 15;
+            break;
+        case 'naranja':
+            precio = 20;
+            break;
+        case 'banana':
+            precio = 25;
+            break;
+        
+    }   
+}
+
+** Prácticas: Switch 2 **
+-------------------------
+function mostrar(opcion) {
+    switch (opcion) {
+        case 1:
+            alert("Buenos días");
+            break;
+        case 2:
+            alert("Buenas tardes");
+            break;
+        case 3:
+            alert("Buenas noches");
+            break;
+    }
+}

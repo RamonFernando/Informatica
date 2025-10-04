@@ -1,0 +1,38 @@
+<!-- Ejercicio 3
+ 4.- Crea un programa que pida al usuario una contraseña. Si escribe "1234" el programa responderá 
+"Acceso concedido.".-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Gill Sans MT';
+            background-color: #ac9776;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicios</h2>
+    <p>...</p>
+        <script>
+            let precioProducto = parseFloat(prompt("Introduce el precio del producto:"));
+            let descuento = precioProducto * 0.9;
+            let mensaje = "";
+            if(precioProducto > 80){
+                mensaje = "El precio final del producto con descuento es: " + descuento + " €";
+            }else if(precioProducto < 5){
+                mensaje = "El precio final del producto es: " + (precioProducto+2) + " € por gastos de gestion";
+            }else{
+                mensaje = "El precio final del producto es: " + precioProducto + " €";
+            }
+            alert(mensaje);
+        </script>
+
+    <p>FIN</p>
+</body>
+</html>

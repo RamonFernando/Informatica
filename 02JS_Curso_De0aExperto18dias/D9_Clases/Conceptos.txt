@@ -1,0 +1,4 @@
+Que son los prototipos: 
+- Que es: Es un objeto que funciona como plantilla y que cuando se crean nuevas instancias de este objeto
+estas van a heredar sus caracteristicas.
+- Para que sirve: Es un mecanismo que nos permite herencia entre objetos.

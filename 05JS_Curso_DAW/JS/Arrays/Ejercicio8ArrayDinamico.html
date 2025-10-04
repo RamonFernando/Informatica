@@ -1,0 +1,73 @@
+<!-- Ejercicio 7 ç
+7.- Crea un array de 10 elementos de tipo double llamado notas. Ve leyendo las diez notas desde la 
+consola, mediante un bucle while, y guardándolas en el array. A continuación, muestra las diez 
+notas. 
+8.- Modifica el programa anterior para que el programa pare de pedir notas si se le pasa un valor 
+negativo. -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Gill Sans MT';
+            background-color: #7b7b7a;
+            padding: 20px;
+            color: #ffffff;
+        }
+        .boton{
+            color: #7b7b7a;
+            border-radius: 0.3em;
+            padding: .5em 1em;
+            border: none;
+            background-color: #ffffff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicios</h2>
+    <p>Notas del Curso</p>
+    <script>
+        let notas = new Array(10);
+        let i = 0;
+        let notaMedia = 0;
+        while (i < notas.length) {
+            let nota = parseFloat(prompt("Introduce la nota " + (i + 1)));
+            
+            // valida que la nota sea un numero entre 0 y 10 y diferencte de vacio
+            if(nota > 10 || isNaN(nota) || nota == ""){
+                alert("Error: La nota debe estar entre 0 y 10");
+                // nota = parseFloat(prompt("Introduce la nota " + (i + 1)));
+                continue;
+            }
+            // valida que la nota no sea negativa, sino se corta el bucle while
+            if(nota < 0){
+                alert("Error: Parando programa...");
+                break;
+            }else{
+                notas[i] = nota;
+                notaMedia += notas[i];
+            }
+            
+            i++;
+        }
+        let j = 0;
+        
+        // muestra las notas, si la nota es menor a 0 se corta el bucle
+        while (j < notas.length) {
+                if(notas[j] > 0){
+                    document.write("Nota " + (j + 1) + ": " + notas[j] + "<br>");
+                    j++;
+                }else{
+                    break;
+                }
+        }
+        document.write("<p>La nota media es: " + (notaMedia / j).toFixed(2) + " </p>");
+    </script>
+    <p>FIN</p>
+</body>
+</html>

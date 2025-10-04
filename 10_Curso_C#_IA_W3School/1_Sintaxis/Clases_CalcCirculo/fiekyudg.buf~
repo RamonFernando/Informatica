@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Clases_CalcCirculo
+{
+    internal class Program
+    {   
+        class Circulo
+        {   
+            // Propiedades
+            public double Radio { get; set; }
+
+            // Metodos
+            public double CalcularArea()
+            {
+                return Math.PI * Math.Pow(Radio, 2);
+            }
+        }
+        static void Main(string[] args)
+        {
+            Circulo c = new Circulo { Radio = 5 };
+            Circulo c2 = new Circulo { Radio = 10 };
+            Console.WriteLine($"El área del círculo es: {c.CalcularArea()}");
+            Console.WriteLine($"El área del círculo es: {Math.Round(c2.CalcularArea(), 2)}");
+        }
+    }
+}

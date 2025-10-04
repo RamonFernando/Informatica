@@ -1,0 +1,41 @@
+- Prácticas: Funciones 1
+Declare una funcion llamada ejercicioFunciones, la cual debe mostrar en un alert el siguiente mensaje: "Hola mundo"
+
+- Prácticas: Funciones 2
+Declare una función llamada suma() que le asigne, el valor de la suma entre 15 + 19, a la variable resultado ya declarada.
+
+- Prácticas: Return 1
+Escribir el código necesario para hacer que la funcion sumar() resuelva la siguiente suma (15 + 19) y retorne el resultado
+de la misma, para que sea utilizada por la función mostrarResultado().
+- Prácticas: Return 2
+Declarar la función obtenerFecha(), la cual debe obtener la fecha actual en formato DD/MM/YYYY (utilizar la función 
+toLocaleDateString('es-ES') del objeto Date) y retornarla para que la función mostrarFecha la utilice.
+
+- Prácticas: Parámetros 1
+Declarar una función llamada suma que reciba dos numeros por parametro, realice la suma entre ambos y muestre su resultado en un alert.
+
+- Prácticas: Parámetros 2
+Declare una funcion llamada mostrarMensaje que reciba un parámetro con el mensaje a mostrar. Dicha función debe mostrar en un alert el 
+mensaje que recibio por parámetro.
+
+- Prácticas: Hoja de script
+Suponga que existe un archivo js llamda miScript. Añada la relación entre la página HTML y este archivo js.
+
+- Prácticas: Math 1
+Asigne a la variable ya declarada potencia, el resultado de elevar 2 a la potencia 4.
+
+- Prácticas: Math 2
+Asigne a la variable ya declarada raiz, el resultado de calcular la raiz cuadrada de 64.
+
+- Prácticas: Redondeo 1
+Asigne a la variable ya declarada redondeo, el resultado de redondear el siguiente número 6.7241569844.
+
+- Prácticas: Redondeo 2
+Asigne a la variable ya declarada piso, el resultado de redondear hacia el entero inferior (o piso) el siguiente 
+número 6.7241569844.
+
+- Prácticas: Random 1
+Genere un número aleatorio entre 10 y 50 como límites inferior y superior respectivamente.
+
+- Prácticas: Random 2
+Genere un número aleatorio entre 50 y 100 como límites inferior y superior respectivamente

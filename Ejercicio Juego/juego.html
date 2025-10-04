@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra, Papel o Tijera</title>
+</head>
+<body>
+    <div class=" container">
+        <h1>Piedra, Papel o Tijera</h1>
+        <div class="main">
+            <div class="box-container">
+                <h3 class="texto-info">Juego</h3>
+                <div class="box-info">
+                    <div class="box-option">
+                        <option value="piedra">
+                            <img class="img" src="assets/img/piedra.avif" alt="piedra">
+                        </option>
+                        <option value="papel">
+                            <img class="img" src="assets/img/papel.jpg" alt="papel">
+                        </option>
+                        <option value="tijera">
+                            <img class="img" src="assets/img/tijera.avif" alt="tijera">
+                        </option>
+                    </div><!--box-option-->
+                    <div class="box-result">
+                        <h3 id="resultado"></h3>
+                    </div>
+                    <button class="btn btn-primary" type="button" onclick="seleccionarOpcion()">Seleccionar</button>    
+
+                </div><!--box-info-->
+                
+            </div><!--box-container-->
+        </div><!--main-->
+    </div><!--container-->
+
+    <script src="assets/js/juego.js"></script>
+</body>
+</html>

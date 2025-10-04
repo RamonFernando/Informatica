@@ -1,0 +1,17 @@
+                    ** Ejercicio D7 ENUNCIADO **
+
+En realidad hoy no vamos a crear un nuevo proyecto, sino que vamos a tomar el proyecto que hemos creado para Ramiro, y te voy a pedir 
+que le agregues una pequeña mejora: vas a hacer que al presionar el botón calcular, en vez de mostrar los valores de venta mayor y menor 
+en el mensaje, lo haga cambiando el color de fondo de los inputs, para destacar cuál de ellos tiene la venta más grande y 
+cuál tiene la venta menor.
+
+- Ten en cuenta que para hacer esto debes escribirlo luego de que se hayan realizado todos los cálculos.
+- También recuerda que ya dispones de las variables ventaMayor y VentaMenor, por lo que puedes valerte de ellas para compararlas con 
+cada uno de los inputs y ver cuáles tienen ese valor.
+- Y también deberías considerar que si lo que vas a hacer es repasar cada input para compararlo con esos valores, deberías utilizar 
+un nuevo loop.
+
+Para que no te pierdas, puedes ir desarrollando tu solución apoyándote en el cuestionario que sigue a continuación, para no 
+perderte en el camino.
+
+Mucha suerte, concentración y alegría, que estás por hacer lo que más nos gusta. Programar.

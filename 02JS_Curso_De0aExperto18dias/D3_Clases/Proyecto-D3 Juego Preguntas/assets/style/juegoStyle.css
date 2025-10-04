@@ -1,0 +1,47 @@
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+}
+body{
+  background: linear-gradient(90deg, rgba(115,113,145,1) 0%, rgba(191,191,193,1) 65%) !important;
+}
+h1, h3{
+    text-align: center;
+    
+}
+.form-control{
+  margin-bottom: 3rem;
+}
+.titleGame{
+  color: #0d6efd;
+  padding: 1rem;
+}
+.titleQuestion{
+  margin-bottom: 3rem;
+}
+.questionTitle{
+  color: #0d6efd;
+}
+.buttonEnd{
+  width: 100%;
+  display: flex !important;
+  justify-content: space-evenly !important;
+  align-items: center !important;
+  padding: 2rem;
+}
+#timer{
+  border: 1px solid black;
+  position: fixed;
+  padding: 1rem;
+  top: 4rem,;
+  right: 1.5rem;
+}
+#time{
+  font-size: 1.2rem;
+}
+.t1{
+  color: #0d6efd;
+}
+

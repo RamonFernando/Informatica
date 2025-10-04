@@ -1,0 +1,175 @@
+-----------------------
+** Prácticas: JSON 1 **
+-----------------------
+let json1 = {
+    "titulo":  "Titanic",
+    "director": "James Cameron",
+    "lanzamiento": 1997,
+    "duracion": 134,
+    "actores": ["Leonardo DiCaprio","Kate Winslet"],
+    "premioOscar": true
+};
+
+-----------------------
+** Prácticas: JSON 2 **
+-----------------------
+
+let json1 = {
+    "nombre": "Collegium",
+    "direccion": {"calle": "Calle Publica 123", "ciudad": "Buenos Aires"},
+    "cantEstudiantes": 3,
+    "estudiantes": ["Pedro Picapiedra", "Pablo Marmol", "Vilma Picapiedra"]
+};
+
+--------------------------------
+** Prácticas: Datos en JSON 1 **
+--------------------------------
+
+let titulo;
+let director;
+let lanzamiento;
+let duracion;
+let actores;
+let premioOscar;
+ 
+function obtenerDatos() {
+    let datosJson;
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', "datos.json", true);
+    xhr.responseType = 'json';
+    xhr.onload = function() {
+        if(xhr.status === 200) {
+            datosJson = xhr.response;
+            titulo = datosJson.titulo;
+            director = datosJson.director;
+            lanzamiento = datosJson.lanzamiento;
+            duracion = datosJson.duracion;
+            actores = datosJson.actores;
+            premioOscar = datosJson.premioOscar;
+        }
+    }
+    xhr.send();
+}
+
+--------------------------------
+** Prácticas: Datos en JSON 2 **
+--------------------------------
+
+let nombre;
+let calle;
+let ciudad;
+let cantEstudiantes;
+let estudiantes;
+ 
+function obtenerDatos() {
+    let datosJson;
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', "datos.json", true);
+    xhr.responseType = 'json';
+    xhr.onload = function() {
+        if(xhr.status === 200) {
+            datosJson = xhr.response;
+            nombre = datosJson.nombre;
+            calle = datosJson.direccion.calle;
+            ciudad = datosJson.direccion.ciudad;
+            cantEstudiantes = datosJson.cantEstudiantes;
+            estudiantes = datosJson.estudiantes;
+        }
+    }
+    xhr.send();
+}
+
+------------------------
+** Prácticas: Fetch 1 **
+------------------------
+
+let titulo;
+let director;
+let lanzamiento;
+let duracion;
+let actores;
+let premioOscar;
+
+function obtenerDatos() {
+    let datosJson;
+    fetch('persona.json')
+    .then(res => res.json())
+    .tehn((salida) => {
+        titulo = salida.titulo;
+        director = salida.director;
+        lanzamiento = salida.lanzamiento;
+        duracion = salida.duracion;
+        actores = salida.actores;
+        premioOscar = salida.premioOscar;
+        
+    })
+}
+
+------------------------
+** Prácticas: Fetch 2 **
+------------------------
+
+let nombre;
+let calle;
+let ciudad;
+let cantEstudiantes;
+let estudiantes;
+
+function obtenerDatos() {
+    fetch('datos.json')
+    .then(respuesta => respuesta.json())
+    .then(function(salida) {
+        titulo = salida.json;
+        calle = salida.json;
+        ciudad = salida.json;
+        cantEstudiantes = cantEstudiantes.json;
+        estudiantes = estudiantes.json;
+    })
+}
+
+------------------------
+** Prácticas: Catch 1 **
+------------------------
+
+let nombre;
+let calle;
+let ciudad;
+let cantEstudiantes;
+let estudiantes;
+
+function obtenerDatos() {
+    fetch('datos.json')
+    .then(respuesta => respuesta.json())
+    .then(function(salida) {
+        titulo = salida.json;
+        calle = salida.json;
+        ciudad = salida.json;
+        cantEstudiantes = cantEstudiantes.json;
+        estudiantes = estudiantes.json;
+    })
+}
+
+------------------------
+** Prácticas: Catch 2 **
+------------------------
+
+let nombre;
+let calle;
+let ciudad;
+let cantEstudiantes;
+let estudiantes;
+
+function obtenerDatos() {
+    fetch('datos.json')
+    .then(respuesta => respuesta.json())
+    .then(function(salida) {
+        nombre = salida.nombre;
+        calle = salida.direccion.calle;
+        ciudad = salida.direccion.ciudad;
+        cantEstudiantes = salida.cantEstudiantes;
+        estudiantes = salida.estudiantes;
+    })
+    .catch(function(error){
+        alert(error);
+    })
+}

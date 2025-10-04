@@ -1,0 +1,39 @@
+<!-- Ejercicio 1 
+ 1.- Escribe todos los múltiplos de 5 entre 1 y 1000. Utiliza un bucle while y haz que la variable 
+numero se incremente de 5 en 5.-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Gill Sans MT';
+            background-color: #ac9776;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicios</h2>
+    <p>...</p>
+        <script>
+            let numero = 5;
+            let contador = 1;
+            let resultado = "";
+            while(numero <= 100){
+                if(numero % 5 == 0){
+                    document.write(contador + ": " + numero + "<br>");
+                    resultado += (contador + ": " + numero + "\n");
+                    numero+=5;
+                }
+                contador++;
+            }
+            alert(resultado);
+        </script>
+
+    <p>FIN</p>
+</body>
+</html>

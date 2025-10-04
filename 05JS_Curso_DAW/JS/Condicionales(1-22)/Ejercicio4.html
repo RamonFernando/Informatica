@@ -1,0 +1,30 @@
+<!-- Ejercicio 4
+4.- Crea un programa que pida al usuario una contraseña. Si escribe "1234" el programa responderá 
+"Acceso concedido.". -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Gill Sans MT';
+            background-color: #ac9776;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicios</h2>
+    <p>...</p>
+        <script>
+            let password = parseInt(prompt("Introduce tu password:"));
+            let mensaje = (password === 1234) ? "Acceso concedido" : "Acceso denegado";
+            alert(mensaje);
+        </script>
+
+    <p>FIN</p>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+        }
+        h1, h2 {
+            color: #f1c40f;
+        }
+        .lesson {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #34495e;
+            border-radius: 5px;
+            background-color: #34495e;
+        }
+        .lesson h2 {
+            margin-top: 0;
+        }
+        .level {
+            font-weight: bold;
+            color: #e67e22;
+        }
+        pre {
+            background-color: #2c3e50;
+            padding: 10px;
+            border: 1px solid #34495e;
+            border-radius: 5px;
+            overflow-x: auto;
+            color: #ecf0f1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Curso de JavaScript</h1>
+
+    <div class="lesson">
+        <h2>M&oacute;dulo 1: Fundamentos de JavaScript</h2>
+        <p><strong>Contenido:</strong></p>
+        <ul>
+            <li>Introducci&oacute;n a JavaScript y su historia.</li>
+            <li>Configuraci&oacute;n del entorno de desarrollo.</li>
+            <li>Variables y constantes: <code>var</code>, <code>let</code>, y <code>const</code>.</li>
+            <li>Tipos de datos primitivos: <code>string</code>, <code>number</code>, <code>boolean</code>, <code>null</code>, <code>undefined</code>.</li>
+            <li>Operadores b&aacute;sicos: aritm&eacute;ticos, l&oacute;gicos y relacionales.</li>
+            <li>Estructuras de control: condicionales (<code>if</code>, <code>else</code>, <code>switch</code>).</li>
+            <li>Pr&aacute;cticas iniciales para consolidar conceptos b&aacute;sicos.</li>
+            <li>Buenas pr&aacute;cticas para nombrar variables y escribir c&oacute;digo legible.</li>
+        </ul>
+        <p><strong>Nivel (1-100):</strong> <span class="level">10</span></p>
+        <p><strong>Categor&iacute;a:</strong> Principiante</p>
+        <p><strong>Descripci&oacute;n:</strong> Aprende los conceptos b&aacute;sicos de JavaScript para empezar a programar. Este m&oacute;dulo establece las bases para trabajar con el lenguaje.</p>
+    </div>
+
+    <div class="lesson">
+        <h2>M&oacute;dulo 2: Manipulaci&oacute;n de datos</h2>
+        <p><strong>Contenido:</strong></p>
+        <ul>
+            <li>Creaci&oacute;n y manipulaci&oacute;n de arrays: <code>push</code>, <code>pop</code>, <code>shift</code>, <code>unshift</code>.</li>
+            <li>M&eacute;todos avanzados de arrays: <code>map</code>, <code>filter</code>, <code>reduce</code>.</li>
+            <li>Creaci&oacute;n y manipulaci&oacute;n de objetos.</li>
+            <li>Iteraci&oacute;n sobre arrays y objetos con bucles como <code>for</code>, <code>for...of</code>, y <code>for...in</code>.</li>
+            <li>Manejo de estructuras anidadas (arrays y objetos dentro de objetos).</li>
+            <li>Transformaci&oacute;n de datos en diferentes formatos (JSON).</li>
+        </ul>
+        <p><strong>Nivel (1-100):</strong> <span class="level">30</span></p>
+        <p><strong>Categor&iacute;a:</strong> Principiante-Intermedio</p>
+        <p><strong>Descripci&oacute;n:</strong> Aprende a manejar y transformar datos usando estructuras comunes de JavaScript. Este m&oacute;dulo es clave para gestionar informaci&oacute;n en aplicaciones.</p>
+    </div>
+
+    <div class="lesson">
+        <h2>M&oacute;dulo 3: Programaci&oacute;n Orientada a Objetos (POO)</h2>
+        <p><strong>Contenido:</strong></p>
+        <ul>
+            <li>Creaci&oacute;n de clases y objetos.</li>
+            <li>Herencia y reutilizaci&oacute;n de c&oacute;digo con <code>extends</code>.</li>
+            <li>Encapsulaci&oacute;n: modificadores de acceso (<code>private</code>, <code>protected</code>, <code>public</code>).</li>
+            <li>Uso de <code>super</code> para invocar m&eacute;todos del padre.</li>
+            <li>Composici&oacute;n de objetos y arrays de objetos.</li>
+            <li>M&eacute;todos est&aacute;ticos y su utilidad en proyectos reales.</li>
+            <li>Polimorfismo y sobreescritura de m&eacute;todos.</li>
+        </ul>
+        <p><strong>Nivel (1-100):</strong> <span class="level">50</span></p>
+        <p><strong>Categor&iacute;a:</strong> Intermedio</p>
+        <p><strong>Descripci&oacute;n:</strong> Aprende a estructurar c&oacute;digo de forma eficiente y reutilizable con los principios de POO. Este m&oacute;dulo te prepara para proyectos m&aacute;s grandes y organizados.</p>
+    </div>
+
+    <div class="lesson">
+        <h2>M&oacute;dulo 4: Manipulaci&oacute;n del DOM</h2>
+        <p><strong>Contenido:</strong></p>
+        <ul>
+            <li>Qu&eacute; es el DOM y c&oacute;mo interactuar con &eacute;l.</li>
+            <li>Selecci&oacute;n de elementos: <code>getElementById</code>, <code>querySelector</code>, <code>querySelectorAll</code>.</li>
+            <li>Manipulaci&oacute;n de contenido HTML y estilos CSS desde JavaScript.</li>
+            <li>Creaci&oacute;n y eliminaci&oacute;n de elementos: <code>createElement</code>, <code>appendChild</code>, <code>removeChild</code>.</li>
+            <li>Manejo de eventos: <code>addEventListener</code>, eventos de teclado y rat&oacute;n.</li>
+            <li>Creaci&oacute;n de formularios din&aacute;micos y validaci&oacute;n de datos.</li>
+            <li>Introducci&oacute;n a la manipulaci&oacute;n del modelo de cajas (CSS Box Model) desde JavaScript.</li>
+        </ul>
+        <p><strong>Nivel (1-100):</strong> <span class="level">60</span></p>
+        <p><strong>Categor&iacute;a:</strong> Intermedio</p>
+        <p><strong>Descripci&oacute;n:</strong> Aprende a interactuar con el contenido HTML y crear experiencias din&aacute;micas en la web. Este m&oacute;dulo es clave para desarrollar interfaces de usuario.</p>
+    </div>
+
+    <div class="lesson">
+        <h2>M&oacute;dulo 5: JavaScript Moderno (ES6+)</h2>
+        <p><strong>Contenido:</strong></p>
+        <ul>
+            <li>Declaraciones <code>let</code> y <code>const</code>.</li>
+            <li>Funciones flecha (<code>arrow functions</code>).</li>
+            <li>Plantillas de cadenas (<code>template literals</code>).</li>
+            <li>Desestructuraci&oacute;n de arrays y objetos.</li>
+            <li>Promesas: <code>then</code>, <code>catch</code>, <code>finally</code>.</li>
+            <li>Uso de <code>async</code> y <code>await</code> para manejar asincron&iacute;a.</li>
+            <li>Operadores spread y rest (<code>...</code>).</li>
+            <li>Introducci&oacute;n a los m&oacute;dulos: <code>import</code> y <code>export</code>.</li>
+        </ul>
+        <p><strong>Nivel (1-100):</strong> <span class="level">70</span></p>
+        <p><strong>Categor&iacute;a:</strong> Intermedio-Alto</p>
+        <p><strong>Descripci&oacute;n:</strong> Aprende las caracter&iacute;sticas m&aacute;s recientes y poderosas de JavaScript. Este m&oacute;dulo te permite escribir c&oacute;digo m&aacute;s limpio y moderno.</p>
+    </div>
+
+    <div class="lesson">
+        <h2>M&oacute;dulo 6: Aplicaciones Din&aacute;micas</h2>
+        <p><strong>Contenido:</strong></p>
+        <ul>
+            <li>Almacenamiento de datos en el navegador: <code>localStorage</code> y <code>sessionStorage</code>.</li>
+            <li>Uso de <code>fetch</code> para realizar solicitudes HTTP.</li>
+            <li>Consumo de APIs externas y manejo de datos JSON.</li>
+            <li>Gestor de errores para solicitudes HTTP fallidas.</li>
+            <li>Creaci&oacute;n de aplicaciones completas que integren el DOM y APIs.</li>
+            <li>Optimizaci&oacute;n de rendimiento en aplicaciones web din&aacute;micas.</li>
+        </ul>
+        <p><strong>Nivel (1-100):</strong> <span class="level">80</span></p>
+        <p><strong>Categor&iacute;a:</strong> Junior</p>
+        <p><strong>Descripci&oacute;n:</strong> Aprende a construir aplicaciones completas y persistentes que interact&uacute;an con APIs y almacenan datos. Este m&oacute;dulo es el puente hacia aplicaciones reales.</p>
+    </div>
+
+    <div class="lesson">
+        <h2>M&oacute;dulo 7: Proyecto Final</h2>
+        <p><strong>Contenido:</strong></p>
+        <ul>
+            <li>Desarrollo de una aplicaci&oacute;n completa desde cero.</li>
+            <li>Integraci&oacute;n de todas las t&eacute;cnicas aprendidas: manipulaci&oacute;n del DOM, APIs, y almacenamiento.</li>
+            <li>Pruebas y depuraci&oacute;n del proyecto.</li>
+            <li>Preparaci&oacute;n del proyecto para presentaci&oacute;n o despliegue.</li>
+        </ul>
+        <p><strong>Nivel (1-100):</strong> <span class="level">100</span></p>
+        <p><strong>Categor&iacute;a:</strong> Junior-Mid</p>
+        <p><strong>Descripci&oacute;n:</strong> Integra todos los conocimientos adquiridos en un proyecto real y funcional que demuestre tus habilidades en JavaScript.</p>
+    </div>
+</body>
+</html>

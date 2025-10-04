@@ -1,0 +1,9 @@
+* Pagina del servidor
+* http://localhost/test/Ejercicio1Condicionales.php
+* Para que funcione hay que tener XAMPP instalado y buscar la carpeta con la ruta siguiente:
+* Ruta: discoLocal (C:) > xampp > htdocs > test
+
+Estos ejercicios no estan en la ruta del xampp por lo que no se mostraran, solo son una maqueta.
+
+DocumentRoot "C:/xampp/htdocs"
+<Directory "C:/xampp/htdocs">
