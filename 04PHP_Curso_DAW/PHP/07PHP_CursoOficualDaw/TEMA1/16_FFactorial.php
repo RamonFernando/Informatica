@@ -1,7 +1,7 @@
 <!-- 1. Factorial Function
 
 Escribe una función para calcular el factorial de un número
-(un número entero no negativo). La función acepta el número como argumento.
+(un número entero no negativo). La función acepta el número como argumento. -->
 <?php
     echo "16_Funciones Factorial";
 
@@ -14,4 +14,6 @@ Escribe una función para calcular el factorial de un número
         }
         return $n;
     }
+
+    echo "Factorial: " . factorial(5);
 ?>
