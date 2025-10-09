@@ -3,16 +3,16 @@
 funcione con inicio y fin -->
 <?php
     echo "27_Ej241 Sumar numeros<br>";
-    $sum = 1;
-    for($i = 0; $i < 10; $i++)
-        echo ($i+1) . "º:  $sum + $i = " . ($sum += $i) . "<br>";
+    $sum = 0;
+    for($i = 1; $i <= 10; $i++)
+        echo $i . "º:  $sum + $i = " . ($sum += $i) . "<br>"; // output: 55
     
     function sumar(int $init, int $fin): int{
-        $suma = $init;
-        for($i = 0; $i < $fin; $i++)
+        $suma = 0;
+        for($i = $init; $i <= $fin; $i++)
             $suma += $i;
         return $suma;
     }
-    echo "<br>Suma: " . sumar(1,5); // output: 11
+    echo "<br>Suma: " . sumar(1,5); // output: 15
 
 ?>
