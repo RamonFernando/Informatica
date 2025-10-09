@@ -11,10 +11,15 @@ Este ejercicio se basa en el juego de la Bola 8 mágica.-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { text-align:center; font-family:'Gill Sans MT';
+            background:#7b7b7a; padding:20px; color:#fff; }
+        ul { text-align:left; display:inline-block; }
+    </style>
     <title>Ejer 231</title>
 </head>
-<body>  
-        <h1>Ejercicio 1</h1>
+<body>
+        <h1>Ejercicio 231</h1>
         <h2>Realiza una pregunta</h2>
         <form action="" method="POST">
             <label for="pregunta">Pregunta</label>
@@ -42,9 +47,9 @@ $respuestas = [
             $result = rand(0, count($respuestas)-1);
             
             if(!empty($_POST && isset($_POST))){
-                $pregunta = $_POST['pregunta'];
+                $pregunta = $_POST['pregunta']; // recive la info del input
                 if($pregunta){
-                    echo $respuestas[$result];
+                    echo "<br>" . $respuestas[$result]; // guarda la respuesta random en el array $respuestas
                 }
             }
         }
