@@ -13,5 +13,15 @@ de productos, calcula la potencia utilizando la instrucción for.-->
             $pot *= $base;
         return $pot;
     }
-    echo "2^4 = " . potencia(2, 4) . "<br>"; // 16
+    echo "2^4 = " . potencia(2, 4) . "<br>"; // output: 16
+    function potencia1($base, $exp): float|int{
+        $pot = 1;
+        if($exp == 0) return 1;
+        for($i=$exp; $i > 0; $i--){
+            $pot*=$base;
+        }
+        return $pot;
+    }
+    echo "2^4 = " . potencia1(2, 4) . "<br>"; // output: 16
+    
 ?>

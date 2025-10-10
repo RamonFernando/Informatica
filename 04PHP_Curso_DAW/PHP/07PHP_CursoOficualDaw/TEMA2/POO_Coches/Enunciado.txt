@@ -1,0 +1,17 @@
+Crea una clase en PHP llamada Coche. Esta clase debe contener las siguientes características:
+Atributos:
+Marca
+Modelo
+Año
+Velocidad actual
+
+Constructor:
+Debe permitir inicializar la marca, modelo y año del coche al crear un objeto de esta clase.
+
+Métodos:
+setters y getters para los atributos
+acelerar($incremento): Incrementa la velocidad actual del coche.
+frenar($decremento): Reduce la velocidad actual del coche.
+detalles(): Muestra un mensaje con la información de la marca, modelo, año y velocidad actual del coche.
+
+Crea un objeto de la clase Coche, establece algunos valores y llama a los métodos acelerar, frenar y detalles para mostrar el funcionamiento de la clase.
