@@ -1,0 +1,8 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\01_Ej2ContarCaracteresString\bin\Debug\01_Ej2ContarCaracteresString.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\01_Ej2ContarCaracteresString\bin\Debug\01_Ej2ContarCaracteresString.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\01_Ej2ContarCaracteresString\bin\Debug\01_Ej2ContarCaracteresString.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\01_Ej2ContarCaracteresString\obj\Debug\01_Ej2ContarCaracteresString.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\01_Ej2ContarCaracteresString\obj\Debug\01_Ej2ContarCaracteresString.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\01_Ej2ContarCaracteresString\obj\Debug\01_Ej2ContarCaracteresString.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\01_Ej2ContarCaracteresString\obj\Debug\01_Ej2ContarCaracteresString.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\01_Ej2ContarCaracteresString\obj\Debug\01_Ej2ContarCaracteresString.exe.config
