@@ -1,0 +1,8 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\03_Ej6StrCompararCadenas\bin\Debug\03_Ej6StringsCompararCadenas.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\03_Ej6StrCompararCadenas\bin\Debug\03_Ej6StringsCompararCadenas.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\03_Ej6StrCompararCadenas\bin\Debug\03_Ej6StringsCompararCadenas.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\03_Ej6StrCompararCadenas\obj\Debug\03_Ej6StringsCompararCadenas.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\03_Ej6StrCompararCadenas\obj\Debug\03_Ej6StringsCompararCadenas.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\03_Ej6StrCompararCadenas\obj\Debug\03_Ej6StringsCompararCadenas.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\03_Ej6StrCompararCadenas\obj\Debug\03_Ej6StringsCompararCadenas.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\03_Ej6StrCompararCadenas\obj\Debug\03_Ej6StringsCompararCadenas.exe.config

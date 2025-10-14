@@ -16,6 +16,7 @@ namespace _01_Ej2ContarCaracteresString
                 Ingrese la cadena: w3resource.com
                 Salida esperada : La longitud de la cuerda es: 15
                 */
+                Console.WriteLine("01_Ej2 String Contar Caracteres");
                 Console.WriteLine("Introduzca una frase: ");
                 string frase = Console.ReadLine();
                 while (frase.Length == 0 || frase == null)

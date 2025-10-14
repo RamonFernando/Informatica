@@ -1,0 +1,8 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\02_Ej3StringSepararCaracteres\bin\Debug\02_Ej3StringSepararCaracteres.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\02_Ej3StringSepararCaracteres\bin\Debug\02_Ej3StringSepararCaracteres.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\02_Ej3StringSepararCaracteres\bin\Debug\02_Ej3StringSepararCaracteres.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\02_Ej3StringSepararCaracteres\obj\Debug\02_Ej3StringSepararCaracteres.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\02_Ej3StringSepararCaracteres\obj\Debug\02_Ej3StringSepararCaracteres.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\02_Ej3StringSepararCaracteres\obj\Debug\02_Ej3StringSepararCaracteres.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\02_Ej3StringSepararCaracteres\obj\Debug\02_Ej3StringSepararCaracteres.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\02_Ej3StringSepararCaracteres\obj\Debug\02_Ej3StringSepararCaracteres.exe.config
