@@ -11,13 +11,13 @@ namespace _03_Ej6StrCompararCadenas
         static void Main(string[] args)
         {
             /*
-             6. Escriba un programa en C# Sharp para comparar dos cadenas sin utilizar funciones de biblioteca de cadenas.
+            6. Escriba un programa en C# Sharp para comparar dos cadenas sin utilizar funciones de biblioteca de cadenas.
             Datos de prueba:
             Ingrese la primera cadena: esta es la primera cadena
             Ingrese la segunda cadena: esta es la primera cadena
             Salida esperada :
 
-            La longitud de ambas cuerdas es igual y 
+            La longitud de ambas cuerdas es igual y
             además, ambas cadenas son iguales.
              */
             Console.WriteLine("03_Ej6Strings Comparar Cadenas");
