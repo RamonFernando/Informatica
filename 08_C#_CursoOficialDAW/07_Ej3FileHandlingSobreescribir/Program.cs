@@ -1,0 +1,43 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+
+namespace _07_Ej3FileHandlingSobreescribir
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            /*
+             3. Escriba un programa C# Sharp para crear un archivo en blanco en el 
+                disco si el mismo archivo ya existe.
+                Salida esperada :
+
+                Un archivo creado con el nombre mytest.txt
+             */
+
+            string fileName2 = "mytest.txt";
+
+            if (File.Exists(fileName2))
+            {
+                File.Delete(fileName2);
+                Console.WriteLine("Archivo {0} eliminado correctamente", fileName2);
+            }
+            File.Create(fileName2).Close();
+
+            // Escribimos en el archivo
+            using (StreamWriter sw = new StreamWriter(fileName2))
+            {
+                sw.WriteLine("\"G2 1 vs 3 TES\"");
+            }
+            Console.WriteLine("G2 1 vs 3 TES");
+            Console.WriteLine("Archivo creado con el nombre {0} correctamente", fileName2);
+
+
+
+        }
+    }
+}

@@ -1,0 +1,8 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\07_Ej1FileHandling\obj\Debug\07_Ej1FileHandling.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\07_Ej1FileHandling\obj\Debug\07_Ej1FileHandling.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\07_Ej1FileHandling\bin\Debug\07_Ej1FileHandling.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\07_Ej1FileHandling\bin\Debug\07_Ej1FileHandling.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\07_Ej1FileHandling\bin\Debug\07_Ej1FileHandling.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\07_Ej1FileHandling\obj\Debug\07_Ej1FileHandling.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\07_Ej1FileHandling\obj\Debug\07_Ej1FileHandling.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\07_Ej1FileHandling\obj\Debug\07_Ej1FileHandling.exe.config

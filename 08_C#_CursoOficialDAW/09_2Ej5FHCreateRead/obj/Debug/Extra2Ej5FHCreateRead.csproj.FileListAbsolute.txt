@@ -1,0 +1,8 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\Extra2Ej5FHCreateRead\bin\Debug\Extra2Ej5FHCreateRead.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\Extra2Ej5FHCreateRead\bin\Debug\Extra2Ej5FHCreateRead.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\Extra2Ej5FHCreateRead\bin\Debug\Extra2Ej5FHCreateRead.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\Extra2Ej5FHCreateRead\obj\Debug\Extra2Ej5FHCreateRead.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\Extra2Ej5FHCreateRead\obj\Debug\Extra2Ej5FHCreateRead.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\Extra2Ej5FHCreateRead\obj\Debug\Extra2Ej5FHCreateRead.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\Extra2Ej5FHCreateRead\obj\Debug\Extra2Ej5FHCreateRead.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\Extra2Ej5FHCreateRead\obj\Debug\Extra2Ej5FHCreateRead.exe.config

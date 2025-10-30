@@ -1,0 +1,8 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\06_Ej2FileHandlingEliminar\bin\Debug\06_Ej2FileHandlingEliminar.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\06_Ej2FileHandlingEliminar\bin\Debug\06_Ej2FileHandlingEliminar.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\06_Ej2FileHandlingEliminar\bin\Debug\06_Ej2FileHandlingEliminar.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\06_Ej2FileHandlingEliminar\obj\Debug\06_Ej2FileHandlingEliminar.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\06_Ej2FileHandlingEliminar\obj\Debug\06_Ej2FileHandlingEliminar.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\06_Ej2FileHandlingEliminar\obj\Debug\06_Ej2FileHandlingEliminar.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\06_Ej2FileHandlingEliminar\obj\Debug\06_Ej2FileHandlingEliminar.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\06_Ej2FileHandlingEliminar\obj\Debug\06_Ej2FileHandlingEliminar.exe.config

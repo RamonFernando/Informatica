@@ -1,0 +1,35 @@
+﻿using System;
+using System.IO;
+using System.Collections.Generic;
+
+class Program
+{
+    static string rutaArchivo = "datos.txt";
+
+    static void Main()
+    {
+        /*
+         1. Escriba un programa en C# Sharp para crear un archivo en blanco en el disco.
+            Salida esperada :
+            Un archivo creado con el nombre mytest.txt
+         */
+        try
+        {
+            string fileName = @"mytest.txt";
+            Console.WriteLine("Creando un archivo llamado {0} en el disco", fileName);
+
+            using (FileStream fileStr = File.Create(fileName))
+            {
+                
+            }
+        }
+        catch(Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+
+
+        Console.ReadKey();
+        
+    }
+}

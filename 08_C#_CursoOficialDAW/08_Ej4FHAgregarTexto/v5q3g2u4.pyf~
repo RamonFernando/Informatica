@@ -1,0 +1,36 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+
+namespace Exatra1FHAgregarTexto
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            /*
+             4. Escriba un programa en C# Sharp para crear un archivo y agregar algo de texto.
+                Salida esperada:
+
+                Un archivo creado con el nombre de contenido mytest.txt*/
+                
+                string fileName = "mytest.txt";
+                Console.WriteLine("Un archivo creado con el nombre de contenido mytest.txt");
+
+            if (File.Exists(fileName))
+            {
+                Console.WriteLine("El archivo ya existe, borrando archivo existente");
+                File.Delete(fileName);    
+            }
+
+            using (StreamWriter sw = new StreamWriter(fileName))
+            {
+                sw.Write("Final Mundial 2025 GEN 3 vs 2 AL");
+            }
+
+        }
+    }
+}

@@ -1,0 +1,84 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+
+namespace Exatra1FHAgregarTexto
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            /*
+             * CRUD
+             4. Escriba un programa en C# Sharp para crear un archivo y agregar algo de texto.
+                Salida esperada:
+
+                Un archivo creado con el nombre de contenido mytest.txt*/
+                
+                string fileName = "mytest.txt";
+                Console.WriteLine("Un archivo creado con el nombre de contenido mytest.txt");
+
+            // DELETE (si existe)
+            if (File.Exists(fileName))
+            {
+                Console.WriteLine("El archivo ya existe, borrando archivo existente.");
+                File.Delete(fileName);    
+            }
+
+            // CREATE
+            using (StreamWriter sw = new StreamWriter(fileName))
+            {
+                sw.WriteLine("Final Mundial 2025 GEN 3 vs 2 AL");
+                sw.WriteLine("Campeón: GEN - Jugador MVP: Ruler");
+            }
+
+            // Leyendo el archivo
+            Console.WriteLine("\nLeyendo el archivo con StreamReader");
+            using (StreamReader sr = new StreamReader(fileName))
+            {
+                
+                while ((sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(sr.ReadLine());
+                }
+            }
+
+            // Leer en multiples lineas con ReadAllLines
+            string[] lines = File.ReadAllLines(fileName); // Devuelve un array
+
+            Console.WriteLine("\nLeer en multiples lineas con ReadAllLines");
+            foreach (string line in lines)
+            {
+                Console.WriteLine(line);
+            }
+
+            // UPDATE
+            // Actualizando el archivo con apend
+            string []info = { "G2 1 vs 3 TES", "GEN 3 vs 1 HLE", "AL 3 vs 2 T1", "KT 3 vs 0 CFO" };
+
+            // Actualizando el archivo con AppendAllLines para agregar multiples lineas
+            Console.WriteLine("\nActualizando el archivo con apendAllLines");
+            File.AppendAllLines(fileName, info);
+
+            // Actualizando el archivo con apendAllText para agregar una sola linea
+            Console.WriteLine("Actualizando el archivo con apendAllText\n");
+            File.AppendAllText(fileName, "Campeón: GEN - 3er Titulo");
+
+            // READ
+            // Leyendo nuevamente el archivo
+            Console.WriteLine("\nLeyendo el archivo con StreamReader");
+            using (StreamReader sr1 = new StreamReader(fileName))
+            {
+                string linea;
+                while ((linea = sr1.ReadLine()) != null)
+                {
+                    Console.WriteLine(linea);
+                }
+            }
+            
+        }
+    }
+}

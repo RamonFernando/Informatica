@@ -16,7 +16,7 @@ namespace _02_Ej3StringSepararCaracteres
             Ingrese la cadena: w3resource.com
             Salida esperada :
 
-            Los caracteres de la cadena son: 
+            Los caracteres de la cadena son:
             w 3 resource . com*/
             Console.WriteLine("02_Ej3 String Separar Caracteres");
             Console.WriteLine("Ingrese la cadena:");

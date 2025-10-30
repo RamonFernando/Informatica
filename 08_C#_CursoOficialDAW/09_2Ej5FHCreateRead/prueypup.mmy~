@@ -1,0 +1,45 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+
+namespace Extra2Ej5FHCreateRead
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            /*
+             5. Escriba un programa C# Sharp para crear un archivo de texto y leerlo.
+                Salida esperada :
+
+                Aquí está el contenido del archivo mytest.txt:                                                                 
+                Hola y bienvenido                                                                                            
+                Es el primer contenido                                                                                      
+                del archivo de texto mytest.txt
+             */
+
+            Console.WriteLine("Crear y Leer archivo de texto");
+
+            string fileName = @"archivo.txt";
+
+            if (File.Exists(fileName))
+            {
+                File.Delete(fileName);
+            }
+
+            // CREATE
+            File.Create(fileName).Close();
+
+            // WRITE
+            using (StreamWriter sw = new StreamWriter(fileName))
+            {
+                sw.WriteLine("Hola y bienvenido");
+                sw.WriteLine("Es el primer contenido");
+                sw.WriteLine("del archivo de texto archivo.txt");
+            }
+        }
+    }
+}

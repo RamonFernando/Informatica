@@ -1,0 +1,8 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\04_EjStrContarDigitos\bin\Debug\04_EjStrContarDigitos.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\04_EjStrContarDigitos\bin\Debug\04_EjStrContarDigitos.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\04_EjStrContarDigitos\bin\Debug\04_EjStrContarDigitos.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\04_EjStrContarDigitos\obj\Debug\04_EjStrContarDigitos.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\04_EjStrContarDigitos\obj\Debug\04_EjStrContarDigitos.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\04_EjStrContarDigitos\obj\Debug\04_EjStrContarDigitos.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\04_EjStrContarDigitos\obj\Debug\04_EjStrContarDigitos.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\04_EjStrContarDigitos\obj\Debug\04_EjStrContarDigitos.exe.config

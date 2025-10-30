@@ -1,0 +1,3 @@
+Hola y bienvenido
+Es el primer contenido
+del archivo de texto: archivo.txt

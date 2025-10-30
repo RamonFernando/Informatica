@@ -1,0 +1,8 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\07_Ej3FileHandlingSobreescribir\bin\Debug\07_Ej3FileHandlingSobreescribir.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\07_Ej3FileHandlingSobreescribir\bin\Debug\07_Ej3FileHandlingSobreescribir.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\07_Ej3FileHandlingSobreescribir\bin\Debug\07_Ej3FileHandlingSobreescribir.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\07_Ej3FileHandlingSobreescribir\obj\Debug\07_Ej3FileHandlingSobreescribir.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\07_Ej3FileHandlingSobreescribir\obj\Debug\07_Ej3FileHandlingSobreescribir.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\07_Ej3FileHandlingSobreescribir\obj\Debug\07_Ej3FileHandlingSobreescribir.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\07_Ej3FileHandlingSobreescribir\obj\Debug\07_Ej3FileHandlingSobreescribir.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\07_Ej3FileHandlingSobreescribir\obj\Debug\07_Ej3FileHandlingSobreescribir.exe.config
