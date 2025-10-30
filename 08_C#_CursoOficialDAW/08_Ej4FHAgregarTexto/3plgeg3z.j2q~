@@ -33,7 +33,7 @@ namespace _08_Ej4FHAgregarTexto
             Console.WriteLine("Agregando texto al archivo con StreamWriter");
             using (StreamWriter sw = new StreamWriter(fileName))
             {
-                sw.WriteLine("G2 1 vs 3 TES");
+                sw.Write("G2 1 vs 3 TES");
                 sw.WriteLine("Jugador MVP: Ruler");
             }
 
@@ -41,31 +41,14 @@ namespace _08_Ej4FHAgregarTexto
             Console.WriteLine("Leyendo el archivo con StreamReader");
             using (StreamReader sr = new StreamReader(fileName))
             {
-                string linea;
-                while ((linea = sr.ReadLine()) != null)
+                
+                while (sr.ReadLine() != null)
                 {
-                    Console.WriteLine(linea);
+                    Console.WriteLine(sr.ReadLine());
                 }
             }
 
-            string []info = { "AL 3 vs 2 T1", "GEN 3 vs 1 HLE", "KT 3 vs 0 CFO" };
 
-            // UPDATE
-            // Agregando texto al archivo con append
-            Console.WriteLine("Agregando texto al archivo con AppendAllText");
-            File.AppendAllText(fileName, "Campeon: GEN (GEN 3 vs 2 AL), Jugador MVP: Ruler" + Environment.NewLine);
-
-            // Agregando texto con AppendAllLines
-            Console.WriteLine("Agregando texto al archivo con AppendAllLines");
-            File.AppendAllLines(fileName, info);
-
-            // READ
-            // Foreach
-            Console.WriteLine("Leyendo el archivo con Foreach");
-            foreach (string linea in File.ReadLines(fileName))
-            {
-                Console.WriteLine(linea);
-            }
         }
     }
 }

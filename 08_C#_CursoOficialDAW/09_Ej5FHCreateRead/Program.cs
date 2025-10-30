@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
 
-namespace Extra2Ej5FHCreateRead
+namespace _09_Ej5FHCreateRead
 {
     internal class Program
     {
@@ -38,7 +38,18 @@ namespace Extra2Ej5FHCreateRead
             {
                 sw.WriteLine("Hola y bienvenido");
                 sw.WriteLine("Es el primer contenido");
-                sw.WriteLine("del archivo de texto archivo.txt");
+                sw.WriteLine("del archivo de texto: archivo.txt");
+            }
+
+            // READ
+            Console.WriteLine("Contenido del archivo: ");
+            using (StreamReader sr = new StreamReader(fileName))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(line);
+                }
             }
         }
     }

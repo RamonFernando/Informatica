@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CC6CC203-EA40-4706-9094-90F5F4E3019E}</ProjectGuid>
+    <ProjectGuid>{5BB7A1C5-79F3-4FF8-A132-211E7DE61F2B}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Extra2Ej5FHCreateRead</RootNamespace>
-    <AssemblyName>Extra2Ej5FHCreateRead</AssemblyName>
+    <RootNamespace>_09_Ej5FHCreateRead</RootNamespace>
+    <AssemblyName>09_Ej5FHCreateRead</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

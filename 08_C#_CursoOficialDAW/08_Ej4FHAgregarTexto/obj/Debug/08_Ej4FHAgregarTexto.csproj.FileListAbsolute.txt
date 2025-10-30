@@ -1,0 +1,8 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\08_Ej4FHAgregarTexto\bin\Debug\08_Ej4FHAgregarTexto.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\08_Ej4FHAgregarTexto\bin\Debug\08_Ej4FHAgregarTexto.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\08_Ej4FHAgregarTexto\bin\Debug\08_Ej4FHAgregarTexto.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\08_Ej4FHAgregarTexto\obj\Debug\08_Ej4FHAgregarTexto.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\08_Ej4FHAgregarTexto\obj\Debug\08_Ej4FHAgregarTexto.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\08_Ej4FHAgregarTexto\obj\Debug\08_Ej4FHAgregarTexto.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\08_Ej4FHAgregarTexto\obj\Debug\08_Ej4FHAgregarTexto.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\08_Ej4FHAgregarTexto\obj\Debug\08_Ej4FHAgregarTexto.exe.config

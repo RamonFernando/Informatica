@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // La información general de un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada a un ensamblado.
-[assembly: AssemblyTitle("Extra2Ej5FHCreateRead")]
+[assembly: AssemblyTitle("09_Ej5FHCreateRead")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Extra2Ej5FHCreateRead")]
+[assembly: AssemblyProduct("09_Ej5FHCreateRead")]
 [assembly: AssemblyCopyright("Copyright ©  2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // El siguiente GUID sirve como id. de typelib si este proyecto se expone a COM.
-[assembly: Guid("cc6cc203-ea40-4706-9094-90f5f4e3019e")]
+[assembly: Guid("5bb7a1c5-79f3-4ff8-a132-211e7de61f2b")]
 
 // La información de versión de un ensamblado consta de los cuatro valores siguientes:
 //

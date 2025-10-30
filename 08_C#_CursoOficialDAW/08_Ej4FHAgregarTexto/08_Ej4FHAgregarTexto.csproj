@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CEE236BB-A50A-4FA1-969B-00837C76BA84}</ProjectGuid>
+    <ProjectGuid>{50EAB4AE-B2EE-4311-86E3-A574F52ECFCF}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Exatra1FHAgregarTexto</RootNamespace>
-    <AssemblyName>Exatra1FHAgregarTexto</AssemblyName>
+    <RootNamespace>_08_Ej4FHAgregarTexto</RootNamespace>
+    <AssemblyName>08_Ej4FHAgregarTexto</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

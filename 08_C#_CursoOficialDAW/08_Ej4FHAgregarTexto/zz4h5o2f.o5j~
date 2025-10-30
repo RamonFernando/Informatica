@@ -53,7 +53,7 @@ namespace _08_Ej4FHAgregarTexto
             // UPDATE
             // Agregando texto al archivo con append
             Console.WriteLine("Agregando texto al archivo con AppendAllText");
-            File.AppendAllText(fileName, "Campeon: GEN (GEN 3 vs 2 AL), Jugador MVP: Ruler" + Environment.NewLine);
+            File.AppendAllText(fileName, "Campeon: GEN (GEN 3 vs 2 AL), Jugador MVP: Ruler");
 
             // Agregando texto con AppendAllLines
             Console.WriteLine("Agregando texto al archivo con AppendAllLines");
@@ -62,7 +62,7 @@ namespace _08_Ej4FHAgregarTexto
             // READ
             // Foreach
             Console.WriteLine("Leyendo el archivo con Foreach");
-            foreach (string linea in File.ReadLines(fileName))
+            foreach (string linea in info)
             {
                 Console.WriteLine(linea);
             }

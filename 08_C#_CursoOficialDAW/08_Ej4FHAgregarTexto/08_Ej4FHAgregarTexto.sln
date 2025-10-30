@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36616.10 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exatra1FHAgregarTexto", "Exatra1FHAgregarTexto.csproj", "{CEE236BB-A50A-4FA1-969B-00837C76BA84}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08_Ej4FHAgregarTexto", "08_Ej4FHAgregarTexto.csproj", "{50EAB4AE-B2EE-4311-86E3-A574F52ECFCF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CEE236BB-A50A-4FA1-969B-00837C76BA84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CEE236BB-A50A-4FA1-969B-00837C76BA84}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CEE236BB-A50A-4FA1-969B-00837C76BA84}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CEE236BB-A50A-4FA1-969B-00837C76BA84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50EAB4AE-B2EE-4311-86E3-A574F52ECFCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50EAB4AE-B2EE-4311-86E3-A574F52ECFCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50EAB4AE-B2EE-4311-86E3-A574F52ECFCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50EAB4AE-B2EE-4311-86E3-A574F52ECFCF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {AB506650-9531-4821-B33C-FA84F73C14C7}
+		SolutionGuid = {8E1ABB67-6FF2-491E-BC52-F3B75800AC34}
 	EndGlobalSection
 EndGlobal
