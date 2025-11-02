@@ -1,0 +1,86 @@
+﻿using System;
+using System.IO;
+
+namespace _10_Ej6FHEscribirEnArchivo
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            /**
+              Escriba un programa en C# Sharp para crear un archivo y escribir una matriz de 
+            cadenas en el archivo.
+            Datos de prueba :
+            Ingrese el número de líneas a escribir en el archivo:2
+            Ingrese 2 cadenas a continuación:
+            Línea de entrada 1: esta es la primera línea
+            Línea de entrada 2: esta es la segunda línea
+            Salida esperada :
+
+            El contenido del archivo es:  
+            -----------------------------                                                                            
+             Esta es la primera línea                                                                                             
+             Esta es la segunda línea 
+             */
+
+            Console.WriteLine("Escribiendo en archivos en C#");
+            // Logica del ejercicio
+            // 1. Crear el archivo, (comprobar que no exista)
+            // 2. Crear un array para almacenar las cadenas
+            // 3. Pedir al usuario ingresar el # de lineas que quiere escribir en el archivo
+            // 4. Ingresar las cadenas en el array
+            // 5. Escribir el array en el archivo
+            // 6. Mostrar el archivo por pantalla
+
+            // Creamos el archivo y comprobamos que no exista
+            string fileName = @"Texto.txt";
+            if (File.Exists(fileName))
+            {
+                File.Delete(fileName);
+            }
+            File.Create(fileName).Close();
+
+            int lines = 0;
+            // Pedimos al usuario que ingrese el # de lineas que quiere escribir en el archivo
+            Console.WriteLine("Ingrese el numero de lineas a escribir en el archivo: (numero entero)");
+            // lines = Convert.ToInt32(Console.ReadLine()); // Convertimos el string a int
+
+            while (lines <= 1 || lines.GetType() != typeof(int)) // Comprobamos que sea mayor a 0 y que sea un entero
+            {
+                Console.WriteLine("Error. Ingrese un numero entero mayor a 0:");
+                lines = Convert.ToInt32(Console.ReadLine());
+            }
+
+            // Creamos el array
+            string[] strings = new string[lines]; // Creamos un array de 2 cadenas
+
+            // Ingresamos las cadenas en el array 
+            for (int i = 0; i < lines; i++)
+            {
+                Console.WriteLine("Ingrese " + (i + 1) + " cadenas a continuación:");
+                strings[i] = Console.ReadLine();
+            }
+
+            // Escribimos el array en el archivo
+            File.WriteAllLines(fileName, strings);
+
+            // Mostramos el archivo por pantalla
+            Console.WriteLine("El contenido del archivo es: ");
+            Console.WriteLine("----------------------------");
+            // Console.WriteLine(File.ReadAllText(fileName));
+
+            // Leemos con StreamReade
+            string line;
+            int cont = 1;
+            using (StreamReader sr = new StreamReader(fileName))
+            {
+                while ((line = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine("Linea de entrada " + cont + ": " + line);
+                    cont++;
+                }
+            }
+
+        }
+    }
+}

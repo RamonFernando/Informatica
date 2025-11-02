@@ -1,0 +1,8 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\10_Ej6FHEscribirEnArchivo\bin\Debug\10_Ej6FHEscribirEnArchivo.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\10_Ej6FHEscribirEnArchivo\bin\Debug\10_Ej6FHEscribirEnArchivo.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\10_Ej6FHEscribirEnArchivo\bin\Debug\10_Ej6FHEscribirEnArchivo.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\10_Ej6FHEscribirEnArchivo\obj\Debug\10_Ej6FHEscribirEnArchivo.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\10_Ej6FHEscribirEnArchivo\obj\Debug\10_Ej6FHEscribirEnArchivo.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\10_Ej6FHEscribirEnArchivo\obj\Debug\10_Ej6FHEscribirEnArchivo.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\10_Ej6FHEscribirEnArchivo\obj\Debug\10_Ej6FHEscribirEnArchivo.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\10_Ej6FHEscribirEnArchivo\obj\Debug\10_Ej6FHEscribirEnArchivo.exe.config

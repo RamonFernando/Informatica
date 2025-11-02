@@ -12,7 +12,7 @@ namespace _08_Ej4FHAgregarTexto
         static void Main(string[] args)
         {
             /*  CRUD
-             4. Escriba un programa en C# Sharp para crear un archivo y agregar algo de texto.
+            4. Escriba un programa en C# Sharp para crear un archivo y agregar algo de texto.
                 Salida esperada:
                 Un archivo creado con el nombre de contenido mytest.txt*/
             
