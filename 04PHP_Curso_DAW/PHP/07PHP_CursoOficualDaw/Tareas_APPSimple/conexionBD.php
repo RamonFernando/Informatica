@@ -59,7 +59,7 @@ function conexionBD(): PDO
         $conn->exec("USE $dbName");
 
         // 6. Retornamos la conexión con un mensaje de éxito
-        echo "Conexion exitosa y base de datos seleccionada\n";
+        echo "Conexion exitosa y base de datos seleccionada✅\n";
         return $conn;
     } catch (PDOException $e) {
         die("Error de conexión: " . $e->getMessage());
