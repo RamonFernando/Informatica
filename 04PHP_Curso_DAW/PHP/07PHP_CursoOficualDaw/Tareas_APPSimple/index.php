@@ -8,6 +8,7 @@
 
     // Index.php
     while (true){
+        
         echo "========================\n";
         echo "Tareas de la APP Simple\n";
         echo "========================\n";
@@ -24,15 +25,48 @@
         $opcion = trim(fgets(STDIN));
         
         // Lógica para manejar la opción seleccionada
-        echo match ($opcion) {
-            "1" => create(),
-            "2" => read(),
-            "3" => update(),
-            "4" => delete(),
-            "5" => search(),
-            "6" => closeConnection($conn),
-            default => "Opción no válida. Por favor, intente de nuevo.\n"
-        };
+        switch ($opcion) {
+    case "1":
+        echo "Introduce el título: ";
+        $titulo = trim(fgets(STDIN));
+
+        echo "Introduce la descripción: ";
+        $descripcion = trim(fgets(STDIN));
+
+        echo "Introduce la fecha (YYYY-MM-DD): ";
+        $fecha_caducidad = trim(fgets(STDIN));
+
+        echo "Está completada (0 o 1): ";
+        $completada = trim(fgets(STDIN));
+
+        echo create($titulo, $descripcion, $fecha_caducidad, $completada);
+        break;
+
+    case "2":
+        echo read();
+        break;
+
+    case "3":
+        echo update();
+        break;
+
+    case "4":
+        echo delete();
+        break;
+
+    case "5":
+        echo search();
+        break;
+
+    case "6":
+        closeConnection($conn);
+        break;
+
+    default:
+        echo "Opción no válida. Por favor, intente de nuevo.\n";
+        break;
+}
+
     }
 
     function closeConnection($conn){

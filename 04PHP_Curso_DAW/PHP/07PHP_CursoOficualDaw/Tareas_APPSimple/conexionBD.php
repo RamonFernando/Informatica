@@ -33,11 +33,13 @@
 
 function conexionBD(): PDO
 {
+    
     // 1. Variables
     $serverName = "localhost";
     $user = "root";
     $password = "";
     $dbName = "tareas_db";
+    static $conexionMostrada = false; // solo mostrar mensaje una vez
 
     // 2. Activamos control de errores
     // (PDO lanza excepciones automáticamente al detectar errores)
@@ -47,7 +49,8 @@ function conexionBD(): PDO
         $dsn = "mysql:host=$serverName;charset=utf8mb4";
         $conn = new PDO($dsn, $user, $password, [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            PDO::ATTR_EMULATE_PREPARES => false
         ]);
 
         // 4. Creamos la base de datos si no existe y la configuramos con UTF8MB4
@@ -59,7 +62,12 @@ function conexionBD(): PDO
         $conn->exec("USE $dbName");
 
         // 6. Retornamos la conexión con un mensaje de éxito
-        echo "Conexion exitosa y base de datos seleccionada✅\n";
+        // Mostrar el mensaje solo la primera vez
+        if (!$conexionMostrada) {
+            echo "✅ Conexión exitosa y base de datos seleccionada\n";
+            $conexionMostrada = true;
+        }
+
         return $conn;
     } catch (PDOException $e) {
         die("Error de conexión: " . $e->getMessage());
@@ -139,3 +147,4 @@ $conn = conexionBD();
 // 9. Verificar la conexión
 $conn = conexionBD();
 */
+?>
