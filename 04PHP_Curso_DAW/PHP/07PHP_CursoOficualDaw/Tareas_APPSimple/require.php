@@ -6,4 +6,5 @@ require_once '4_delete.php';
 require_once '5_search.php';
 require_once 'index.php';
 require_once 'archivos.php';
+require_once 'detectarErrores.php';
 ?>

@@ -36,10 +36,15 @@
         echo "Introduce la fecha (YYYY-MM-DD): ";
         $fecha_caducidad = trim(fgets(STDIN));
 
-        echo "Está completada (0 o 1): ";
+        echo "Estado de la tarea, Completada? ((0)❌No o (1)✅Sí): ";
         $completada = trim(fgets(STDIN));
-
-        echo create($titulo, $descripcion, $fecha_caducidad, $completada);
+        
+        // 4. Mostrar un mensaje de confirmación
+        $msgVerify = create($titulo, $descripcion, $fecha_caducidad, $completada);
+            echo $msgVerify ?
+                "✅  Tarea creada exitosamente.\n":
+                "❌  No se pudo crear la tarea. Verifique los datos e intente nuevamente.\n";
+        
         break;
 
     case "2":
@@ -51,7 +56,14 @@
         break;
 
     case "4":
-        echo delete();
+        echo "Inserte la ID de la tarea a eliminar: ";
+        $id = trim(fgets(STDIN));
+            // Mostrar mensaje de confirmación
+            $msgVerify = delete($id);
+            echo $msgVerify ?
+                "✅ Tarea eliminada exitosamente.\n":
+                "❌ No se pudo eliminar la tarea $id. Verifique la ID e intente nuevamente.\n";
+            
         break;
 
     case "5":
