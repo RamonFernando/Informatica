@@ -1,0 +1,8 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\TipoDatosYOperadores\bin\Debug\TipoDatosYOperadores.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\TipoDatosYOperadores\bin\Debug\TipoDatosYOperadores.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\TipoDatosYOperadores\bin\Debug\TipoDatosYOperadores.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\TipoDatosYOperadores\obj\Debug\TipoDatosYOperadores.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\TipoDatosYOperadores\obj\Debug\TipoDatosYOperadores.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\TipoDatosYOperadores\obj\Debug\TipoDatosYOperadores.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\TipoDatosYOperadores\obj\Debug\TipoDatosYOperadores.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\TipoDatosYOperadores\obj\Debug\TipoDatosYOperadores.exe.config

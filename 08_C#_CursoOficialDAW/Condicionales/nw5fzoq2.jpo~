@@ -1,0 +1,41 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Condicionales
+{
+    public class Ej1CondicionalesIf
+    {
+        /**
+         * Ejercicio 1: Pide al usuario su edad y muestra si es mayor o menor de edad.
+         * */
+
+        public static void esMayorEdad()
+        {
+            while (true)
+            {
+                Console.Clear();
+                Console.WriteLine("==================================");
+                Console.WriteLine("  Ejercicio 1 - Es mayor de edad ");
+                Console.WriteLine("==================================");
+                Console.WriteLine("Introduce tu edad o 0 para salir: ");
+                string entrada = Console.ReadLine();
+
+                if(entrada == "0")
+                {
+                    Console.WriteLine("Saliendo del ejercicio...");
+                    break;
+                }
+                
+                if (int.TryParse(entrada, out int edad))                    
+                {
+                    // Operador ternario para comprobar si es mayor de edad
+                    Console.WriteLine(edad >= 18 ? "Es mayor de edad" : "Es menor de edad");
+                    Console.ReadKey();
+                }           
+            }
+        }
+    }
+}

@@ -1,0 +1,49 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TipoDatosYOperadores
+{
+    public class Ej2EntradaConsola
+    {
+        public static void OperacionesMatematicas()
+        {
+            while (true)
+            {
+                Console.Clear();
+                Console.WriteLine("===================================");
+                Console.WriteLine("  Operaciones matematicas basicas");
+                Console.WriteLine("===================================");
+                Console.Write("Sumar");
+                Console.Write("Restar");
+                Console.Write("Multiplicar");
+                Console.Write("Dividir");
+                Console.WriteLine("Salir del programa (0)");
+
+                if(!int.TryParse(Console.ReadLine(),out int opc)){
+                    Console.WriteLine("Numero ingresado no valido, introduce un numero entero.");
+                    continue;
+                }
+                switch (opc)
+                {
+                    case 1:
+                        Console.WriteLine();
+                        break;
+                    default:
+                        Console.WriteLine("Opcion no valida, vuelve a introducir un numero.");
+                        break;
+                }
+
+
+                if (opc == 0)
+                {
+                    Console.WriteLine("Saliendo del ejercicio...");
+                    return;
+
+                }
+            }
+        }
+    }
+}

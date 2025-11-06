@@ -1,0 +1,39 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Condicionales
+{
+    public class Ej2CondicionalesPedirNota
+    {
+        /**
+         * Ejercicio 2: Pide una nota (0–10) y muestra:
+            ● “Suspendido” si < 5
+            ● “Aprobado” si >= 5 y < 7
+            ● “Notable” si >= 7 y < 9
+            ● “Sobresaliente” si >= 9
+         * */
+
+        public static void pedirNota()
+        {
+            while (true)
+            {
+                Console.Clear();
+                Console.WriteLine("=================================");
+                Console.WriteLine("   Ejercicio 2 - Pedir nota ");
+                Console.WriteLine("=================================");
+                Console.WriteLine("Introduce tu nota o 's' para salir: ");
+
+                string entrada = Console.ReadLine();
+
+                if (entrada.ToLower() == "s")
+                {
+                    Console.WriteLine("Saliendo del ejercicio...");
+                    Console.WriteLine("Presiona cualquier tecla para salir...");
+                }
+            }
+        }
+    }
+}

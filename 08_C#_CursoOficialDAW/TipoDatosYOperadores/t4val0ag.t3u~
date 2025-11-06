@@ -1,0 +1,77 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TipoDatosYOperadores
+{
+    public class Ej2EntradaConsola
+    {
+        public static void OperacionesMatematicas()
+        {
+            
+            while (true)
+            {
+                Console.Clear();
+                Console.WriteLine("===================================");
+                Console.WriteLine("  Operaciones matematicas basicas");
+                Console.WriteLine("===================================");
+                Console.WriteLine("1. Sumar");
+                Console.WriteLine("2. Restar");
+                Console.WriteLine("3. Multiplicar");
+                Console.WriteLine("4. Dividir");
+                Console.WriteLine("5. Salir (0)");
+
+                // Validaciones de entrada
+                if (!int.TryParse(Console.ReadLine(),out int opc)){
+                    Console.WriteLine("Numero ingresado no valido, introduce un numero entero.");
+                    continue;
+                }
+                if (opc == 0)
+                {
+                    Console.WriteLine("Saliendo del ejercicio...");
+                    return;
+
+                }
+
+                Console.WriteLine("Ingresa el primer numero: ");
+                int num1 = ValidarNumero();
+                Console.WriteLine("Ingresa el segundo numero: ");
+                int num2 = ValidarNumero();
+
+                int result = 0;
+
+                switch (opc)
+                {
+                    case 1:
+                        
+                        result = num1 + num2;
+                        Console.WriteLine("El resultado de la suma es: " + result);
+                        break;
+                    case 2:
+                        result = num1 - num2;
+                        Console.WriteLine("El resultado de la resta es: " + result);
+                        break;
+                    default:
+                        Console.WriteLine("Opcion no valida, vuelve a introducir un numero.");
+                        break;
+                }
+
+
+                
+            }
+
+            
+        }
+        public static int ValidarNumero()
+        {   
+            int num;
+                while (!int.TryParse(Console.ReadLine(), out num))
+                    Console.WriteLine("Numero ingresado no valido, introduce un numero entero.");
+                        
+            return (num);
+        }
+    }
+}

@@ -1,0 +1,37 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TipoDatosYOperadores
+{
+    public class Ej3ConcersionesFaC
+    {
+        public static void ConversionesFaC()
+        {
+            while (true)
+            {
+                Console.WriteLine("===================================");
+                Console.WriteLine("  Conversiones Fahrenheit a Celsius");
+                Console.WriteLine("===================================");
+                Console.WriteLine("Ingresa la temperatura en Fahrenheit: ('s' para salir)");
+
+                double celsius = 0;
+
+                if (!double.TryParse(Console.ReadLine(), out double temper))
+                {
+                    Console.WriteLine("Debes introducir una temperatura valida.");
+                    continue;
+                }
+                if (temper == 's')
+                {
+                    Console.WriteLine("Saliendo del ejercicio...");
+                    return;
+                }
+                
+            }
+        
+        }
+    }
+}
