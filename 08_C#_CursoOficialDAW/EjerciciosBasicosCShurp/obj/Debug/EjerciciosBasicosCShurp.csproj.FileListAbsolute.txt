@@ -1,0 +1,8 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\EjerciciosBasicosCShurp\bin\Debug\EjerciciosBasicosCShurp.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\EjerciciosBasicosCShurp\bin\Debug\EjerciciosBasicosCShurp.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\EjerciciosBasicosCShurp\bin\Debug\EjerciciosBasicosCShurp.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\EjerciciosBasicosCShurp\obj\Debug\EjerciciosBasicosCShurp.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\EjerciciosBasicosCShurp\obj\Debug\EjerciciosBasicosCShurp.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\EjerciciosBasicosCShurp\obj\Debug\EjerciciosBasicosCShurp.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\EjerciciosBasicosCShurp\obj\Debug\EjerciciosBasicosCShurp.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\EjerciciosBasicosCShurp\obj\Debug\EjerciciosBasicosCShurp.exe.config

@@ -1,0 +1,55 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace EjerciciosBasicosCShurp
+{
+    public class Ej2CalcularPrecio
+    {
+        // Ejercicio 2: Declara variables para el precio de un producto y la cantidad comprada.
+        // Calcula y muestra el total a pagar.
+        // Ejemplo:
+        // Precio = 4.5
+        // Cantidad = 3
+        // Total = 13.5
+
+        /**
+         * Metodo principal para calcular el precio total de un producto (precio * cantidad)
+         * @return void Devuelve el precio total de un producto
+         * */
+        public static void CalcularPrecio()
+        {
+            while (true)
+            {
+                // Pedimos los datos y validamos 
+                Console.WriteLine("Introduce el precio: (Nota: si tu precio lleva decimales utiliza una ',')");
+                if (!double.TryParse(Console.ReadLine(), out double precio))
+                {
+                    Console.WriteLine("El precio debe ser un numero valido.");
+                    continue;
+                }
+                Console.WriteLine("Introduce la cantidad: ");
+                if (!int.TryParse(Console.ReadLine(), out int cantidad))
+                {
+                    Console.WriteLine("La cantidad debe ser un numero valido.");
+                    continue;
+                }
+                double precioTotal = precio * cantidad;
+                Console.WriteLine("El precio total es: {0:0.00} euros.", precioTotal);
+
+                Console.WriteLine("Preciona 0 para salir. De lo contrario preciona cualquier tecla. Para continuar.");
+                string respuesta = Console.ReadLine();
+
+                if (respuesta == "0")
+                {
+                    Console.WriteLine("Saliendo del ejercicio...");
+                    return;
+                }
+                Console.ReadKey();
+            }
+
+        }
+    }
+}

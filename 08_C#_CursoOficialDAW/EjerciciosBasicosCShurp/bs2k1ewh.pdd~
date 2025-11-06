@@ -1,0 +1,78 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace EjerciciosBasicosCShurp
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            while (true)
+            {
+                // Ejercicios basicos de C#
+                Console.Clear();
+                Console.WriteLine("=======================================");
+                Console.WriteLine("  Ejercicios básicos de C# Sintaxis Basica");
+                Console.WriteLine("=======================================");
+                Console.WriteLine("1. Ejercicio 1");
+                Console.WriteLine("2. Ejercicio 2");
+                Console.WriteLine("0. Salir");
+                Console.WriteLine("=======================================");
+                Console.WriteLine("Introduce el numero del ejericio que quieres ver: ");
+                int opc = 0;
+                if (!int.TryParse(Console.ReadLine(), out opc) || opc < 0)
+                {
+                    Console.WriteLine("Opcion no valida, introduce un numero entero.");
+                    Console.ReadKey();
+                    continue;
+                }
+
+                switch (opc)
+                {
+                    case 0:
+                        Console.WriteLine("Saliendo del programa...");
+                        return;
+
+                    case 1:
+                        Console.WriteLine("Ejercicio 1 - Mostrar prints");
+                        Ej1MostrarPrints.MostrarDatos();
+
+                        Console.WriteLine("Presiona cualquier tecla para volver al menu principal");
+
+                        break;
+                    case 2:
+                        Console.WriteLine("Ejercicio 2 - Calcular precio");
+                        Ej2CalcularPrecio.CalcularPrecio();
+                        Console.WriteLine("Presiona cualquier tecla para volver al menu principal");
+
+                        break;
+
+                    case 3:
+                        Console.WriteLine("Ejercicio 3");
+                        Console.WriteLine("Presiona cualquier tecla para volver al menu principal");
+                        break;
+
+                    case 4:
+                        Console.WriteLine("Ejercicio 4");
+                        Console.WriteLine("Presiona cualquier tecla para volver al menu principal");
+
+                        break;
+
+                    default:
+                        Console.WriteLine("El numero ingresado esta fuera de rango, vuelve a introducir un numero.");
+                        break;
+                }
+
+                //Console.WriteLine("Presiona cualquier tecla para volver al menu principal");
+                Console.ReadKey();
+
+
+            }
+
+        }
+    }
+}
