@@ -1,0 +1,52 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BuclesForWhileForEach
+{
+    public class Ej4BuclesForeachArrayNombres
+    {
+        /**
+         * Ejercicio 4: Crea un array con 5 nombres y usa un foreach para mostrarlos en consola.
+         * */       
+        public static void MostrarNombres()
+        {
+            string[] nombres = new string[5];
+
+            while (true)
+            {
+                Console.Clear();
+                Console.WriteLine("=========================================");
+                Console.WriteLine("  Ejercicio 4 Foreach - Mostrar Nombres");
+                Console.WriteLine("=========================================");
+                Console.WriteLine("Introduce 5 nombres: o (0) para salir: ");
+
+                for (int i = 0; i < 5; i++)
+                {                  
+                    Console.Write((i+1) + "º Nombre: ");
+                    nombres[i] = Console.ReadLine();
+                    
+                    if (nombres.Length == 5 && nombres[i] != "0")
+                        Console.WriteLine("No has introducido ningun nombre.");
+                    
+                    if (nombres[i] == "0")
+                    {
+                        Console.WriteLine("Saliendo del ejercicio...");
+                        return;
+                    }
+                    
+                }
+                
+                
+                Console.WriteLine("Nombres introducidos:");
+                foreach (var nombre in nombres)
+                    Console.WriteLine($"Nombre: {nombre}");
+                
+                Console.WriteLine("Presiona cualquier tecla para continuar...");
+                Console.ReadKey();
+            }
+        }
+    }
+}

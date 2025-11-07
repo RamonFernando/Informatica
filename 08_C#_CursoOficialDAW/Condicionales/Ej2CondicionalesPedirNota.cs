@@ -32,6 +32,7 @@ namespace Condicionales
 
                 string entrada = Console.ReadLine();
 
+                // Validaciones de entrada
                 if (entrada.ToLower() == "s")
                 {
                     Console.WriteLine("Saliendo del ejercicio...");
@@ -60,7 +61,7 @@ namespace Condicionales
                     }
                     Console.WriteLine("Presiona cualquier tecla para reiniciar...");
                     Console.ReadKey();
-                }               
+                }
             }
         }
     }

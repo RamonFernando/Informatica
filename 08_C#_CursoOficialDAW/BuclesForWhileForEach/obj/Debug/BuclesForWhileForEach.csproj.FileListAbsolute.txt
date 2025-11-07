@@ -1,0 +1,8 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\BuclesForWhileForEach\bin\Debug\BuclesForWhileForEach.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\BuclesForWhileForEach\bin\Debug\BuclesForWhileForEach.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\BuclesForWhileForEach\bin\Debug\BuclesForWhileForEach.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\BuclesForWhileForEach\obj\Debug\BuclesForWhileForEach.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\BuclesForWhileForEach\obj\Debug\BuclesForWhileForEach.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\BuclesForWhileForEach\obj\Debug\BuclesForWhileForEach.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\BuclesForWhileForEach\obj\Debug\BuclesForWhileForEach.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\BuclesForWhileForEach\obj\Debug\BuclesForWhileForEach.exe.config

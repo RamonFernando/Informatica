@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Condicionales
+namespace BuclesForWhileForEach
 {
     internal class Program
     {
@@ -14,12 +14,13 @@ namespace Condicionales
             {
                 // Ejercicios basicos de C#
                 Console.Clear();
-                Console.WriteLine("=======================================");
-                Console.WriteLine("  Ejercicios de C# Datos y Operadores");
-                Console.WriteLine("=======================================");
-                Console.WriteLine("1. Ejercicio 1");
-                Console.WriteLine("2. Ejercicio 2");
-                Console.WriteLine("3. Ejercicio 3");
+                Console.WriteLine("============================");
+                Console.WriteLine("  Ejercicios de C# Bucles");
+                Console.WriteLine("============================");
+                Console.WriteLine("1. Ejercicio 1 For");
+                Console.WriteLine("2. Ejercicio 2 For");
+                Console.WriteLine("3. Ejercicio 3 While");
+                Console.WriteLine("4. Ejercicio 4 Foreach");
                 Console.WriteLine("0. Salir");
                 Console.WriteLine("=======================================");
                 Console.WriteLine("Introduce el numero del ejericio que quieres ver: ");
@@ -37,22 +38,29 @@ namespace Condicionales
                         return;
 
                     case 1:
-                        Console.WriteLine("\nEjercicio 1 - Condicionales - Es mayor de edad (if - else)\n");
-                        Ej1CondicionalesIf.esMayorEdad();
+                        Console.WriteLine("\nEjercicio 1 - Bucles - For Mostrar numeros\n");
+                        Ej1BuclesForMostrarNum.MostrarNumeros();
 
                         Console.WriteLine("Presiona cualquier tecla para volver al menu principal");
                         break;
 
                     case 2:
-                        Console.WriteLine("\nEjercicio 2 - Condicionales - Pedir nota\n");
-                        Ej2CondicionalesPedirNota.pedirNota();
+                        Console.WriteLine("\nEjercicio 2 - Bucles - For Tabla de multiplicar\n");
+                        Ej2ForTablaMultiplicar.TablaMultiplicar();
+                        
+                        Console.WriteLine("Presiona cualquier tecla para volver al menu principal");
+                        break;
+
+                    case 3:
+                        Console.WriteLine("\nEjercicio 3 - Bucles - While Pedir numeros\n");
+                        Ej3BuclesWhilePedirNumCont.ContarNumeros();
 
                         Console.WriteLine("Presiona cualquier tecla para volver al menu principal");
                         break;
-                    case 3:
-                        Console.WriteLine("\nEjercicio 3 - Condicionales - Dia de la semana\n");
-                        Ej3CondicionalesSwichDiaSemana.DiaSemana();
-                        
+
+                    case 4:
+                        Console.WriteLine("\nEjercicio 4 - Bucles - Foreach Mostrar nombres\n");
+                        Ej4BuclesForeachArrayNombres.MostrarNombres();
 
                         Console.WriteLine("Presiona cualquier tecla para volver al menu principal");
                         break;
@@ -61,7 +69,7 @@ namespace Condicionales
                         Console.WriteLine("El numero ingresado esta fuera de rango, vuelve a introducir un numero.");
                         break;
                 }
-                //Console.WriteLine("Presiona cualquier tecla para volver al menu principal");
+                
                 Console.ReadKey();
             }
         }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Condicionales
+namespace BuclesForWhileForEach
 {
     internal class Program
     {
@@ -37,23 +37,21 @@ namespace Condicionales
                         return;
 
                     case 1:
-                        Console.WriteLine("\nEjercicio 1 - Condicionales - Es mayor de edad (if - else)\n");
-                        Ej1CondicionalesIf.esMayorEdad();
+                        Console.WriteLine("\nEjercicio 1 - Bucles - For Mostrar numeros\n");
+                        
 
                         Console.WriteLine("Presiona cualquier tecla para volver al menu principal");
                         break;
 
                     case 2:
                         Console.WriteLine("\nEjercicio 2 - Condicionales - Pedir nota\n");
-                        Ej2CondicionalesPedirNota.pedirNota();
+                        
 
                         Console.WriteLine("Presiona cualquier tecla para volver al menu principal");
                         break;
                     case 3:
                         Console.WriteLine("\nEjercicio 3 - Condicionales - Dia de la semana\n");
-                        Ej3CondicionalesSwichDiaSemana.DiaSemana();
-                        
-
+                       
                         Console.WriteLine("Presiona cualquier tecla para volver al menu principal");
                         break;
                     default:
@@ -61,7 +59,7 @@ namespace Condicionales
                         Console.WriteLine("El numero ingresado esta fuera de rango, vuelve a introducir un numero.");
                         break;
                 }
-                //Console.WriteLine("Presiona cualquier tecla para volver al menu principal");
+                
                 Console.ReadKey();
             }
         }

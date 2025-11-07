@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9B287AD1-06FC-4C6E-9DB9-A563B4EB314D}</ProjectGuid>
+    <ProjectGuid>{E0295EA3-06D2-42C4-90C2-8AA2114D8ED9}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Condicionales</RootNamespace>
-    <AssemblyName>Condicionales</AssemblyName>
+    <RootNamespace>BuclesForWhileForEach</RootNamespace>
+    <AssemblyName>BuclesForWhileForEach</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,9 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ej1CondicionalesIf.cs" />
-    <Compile Include="Ej2CondicionalesPedirNota.cs" />
-    <Compile Include="Ej3CondicionalesSwichDiaSemana.cs" />
+    <Compile Include="Ej1BuclesForMostrarNum.cs" />
+    <Compile Include="Ej2ForTablaMultiplicar.cs" />
+    <Compile Include="Ej3BuclesWhilePedirNumCont.cs" />
+    <Compile Include="Ej4BuclesForeachArrayNombres.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
