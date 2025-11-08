@@ -1,0 +1,77 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Arrays
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            while (true)
+            {
+                // Ejercicios basicos de C#
+                Console.Clear();
+                Console.WriteLine("============================");
+                Console.WriteLine("  Ejercicios de C# Arrays");
+                Console.WriteLine("============================");
+                Console.WriteLine("1. Ejercicio 1 For");
+                Console.WriteLine("2. Ejercicio 2 For");
+                Console.WriteLine("3. Ejercicio 3 While");
+                Console.WriteLine("4. Ejercicio 4 Foreach");
+                Console.WriteLine("0. Salir");
+                Console.WriteLine("=======================================");
+                Console.WriteLine("Introduce el numero del ejericio que quieres ver: ");
+                if (!int.TryParse(Console.ReadLine(), out int opc) || opc < 0)
+                {
+                    Console.WriteLine("Opcion no valida, introduce un numero entero.");
+                    Console.ReadKey();
+                    continue;
+                }
+
+                switch (opc)
+                {
+                    case 0:
+                        Console.WriteLine("Saliendo del programa...");
+                        return;
+
+                    case 1:
+                        Console.WriteLine("\nEjercicio 1 - Bucles - For Mostrar numeros\n");
+                        Ej1BuclesForMostrarNum.MostrarNumeros();
+
+                        Console.WriteLine("Presiona cualquier tecla para volver al menu principal");
+                        break;
+
+                    case 2:
+                        Console.WriteLine("\nEjercicio 2 - Bucles - For Tabla de multiplicar\n");
+                        Ej2ForTablaMultiplicar.TablaMultiplicar();
+
+                        Console.WriteLine("Presiona cualquier tecla para volver al menu principal");
+                        break;
+
+                    case 3:
+                        Console.WriteLine("\nEjercicio 3 - Bucles - While Pedir numeros\n");
+                        Ej3BuclesWhilePedirNumCont.ContarNumeros();
+
+                        Console.WriteLine("Presiona cualquier tecla para volver al menu principal");
+                        break;
+
+                    case 4:
+                        Console.WriteLine("\nEjercicio 4 - Bucles - Foreach Mostrar nombres\n");
+                        Ej4BuclesForeachArrayNombres.MostrarNombres();
+
+                        Console.WriteLine("Presiona cualquier tecla para volver al menu principal");
+                        break;
+                    default:
+
+                        Console.WriteLine("El numero ingresado esta fuera de rango, vuelve a introducir un numero.");
+                        break;
+                }
+
+                Console.ReadKey();
+            }
+        }
+    }
+}

@@ -1,0 +1,68 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Arrays
+{
+    public class Ej3ArraysBuscarPalabra
+    {
+        /**
+         * Ejercicio 3: Crea un array de strings con 4 frutas. Pide una fruta al usuario y di si está o no
+         * en el array.
+        **/
+
+        public static void BuscarPalabra()
+        {
+            while (true)
+            {
+                Console.Clear();
+                Console.WriteLine("=========================================");
+                Console.WriteLine("  Ejercicio 3 Arrays - Buscar palabra");
+                Console.WriteLine("=========================================");
+
+                string[] frutas = { "manzana", "pera", "banana", "kiwi" };
+
+                foreach (string fruta in frutas)
+                {
+                    Console.Write(fruta + " ");
+                }
+
+                Console.WriteLine("\nIntroduce la fruta que deseas buscar: ");
+
+                string entrada = Console.ReadLine();
+                bool encontrada = false;
+                int count = 0;
+
+                foreach (string fruta in frutas)
+                {
+                    if (entrada.Equals(fruta))
+                    {
+                        encontrada = true;
+                        break;
+                    }else
+                    {
+                        encontrada = false;
+                    }
+                    count++;
+                }
+                if(encontrada)
+                    Console.WriteLine("La fruta se encuentra en el array en la posicion: " + count);
+                else
+                    Console.WriteLine("La fruta no se encuentra en el array.");
+
+                    // Console.ReadKey();
+                    Console.WriteLine("Deseas continuar? (s/n)");
+                string respuesta = Console.ReadLine();
+                if (!respuesta.Equals("s"))
+                {
+                    Console.WriteLine("Saliendo del ejercicio...");
+                    return;
+                }
+
+
+            }
+        }
+    }
+}

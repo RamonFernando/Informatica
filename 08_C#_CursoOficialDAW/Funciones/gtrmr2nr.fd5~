@@ -1,0 +1,39 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ej1FuncionesHolaMundo
+{   /**
+     * Ejercicio 3: Crea un método IsEven(int n) que devuelva true si el número es par,
+     * false si no.
+     * Pruébalo con varios valores.
+    **/
+    public class Ej3FuncionesIsEven
+    {   /**
+         * Ejercicio 3: Crea un método IsEven(int n) que devuelva true si el número es par,
+         * false si no.
+         * Pruébalo con varios valores.
+        **/
+        /**
+         * Comprueba si un valor es par
+         * return true si es par
+        **/
+        public static bool IsEven(int num)
+        {
+            Console.Clear();
+            Console.WriteLine("=====================================");
+            Console.WriteLine("  Ejercicios 3 - Funciones - IsEven");
+            Console.WriteLine("=====================================");
+            Console.WriteLine("3. Ejercicio 3 IsEven(Comprobar si es par).");
+            
+            return num % 2 == 0;
+        }
+
+        // Evita crear duplicados de Random
+        private static readonly Random random = new Random();
+        // Crea un numero aleatorio
+        public static int NumRandom() => random.Next(1, 100);
+    }
+}

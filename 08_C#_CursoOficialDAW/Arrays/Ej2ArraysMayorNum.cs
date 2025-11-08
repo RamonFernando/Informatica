@@ -1,0 +1,70 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Arrays
+{
+    /**
+     * Ejercicio 2: Pide al usuario 5 números, guárdalos en un array y muestra el número mayor.
+     **/
+    /**
+     * Pide al usuario 5 números y los guarda en un array, muestra el número mayor.
+     * **/
+    public class Ej2ArraysMayorNum
+    {
+        public static void MayorNumero()
+        {
+            while (true)
+            {
+                Console.Clear();
+                Console.WriteLine("=======================================");
+                Console.WriteLine("  Ejercicio 2 Arrays - Mayor numero");
+                Console.WriteLine("=======================================");
+                Console.WriteLine("Introduce 5 numeros: o 's' para salir: ");
+
+                double[] numeros = new double[5];
+                bool exit = false;
+                int count = 0;
+
+                for (int i = 0; i < numeros.Length; i++)
+                {
+                    Console.WriteLine($"Introduce el numero {i + 1}: ");
+                    string entrada = Console.ReadLine();
+                    if (entrada.Equals("s"))
+                    {
+                        Console.WriteLine("Saliendo del ejercicio...");
+                        exit = true;
+                        break;
+                    }
+                    
+                    if (!double.TryParse(entrada, out double num) && !entrada.Equals("s"))
+                    {
+                        Console.WriteLine("Opcion no valida, introduce un numero entero.");
+                        Console.WriteLine("Presiona cualquier tecla para continuar.");
+                        i--;
+                        continue;
+                    }
+                    
+                    numeros[i] = num;
+                    count++;
+                }
+                // Mostramos los numeros
+                Console.WriteLine((count > 0) ? $"El numero mayor es: {numeros.Max()}" : "No has introducido ningun numero.");
+                for (int i = 0; i < numeros.Length; i++)
+                {   
+                    if (numeros[i] == 0) continue; // Ignoramos el 0 y no lo mostramos
+                    Console.WriteLine($"El numero {i + 1} es: {numeros[i]}");
+                }
+
+                Console.Write("\nPresiona cualquier tecla para continuar.");
+                Console.ReadKey();
+                
+                if (exit) return;
+            }
+
+
+        }
+    }
+}

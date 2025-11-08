@@ -1,0 +1,8 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\Ej1FuncionesHolaMundo\bin\Debug\Ej1FuncionesHolaMundo.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\Ej1FuncionesHolaMundo\bin\Debug\Ej1FuncionesHolaMundo.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\Ej1FuncionesHolaMundo\bin\Debug\Ej1FuncionesHolaMundo.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\Ej1FuncionesHolaMundo\obj\Debug\Ej1FuncionesHolaMundo.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\Ej1FuncionesHolaMundo\obj\Debug\Ej1FuncionesHolaMundo.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\Ej1FuncionesHolaMundo\obj\Debug\Ej1FuncionesHolaMundo.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\Ej1FuncionesHolaMundo\obj\Debug\Ej1FuncionesHolaMundo.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\Ej1FuncionesHolaMundo\obj\Debug\Ej1FuncionesHolaMundo.exe.config

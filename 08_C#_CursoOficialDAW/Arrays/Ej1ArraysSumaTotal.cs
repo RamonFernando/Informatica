@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Arrays
+{
+    public class Ej1ArraysSumaTotal
+    {   /**
+         * Ejercicio 1: Crea un array de 5 enteros, asígnales valores manualmente y muestra la suma total.
+        **/
+        public static void SumarNumeros()
+        {            
+            Console.Clear();
+            Console.WriteLine("=========================================");
+            Console.WriteLine("  Ejercicio 1 Arrays - Sumar numeros");
+            Console.WriteLine("=========================================");
+
+            // Descomentar las lineas deseadas para probar la forma 2
+            int[] integersNums = { 1, 2, 3, 4, 5 };
+            // int sumaTotal = 0;
+
+            Console.WriteLine("Los numeros son: ");
+            for (int i = 0; i < integersNums.Length; i++)
+            {
+                Console.Write(integersNums[i] + " ");
+                // sumaTotal += integersNums[i];
+            }
+            
+            // Console.WriteLine($"\nLa suma total es: {sumaTotal}");
+            Console.WriteLine("\nLa suma total es: " + integersNums.Sum());
+        }
+    }
+}

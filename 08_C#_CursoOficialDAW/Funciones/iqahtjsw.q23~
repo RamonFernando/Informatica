@@ -1,0 +1,36 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ej1FuncionesHolaMundo
+{
+    public class Ej4FuncionesAverage
+    {
+
+        public static void Average(double[] notas)
+        {
+            Console.Clear();
+            Console.WriteLine("======================================");
+            Console.WriteLine("  Ejercicios 4 - Funciones - Average");
+            Console.WriteLine("======================================");
+            Console.WriteLine("4. Ejercicio 4 Average(Nota media).");
+
+            notas = RandomNotes(notas);
+            for (int i = 0; i < notas.Length; i++)
+                Console.Write(notas[i] + " ");
+                    
+            Console.WriteLine("\nLa nota media es: " + notas.Average());
+        }
+        // Generamos numeros aleatorios con decimales entre 1 y 10
+        public static double[] RandomNotes(double[] notas)
+        {
+            Random random = new Random();
+            for (int i = 0; i < notas.Length; i++)
+                notas[i] = random.NextDouble() * 9 + 1;
+            
+            return notas;
+        }
+    }
+}
