@@ -78,7 +78,7 @@ namespace APIPrueba
                                     PrintCharacters(result);
 
                                     if (result.Count == 0)
-                                        Console.WriteLine($"No se ha encontrado ningun personaje con el id {id}.");
+                                        Console.WriteLine("No se ha encontrado ningun personaje con ese nombre.");
 
                                     Console.WriteLine("Presiona cualquier tecla para continuar...");
                                     Console.ReadKey();
@@ -96,9 +96,8 @@ namespace APIPrueba
 
                                     var result2 = await CharacterControler.SearchByName(name, page2);
                                     PrintCharacters(result2);
-
                                     if (result2.Count == 0)
-                                        Console.WriteLine($"No se ha encontrado ningun personaje con el Nombre {name}.");
+                                        Console.WriteLine("No se ha encontrado ningun personaje con ese nombre.");
 
                                     Console.WriteLine("Presiona cualquier tecla para continuar...");
                                     Console.ReadKey();
