@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "aybnHaXhjlM=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Ramon\\Ramon Dropbox\\Ramon Perez\\PC\\Desktop\\Informatica\\08_C#_CursoOficialDAW\\RickAndMortyAPI\\RickAndMortyAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Ramon\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.22.1\\microsoft.visualstudio.azure.containers.tools.targets.1.22.1.nupkg.sha512"
+  ],
+  "logs": []
+}

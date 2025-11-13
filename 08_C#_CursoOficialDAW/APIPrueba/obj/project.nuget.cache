@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Ub8hLFrLmAI=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Ramon\\Ramon Dropbox\\Ramon Perez\\PC\\Desktop\\Informatica\\08_C#_CursoOficialDAW\\APIPrueba\\APIPrueba.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Ramon\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.22.1\\microsoft.visualstudio.azure.containers.tools.targets.1.22.1.nupkg.sha512",
+    "C:\\Users\\Ramon\\.nuget\\packages\\newtonsoft.json\\13.0.4\\newtonsoft.json.13.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}

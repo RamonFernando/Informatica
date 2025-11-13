@@ -1,0 +1,26 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Net.Http;
+
+namespace ProyectoAPI
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            // 1. Instanciar las librerias necesarias
+            // 2. Crear la instancia del cliente HTTP
+            // 3. Crear la URL del servidor al que se va a conectar
+            // (Opcional) Limpiar el header (encabezado)
+            // (Opcional) Agregar el encabezado de autorizacion
+            // 4. Enviar la peticion al servidor
+            // 5. Validar la respuesta del servidor (200)
+            // 6. Leer el contenido de la respuesta
+            // 7. Colocar un try catch para manejo de errores
+        }
+    }
+}

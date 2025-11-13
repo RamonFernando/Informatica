@@ -1,0 +1,81 @@
+﻿using APIModel;
+using Newtonsoft.Json.Linq;
+using System.Net.Http;
+
+namespace APIControler
+{
+    public class CharacterControler
+    {   
+        // Crear un objeto HttpClient una sola vez para realizar las peticiones
+        private static readonly HttpClient client = new HttpClient();
+        /**
+         * Realiza una petición asincrona para obtener la lista de personajes
+         * @param page Pagina de la API
+         * return Llama a la funcion GetCharacters que devuelve la lista de personajes
+         **/
+        public static async Task<List<Character>> GetCharacters(int page)
+        {   
+            string url = $"https://rickandmortyapi.com/api/character?page={page}";
+
+            try
+            {
+                // Realizar la petición
+                using HttpResponseMessage response = await client.GetAsync(url); 
+
+                response.EnsureSuccessStatusCode(); // validación
+                Console.WriteLine((response.StatusCode == System.Net.HttpStatusCode.OK
+                        ? "OK" : "Error " + response.StatusCode));
+
+                string content = await response.Content.ReadAsStringAsync(); // Leer el contenido del JSON
+
+                return GetListCharacters(content); // Devuelve la lista de personajes
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return []; // new List<Character>();
+            }
+
+        }
+        /**
+         * Obtiene la lista de personajes
+         * return Lista de personajes
+         **/
+        private static List<Character> GetListCharacters(string content)
+        {
+            try
+            {
+                List<Character> characters = new List<Character>(); // []
+
+                var json = JObject.Parse(content); // Parsear el JSON a un objeto JObject
+
+                // Obtener la lista de personajes del JSON o asignar una lista vacía sino encuentra "results"
+                characters = json["results"]?.ToObject<List<Character>>() ?? [];
+
+                if (characters == null)
+                {
+                    Console.WriteLine("No se encontraron personajes");
+                    return [];
+                }
+
+                foreach (var character in characters)
+                {
+                    Console.WriteLine($"\nID: {character.ID}");
+                    Console.WriteLine(character.Name);
+                    Console.WriteLine(character.Status);
+                    Console.WriteLine(character.Species);
+                    Console.WriteLine(character.Gender);
+                    Console.WriteLine(character.Image);
+                }
+
+                return characters;
+            } catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return [];
+            }
+        }
+
+
+    }
+}

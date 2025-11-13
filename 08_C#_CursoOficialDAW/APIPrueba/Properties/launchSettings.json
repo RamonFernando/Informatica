@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "APIPrueba": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
