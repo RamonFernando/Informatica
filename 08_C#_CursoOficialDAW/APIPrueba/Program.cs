@@ -68,7 +68,6 @@ namespace APIPrueba
                             }
                             switch (opc1)
                             {
-
                                 case 1:
                                     Console.WriteLine("Introduce el ID del personaje: ");
                                     int id = Convert.ToInt32(Console.ReadLine());
@@ -129,8 +128,9 @@ namespace APIPrueba
 
         }
         public static void PrintCharacters(List<Character> characters)
-        {            
-            Console.WriteLine(JsonConvert.SerializeObject(characters, Formatting.Indented));
+        {
+            var json = JsonConvert.SerializeObject(characters, Formatting.Indented);
+            Console.WriteLine(json);
         }
     }
 }

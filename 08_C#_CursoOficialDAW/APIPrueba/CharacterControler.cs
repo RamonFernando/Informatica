@@ -75,6 +75,8 @@ namespace APIControler
         }
         public static async Task<List<Character>> SearchByName(string name, int page)
         {
+            string url = $"https://rickandmortyapi.com/api/character/?name={name}&page={page}";
+            using HttpClient client = new HttpClient();
             List<Character> idPerson = await GetCharacters(page);
             
             var result = idPerson.Where(p => p.Name.ToLower() == name.ToLower()).ToList();
