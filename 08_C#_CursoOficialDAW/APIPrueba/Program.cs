@@ -1,106 +1,71 @@
 ﻿using APIControler;
 using APIModel;
 using Newtonsoft.Json;
-using System.Security.Cryptography.X509Certificates;
-using System.Xml;
 using Formatting = Newtonsoft.Json.Formatting;
 
 namespace APIPrueba
 {
     public class Program
     {
+        // Paginas de la API (1-42)
+        private const int MIN_PAGE = 1, MAX_PAGE = 42;
         public static async Task Main(string[] args)
         {   
+            
             try
             {
                 while (true)
                 {
-                    Console.Clear();
-                    Console.WriteLine("=========================");
-                    Console.WriteLine("  API de Rick and Morty");
-                    Console.WriteLine("=========================");
-                    Console.WriteLine("1.- Listar GET");
-                    Console.WriteLine("2.- Buscador");
-                    Console.WriteLine("0.- Salir");
-                    Console.WriteLine("=======================");
-                    Console.Write("Elige una opcion: ");
-                    
-                    if (!int.TryParse(Console.ReadLine(), out int opc))
-                    {
-                        Console.WriteLine("Debes introducir un numero");
-                        Console.WriteLine("Presiona cualquier tecla para continuar...");
-                        Console.ReadKey();
-                        continue;
-                    }
-                        
+                    PrintMenu();
+                    int opc = ValidateInteger("Elige una opcion: ");
+                   
                     switch (opc)
                     {
                         case 1:
                             Console.WriteLine("Ejemplo de uso de la API de Rick and Morty Peticion: GET\n");
-                            Console.WriteLine("Ingresa la pagina: ");
-                            int page = Convert.ToInt32(Console.ReadLine());
-                            var characters = await CharacterControler.GetCharacters(page);
+                            var characters = await CharacterControler.GetAllCharacters();
                             PrintCharacters(characters);
 
-                            Console.WriteLine("Presiona cualquier tecla para continuar...");
-                            Console.ReadKey();
+                            WaitForPressKey();
                             break;
                         case 2:
-                            Console.Clear();
-                            Console.WriteLine("=========================");
-                            Console.WriteLine("         Buscador");
-                            Console.WriteLine("=========================");
-                            Console.WriteLine("1.- Id");
-                            Console.WriteLine("2.- Nombre");
-                            Console.WriteLine("3.- Status"); // pendiente
-                            Console.WriteLine("4.- Species");// pendiente
-                            Console.WriteLine("5.- Gender");// pendiente
-                            Console.WriteLine("6.- Origin");// pendiente
-                            Console.WriteLine("0.- Volver al menu principal");
-                            Console.WriteLine("=======================");
-                            Console.Write("Elige una opcion: ");
-                            if (!int.TryParse(Console.ReadLine(), out int opc1))
-                            {
-                                Console.WriteLine("Debes introducir un numero");
-                                Console.WriteLine("Presiona cualquier tecla para continuar...");
-                                Console.ReadKey();
-                                continue;
-                            }
+                            PrintSearchMenu();
+                            int opc1 = ValidateInteger("Elige una opcion: ");
+                            
                             switch (opc1)
                             {
                                 case 1:
                                     Console.WriteLine("Introduce el ID del personaje: ");
                                     int id = Convert.ToInt32(Console.ReadLine());
-                                    Console.WriteLine("Introduce la pagina: ");
-                                    int page1 = Convert.ToInt32(Console.ReadLine());
-                                    var result = await CharacterControler.SearchById(id, page1);
+                                    
+                                    var result = await CharacterControler.SearchById(id);
                                     PrintCharacters(result);
 
                                     if (result.Count == 0)
                                         Console.WriteLine($"No se ha encontrado ningun personaje con el id {id}.");
 
-                                    Console.WriteLine("Presiona cualquier tecla para continuar...");
-                                    Console.ReadKey();
+                                    WaitForPressKey();
                                     break;
                                 case 2:
                                     Console.WriteLine("Introduce el Nombre del personaje: ");
                                     string? name = Console.ReadLine();
-                                    Console.WriteLine("Introduce la pagina: ");
-                                    int page2 = Convert.ToInt32(Console.ReadLine());
-                                    if (string.IsNullOrEmpty(name) || (page2 < 0 || page2 > 42))
+                                    
+                                    
+                                    // Comprobamos que el nombre no este vacio y que la pagina este entre 1 y 42
+                                    if (string.IsNullOrEmpty(name))
                                     {
                                         Console.WriteLine("El nombre no puede estar vacio o la pagina debe estar entre 1 y 42.");
+                                        WaitForPressKey();
                                         return;
                                     }
 
-                                    var result2 = await CharacterControler.SearchByName(name, page2);
+                                    var result2 = await CharacterControler.SearchByName(name);
                                     PrintCharacters(result2);
 
                                     if (result2.Count == 0)
                                         Console.WriteLine($"No se ha encontrado ningun personaje con el Nombre {name}.");
 
-                                    Console.WriteLine("Presiona cualquier tecla para continuar...");
-                                    Console.ReadKey();
+                                    WaitForPressKey();
                                     break;
 
                                 case 0:
@@ -121,16 +86,71 @@ namespace APIPrueba
                             break;
                     }
                 }
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
 
         }
+        // Metodos de impresion
+        public static void PrintMenu()
+        {
+            Console.Clear();
+            Console.WriteLine("=========================");
+            Console.WriteLine("  API de Rick and Morty");
+            Console.WriteLine("=========================");
+            Console.WriteLine("1.- Listar GET");
+            Console.WriteLine("2.- Buscador");
+            Console.WriteLine("0.- Salir");
+            Console.WriteLine("=======================");
+            
+        }
+        public static void PrintSearchMenu()
+        {
+            Console.Clear();
+            Console.WriteLine("=========================");
+            Console.WriteLine("         Buscador");
+            Console.WriteLine("=========================");
+            Console.WriteLine("1.- Id");
+            Console.WriteLine("2.- Nombre");
+            Console.WriteLine("3.- Status"); // pendiente
+            Console.WriteLine("4.- Species");// pendiente
+            Console.WriteLine("5.- Gender");// pendiente
+            Console.WriteLine("6.- Origin");// pendiente
+            Console.WriteLine("0.- Volver al menu principal");
+            Console.WriteLine("=======================");
+            
+        }
+        public static void WaitForPressKey()
+        {
+            Console.WriteLine("Presiona cualquier tecla para continuar...");
+            Console.ReadKey();
+        }
+        
         public static void PrintCharacters(List<Character> characters)
         {
             var json = JsonConvert.SerializeObject(characters, Formatting.Indented);
             Console.WriteLine(json);
+        }
+
+        // Metodos de logica
+        public static bool ValidatePage(int page) => page > MIN_PAGE && page <= MAX_PAGE;
+
+        public static int ValidateInteger(string prompt)
+        {
+            int value;
+            while (true)
+            {                   
+                Console.Write(prompt);
+                string? num = Console.ReadLine();
+
+                if (!string.IsNullOrWhiteSpace(num) && int.TryParse(num, out value))
+                    return value;
+
+                Console.WriteLine("Debes introducir un numero");
+            }
+            
         }
     }
 }

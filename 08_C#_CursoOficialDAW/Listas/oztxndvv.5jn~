@@ -1,0 +1,60 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Listas
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Ejercicio 1 practicando listas antes de hacer las peticiones a la API
+            List<string> ciudades = new List<string>()
+                {
+                "Madrid",
+                "Barcelona",
+                "Valencia",
+                "Sevilla",
+                "Palma de Mallorca"
+            };
+            foreach (var c in ciudades)
+            {
+                Console.WriteLine(c);
+            }
+
+            List<Alumno> alumnos = new List<Alumno>()
+            {
+                new Alumno() { Nombre = "Ramon", Nota = 8 },
+                new Alumno() { Nombre = "Blas", Nota = 3.7 },
+                new Alumno() { Nombre = "Maite", Nota = 7 },
+                new Alumno() { Nombre = "Nick", Nota = 4.8 },
+                new Alumno() { Nombre = "Eva", Nota = 9.5 }
+            };
+            // Usando LINQ y mostrando manualmente
+            foreach (var alumno in alumnos.Where(n => n.Nota > 5))
+            {
+                Console.WriteLine($"Alumno: {alumno.Nombre} Nota: {alumno.Nota}" );
+            };
+            foreach (var nota in alumnos)
+            {
+                if(nota.Nota > 5)
+                {
+                    Console.Write(nota.Nota + " ");
+                }
+            }
+            // Usando metodo ToString
+            ToString(alumnos.Where(n => n.Nota > 5));
+        }
+        public static void ToString(List<string> list)
+        {
+            Console.WriteLine(string.Join(" - ", list));
+        }
+        public class Alumno
+        {
+            public string Nombre { get; set; }
+            public double Nota { get; set; }
+        }
+    }
+}

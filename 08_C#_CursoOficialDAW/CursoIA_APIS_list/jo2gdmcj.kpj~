@@ -1,0 +1,46 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CursoIA_APIS_list
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {   
+
+            // Ejercicio 1 practicando listas antes de hacer las peticiones a la API
+            List<string> ciudades = new List<string>()
+                {
+                "Madrid",
+                "Barcelona",
+                "Valencia",
+                "Sevilla",
+                "Palma de Mallorca"
+            };
+            foreach (var c in ciudades)
+            {
+                Console.WriteLine(c);
+            }
+
+            List<double> notas = new List<double>()
+            {
+                7.5,
+                3.2,
+                9.5,
+                4.8,
+                7.5
+            };
+            foreach (var nota in notas.Where(n => n > 5).ToString())
+            {
+                Console.WriteLine(nota);
+            }
+            ;
+
+
+
+        }
+    }
+}

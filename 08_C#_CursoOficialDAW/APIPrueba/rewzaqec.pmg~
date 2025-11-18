@@ -1,0 +1,142 @@
+﻿using APIModel;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Net.Http;
+
+namespace APIControler
+{
+    public class CharacterControler
+    {
+        // HttpClient estático para toda la aplicación
+        private static readonly HttpClient client = new HttpClient();
+
+        /// <summary>
+        /// Realiza una petición a la API de Rick and Morty para obtener la lista completa de personajes.
+        /// Utiliza un HttpClient reutilizable y valida el estado de la respuesta.
+        /// </summary>
+        /// <returns>Una lista de personajes obtenida del JSON de la API</returns>
+        public static async Task<List<Character>> GetCharacters()
+        {
+            string url = "https://rickandmortyapi.com/api/character";
+
+            try
+            {
+                // Petición GET a la API
+                using HttpResponseMessage response = await client.GetAsync(url);
+
+                // Lanza excepción si la respuesta no es exitosa
+                response.EnsureSuccessStatusCode();
+
+                // Mostrar estado (OK o error)
+                Console.WriteLine(response.StatusCode == System.Net.HttpStatusCode.OK
+                    ? "OK. Petición exitosa."
+                    : $"Error {response.StatusCode}");
+
+                // Leer contenido JSON
+                string content = await response.Content.ReadAsStringAsync();
+
+                Console.WriteLine("Lista de personajes obtenida correctamente.");
+
+                // Convertir el JSON a lista de personajes
+                return GetListCharacters(content);
+            }
+            catch (HttpRequestException httpEx)
+            {
+                Console.WriteLine($"Error en la petición HTTP: {httpEx.Message}");
+                return [];
+            }
+            catch (JsonException jsonEx)
+            {
+                Console.WriteLine($"Error al procesar JSON: {jsonEx.Message}");
+                return [];
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error inesperado: {ex.Message}");
+                return [];
+            }
+        }
+
+        /// <summary>
+        /// Convierte el contenido JSON de la API a una lista de personajes.
+        /// Valida que el JSON contenga la propiedad "results".
+        /// </summary>
+        /// <param name="content">JSON crudo devuelto por la API</param>
+        /// <returns>Lista de personajes o una lista vacía si el JSON es inválido o está incompleto</returns>
+        private static List<Character> GetListCharacters(string content)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(content))
+                {
+                    Console.WriteLine("El contenido JSON está vacío o es nulo.");
+                    return [];
+                }
+
+                // Parsear el JSON
+                JObject json = JObject.Parse(content);
+
+                // Validar que "results" exista y sea un array
+                var resultsToken = json["results"];
+                if (resultsToken == null || resultsToken.Type != JTokenType.Array)
+                {
+                    Console.WriteLine("El JSON no contiene un array 'results'.");
+                    return [];
+                }
+
+                // Convertir a List<Character>
+                return resultsToken.ToObject<List<Character>>() ?? [];
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al convertir el JSON: {ex.Message}");
+                HandleCharacterError(ex);
+                return [];
+            }
+            
+        }
+
+
+        public static async Task<List<Character>> SearchById(int id)
+        {
+            List<Character> idPerson = await GetCharacters();
+
+            var result = idPerson.Where(p => p.Id == id).ToList();
+            return result; // new List<Character>();
+        }
+        public static async Task<List<Character>> SearchByName(string name, int page)
+        {
+            List<Character> idPerson = await GetCharacters();
+            
+            var result = idPerson.Where(p => p.Name.ToLower() == name.ToLower()).ToList();
+            
+            return result; // new List<Character>();
+        }
+        /// <summary>
+        /// Maneja todas las excepciones comunes de la API (HTTP, JSON y generales).
+        /// Imprime un mensaje claro y devuelve una lista vacía.
+        /// </summary>
+        private static List<Character> HandleCharacterError(Exception ex)
+        {
+            switch (ex)
+            {
+                case HttpRequestException httpEx:
+                    Console.WriteLine($"Error en la petición HTTP: {httpEx.Message}");
+                    break;
+
+                case JsonException jsonEx:
+                    Console.WriteLine($"Error al procesar JSON: {jsonEx.Message}");
+                    break;
+
+                default:
+                    Console.WriteLine($"Error inesperado: {ex.Message}");
+                    break;
+            }
+
+            return []; // Devuelve una lista vacía sin tener que repetir código
+        }
+
+
+
+    }
+}

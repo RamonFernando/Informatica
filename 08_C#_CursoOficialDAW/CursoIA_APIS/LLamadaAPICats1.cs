@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CursoIA_APIS
+{
+    internal class LLamadaAPICats1
+    {
+        public static void GetCats()
+        {
+            // Hacer una peticion GET a una API
+            // https://catfact.ninja/fact
+
+            Console.WriteLine("Peticion a API Cats Facts");
+
+            // 1. Creamos el cliente
+            HttpClient client = new HttpClient();
+
+            // 2. Creamos la variable que almacena la url
+            var url = "https://catfact.ninja/fact";
+
+            // 3. Creamos la peticion
+            string respuesta = client.GetStringAsync(url).Result;
+
+            // 4. Validamos la respuesta
+            if (respuesta == null) Console.WriteLine("Error en la peticion");
+
+            // 5. Imprimimos la respuesta
+            Console.WriteLine(respuesta);
+        }
+    }
+}
