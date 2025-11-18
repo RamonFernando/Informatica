@@ -25,3 +25,8 @@ C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOfici
 C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\CursoIA_APIS_list\bin\Debug\System.Text.Json.xml
 C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\CursoIA_APIS_list\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\CursoIA_APIS_list\obj\Debug\CursoIA_.05CC42A4.Up2Date
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\CursoIA_APIS_list\bin\Debug\Newtonsoft.Json.Bson.dll
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\CursoIA_APIS_list\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\CursoIA_APIS_list\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\CursoIA_APIS_list\bin\Debug\Newtonsoft.Json.Bson.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\CursoIA_APIS_list\bin\Debug\Newtonsoft.Json.Bson.xml

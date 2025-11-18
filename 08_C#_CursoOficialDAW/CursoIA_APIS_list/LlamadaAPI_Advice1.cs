@@ -1,15 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+
 
 namespace CursoIA_APIS_list
 {
     internal class LlamadaAPI_Advice1
     {
+        // 1. Creamos un objeto HttpClient
         static readonly HttpClient client = new HttpClient();
 
         public class Advice
@@ -22,24 +21,30 @@ namespace CursoIA_APIS_list
                 return "\nId: " + id + "\nAdvice: " + advice;
             }
         }
+        public class AdviceContent
+        {
+            public Advice slip { get; set; }
+        }
         public static async Task GetRequestDeserializable()
         {
             string url = "https://api.adviceslip.com/advice";
-            Console.WriteLine("Llamada a api y deserializacion de datos.");
+            
             try
-            {
+            {   // 2. Hacer una peticion GET a url
                 HttpResponseMessage response = await client.GetAsync(url);
+                
+                // 3. Validamos la peticion
                 if (response.IsSuccessStatusCode)
                 {
+                    // 4. Obtenemos el contenido de la peticion
                     string responseJson = await response.Content.ReadAsStringAsync();
-                    Console.WriteLine(responseJson);
+                    Console.WriteLine(responseJson); // Imprimimos el contenido
 
-                    List<Advice> advices = JsonSerializer.Deserialize<List<Advice>>(responseJson);
+                    // 5. Deserializamos el contenido en un objeto AdviceContent (JSON)
+                    AdviceContent advices = JsonSerializer.Deserialize<AdviceContent>(responseJson);
 
-                    foreach (var advice in advices)
-                    {
-                        Console.WriteLine(advice.ToString());
-                    }
+                    // 6. Imprimimos el contenido con metodo ToString()
+                    Console.WriteLine(advices.slip.ToString());
 
                 }
                 else
