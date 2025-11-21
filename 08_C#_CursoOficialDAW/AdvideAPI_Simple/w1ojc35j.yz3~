@@ -1,0 +1,64 @@
+﻿using System;
+using System.Net.Http;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+
+namespace AdvideAPI_Simple
+{
+    internal class AdviceControlers
+    {
+        static readonly HttpClient client = new HttpClient();
+        public static async Task GetRequestMethod()
+        {
+            try
+            {
+                // 1. Peticion GET
+                HttpResponseMessage response = await GetRequest(GetUrl());
+                
+                // 2. Valicacion servidor 
+                Console.WriteLine(ValidationServerRequest(response));
+
+                // 3. Obtenemos el JSON
+                string stringJson = await GetJson(response);
+                
+                // 4. Deserializamos y formateamos               
+                string printJson = FormattedJson(stringJson);
+
+                // 5. Imprimir (print)
+                Console.WriteLine("\nJSON");
+                PrintJson(printJson);
+
+                // 6. Deserializamos para obtener el contenido (propiedades)
+                AdviceContent advice = DeserializedJsonObject(stringJson);
+                
+                // 7. Imprimimos el contenido
+                Console.WriteLine("\nAtributos");
+                PrintAdvice(advice);
+
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        public static string GetUrl() => "https://api.adviceslip.com/advice";
+        public static async Task<HttpResponseMessage> GetRequest(string url) =>
+            await client.GetAsync(GetUrl());
+        public static string ValidationServerRequest(HttpResponseMessage response)
+        {
+            if (!response.IsSuccessStatusCode)
+            {
+                return $"Error de la peticion HTTP: \nCodigo: {response.StatusCode}\nInfo: {response.ReasonPhrase}";
+            }
+            return "Response: OK";
+        }
+        public static async Task<string> GetJson(HttpResponseMessage response) =>
+            await response.Content.ReadAsStringAsync();
+        public static string FormattedJson(string stringJson) => 
+            JsonConvert.SerializeObject(JObject.Parse(stringJson), Formatting.Indented);
+        public static void PrintJson(string stringJson) => Console.WriteLine(stringJson);
+        public static AdviceContent DeserializedJsonObject(string stringJsonObject) => JsonConvert.DeserializeObject<AdviceContent>(stringJsonObject);
+        public static void PrintAdvice(AdviceContent content) => Console.WriteLine($"Id: {content.Slip.Id}\nAdvice: {content.Slip.Advice}");
+    }
+}

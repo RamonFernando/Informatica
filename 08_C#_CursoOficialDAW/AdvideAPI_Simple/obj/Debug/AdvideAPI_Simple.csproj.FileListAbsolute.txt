@@ -1,0 +1,11 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\AdvideAPI_Simple\bin\Debug\AdvideAPI_Simple.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\AdvideAPI_Simple\bin\Debug\AdvideAPI_Simple.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\AdvideAPI_Simple\bin\Debug\AdvideAPI_Simple.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\AdvideAPI_Simple\obj\Debug\AdvideAPI_Simple.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\AdvideAPI_Simple\obj\Debug\AdvideAPI_Simple.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\AdvideAPI_Simple\obj\Debug\AdvideAPI_Simple.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\AdvideAPI_Simple\obj\Debug\AdvideAPI_Simple.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\AdvideAPI_Simple\obj\Debug\AdvideAPI_Simple.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\AdvideAPI_Simple\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\AdvideAPI_Simple\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\AdvideAPI_Simple\obj\Debug\AdvideAP.FA4E3A9D.Up2Date

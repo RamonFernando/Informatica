@@ -39,7 +39,7 @@ namespace CursoIA_APIS_list
 
 
                 /* ============================
-                   1) JSON BONITO (JsonElement)
+                    1) JSON BONITO (JsonElement)
                    ============================ */
 
                 JsonElement jsonElement = JsonSerializer.Deserialize<JsonElement>(responseJson);
@@ -51,7 +51,7 @@ namespace CursoIA_APIS_list
 
 
                 /* ============================
-                   2) DATOS ÚTILES (POCO clases)
+                    2) DATOS ÚTILES (POCO clases)
                    ============================ */
 
                 AdviceContent data = JsonSerializer.Deserialize<AdviceContent>(responseJson);

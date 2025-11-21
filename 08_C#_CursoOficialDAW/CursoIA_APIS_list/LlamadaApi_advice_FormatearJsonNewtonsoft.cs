@@ -8,11 +8,11 @@ namespace CursoIA_APIS_list
 {
     // Peticion Get y formateo con Newtonsoft
     internal class LlamadaApi_advice_FormatearJsonNewtonsoft
-    {   
+    {
         // 1. Peticion Get
         static readonly HttpClient client = new HttpClient();
         public static async Task GetRequestFormatJsonNewtonsoft()
-        {   
+        {
             Console.WriteLine("=== Peticion Get y formateo con Newtonsoft ===");
             string url = "https://api.adviceslip.com/advice";
             try

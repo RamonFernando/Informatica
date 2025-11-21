@@ -1,0 +1,24 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AdvideAPI_Simple
+{
+    internal class AdviceControlers
+    {
+        public static async Task GetRequestMethod()
+        {
+            Console.WriteLine("HTTP GET Prueba");
+            try
+            {
+                Console.WriteLine();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+    }
+}
