@@ -23,6 +23,8 @@ namespace PlantillaMenú
             Console.WriteLine("2. Filtrar API (Id)");
             Console.WriteLine("3. Agregar a Lista API");
             Console.WriteLine("4. Eliminar de Lista API");
+            Console.WriteLine("5. Mostrar Lista API");
+            Console.WriteLine("6. Borrar toda la Lista API");
             Console.WriteLine("0. Salir");
             Console.WriteLine("**=============================**");
             Console.Write("Seleccione una opcion: ");
@@ -36,7 +38,7 @@ namespace PlantillaMenú
         }
         public static int? ValidateInput(string input)
         {
-            if (!int.TryParse(input, out int opc) || (opc < 0 || opc > 4))
+            if (!int.TryParse(input, out int opc) || (opc < 0 || opc > 6))
             {
                 Console.WriteLine("El valor ingresado no es valido");
                 WaitForPressKey();

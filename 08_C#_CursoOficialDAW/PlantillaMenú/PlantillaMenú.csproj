@@ -77,7 +77,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="APIControllers.cs" />
+    <Compile Include="APIFavoriteList.cs" />
     <Compile Include="APIFiltersControllers.cs" />
+    <Compile Include="APILoadFavoriteListFromJson.cs" />
+    <Compile Include="APISaveFavoriteListJson.cs" />
     <Compile Include="MenuControllers.cs" />
     <Compile Include="Models.cs" />
     <Compile Include="Program.cs" />

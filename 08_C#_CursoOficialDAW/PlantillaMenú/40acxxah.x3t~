@@ -49,19 +49,12 @@ namespace PlantillaMenú
                             case 4:
                                 Console.WriteLine("Eliminamos nombres de la Lista API");
                                 RequestRemoveToFavoriteList(); // APIFavoriteList
-                                SaveFavoritesToJson();
-
                                 WaitForPressKey();
                                 break;
                             case 5:
                                 Console.WriteLine("Mostramos Lista API");
                                 PrintList(FavoriteList); // APIFavoriteList
                                 WaitForPressKey();
-                                break;
-                            case 6:
-                                Console.WriteLine("Borrar Lista API");
-                                RequestClearFavoriteList(); // APIFavoriteList
-
                                 break;
                             case 0:
                                 ExitMenu();

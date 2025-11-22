@@ -8,7 +8,6 @@ using System.Net.Http;
 // Importar static
 using static PlantillaMenú.APIControllers;
 using static PlantillaMenú.MenuControllers;
-using static PlantillaMenú.APIFavoriteList;
 using static PlantillaMenú.Models;
 
 namespace PlantillaMenú
@@ -20,16 +19,15 @@ namespace PlantillaMenú
         {
             try
             {
-                Console.Write("Ingrese un Id: ");
+                Console.WriteLine("Ingrese un Id: ");
                 string id = Console.ReadLine();
 
                 // Valida que el ID sea un número
-                if (ValidateIsNumberId(id) == -1) {
-                    Console.WriteLine("Operacion cancelada.");
-                    WaitForPressKey();
-                    return;
-                } 
-                    
+                if (ValidateIsNumberId(id) == null) return;
+
+                // Convierte el ID a un string
+                id = id.ToString();
+
                 // Hace la petición GET usando el ID
                 var response = await GetRequestById(id);
 
@@ -45,10 +43,6 @@ namespace PlantillaMenú
                 // Imprime el JSON deserializado
                 PrintJson(DeserializedJson(json));
 
-
-                AddFavoriteList(ValidateIsNumberId(id), DeserializedJson(json));
-                WaitForPressKey();
-
             }
             catch (Exception ex) { HandlerException(ex); }
         }
@@ -62,10 +56,10 @@ namespace PlantillaMenú
             await GetHttpRequest(urlFilter);
 
         // Valida que la entrada sea un número entero; si no lo es, devuelve null
-        public static int ValidateIsNumberId(string input) {
+        public static int? ValidateIsNumberId(string input) {
             if (!int.TryParse(input, out int num)) {
                 Console.WriteLine("El valor ingresado no es valido");
-                return -1;
+                return null;
             }
             return num;
         }
@@ -81,10 +75,15 @@ namespace PlantillaMenú
         public static bool ValidateSearchById(NameClassContent atribute) {
             if (!IsValidAtribute(atribute)) {
                 Console.WriteLine("Id no encontrado");
-                WaitForPressKey();
                 return false;
             }
             return true;
-        }                    
+        }
+        public static int ConverStringToInt(string input) {
+            input = Console.ReadLine();
+            ValidateIsNumberId(input);
+            int.TryParse(input, out int num);
+            return num;
+        }
     }
 }

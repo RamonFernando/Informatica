@@ -80,6 +80,8 @@ namespace PlantillaMenú
         // Formatear Json
         public static string FormattedJson (string stringJson) =>
             JsonConvert.SerializeObject(JObject.Parse(stringJson),Formatting.Indented);
+        public static List<FavoriteItemList> FormattedJsonList(FavoriteItemList FavoriteList) =>
+            JsonConvert.SerializeObject(FavoriteList, Formatting.Indented);
 
         // Deserializar Json para obtener el objeto y sus atributos
         public static NameClassContent DeserializedJson(string stringJson) =>

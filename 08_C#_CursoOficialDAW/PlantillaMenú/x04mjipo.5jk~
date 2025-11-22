@@ -1,0 +1,28 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PlantillaMenú
+{
+    internal class APIFavoriteList
+    {
+        List<int> AddFavoriteList = new List<int>();
+        public static void Add(int id)
+        {
+
+        }
+        public static void Remove(int id)
+        {
+
+        }
+        public static void PrintList()
+        {
+            Console.WriteLine("Lista de favoritos");
+        }
+
+    }
+}
+    
+

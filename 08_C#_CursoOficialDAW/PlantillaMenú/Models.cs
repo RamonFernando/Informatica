@@ -24,5 +24,12 @@ namespace PlantillaMenú
             private static readonly HttpClient client = new HttpClient();
             public static HttpClient CreateHttpClient() => client;
         }
+
+        public class FavoriteItemList
+        {
+            public int Id { get; set; }
+            public NameClassContent Content { get; set; }
+        }
+            
     }
 }

@@ -8,7 +8,6 @@ using System.Net.Http;
 // Importar static
 using static PlantillaMenú.APIControllers;
 using static PlantillaMenú.MenuControllers;
-using static PlantillaMenú.APIFavoriteList;
 using static PlantillaMenú.Models;
 
 namespace PlantillaMenú
@@ -24,12 +23,11 @@ namespace PlantillaMenú
                 string id = Console.ReadLine();
 
                 // Valida que el ID sea un número
-                if (ValidateIsNumberId(id) == -1) {
-                    Console.WriteLine("Operacion cancelada.");
-                    WaitForPressKey();
-                    return;
-                } 
-                    
+                if (ValidateIsNumberId(id) == -1) return;
+
+                // Convierte el string a entero
+                ConverStringToInt(id);
+
                 // Hace la petición GET usando el ID
                 var response = await GetRequestById(id);
 
@@ -46,8 +44,9 @@ namespace PlantillaMenú
                 PrintJson(DeserializedJson(json));
 
 
-                AddFavoriteList(ValidateIsNumberId(id), DeserializedJson(json));
-                WaitForPressKey();
+                Console.WriteLine("Desea Agregar a la Lista API? (S/N)");
+                string input = Console.ReadLine();
+                if (input.ToUpper() == "S"));
 
             }
             catch (Exception ex) { HandlerException(ex); }
@@ -69,6 +68,8 @@ namespace PlantillaMenú
             }
             return num;
         }
+        public static int ConverStringToInt(string input) =>
+            ValidateIsNumberId(input);
 
         // Valida que el objeto deserializado tenga un atributo Slip válido
         public static bool IsValidAtribute(NameClassContent attribute) {
@@ -81,10 +82,11 @@ namespace PlantillaMenú
         public static bool ValidateSearchById(NameClassContent atribute) {
             if (!IsValidAtribute(atribute)) {
                 Console.WriteLine("Id no encontrado");
-                WaitForPressKey();
                 return false;
             }
             return true;
-        }                    
+        }
+        
+            
     }
 }

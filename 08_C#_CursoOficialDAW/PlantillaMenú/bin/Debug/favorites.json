@@ -1,0 +1,20 @@
+[
+  {
+    "Id": 2,
+    "Content": {
+      "slip": {
+        "id": 2,
+        "advice": "Smile and the world smiles with you. Frown and you're on your own."
+      }
+    }
+  },
+  {
+    "Id": 65,
+    "Content": {
+      "slip": {
+        "id": 65,
+        "advice": "When having a clear out, ask yourself if an item has any financial, practical or sentimental value. If not, chuck it."
+      }
+    }
+  }
+]

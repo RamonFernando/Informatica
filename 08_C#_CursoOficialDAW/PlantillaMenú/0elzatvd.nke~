@@ -1,0 +1,130 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using static PlantillaMenú.APIControllers;
+using static PlantillaMenú.MenuControllers;
+using static PlantillaMenú.APIFiltersControllers;
+using static PlantillaMenú.Models;
+
+namespace PlantillaMenú
+{
+    internal class APIFavoriteList
+    {
+        public static List<FavoriteItemList> FavoriteList { get; set; } = new List<FavoriteItemList>();
+
+        // Metodo que realiza una petición GET a una API usando el ID proporcionado
+        public static async Task RequestAddToFavoriteList()
+        {           
+            Console.Write("Ingrese el Id que desea Guardar: ");
+            string input = Console.ReadLine();
+            
+            int num = ConverStringToInt(input); // APIFiltersControllers
+
+            if (num == -1) {
+                Console.WriteLine("Id no valido");
+                return;
+            }
+            try
+            {
+                // APIControllers
+                var response = await GetRequestById(input);
+                var validation = ValidatedHttpResponse(response); 
+                if (validation != "Response: OK")
+                {
+                    WaitForPressKey();
+                    return;
+                }
+                var stringJson = await GetJson(response);
+                var resultjson = DeserializedJson(stringJson);
+
+                AddFavoriteList(input, resultjson);
+            } catch (Exception ex) { HandlerException(ex); }
+            WaitForPressKey();
+        }
+
+        
+        public static async Task RequestRemoveToFavoriteList()
+        {
+            Console.Write("Ingrese el Id que desea Guardar: ");
+            string input = Console.ReadLine();
+
+            int num = ConverStringToInt(input); // APIFiltersControllers
+
+            if (num == -1)
+            {
+                Console.WriteLine("Id no valido");
+                return;
+            }
+            try
+            {
+                // APIControllers
+                var response = await GetRequestById(input);
+                var validation = ValidatedHttpResponse(response);
+                if (validation != "Response: OK")
+                {
+                    WaitForPressKey();
+                    return;
+                }
+                var stringJson = await GetJson(response);
+                var resultjson = DeserializedJson(stringJson);
+
+                Remove(num);
+            }
+            catch (Exception ex) { HandlerException(ex); }
+            WaitForPressKey();
+        }
+
+        public static void Add(int id, NameClassContent objJson) {
+            if (FavoriteList.Any(i => i.Id == id)) {
+                Console.WriteLine("El id ya se encuentra en la lista de favoritos.");
+                return;
+            }
+            FavoriteList.Add(new FavoriteItemList { Id = id, Content = objJson });
+        }
+        public static void Remove(int id) {
+            var item = FavoriteList.FirstOrDefault(i => i.Id == id);
+            if (item == null) {
+                Console.WriteLine("El id no se encuentra en la lista de favoritos.");
+                return;
+            }            
+            FavoriteList.Remove(item);
+        }
+        public static void PrintList(List<FavoriteItemList> FavoriteList) {
+            Console.WriteLine("Lista de favoritos");
+            int count = 1;
+            if (FavoriteList.Count == 0) {
+                Console.WriteLine("No hay elementos en la lista de favoritos.");
+                return;
+            }
+            foreach (var item in FavoriteList)                 
+                Console.WriteLine(  $"{count++}º Favorito:" +
+                                    $"\nId: {item.Id}" +
+                                    $"\nAdvice: {item.Content.Slip.Advice}\n");          
+        }
+
+        public static void AddFavoriteList(string id, NameClassContent objJson)
+        {
+            Console.WriteLine("Desea Agregar a la Lista API? (S/N)");
+            string input = Console.ReadLine();
+            if (input.ToUpper() == "S")
+            {
+                int number = ConverStringToInt(id);
+                if(number == -1) {
+                    Console.WriteLine("Error. No se agrego a la Lista API");
+                    return;
+                } 
+                
+                Add(number, objJson);
+                Console.WriteLine("Guardado con exito.");
+                return;
+            }
+            Console.WriteLine("No se agrego a la Lista API");
+        }
+
+    }
+}
+    
+
