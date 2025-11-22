@@ -16,13 +16,13 @@ namespace AdvideAPI_Simple
                 // 1. Peticion GET
                 HttpResponseMessage response = await GetRequest(GetUrl());
                 
-                // 2. Valicacion servidor 
+                // 2. Valicacion servidor
                 Console.WriteLine(ValidationServerRequest(response));
 
                 // 3. Obtenemos el JSON
                 string stringJson = await GetJson(response);
                 
-                // 4. Deserializamos y formateamos               
+                // 4. Deserializamos y formateamos
                 string printJson = FormattedJson(stringJson);
 
                 // 5. Imprimir (print)

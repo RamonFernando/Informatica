@@ -1,0 +1,60 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Net.Http;
+
+// Importar static
+using static PlantillaMenú.APIControllers;
+using static PlantillaMenú.MenuControllers;
+using static PlantillaMenú.Models;
+
+namespace PlantillaMenú
+{
+    internal class APIFiltersControllers
+    {
+        // Metodos para filtrar los atributos de la API
+        public static async Task GetRequestWhitFilter()
+        {   
+            Console.WriteLine("Ingrese un Id: ");
+            string id = Console.ReadLine();
+
+            // Validamos la entrada
+            ValidateInput(id);
+
+            // Realizamos la peticion por Id
+            var response = await GetRequestById(id);
+
+            // Validamos la respuesta
+            ValidatedHttpResponse(response);
+
+            // Imprimimos el Json
+            var json = await GetJson(response);
+            
+            // Deserializamos el Json y lo imprimimos
+            ValidateId(DeserializedJson(json));
+            PrintJson(DeserializedJson(json));
+
+        }
+        public static async Task<HttpResponseMessage> GetRequestById(string id) =>
+            await GetHttpRequest($"https://api.adviceslip.com/advice/{id}");
+
+        
+        public async Task<HttpResponseMessage> GetHttpRequestFilter (string urlFilter) => 
+            await GetHttpRequest(urlFilter); // Realizar peticion
+
+        public static bool ValidateId (NameClassContent atribute)
+        {
+            if (atribute?.Slip.Id == null)
+{
+                return false;
+            }
+            return true;
+
+        }
+            
+            
+        
+    }
+}

@@ -1,0 +1,140 @@
+﻿using Newtonsoft.Json.Linq;
+using System;
+using System.Net.Http;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+
+// Importar static
+using static PlantillaMenú.Models;
+using static PlantillaMenú.Models.GetHttpClient;
+using static PlantillaMenú.MenuControllers;
+
+namespace PlantillaMenú
+{       
+    internal class APIControllers
+    {   
+        // Metodo principal que realiza la peticion GET a la API
+        public static async Task ExecuteHttpRequest()
+        {
+            try
+            {
+                GetUrl();
+
+                // Peticion al servidor (API)
+                HttpResponseMessage response = await GetHttpRequest(GetUrl());
+
+                // Validar peticion GetHttpRequest
+                string validation = ValidatedHttpResponse(response);
+                if (validation != "Response: OK") return;
+
+                // Leer peticion y obtener el stringJson
+                string stringJson = await GetJson(response);
+
+                // Formatear Json (Serializar)
+                var objectJson = FormattedJson(stringJson);
+
+                // Imprimir Json Formateado
+                Console.WriteLine(objectJson);
+
+                // Deserializar para obtener Json (Atributos)
+                NameClassContent json = DeserializedJson(stringJson);
+
+                // Llamar medoto PrintJson
+                PrintJson(json);
+            
+            }  catch (Exception ex) { HandlerException(ex); }
+        }
+
+        // Metodos Secundarios
+        // Obtener URL
+        public static string GetUrl() => "https://api.adviceslip.com/advice";
+        // Realizar peticion GET (using para libreria HttpClient)
+        public static async Task<HttpResponseMessage> GetHttpRequest(string url) {
+            var client = CreateHttpClient(); // Crear un objeto HttpClient
+            return await client.GetAsync(url);
+        }
+        // Validar peticion del servidor
+        // Validar peticion del servidor
+        public static string ValidatedHttpResponse(HttpResponseMessage response)
+        {   
+            string message = "Response: OK";
+            if (!response.IsSuccessStatusCode)
+            {
+                string errorMessage =
+                    $"Error de la peticion HTTP: " +
+                    $"\nCodigo: {response.StatusCode}" +
+                    $"\nInfo: {response.ReasonPhrase}";
+
+                Console.WriteLine(errorMessage);  
+                return errorMessage;              
+            }    
+            return message;
+        }
+
+        // Obtener JSON
+        public static async Task<string> GetJson(HttpResponseMessage response) =>
+            await response.Content.ReadAsStringAsync();
+        
+        // Formatear Json
+        public static string FormattedJson (string stringJson) =>
+            JsonConvert.SerializeObject(JObject.Parse(stringJson),Formatting.Indented);
+        
+        // Deserializar Json para obtener el objeto y sus atributos
+        public static NameClassContent DeserializedJson(string stringJson) =>
+            JsonConvert.DeserializeObject<NameClassContent>(stringJson);
+        
+        // Imprimir Json
+        public static void PrintJson(NameClassContent objJson) =>
+            Console.WriteLine($"Id: {objJson.Slip.Id}\nAdvice: {objJson.Slip.Advice}");
+
+        // Manejo de Excepciones
+        public static void HandlerException(Exception ex) {
+            
+            // Ocurre cuando la petición HTTP falla (sin conexión, DNS, servidor caído…)
+            if (ex is HttpRequestException HttpEx) {
+                Console.WriteLine($"Error en la peticion HTTP: \n{HttpEx.Message} \n{HttpEx.HResult}");
+                return;
+            }
+
+            // Error general al procesar JSON (estructura inválida o datos mal formados)
+            if (ex is JsonException JsonEx) {
+                Console.WriteLine($"Error en la peticion HTTP: \n{JsonEx.Message} \n{JsonEx.HResult}");
+                return;
+            }
+
+            // La petición fue cancelada, normalmente por timeout (ej: HttpClient.Timeout)
+            if (ex is TaskCanceledException TaskEx) {
+                Console.WriteLine($"Error en la peticion HTTP: \n{TaskEx.Message} \n{TaskEx.HResult}");
+                return;
+            }
+
+            // El JSON está mal escrito y no se puede leer correctamente (Json no valido)
+            if (ex is JsonReaderException JsonReaderEx) {
+                Console.WriteLine($"Error en la peticion HTTP: \n{JsonReaderEx.Message} \n{JsonReaderEx.HResult}");
+                return;
+            }
+
+            // El formato de un dato no coincide con lo esperado (ej: convertir "abc" a número)
+            if (ex is FormatException FormatEx) {
+                Console.WriteLine($"Error en la peticion HTTP: \n{FormatEx.Message} \n{FormatEx.HResult}");
+                return;
+            }
+
+            // Se pasó un argumento incorrecto o inválido a un método (ej: Convert.ToInt32("abc"))
+            if (ex is ArgumentException ArgEx) {
+                Console.WriteLine($"Error en la peticion HTTP: \n{ArgEx.Message} \n{ArgEx.HResult}");
+                return;
+            }
+
+            // Se intentó usar un objeto que es null (ej: obj.ToString())
+            if (ex is NullReferenceException NullEx) {
+                Console.WriteLine($"Error en la peticion HTTP: \n{NullEx.Message} \n{NullEx.HResult}");
+                return;
+            }
+
+            // Error general
+            Console.WriteLine($"Error desconocido: \n{ex.Message} \n{ex.HResult}");
+        }
+
+    }
+}

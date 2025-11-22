@@ -1,0 +1,48 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PlantillaMenú
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            ShowMenu();
+        }
+        public static string ApiName() => "API NOMBRE_API";
+        public static void ShowMenu()
+        {
+            Console.Clear();
+            Console.WriteLine("=================================");
+            Console.WriteLine("         API NOMBRE_API");
+            Console.WriteLine("=================================");
+            Console.WriteLine("=================================");
+            Console.WriteLine("         MENU PRINCIPAL");
+            Console.WriteLine("=================================");
+            Console.WriteLine("1. Opcion 1");
+            Console.WriteLine("2. Opcion 2");
+            Console.WriteLine("3. Opcion 3");
+            Console.WriteLine("0. Salir");
+            Console.WriteLine("=================================");
+            Console.WriteLine("Seleccione una opcion: ");
+        }
+        public static void ExitMenu()
+        {
+            Console.WriteLine("=================================");
+            Console.WriteLine($"Gracias por usar la {ApiName()}");
+            Console.WriteLine("=================================");
+        }
+        public static void ValidateInput()
+        {
+            Console.WriteLine();
+        }
+        public static void WaitForPressKey()
+        {
+            Console.WriteLine("Presione cualquier tecla para continuar...");
+            Console.ReadKey();
+        }
+    }
+}

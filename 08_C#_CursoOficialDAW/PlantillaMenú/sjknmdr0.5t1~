@@ -1,0 +1,89 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PlantillaMenú
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            while (true)
+            {
+                try
+                {
+                    ShowMenu();
+                    Console.Write("Seleccione una opcion: ");
+                    string input = Console.ReadLine();
+                    if (!int.TryParse(input, out int opc))
+                    {
+                        Console.WriteLine("El valor ingresado no es valido");
+                        continue;
+                        WaitForPressKey();
+                    }
+                    switch (opc)
+                        {
+                            case 1:
+                                Console.WriteLine("Mostramos nombres API");
+                                WaitForPressKey();
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                            case 0:
+                                ExitMenu();
+                                return;
+                        }
+                    
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                }
+            }
+        }
+
+        // Metodos
+        public static string ApiName() => "API NOMBRE_API";
+        public static void ShowMenu()
+        {
+            Console.Clear();
+            Console.WriteLine("**=============================**");
+            Console.WriteLine("         API NOMBRE_API");
+            Console.WriteLine("=================================");
+            Console.WriteLine("         MENU PRINCIPAL");
+            Console.WriteLine("=================================");
+            Console.WriteLine("1. Opcion 1");
+            Console.WriteLine("2. Opcion 2");
+            Console.WriteLine("3. Opcion 3");
+            Console.WriteLine("0. Salir");
+            Console.WriteLine("**=============================**");
+        }
+        public static void ExitMenu()
+        {
+            Console.WriteLine("=================================");
+            Console.WriteLine($"Gracias por usar la {ApiName()}");
+            Console.WriteLine("=================================");
+            return;
+        }
+        public static int ValidateInput(string input, int opc)
+        {
+            input = Console.ReadLine();
+            if (!int.TryParse(input, out opc))
+            {
+                Console.WriteLine("El valor ingresado no es valido");
+                WaitForPressKey();
+            }
+            return opc;
+
+        }
+        public static void WaitForPressKey()
+        {
+            Console.WriteLine("Presione cualquier tecla para continuar...");
+            Console.ReadKey();
+        }
+    }
+}

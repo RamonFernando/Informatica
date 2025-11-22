@@ -1,0 +1,70 @@
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Text.Json;
+using System.Threading.Tasks;
+
+using static PlantillaMenú.MenuControllers;
+using static PlantillaMenú.Models;
+using static PlantillaMenú.Models.GetHttpClient;
+
+namespace PlantillaMenú
+{   
+    
+    internal class APIControllers
+    {   
+        
+        
+        public static async Task GetRequestMethod()
+        {
+            GetUrl();
+            HttpResponseMessage response = await GetRequest(GetUrl());
+            ValidationServerRequest(response);
+            string stringJson = await GetJson(response);
+            Console.WriteLine(stringJson);
+
+            JObject objectJson = JsonConvert.DeserializeObject<JObject>(stringJson);
+
+        }
+        // Obtener URL
+        public static string GetUrl() => "https://api.adviceslip.com/advice";
+        // Realizar peticion
+        public static async Task<HttpResponseMessage> GetRequest(string url)
+        {
+            var client = GetHttpClientMethod();
+            return await client.GetAsync(url);
+
+        }
+        // Validar peticion del servidor
+        public static string ValidationServerRequest(HttpResponseMessage response)
+        {
+            if (!response.IsSuccessStatusCode)
+            {
+                return $"Error de la peticion HTTP: \nCodigo: {response.StatusCode}\nInfo: {response.ReasonPhrase}";
+            }
+            return "Response: OK";
+        }
+        // Obtener JSON
+        public static async Task<string> GetJson(HttpResponseMessage response) =>
+            await response.Content.ReadAsStringAsync();
+        
+
+        public static void HandlerException(Exception ex)
+        {
+            if (ex is HttpRequestException HttpEx)
+            {
+                Console.WriteLine($"Error en la peticion HTTP: \n{HttpEx.Message} \n{HttpEx.HResult}");
+                return;
+            }
+            if (ex is JsonException JsonEx)
+            {
+                Console.WriteLine($"Error en la peticion HTTP: \n{JsonEx.Message} \n{JsonEx.HResult}");
+                return;
+            }
+            Console.WriteLine($"Error desconocido: \n{ex.Message} \n{ex.HResult}");
+        }
+    }
+}

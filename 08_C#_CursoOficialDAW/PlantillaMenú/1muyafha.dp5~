@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Net.Http;
+
+// Importar static
+using static PlantillaMenú.APIControllers;
+using static PlantillaMenú.Models;
+
+namespace PlantillaMenú
+{
+    internal class APIFiltersControllers
+    {
+        // Metodos para filtrar los atributos de la API
+        public async Task<HttpResponseMessage> GetHttpRequestFilter (string urlFilter) => await GetRequest(urlFilter); // Realizar peticion>
+    }
+}

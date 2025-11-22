@@ -1,0 +1,75 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Net.Http;
+
+// Importar static
+using static PlantillaMenú.APIControllers;
+using static PlantillaMenú.MenuControllers;
+using static PlantillaMenú.Models;
+
+namespace PlantillaMenú
+{
+    internal class APIFiltersControllers
+    {
+        // Metodos para filtrar los atributos de la API
+        public static async Task GetRequestWhitFilter()
+        {   
+            try
+            {
+                Console.WriteLine("Ingrese un Id: ");
+                string id = Console.ReadLine();
+
+                // Validamos la entrada
+                if (ValidateIsNumberId(id) == null) return;
+
+                // Realizamos la peticion por Id
+                var response = await GetRequestById(id);
+
+                // Validamos la respuesta
+                ValidatedHttpResponse(response);
+
+                // Imprimimos el Json
+                var json = await GetJson(response);
+
+                // Validamos el Id 
+                if (!ValidateSearchById(DeserializedJson(json))) return;
+
+                // Imprimimos el Json
+                PrintJson(DeserializedJson(json));
+            
+            } catch (Exception ex) { HandlerException(ex); }
+        }
+        public static async Task<HttpResponseMessage> GetRequestById(string id) =>
+            await GetHttpRequest($"https://api.adviceslip.com/advice/{id}");
+        
+        public async Task<HttpResponseMessage> GetHttpRequestFilter (string urlFilter) => 
+            await GetHttpRequest(urlFilter); // Realizar peticion
+        
+        public static int? ValidateIsNumberId(string input)
+        {
+            if (!int.TryParse(input, out int num))
+            {
+                Console.WriteLine("El valor ingresado no es valido");
+                return null;
+            }
+            return num;
+        }
+
+        // Validamos el atributo o el objeto
+        public static bool IsValidAtribute(NameClassContent attribute) {
+            return attribute != null
+                   && attribute.Slip != null
+                   && attribute.Slip.Id > 0;
+        }
+        public static bool ValidateSearchById(NameClassContent atribute) {
+            if (!IsValidAtribute(atribute)){
+                Console.WriteLine("Id no encontrado");
+                return false;
+            }
+            return true;
+        }
+    }
+}

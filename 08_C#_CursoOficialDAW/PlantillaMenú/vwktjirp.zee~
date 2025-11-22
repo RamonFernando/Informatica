@@ -1,0 +1,69 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Net.Http;
+
+using static PlantillaMenú.MenuControllers;
+using static PlantillaMenú.APIControllers;
+using static PlantillaMenú.APIFiltersControllers;
+
+namespace PlantillaMenú
+{
+    internal class Program
+    {
+        
+        static async Task Main(string[] args)
+        {
+
+            while (true)
+            {
+                try
+                {
+                    ShowMenu();
+                    int? opc = ValidateInput(Console.ReadLine());
+                    
+                    switch (opc)
+                        {
+                            case 1:
+                                Console.WriteLine("Mostramos consulta API");
+                                await GetRequestMethod(); // ApiControllers
+                                
+                                // Metodo
+                                WaitForPressKey();
+                                break;
+                            case 2:
+                                Console.WriteLine("Filtramos nombres API");
+                                // Metodo
+                                WaitForPressKey();
+                                break;
+                            case 3:
+                                Console.WriteLine("Agregamos nombres a la Lista API");
+                                // Metodo
+                                WaitForPressKey();
+                                break;
+                            case 4:
+                                Console.WriteLine("Eliminamos nombres de la Lista API");
+                                // Metodo
+                                WaitForPressKey();
+                                break;
+                            case 0:
+                                ExitMenu();
+                                return;
+                            default:
+                                Console.WriteLine("Opción no válida");
+                                WaitForPressKey();
+                                break;
+                        }                   
+                }
+                catch (Exception ex)
+                {
+                    HandlerException(ex);
+                }
+            }
+        }
+
+        
+    }
+}

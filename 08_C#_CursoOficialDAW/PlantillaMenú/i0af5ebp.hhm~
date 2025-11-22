@@ -1,0 +1,63 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using static PlantillaMenú.MenuControllers;
+using static PlantillaMenú.APIControllers;
+using System.Net.Http;
+
+namespace PlantillaMenú
+{
+    internal class Program
+    {
+        static readonly HttpClient client = new HttpClient();
+        static void Main(string[] args)
+        {
+
+            while (true)
+            {
+                try
+                {
+                    ShowMenu();
+                    int? opc = ValidateInput(Console.ReadLine());
+                    
+                    switch (opc)
+                        {
+                            case 1:
+                                Console.WriteLine("Mostramos nombres API");
+                                
+                                // Metodo
+                                WaitForPressKey();
+                                break;
+                            case 2:
+                                Console.WriteLine("Filtramos nombres API");
+                                // Metodo
+                                WaitForPressKey();
+                                break;
+                            case 3:
+                                Console.WriteLine("Agregamos nombres a la Lista API");
+                                // Metodo
+                                WaitForPressKey();
+                                break;
+                            case 4:
+                                Console.WriteLine("Eliminamos nombres de la Lista API");
+                                // Metodo
+                                WaitForPressKey();
+                                break;
+                            case 0:
+                                ExitMenu();
+                                return;
+                        }                   
+                }
+                catch (Exception ex)
+                {
+                    HandlerException(ex);
+                }
+            }
+        }
+
+        
+    }
+}

@@ -1,0 +1,87 @@
+﻿using Newtonsoft.Json.Linq;
+using System;
+using System.Net.Http;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+
+using static PlantillaMenú.Models;
+using static PlantillaMenú.Models.GetHttpClient;
+
+namespace PlantillaMenú
+{   
+    
+    internal class APIControllers
+    {   
+        // Metodo principal que realiza la peticion GET a la API
+        public static async Task GetRequestMethod()
+        {
+            GetUrl();
+
+            // Realizar peticion
+            HttpResponseMessage response = await GetRequest(GetUrl());
+            
+            // Validar peticion
+            ValidationServerRequest(response);
+
+            // Leer peticion y obtener el stringJson
+            string stringJson = await GetJson(response);
+            
+            // Formatear Json
+            var objectJson = FormattedJson(stringJson);
+          
+            // Imprimir Json Formateado
+            Console.WriteLine(objectJson);
+
+            // Deserializar para obtener Json
+            / NameClassContent json = JsonConvert.DeserializeObject<NameClassContent>(stringJson);
+
+            // Llamar medoto PrintJson
+            PrintJson(json);
+
+        }
+
+        // Metodos Secundarios
+        // Obtener URL
+        public static string GetUrl() => "https://api.adviceslip.com/advice";
+        // Realizar peticion
+        public static async Task<HttpResponseMessage> GetRequest(string url)
+        {
+            var client = GetHttpClientMethod(); // Crear un objeto HttpClient
+            return await client.GetAsync(url);
+
+        }
+        // Validar peticion del servidor
+        public static string ValidationServerRequest(HttpResponseMessage response)
+        {
+            if (!response.IsSuccessStatusCode)
+            {
+                return $"Error de la peticion HTTP: \nCodigo: {response.StatusCode}\nInfo: {response.ReasonPhrase}";
+            }
+            return "Response: OK";
+        }
+        // Obtener JSON
+        public static async Task<string> GetJson(HttpResponseMessage response) =>
+            await response.Content.ReadAsStringAsync();
+        // Formatear Json
+        public static string FormattedJson (string stringJson) =>
+            JsonConvert.SerializeObject(JObject.Parse(stringJson),Formatting.Indented);
+        // Imprimir Json
+        public static void PrintJson(NameClassContent objJson) =>
+            Console.WriteLine($"Id: {objJson.Slip.Id}\nAdvice: {objJson.Slip.Advice}");
+        // Manejo de Excepciones
+        public static void HandlerException(Exception ex)
+        {
+            if (ex is HttpRequestException HttpEx)
+            {
+                Console.WriteLine($"Error en la peticion HTTP: \n{HttpEx.Message} \n{HttpEx.HResult}");
+                return;
+            }
+            if (ex is JsonException JsonEx)
+            {
+                Console.WriteLine($"Error en la peticion HTTP: \n{JsonEx.Message} \n{JsonEx.HResult}");
+                return;
+            }
+            Console.WriteLine($"Error desconocido: \n{ex.Message} \n{ex.HResult}");
+        }
+    }
+}
