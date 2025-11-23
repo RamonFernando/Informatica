@@ -1,0 +1,142 @@
+﻿using System;
+using System.Threading.Tasks;
+using System.Net.Http;
+
+// Importar static
+using static APIRickAndMorty.Program;
+using static APIRickAndMorty.Models;
+using static APIRickAndMorty.APIControllers;
+using static APIRickAndMorty.APIFavoriteList;
+using static APIRickAndMorty.APIFiltersControllers;
+using static APIRickAndMorty.APILoadFavoriteListFromJson;
+using static APIRickAndMorty.APISaveFavoriteListJson;
+using static APIRickAndMorty.Helpers;
+using static APIRickAndMorty.Views;
+
+namespace APIRickAndMorty
+{
+    internal class APIFiltersControllers
+    {
+        // Filtrar Id
+        // Método principal para pedir un ID y hacer una petición filtrada por ese ID
+        public static async Task GetRequestWhithFilter()
+        {
+            await SearchById();
+        }
+        public static async Task SearchById()
+        {
+            PrintSearchById();
+            string id = ReadInput();
+
+            // Valida que el ID sea un número
+            if (ValidateIsNumberId(id) == -1)
+            {
+                PrintCancelOperation();
+                PrintWaitForPressKey();
+                return;
+            }
+
+            // Hace la petición GET usando el ID
+            var response = await GetRequestById(id);
+
+            // Verifica que la respuesta HTTP sea válida
+            if (!ValidatedHttpResponse(response)) return;
+
+            // Extrae el JSON de la respuesta
+            var json = await GetJson(response);
+            var jsonCharacter = DeserializedJsonCharacter(json);
+
+            // Valida que el JSON contenga un ID válido
+            if (!ValidateSearchById(jsonCharacter)) return;
+
+            // Imprime el JSON deserializado
+            PrintJson(jsonCharacter);
+
+            PrintAskAddToFavoriteList();
+            var confirm = ConfirmOperationFavoriteList(ReadInputUpper());
+            if (!confirm)
+            {
+                PrintCancelOperation();
+                PrintWaitForPressKey();
+                return;
+            }
+
+            // Convierte el ID en un entero y agrega el JSON deserializado a la lista
+            Add(int.Parse(id), jsonCharacter);
+
+            PrintSuccessOperation();
+            PrintWaitForPressKey();
+        }
+        public static async Task SearchByName()
+        {
+            PrintSearchByName();
+            String name = ReadInput();
+            var response = await GetHttpRequestByName(name);
+
+            // Verifica que la respuesta HTTP sea válida
+            if (!ValidatedHttpResponse(response)) return;
+
+            // Extrae el JSON de la respuesta
+            var json = await GetJson(response);
+            // Devolvemos una lista de personajes
+            var jsonRoot = DeserializedJsonRoot(json);
+
+            if (jsonRoot.ResultsList.Count == 0)
+            {
+                PrintNotFountId();
+                PrintWaitForPressKey();
+                return;
+            }
+
+            // Imprime el JSON deserializado (Lista)
+            PrintFormattedJson(jsonRoot);
+            
+            PrintAskAddToFavoriteList();
+            var confirm = ConfirmOperationFavoriteList(ReadInputUpper());
+            if (!confirm)
+            {
+                PrintCancelOperation();
+                PrintWaitForPressKey();
+                return;
+            }
+            
+            foreach (var pers in jsonRoot.ResultsList) {
+                Add(pers.Id, pers);
+            }
+
+            PrintSuccessOperation();
+            PrintWaitForPressKey();
+        }
+
+        // Realiza una petición GET a la API AdviceSlip usando el ID proporcionado
+        public static async Task<HttpResponseMessage> GetRequestById(string id) =>
+            await GetHttpRequest($"https://rickandmortyapi.com/api/character/{id}");
+        public static async Task<HttpResponseMessage> GetHttpRequestByName(string name) =>
+            await GetHttpRequest($"https://rickandmortyapi.com/api/character/?name={name}");
+
+        // Realiza una petición GET usando cualquier URL pasada como filtro
+        public async Task<HttpResponseMessage> GetHttpRequestFilter(string urlFilter) =>
+            await GetHttpRequest(urlFilter);
+
+        // Valida que el objeto deserializado tenga un atributo válido
+        public static bool IsValidAtribute(ClassRoot attribute)
+        {
+            if (attribute != null && attribute.ResultsList != null && attribute.ResultsList.Count > 0)
+                return true;
+
+            return false;
+        }
+
+        // Verifica si la búsqueda por ID es válida; si no, muestra mensaje
+        public static bool ValidateSearchById(ClassAtributes atribute)
+        {
+            if (atribute.Id <= 0 || atribute == null)
+            {
+                PrintNotFountId();
+                PrintWaitForPressKey();
+                return false;
+            }
+            return true;
+        }
+    }
+}

@@ -14,7 +14,7 @@ using static PlantillaMenú.Views;
 namespace PlantillaMenú
 {
     internal class Program
-    {        
+    {
         static async Task Main(string[] args)
         {
             LoadFavoritesFromJson(); // Cargamos la lista de favoritos
@@ -30,12 +30,12 @@ namespace PlantillaMenú
                         {
                             case 1:
                                 Console.WriteLine("Mostramos consulta API");
-                                await ExecuteHttpRequest(); // ApiControllers                                
+                                await ExecuteHttpRequest(); // ApiControllers
                                 break;
                             case 2:
                                 Console.WriteLine("Filtramos Id API");
                                 await GetRequestWhithFilter(); // ApiFiltersControllers
-                                SaveFavoritesToJson();                                
+                                SaveFavoritesToJson();
                                 break;
                             case 3:
                                 Console.WriteLine("Agregamos nombres a la Lista API");
@@ -60,13 +60,13 @@ namespace PlantillaMenú
                             case 0:
                                 ExitMenu();
                                 return;
-                        }                   
+                        }
                 }
                 catch (Exception ex)
                 {
                     HandlerException(ex);
                 }
             }
-        }        
+        }
     }
 }

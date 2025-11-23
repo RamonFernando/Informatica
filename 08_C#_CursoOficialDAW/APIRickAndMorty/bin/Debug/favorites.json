@@ -1,0 +1,36 @@
+[
+  {
+    "Id": 3,
+    "Name": "Summer Smith",
+    "Status": "Alive",
+    "Species": "Human",
+    "Type": "",
+    "Gender": "Female",
+    "Origin": {
+      "name": "Earth (Replacement Dimension)",
+      "url": "https://rickandmortyapi.com/api/location/20"
+    },
+    "Location": {
+      "name": "Earth (Replacement Dimension)",
+      "url": "https://rickandmortyapi.com/api/location/20"
+    },
+    "Image": "https://rickandmortyapi.com/api/character/avatar/3.jpeg"
+  },
+  {
+    "Id": 12,
+    "Name": "Alexander",
+    "Status": "Dead",
+    "Species": "Human",
+    "Type": "",
+    "Gender": "Male",
+    "Origin": {
+      "name": "Earth (C-137)",
+      "url": "https://rickandmortyapi.com/api/location/1"
+    },
+    "Location": {
+      "name": "Anatomy Park",
+      "url": "https://rickandmortyapi.com/api/location/5"
+    },
+    "Image": "https://rickandmortyapi.com/api/character/avatar/12.jpeg"
+  }
+]

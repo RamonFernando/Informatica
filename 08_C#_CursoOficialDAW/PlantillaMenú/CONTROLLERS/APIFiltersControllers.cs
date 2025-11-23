@@ -1,0 +1,88 @@
+﻿using System;
+using System.Threading.Tasks;
+using System.Net.Http;
+
+// Importar static
+using static PlantillaMenú.APIControllers;
+using static PlantillaMenú.Helpers;
+using static PlantillaMenú.APIFavoriteList;
+using static PlantillaMenú.Models;
+using static PlantillaMenú.Views;
+
+namespace PlantillaMenú
+{
+    internal class APIFiltersControllers
+    {
+        // Filtrar Id
+        // Método principal para pedir un ID y hacer una petición filtrada por ese ID
+        public static async Task GetRequestWhithFilter()
+        {
+            PrintSearchById();
+            string id = ReadInput();
+
+            // Valida que el ID sea un número
+            if (ValidateIsNumberId(id) == -1)
+            {
+                PrintCancelOperation();
+                PrintWaitForPressKey();
+                return;
+            }
+
+            // Hace la petición GET usando el ID
+            var response = await GetRequestById(id);
+
+            // Verifica que la respuesta HTTP sea válida
+            if (!ValidatedHttpResponse(response)) return;
+
+            // Extrae el JSON de la respuesta
+            var json = await GetJson(response);
+            var objectJson = DeserializedJson(json);
+
+            // Valida que el JSON contenga un ID válido
+            if (!ValidateSearchById(DeserializedJson(json))) return;
+
+            // Imprime el JSON deserializado
+            PrintJson(objectJson);
+
+            PrintAskAddToFavoriteList();
+            var confirm = ConfirmOperationFavoriteList(ReadInputUpper());           
+            if (!confirm) {                
+                PrintCancelOperation();
+                PrintWaitForPressKey();
+                return;
+            }
+
+            // Convierte el ID en un entero y agrega el JSON deserializado a la lista
+            Add(int.Parse(id), DeserializedJson(json));
+
+            PrintSuccessOperation();
+            PrintWaitForPressKey();
+        }
+
+        // Realiza una petición GET a la API AdviceSlip usando el ID proporcionado
+        public static async Task<HttpResponseMessage> GetRequestById(string id) =>
+            await GetHttpRequest($"https://api.adviceslip.com/advice/{id}");
+
+        // Realiza una petición GET usando cualquier URL pasada como filtro
+        public async Task<HttpResponseMessage> GetHttpRequestFilter(string urlFilter) =>
+            await GetHttpRequest(urlFilter);
+
+        // Valida que el objeto deserializado tenga un atributo Slip válido
+        public static bool IsValidAtribute(NameClassContent attribute) {
+            if (attribute != null && attribute.Slip != null && attribute.Slip.Id > 0) 
+                return true;
+            
+           return false;
+        }
+
+        // Verifica si la búsqueda por ID es válida; si no, muestra mensaje
+        public static bool ValidateSearchById(NameClassContent atribute) {
+            if (!IsValidAtribute(atribute) || atribute == null) {
+                PrintNotFountId();
+                PrintWaitForPressKey();
+                return false;
+            }
+            return true;
+        }                    
+    }
+}

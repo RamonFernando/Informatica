@@ -52,5 +52,14 @@
         "advice": "Smile and the world smiles with you. Frown and you're on your own."
       }
     }
+  },
+  {
+    "Id": 14,
+    "Content": {
+      "slip": {
+        "id": 14,
+        "advice": "Life is better when you sing about bananas."
+      }
+    }
   }
 ]
