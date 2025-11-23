@@ -1,16 +1,11 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 
 // Importar static
-using static PlantillaMenú.Models;
 using static PlantillaMenú.APIFavoriteList;
 using static PlantillaMenú.APIControllers;
+using static PlantillaMenú.Helpers;
+using static PlantillaMenú.Views;
 
 namespace PlantillaMenú
 {
@@ -23,7 +18,7 @@ namespace PlantillaMenú
                 string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "favorites.json");
 
                 if (!File.Exists(filePath)) {   
-                    Console.WriteLine("El archivo no existe.");
+                    PrintNoFile();
                     return;
                 }
                     
@@ -37,6 +32,5 @@ namespace PlantillaMenú
                 HandlerException(ex);
             }
         }
-
     }
 }

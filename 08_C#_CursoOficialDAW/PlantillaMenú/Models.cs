@@ -29,7 +29,6 @@ namespace PlantillaMenú
         {
             public int Id { get; set; }
             public NameClassContent Content { get; set; }
-        }
-            
+        }           
     }
 }

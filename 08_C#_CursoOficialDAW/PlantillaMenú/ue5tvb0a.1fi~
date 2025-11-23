@@ -7,8 +7,7 @@ using Newtonsoft.Json;
 // Importar static
 using static PlantillaMenú.Models;
 using static PlantillaMenú.Models.GetHttpClient;
-using static PlantillaMenú.Helpers;
-using static PlantillaMenú.Views;
+using static PlantillaMenú.MenuControllers;
 
 namespace PlantillaMenú
 {       
@@ -77,6 +76,10 @@ namespace PlantillaMenú
         public static NameClassContent DeserializedJson(string stringJson) =>
             JsonConvert.DeserializeObject<NameClassContent>(stringJson);
         
+        // Imprimir Json
+        public static void PrintJson(NameClassContent objJson) =>
+            Console.WriteLine($"Id: {objJson.Slip.Id}\nAdvice: {objJson.Slip.Advice}");
+
         // Manejo de Excepciones
         public static void HandlerException(Exception ex) {
             

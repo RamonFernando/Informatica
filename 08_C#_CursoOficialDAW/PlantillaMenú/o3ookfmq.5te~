@@ -36,26 +36,14 @@ namespace PlantillaMenú
             var response = await GetRequestById(input);
             if (!ValidatedHttpResponse(response)) return;
 
-            // Extrae el JSON de la respuesta
-            var json = await GetJson(response);
-            var objectJson = DeserializedJson(json);
-
-            // Valida que el JSON contenga un ID valido
-            if (!ValidateSearchById(DeserializedJson(json))) return;
+            var stringJson = await GetJson(response);
+            var resultjson = DeserializedJson(stringJson);
 
             PrintAskAddToFavoriteList();
-            var confirm = ConfirmOperationFavoriteList(ReadInputUpper());
-            if (!confirm)
-            {
-                PrintCancelOperation();
-                PrintWaitForPressKey();
-                return;
-            }
-
-            // Convierte el ID en un entero y agrega el JSON deserializado a la lista
-            Add(num, DeserializedJson(json));
-
-            PrintSuccessOperation();
+            string input2 = ReadInputUpper();
+            ConfirmOperationFavoriteList(input2);
+            bool saved = Add(num, resultjson);
+            PrintAddToFavoriteList(saved, num);
             PrintWaitForPressKey();
         }
 
@@ -74,18 +62,7 @@ namespace PlantillaMenú
                 PrintWaitForPressKey();
                 return;
             }
-
-            PrintAskAddToFavoriteList();
-            var confirm = ConfirmOperationFavoriteList(ReadInputUpper());
-            if (!confirm)
-            {
-                PrintCancelOperation();
-                PrintWaitForPressKey();
-                return;
-            }
             Remove(num);
-
-            PrintSuccessOperation();
             PrintWaitForPressKey();
         }
         public static bool Add(int id, NameClassContent objJson) {
@@ -105,6 +82,7 @@ namespace PlantillaMenú
             FavoriteList.Remove(item);
         }
         
+
         // Pide confirmación al usuario y, si acepta, agrega el elemento
         // a la lista de favoritos usando el ID y el objeto JSON ya deserializado.
         public static bool ConfirmOperationFavoriteList(string input) {

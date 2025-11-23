@@ -1,17 +1,11 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 // Importar static
 using static PlantillaMenú.APIFavoriteList;
-using static PlantillaMenú.MenuControllers;
 using static PlantillaMenú.APIControllers;
-using static PlantillaMenú.APIFiltersControllers;
-using static PlantillaMenú.Models;
+using static PlantillaMenú.Helpers;
+using static PlantillaMenú.Views;
 
 namespace PlantillaMenú
 {
@@ -29,13 +23,12 @@ namespace PlantillaMenú
                 
                 File.WriteAllText(filePath, json); // Escribir en el archivo
 
-                Console.WriteLine($"Favoritos guardados en: {filePath}");
+                PrintSaveToJson(filePath);
             }
             catch (Exception ex)
             {
                 HandlerException(ex);
             }
         }
-
     }
 }

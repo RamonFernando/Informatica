@@ -1,0 +1,116 @@
+﻿using System;
+using System.Collections.Generic;
+using static PlantillaMenú.APIControllers;
+// Importar static
+using static PlantillaMenú.APIFavoriteList;
+using static PlantillaMenú.APIFiltersControllers;
+using static PlantillaMenú.APILoadFavoriteListFromJson;
+using static PlantillaMenú.APISaveFavoriteListJson;
+using static PlantillaMenú.Helpers;
+using static PlantillaMenú.Models;
+
+namespace PlantillaMenú
+{
+    internal class Views
+    {
+        public static void ShowMenu()
+        {
+            Console.Clear();
+            Console.WriteLine("**=============================**");
+            Console.WriteLine("         API NOMBRE_API");
+            Console.WriteLine("=================================");
+            Console.WriteLine("         MENU PRINCIPAL");
+            Console.WriteLine("=================================");
+            Console.WriteLine("1. Mostrar API");
+            Console.WriteLine("2. Filtrar API (Id)");
+            Console.WriteLine("3. Agregar a Lista API");
+            Console.WriteLine("4. Eliminar de Lista API");
+            Console.WriteLine("5. Mostrar Lista API");
+            Console.WriteLine("6. Borrar toda la Lista API");
+            Console.WriteLine("0. Salir");
+            Console.WriteLine("**=============================**");
+            PrintOptionMenu();
+        }
+        public static void ExitMenu()
+        {
+            Console.WriteLine("=================================");
+            Console.WriteLine($"Gracias por usar la {ApiName()}");
+            Console.WriteLine("=================================");
+            return;
+        }
+        // Metodos Solo de impresión
+        public static void PrintWaitForPressKey() {
+            Console.WriteLine("Presione cualquier tecla para continuar...");
+            Console.ReadKey();
+        }
+        public static void PrintOptionMenu() => Console.Write("Seleccione una opcion: ");
+
+        public static void PrintSearchById() => Console.WriteLine("Ingresa el Id que desea buscar:");
+
+        public static void PrintResponseInvalidInput() => Console.WriteLine("Respuesta no valida.");
+        
+        public static void PrintInvalidOption() => Console.WriteLine("El valor ingresado no es valido.");
+        
+        public static void PrintCancelOperation() => Console.WriteLine("Operación cancelada.");
+
+        public static void PrintSuccessOperation() => Console.WriteLine("Operación exitosa.");
+
+        public static void PrintErrorOperation() => Console.WriteLine("Error. Operación fallida.");
+        
+        public static void PrintNoFavorites() => Console.WriteLine("No hay elementos en la lista de favoritos.");
+        
+        public static void PrintAskAddToFavoriteList() => Console.WriteLine("Desea Agregar a la Lista API? (S/N)");
+        
+        public static void PrintAskRemoveToFavoriteList() => Console.WriteLine("Desea Eliminar de la Lista API? (S/N)");
+        
+        public static void PrintAskClearFavoriteList() => Console.WriteLine("Estas seguro que desea Borrar toda la Lista API? (S/N)");
+        
+        public static void PrintCancelAdd() => Console.WriteLine("No se agregado a la Lista API.");
+        
+        public static void PrintCancelRemove() => Console.WriteLine("No se ha eliminado de la Lista API.");
+
+        public static void PrintDuplicateId(int id) => Console.WriteLine($"El id {id} ya se encuentra en la lista de favoritos.");
+        
+        public static void  PrintNotFoundIdInList(int id) => Console.WriteLine($"El id {id} no se encuentra en la lista de favoritos.");
+
+        public static void PrintNotFountId() => Console.WriteLine("Id no encontrado");
+        public static void PrintAskId() => Console.Write("Ingrese el Id que desea Guardar: ");
+
+        public static void PrintAskIdToRemove() => Console.Write("Ingrese el Id que desea Eliminar: ");
+
+        // JSON
+        // Imprimir Json
+        public static void PrintJson(NameClassContent objJson) =>
+            Console.WriteLine($"Id: {objJson.Slip.Id}\nAdvice: {objJson.Slip.Advice}");
+
+        public static void PrintFormattedJson(NameClassContent objJson) =>
+            Console.WriteLine($"Id: {objJson.Slip.Id}\nAdvice: {objJson.Slip.Advice}");
+
+        // Save
+        public static void PrintAddToFavoriteList(bool saved, int id) =>
+            Console.WriteLine(saved ? $"Id: {id} Guardado con exito" : "No se agrego a la Lista API");
+        public static void PrintSaveToJson(string filePath) => Console.WriteLine($"Favoritos guardados en: {filePath}");
+
+        // Load
+        public static void PrintNoFile() => Console.WriteLine("El archivo no existe.");
+
+        // List
+        public static void PrintList(List<FavoriteItemList> FavoriteList)
+        {
+            Console.WriteLine("Lista de favoritos");
+            int count = 1;
+            if (FavoriteList.Count == 0 || FavoriteList == null)
+            {
+                PrintNoFavorites();
+                PrintWaitForPressKey();
+                return;
+            }
+            foreach (var item in FavoriteList) { 
+                Console.WriteLine($"{count++}º Favorito:" +
+                                    $"\nId: {item.Id}" +
+                                    $"\nAdvice: {item.Content.Slip.Advice}\n");
+            }
+            PrintWaitForPressKey();
+        }
+    }
+}

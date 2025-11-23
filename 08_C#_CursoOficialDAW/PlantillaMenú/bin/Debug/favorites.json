@@ -1,19 +1,55 @@
 [
   {
+    "Id": 4,
+    "Content": {
+      "slip": {
+        "id": 4,
+        "advice": "Cars are bad investments."
+      }
+    }
+  },
+  {
+    "Id": 9,
+    "Content": {
+      "slip": {
+        "id": 9,
+        "advice": "True happiness always resides in the quest."
+      }
+    }
+  },
+  {
+    "Id": 8,
+    "Content": {
+      "slip": {
+        "id": 8,
+        "advice": "Happiness is a journey, not a destination."
+      }
+    }
+  },
+  {
+    "Id": 12,
+    "Content": {
+      "slip": {
+        "id": 12,
+        "advice": "Always block trolls."
+      }
+    }
+  },
+  {
+    "Id": 13,
+    "Content": {
+      "slip": {
+        "id": 13,
+        "advice": "If you're feeling tired or anxious, a pint of water will almost always make you feel better."
+      }
+    }
+  },
+  {
     "Id": 2,
     "Content": {
       "slip": {
         "id": 2,
         "advice": "Smile and the world smiles with you. Frown and you're on your own."
-      }
-    }
-  },
-  {
-    "Id": 65,
-    "Content": {
-      "slip": {
-        "id": 65,
-        "advice": "When having a clear out, ask yourself if an item has any financial, practical or sentimental value. If not, chuck it."
       }
     }
   }

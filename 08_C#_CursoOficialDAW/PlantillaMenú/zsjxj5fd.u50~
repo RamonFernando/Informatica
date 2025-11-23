@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 
 // Importar static
-using static PlantillaMenú.Helpers;
+using static PlantillaMenú.MenuControllers;
 using static PlantillaMenú.APIControllers;
 using static PlantillaMenú.APIFiltersControllers;
 using static PlantillaMenú.APIFavoriteList;
@@ -23,7 +23,6 @@ namespace PlantillaMenú
                 try
                 {
                     ShowMenu();
-                    
                     int? opc = ValidateInput(ReadInput());
                     if (opc is null) continue; // Si la entrada es null, salimos
                     switch (opc)
@@ -39,7 +38,6 @@ namespace PlantillaMenú
                                 break;
                             case 3:
                                 Console.WriteLine("Agregamos nombres a la Lista API");
-                                Console.WriteLine("Prueba");
                                 await RequestAddToFavoriteList(); // APIFavoriteList
                                 SaveFavoritesToJson();
                                 break;

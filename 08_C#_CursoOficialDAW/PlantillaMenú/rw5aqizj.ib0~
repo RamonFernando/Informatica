@@ -3,13 +3,12 @@ using System.Threading.Tasks;
 
 
 // Importar static
-using static PlantillaMenú.Helpers;
+using static PlantillaMenú.MenuControllers;
 using static PlantillaMenú.APIControllers;
 using static PlantillaMenú.APIFiltersControllers;
 using static PlantillaMenú.APIFavoriteList;
 using static PlantillaMenú.APILoadFavoriteListFromJson;
 using static PlantillaMenú.APISaveFavoriteListJson;
-using static PlantillaMenú.Views;
 
 namespace PlantillaMenú
 {
@@ -23,39 +22,42 @@ namespace PlantillaMenú
                 try
                 {
                     ShowMenu();
-                    
-                    int? opc = ValidateInput(ReadInput());
-                    if (opc is null) continue; // Si la entrada es null, salimos
+                    int? opc = ValidateInput(Console.ReadLine());
                     switch (opc)
                         {
                             case 1:
                                 Console.WriteLine("Mostramos consulta API");
-                                await ExecuteHttpRequest(); // ApiControllers                                
+                                await ExecuteHttpRequest(); // ApiControllers
+                                
                                 break;
                             case 2:
                                 Console.WriteLine("Filtramos Id API");
-                                await GetRequestWhithFilter(); // ApiFiltersControllers
-                                SaveFavoritesToJson();                                
+                                await GetRequestWhitFilter(); // ApiFiltersControllers
+                                SaveFavoritesToJson();
+                                
                                 break;
                             case 3:
                                 Console.WriteLine("Agregamos nombres a la Lista API");
-                                Console.WriteLine("Prueba");
                                 await RequestAddToFavoriteList(); // APIFavoriteList
                                 SaveFavoritesToJson();
+
                                 break;
                             case 4:
                                 Console.WriteLine("Eliminamos nombres de la Lista API");
                                 RequestRemoveToFavoriteList(); // APIFavoriteList
                                 SaveFavoritesToJson();
+
+                                WaitForPressKey();
                                 break;
                             case 5:
                                 Console.WriteLine("Mostramos Lista API");
                                 PrintList(FavoriteList); // APIFavoriteList
+                                WaitForPressKey();
                                 break;
                             case 6:
                                 Console.WriteLine("Borrar Lista API");
                                 RequestClearFavoriteList(); // APIFavoriteList
-                                SaveFavoritesToJson();
+
                                 break;
                             case 0:
                                 ExitMenu();

@@ -45,7 +45,7 @@ namespace PlantillaMenú
             PrintJson(objectJson);
 
             PrintAskAddToFavoriteList();
-            var confirm = ConfirmOperationFavoriteList(ReadInputUpper());           
+            var confirm = ConfirmOperationFavoriteList(ReadInputUpper());
             if (!confirm) {                
                 PrintCancelOperation();
                 PrintWaitForPressKey();

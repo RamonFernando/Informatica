@@ -45,14 +45,12 @@ namespace PlantillaMenú
             PrintJson(objectJson);
 
             PrintAskAddToFavoriteList();
-            var confirm = ConfirmOperationFavoriteList(ReadInputUpper());           
-            if (!confirm) {                
+            if (!ConfirmOperationFavoriteList(ReadInputUpper()))
+            {
                 PrintCancelOperation();
                 PrintWaitForPressKey();
                 return;
             }
-
-            // Convierte el ID en un entero y agrega el JSON deserializado a la lista
             Add(int.Parse(id), DeserializedJson(json));
 
             PrintSuccessOperation();

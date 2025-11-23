@@ -81,10 +81,11 @@
     <Compile Include="APIFiltersControllers.cs" />
     <Compile Include="APILoadFavoriteListFromJson.cs" />
     <Compile Include="APISaveFavoriteListJson.cs" />
-    <Compile Include="MenuControllers.cs" />
+    <Compile Include="Helpers.cs" />
     <Compile Include="Models.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

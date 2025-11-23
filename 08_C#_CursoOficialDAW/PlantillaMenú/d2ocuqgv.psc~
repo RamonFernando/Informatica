@@ -32,27 +32,19 @@ namespace PlantillaMenú
             var response = await GetRequestById(id);
 
             // Verifica que la respuesta HTTP sea válida
-            if (!ValidatedHttpResponse(response)) return;
+            if (!ValidateHttpResponse(response)) return;
 
             // Extrae el JSON de la respuesta
             var json = await GetJson(response);
-            var objectJson = DeserializedJson(json);
 
             // Valida que el JSON contenga un ID válido
             if (!ValidateSearchById(DeserializedJson(json))) return;
 
             // Imprime el JSON deserializado
-            PrintJson(objectJson);
+            PrintJson(DeserializedJson(json));
 
             PrintAskAddToFavoriteList();
-            var confirm = ConfirmOperationFavoriteList(ReadInputUpper());           
-            if (!confirm) {                
-                PrintCancelOperation();
-                PrintWaitForPressKey();
-                return;
-            }
-
-            // Convierte el ID en un entero y agrega el JSON deserializado a la lista
+            ConfirmOperationFavoriteList(ReadInputUpper());
             Add(int.Parse(id), DeserializedJson(json));
 
             PrintSuccessOperation();

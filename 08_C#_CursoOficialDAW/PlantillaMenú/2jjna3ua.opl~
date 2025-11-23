@@ -2,15 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
-
-// Importar static
 using static PlantillaMenú.APIControllers;
 using static PlantillaMenú.APIFiltersControllers;
-using static PlantillaMenú.Helpers;
+using static PlantillaMenú.MenuControllers;
 using static PlantillaMenú.Models;
 using static PlantillaMenú.APISaveFavoriteListJson;
-using static PlantillaMenú.Views;
 
 namespace PlantillaMenú
 {
@@ -23,74 +21,55 @@ namespace PlantillaMenú
         // confirma (S/N), agrega el resultado a la lista de favoritos.
         public static async Task RequestAddToFavoriteList()
         {           
-            PrintAskId();
-            string input = ReadInput();
+            Console.Write("Ingrese el Id que desea Guardar: ");
+            string input = Console.ReadLine();
             
             int num = ValidateIsNumberId(input); // APIFiltersControllers
 
             if (num == -1) {
-                PrintInvalidOption();
+                Console.WriteLine("Id no valido");
                 return;
             }
-            // APIControllers
-            var response = await GetRequestById(input);
-            if (!ValidatedHttpResponse(response)) return;
-
-            // Extrae el JSON de la respuesta
-            var json = await GetJson(response);
-            var objectJson = DeserializedJson(json);
-
-            // Valida que el JSON contenga un ID valido
-            if (!ValidateSearchById(DeserializedJson(json))) return;
-
-            PrintAskAddToFavoriteList();
-            var confirm = ConfirmOperationFavoriteList(ReadInputUpper());
-            if (!confirm)
+            try
             {
-                PrintCancelOperation();
-                PrintWaitForPressKey();
-                return;
-            }
+                // APIControllers
+                var response = await GetRequestById(input);
+                var validation = ValidatedHttpResponse(response); 
+                if (validation != "Response: OK")
+                {
+                    WaitForPressKey();
+                    return;
+                }
+                var stringJson = await GetJson(response);
+                var resultjson = DeserializedJson(stringJson);
 
-            // Convierte el ID en un entero y agrega el JSON deserializado a la lista
-            Add(num, DeserializedJson(json));
-
-            PrintSuccessOperation();
-            PrintWaitForPressKey();
+                AddFavoriteList(num, resultjson);
+            } catch (Exception ex) { HandlerException(ex); }
+            WaitForPressKey();
         }
 
         // Solicita al usuario un ID, valida la entrada y, si es correcta,
         // elimina de la lista de favoritos el elemento que coincida con dicho ID.
         public static void RequestRemoveToFavoriteList()
         {
-            PrintAskIdToRemove();
-            string input = ReadInput();
+            Console.Write("Ingrese el Id que desea Guardar: ");
+            string input = Console.ReadLine();
 
             int num = ValidateIsNumberId(input); // APIFiltersControllers
 
             if (num == -1)
             {
-                PrintCancelOperation();
-                PrintWaitForPressKey();
-                return;
-            }
-
-            PrintAskAddToFavoriteList();
-            var confirm = ConfirmOperationFavoriteList(ReadInputUpper());
-            if (!confirm)
-            {
-                PrintCancelOperation();
-                PrintWaitForPressKey();
+                Console.WriteLine("Id no valido");
+                WaitForPressKey();
                 return;
             }
             Remove(num);
-
-            PrintSuccessOperation();
-            PrintWaitForPressKey();
+            WaitForPressKey();
         }
+
         public static bool Add(int id, NameClassContent objJson) {
             if (FavoriteList.Any(i => i.Id == id)) {
-                PrintDuplicateId(id);
+                Console.WriteLine("El id ya se encuentra en la lista de favoritos.");
                 return false;
             }
             FavoriteList.Add(new FavoriteItemList { Id = id, Content = objJson });
@@ -99,17 +78,36 @@ namespace PlantillaMenú
         public static void Remove(int id) {
             var item = FavoriteList.FirstOrDefault(i => i.Id == id);
             if (item == null) {
-                PrintNotFoundIdInList(id);
+                Console.WriteLine("El id no se encuentra en la lista de favoritos.");
                 return;
             }            
             FavoriteList.Remove(item);
         }
-        
+        public static void PrintList(List<FavoriteItemList> FavoriteList) {
+            Console.WriteLine("Lista de favoritos");
+            int count = 1;
+            if (FavoriteList.Count == 0) {
+                Console.WriteLine("No hay elementos en la lista de favoritos.");
+                return;
+            }
+            foreach (var item in FavoriteList)                 
+                Console.WriteLine(  $"{count++}º Favorito:" +
+                                    $"\nId: {item.Id}" +
+                                    $"\nAdvice: {item.Content.Slip.Advice}\n");          
+        }
+
         // Pide confirmación al usuario y, si acepta, agrega el elemento
         // a la lista de favoritos usando el ID y el objeto JSON ya deserializado.
-        public static bool ConfirmOperationFavoriteList(string input) {
-            if (input.Trim().ToUpper() != "S") return false;
-            return input == "S";
+        public static void AddFavoriteList(int id, NameClassContent objJson)
+        {
+            Console.WriteLine("Desea Agregar a la Lista API? (S/N)");
+            string input = Console.ReadLine().Trim().ToUpper();
+            if (string.IsNullOrWhiteSpace(input) || input.ToUpper() != "S") {
+                Console.WriteLine("No se agrego a la Lista API");
+                return;
+            }
+            bool saved = Add(id, objJson);
+            Console.WriteLine(saved ? "Guardado con exito" : "No se agrego a la Lista API");
         }
         // Convierte la lista de favoritos a un string JSON con formato indentado.
         // Si la lista es null, devuelve un JSON de una lista vacía.
@@ -124,30 +122,34 @@ namespace PlantillaMenú
         // Borra toda la lista de favoritos si el usuario confirma (S/N)
         public static void RequestClearFavoriteList()
         {
-            PrintAskClearFavoriteList();
-            string input = ReadInputUpper();
+            Console.WriteLine("¿Estas seguro que deseas borrar la Lista API? (S/N)");
+            string input = Console.ReadLine();
 
             // Validar entrada vacía o con espacios
             if (input == null || string.IsNullOrWhiteSpace(input)) {
-                PrintResponseInvalidInput();
+                Console.WriteLine("Respuesta no válida.");
+                WaitForPressKey();
                 return;
             }
 
+            // Normalizar entrada
+            input = input.Trim().ToUpper();
+
             // Si no confirma con S cancelamos la operación
             if (input != "S") {
-                PrintCancelOperation();
-                PrintWaitForPressKey();
+                Console.WriteLine("Operación cancelada.");
+                WaitForPressKey();
                 return;
             }
 
             // Borrar lista
             FavoriteList.Clear();
-            PrintSuccessOperation();
+            Console.WriteLine("Lista API borrada con éxito.");
 
             // Guardar cambios en JSON
             SaveFavoritesToJson();
 
-            PrintWaitForPressKey();
+            WaitForPressKey();
         }
     }
 }

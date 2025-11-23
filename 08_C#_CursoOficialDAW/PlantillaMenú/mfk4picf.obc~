@@ -7,38 +7,45 @@ using Newtonsoft.Json;
 // Importar static
 using static PlantillaMenú.Models;
 using static PlantillaMenú.Models.GetHttpClient;
-using static PlantillaMenú.Helpers;
-using static PlantillaMenú.Views;
+using static PlantillaMenú.MenuControllers;
+using System.Collections.Generic;
 
 namespace PlantillaMenú
 {       
     internal class APIControllers
-    {
+    {   
         // Metodo principal que realiza la peticion GET a la API
         public static async Task ExecuteHttpRequest()
         {
-            // Peticion al servidor (Llamada a la API)
-            HttpResponseMessage response = await GetHttpRequest(GetUrl());
+            try
+            {
+                GetUrl();
 
-            // Validar peticion GetHttpRequest
-            if (!ValidatedHttpResponse(response)) return;
+                // Peticion al servidor (API)
+                HttpResponseMessage response = await GetHttpRequest(GetUrl());
 
-            // Leer peticion y obtener el stringJson
-            string stringJson = await GetJson(response);
+                // Validar peticion GetHttpRequest
+                string validation = ValidatedHttpResponse(response);
+                if (validation != "Response: OK") return;
 
-            // Formatear Json (Serializar)
-            var objectJson = FormattedJson(stringJson);
+                // Leer peticion y obtener el stringJson
+                string stringJson = await GetJson(response);
 
-            // Imprimir Json Formateado
-            Console.WriteLine(objectJson);
+                // Formatear Json (Serializar)
+                var objectJson = FormattedJson(stringJson);
 
-            // Deserializar para obtener Json (Atributos)
-            NameClassContent json = DeserializedJson(stringJson);
+                // Imprimir Json Formateado
+                Console.WriteLine(objectJson);
 
-            // Llamar medoto PrintJson
-            PrintJson(json);
-            PrintWaitForPressKey();
-        }    
+                // Deserializar para obtener Json (Atributos)
+                NameClassContent json = DeserializedJson(stringJson);
+
+                // Llamar medoto PrintJson
+                PrintJson(json);
+                WaitForPressKey();
+
+            }  catch (Exception ex) { HandlerException(ex); }
+        }
 
         // Metodos Secundarios
         // Obtener URL
@@ -50,19 +57,20 @@ namespace PlantillaMenú
         }
         // Validar peticion del servidor
         // Validar peticion del servidor
-        public static bool ValidatedHttpResponse(HttpResponseMessage response)
+        public static string ValidatedHttpResponse(HttpResponseMessage response)
         {   
-            // Validar que la peticion HTTP sea exitosa
-            if (!response.IsSuccessStatusCode) {
+            string message = "Response: OK";
+            if (!response.IsSuccessStatusCode)
+            {
                 string errorMessage =
                     $"Error de la peticion HTTP: " +
                     $"\nCodigo: {response.StatusCode}" +
                     $"\nInfo: {response.ReasonPhrase}";
 
                 Console.WriteLine(errorMessage);
-                return false;              
+                return errorMessage;              
             }    
-            return true;
+            return message;
         }
 
         // Obtener JSON
@@ -77,6 +85,10 @@ namespace PlantillaMenú
         public static NameClassContent DeserializedJson(string stringJson) =>
             JsonConvert.DeserializeObject<NameClassContent>(stringJson);
         
+        // Imprimir Json
+        public static void PrintJson(NameClassContent objJson) =>
+            Console.WriteLine($"Id: {objJson.Slip.Id}\nAdvice: {objJson.Slip.Advice}");
+
         // Manejo de Excepciones
         public static void HandlerException(Exception ex) {
             
