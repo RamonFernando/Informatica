@@ -1,7 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 // Importar static
+using static APIRickAndMorty.Program;
+using static APIRickAndMorty.Models;
 using static APIRickAndMorty.APIControllers;
 using static APIRickAndMorty.APIFavoriteList;
 using static APIRickAndMorty.APIFiltersControllers;
@@ -43,6 +48,7 @@ namespace APIRickAndMorty
                             break;
                         case 4:
                             Console.WriteLine("Agregamos nombres a la Lista API");
+                            Console.WriteLine("Prueba");
                             await RequestAddToFavoriteList(); // APIFavoriteList
                             SaveFavoritesToJson();
                             break;
@@ -62,8 +68,6 @@ namespace APIRickAndMorty
                             break;
                         case 8:
                             Console.WriteLine("Mostramos toda la API");
-                            await GetAllPages();
-                            break;
                         case 0:
                             ExitMenu();
                             return;

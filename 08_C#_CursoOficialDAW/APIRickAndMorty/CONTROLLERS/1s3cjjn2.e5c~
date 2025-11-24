@@ -107,7 +107,8 @@ namespace APIRickAndMorty
         public static void Remove(int id)
         {
             var item = FavoriteList.FirstOrDefault(i => i.Id == id);
-            if (item == null) {
+            if (item == null)
+            {
                 PrintNotFoundIdInList(id);
                 return;
             }
@@ -131,13 +132,15 @@ namespace APIRickAndMorty
             string input = ReadInputUpper();
 
             // Validar entrada vacía o con espacios
-            if (input == null || string.IsNullOrWhiteSpace(input)) {
+            if (input == null || string.IsNullOrWhiteSpace(input))
+            {
                 PrintResponseInvalidInput();
                 return;
             }
 
             // Si no confirma con S cancelamos la operación
-            if (input != "S") {
+            if (input != "S")
+            {
                 PrintCancelOperation();
                 PrintWaitForPressKey();
                 return;

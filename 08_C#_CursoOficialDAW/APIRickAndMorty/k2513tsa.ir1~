@@ -1,7 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 // Importar static
+using static APIRickAndMorty.Program;
+using static APIRickAndMorty.Models;
 using static APIRickAndMorty.APIControllers;
 using static APIRickAndMorty.APIFavoriteList;
 using static APIRickAndMorty.APIFiltersControllers;

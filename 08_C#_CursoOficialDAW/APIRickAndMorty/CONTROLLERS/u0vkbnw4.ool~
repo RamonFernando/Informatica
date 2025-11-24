@@ -1,12 +1,16 @@
 ﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 // Importar static
+using static APIRickAndMorty.Program;
 using static APIRickAndMorty.Models;
 using static APIRickAndMorty.APIControllers;
+using static APIRickAndMorty.APIFavoriteList;
 using static APIRickAndMorty.APIFiltersControllers;
+using static APIRickAndMorty.APILoadFavoriteListFromJson;
 using static APIRickAndMorty.APISaveFavoriteListJson;
 using static APIRickAndMorty.Helpers;
 using static APIRickAndMorty.Views;
@@ -27,7 +31,8 @@ namespace APIRickAndMorty
 
             int num = ValidateIsNumberId(input); // APIFiltersControllers
 
-            if (num == -1) {
+            if (num == -1)
+            {
                 PrintInvalidOption();
                 return;
             }
@@ -44,7 +49,8 @@ namespace APIRickAndMorty
 
             PrintAskAddToFavoriteList();
             var confirm = ConfirmOperationFavoriteList(ReadInputUpper());
-            if (!confirm) {
+            if (!confirm)
+            {
                 PrintCancelOperation();
                 PrintWaitForPressKey();
                 return;
@@ -66,7 +72,8 @@ namespace APIRickAndMorty
 
             int num = ValidateIsNumberId(input); // APIFiltersControllers
 
-            if (num == -1) {
+            if (num == -1)
+            {
                 PrintCancelOperation();
                 PrintWaitForPressKey();
                 return;
@@ -74,7 +81,8 @@ namespace APIRickAndMorty
 
             PrintAskRemoveToFavoriteList();
             var confirm = ConfirmOperationFavoriteList(ReadInputUpper());
-            if (!confirm) {
+            if (!confirm)
+            {
                 PrintCancelOperation();
                 PrintWaitForPressKey();
                 return;
@@ -86,7 +94,8 @@ namespace APIRickAndMorty
         }
         public static bool Add(int id, ClassCharacter character)
         {
-            if (FavoriteList.Any(i => i.Id == id)) {
+            if (FavoriteList.Any(i => i.Id == id))
+            {
                 PrintDuplicateId(id);
                 return false;
             }
@@ -107,7 +116,8 @@ namespace APIRickAndMorty
         public static void Remove(int id)
         {
             var item = FavoriteList.FirstOrDefault(i => i.Id == id);
-            if (item == null) {
+            if (item == null)
+            {
                 PrintNotFoundIdInList(id);
                 return;
             }
@@ -131,13 +141,15 @@ namespace APIRickAndMorty
             string input = ReadInputUpper();
 
             // Validar entrada vacía o con espacios
-            if (input == null || string.IsNullOrWhiteSpace(input)) {
+            if (input == null || string.IsNullOrWhiteSpace(input))
+            {
                 PrintResponseInvalidInput();
                 return;
             }
 
             // Si no confirma con S cancelamos la operación
-            if (input != "S") {
+            if (input != "S")
+            {
                 PrintCancelOperation();
                 PrintWaitForPressKey();
                 return;

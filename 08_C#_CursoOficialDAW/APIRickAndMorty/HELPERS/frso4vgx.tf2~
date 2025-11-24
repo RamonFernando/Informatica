@@ -1,12 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 // Importar static
-using static APIRickAndMorty.APIControllers;
+using static APIRickAndMorty.Program;
 using static APIRickAndMorty.Models;
+using static APIRickAndMorty.APIControllers;
+using static APIRickAndMorty.APIFavoriteList;
+using static APIRickAndMorty.APIFiltersControllers;
+using static APIRickAndMorty.APILoadFavoriteListFromJson;
+using static APIRickAndMorty.APISaveFavoriteListJson;
+using static APIRickAndMorty.Helpers;
 using static APIRickAndMorty.Views;
 
 namespace APIRickAndMorty
@@ -49,32 +55,13 @@ namespace APIRickAndMorty
             return input.Trim().ToUpper() == "S";
         }
 
-        public static async Task<List<ClassCharacter>> GetAllPagesList()
-        {
-            List<ClassCharacter> all = new List<ClassCharacter>();
-            string url = GetUrl();
-
-            while (url != null)
-            {
-                HttpResponseMessage response = await GetHttpRequest(url);
-                if (!ValidatedHttpResponse(response)) break;
-
-                string json = await GetJson(response);
-                ClassRoot data = DeserializedJsonRoot(json);
-
-                all.AddRange(data.ResultsList);
-
-                url = data.Info.Next;
-            }
-
-            return all;
-        }
-        public static void PaginateListApi<T>(List<T> list, Action<T> PrintJson, int pageSize)
+        public static void PaginateListApi<T>(List<T> list, Action<T> printItem, int pageSize = 5)
         {
             if (list == null || list.Count == 0)
             {
                 PrintNoData();
                 PrintWaitForPressKey();
+                Console.ReadKey();
                 return;
             }
 
@@ -84,7 +71,7 @@ namespace APIRickAndMorty
             while (true)
             {
                 Console.Clear();
-                PrintCountPagesAll(currentPage + 1, totalPages);
+                PrintCountPagesAll(currentPage ++, totalPages);
 
                 var page = list
                     .Skip(currentPage * pageSize)
@@ -93,20 +80,24 @@ namespace APIRickAndMorty
 
                 foreach (var item in page)
                 {
-                    PrintJson(item);
+                    printItem(item);
                     PrintOnlyLane();
                 }
 
-                PrintSelectOption();
+                Console.WriteLine("\n[N] Siguiente | [P] Anterior | [Q] Salir");
+                Console.Write("Opción: ");
                 string key = Console.ReadKey(true).Key.ToString().ToUpper();
 
                 if (key == "N" && currentPage < totalPages - 1)
                     currentPage++;
-                else if (key == "B" && currentPage > 0)
+
+                else if (key == "P" && currentPage > 0)
                     currentPage--;
+
                 else if (key == "Q")
                     break;
             }
         }
+
     }
 }

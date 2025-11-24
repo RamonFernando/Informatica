@@ -3,9 +3,13 @@ using System.Threading.Tasks;
 using System.Net.Http;
 
 // Importar static
+using static APIRickAndMorty.Program;
 using static APIRickAndMorty.Models;
 using static APIRickAndMorty.APIControllers;
 using static APIRickAndMorty.APIFavoriteList;
+using static APIRickAndMorty.APIFiltersControllers;
+using static APIRickAndMorty.APILoadFavoriteListFromJson;
+using static APIRickAndMorty.APISaveFavoriteListJson;
 using static APIRickAndMorty.Helpers;
 using static APIRickAndMorty.Views;
 
@@ -13,13 +17,23 @@ namespace APIRickAndMorty
 {
     internal class APIFiltersControllers
     {
+        // Filtrar Id
+        // Método principal para pedir un ID y hacer una petición filtrada por ese ID
+        public static async Task GetRequestWhithFilter()
+        {
+            await SearchById();
+            PrintWaitForPressKey();
+            await SearchByName();
+            await SearchById();
+        }
         public static async Task SearchById()
         {
             PrintSearchById();
             string id = ReadInput();
 
             // Valida que el ID sea un número
-            if (ValidateIsNumberId(id) == -1) {
+            if (ValidateIsNumberId(id) == -1)
+            {
                 PrintCancelOperation();
                 PrintWaitForPressKey();
                 return;
@@ -43,7 +57,8 @@ namespace APIRickAndMorty
 
             PrintAskAddToFavoriteList();
             var confirm = ConfirmOperationFavoriteList(ReadInputUpper());
-            if (!confirm) {
+            if (!confirm)
+            {
                 PrintCancelOperation();
                 PrintWaitForPressKey();
                 return;
@@ -69,7 +84,8 @@ namespace APIRickAndMorty
             // Devolvemos una lista de personajes
             var jsonRoot = DeserializedJsonRoot(json);
 
-            if (jsonRoot.ResultsList.Count == 0) {
+            if (jsonRoot.ResultsList.Count == 0)
+            {
                 PrintNotFountId();
                 PrintWaitForPressKey();
                 return;
@@ -80,7 +96,8 @@ namespace APIRickAndMorty
             
             PrintAskAddToFavoriteList();
             var confirm = ConfirmOperationFavoriteList(ReadInputUpper());
-            if (!confirm) {
+            if (!confirm)
+            {
                 PrintCancelOperation();
                 PrintWaitForPressKey();
                 return;
@@ -105,7 +122,8 @@ namespace APIRickAndMorty
             await GetHttpRequest(urlFilter);
 
         // Valida que el objeto deserializado tenga un atributo válido
-        public static bool IsValidAtribute(ClassRoot attribute) {
+        public static bool IsValidAtribute(ClassRoot attribute)
+        {
             if (attribute != null && attribute.ResultsList != null && attribute.ResultsList.Count > 0)
                 return true;
 
@@ -115,7 +133,8 @@ namespace APIRickAndMorty
         // Verifica si la búsqueda por ID es válida; si no, muestra mensaje
         public static bool ValidateSearchById(ClassCharacter atribute)
         {
-            if (atribute.Id <= 0 || atribute == null) {
+            if (atribute.Id <= 0 || atribute == null)
+            {
                 PrintNotFountId();
                 PrintWaitForPressKey();
                 return false;

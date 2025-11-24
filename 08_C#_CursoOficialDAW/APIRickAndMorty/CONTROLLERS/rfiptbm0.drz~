@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 using static APIRickAndMorty.Models;
 using static APIRickAndMorty.Helpers;
 using static APIRickAndMorty.Views;
+using System.Linq;
 
 namespace APIRickAndMorty
 {
@@ -104,19 +105,22 @@ namespace APIRickAndMorty
         public static void HandlerException(Exception ex)
         {
             // Ocurre cuando la petición HTTP falla (sin conexión, DNS, servidor caído…)
-            if (ex is HttpRequestException HttpEx) {
+            if (ex is HttpRequestException HttpEx)
+            {
                 Console.WriteLine($"Error en la peticion HTTP: \n{HttpEx.Message} \n{HttpEx.HResult}");
                 return;
             }
 
             // Error general al procesar JSON (estructura inválida o datos mal formados)
-            if (ex is JsonException JsonEx) {
+            if (ex is JsonException JsonEx)
+            {
                 Console.WriteLine($"Error en la peticion HTTP: \n{JsonEx.Message} \n{JsonEx.HResult}");
                 return;
             }
 
             // La petición fue cancelada, normalmente por timeout (ej: HttpClient.Timeout)
-            if (ex is TaskCanceledException TaskEx) {
+            if (ex is TaskCanceledException TaskEx)
+            {
                 Console.WriteLine($"Error en la peticion HTTP: \n{TaskEx.Message} \n{TaskEx.HResult}");
                 return;
             }

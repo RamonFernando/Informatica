@@ -2,24 +2,12 @@
 using System.Collections.Generic;
 using System.Net.Http;
 
-// Importar static
-using static APIRickAndMorty.APIControllers;
-using static APIRickAndMorty.APIFavoriteList;
-using static APIRickAndMorty.APIFiltersControllers;
-using static APIRickAndMorty.APILoadFavoriteListFromJson;
-using static APIRickAndMorty.APISaveFavoriteListJson;
-using static APIRickAndMorty.Helpers;
-using static APIRickAndMorty.Models;
-
-using static APIRickAndMorty.Program;
-using static APIRickAndMorty.Views;
-
 namespace APIRickAndMorty
 {
     internal class Models
     {
         // Nombre de la clase, propiedades de la API (personaje)
-        public class ClassAtributes
+        public class ClassCharacter
         {
             [JsonProperty("id")]
             public int Id { get; set; }
@@ -72,7 +60,7 @@ namespace APIRickAndMorty
             public Info Info { get; set; }
 
             [JsonProperty("results")]
-            public List<ClassAtributes> ResultsList { get; set; } = new List<ClassAtributes>();
+            public List<ClassCharacter> ResultsList { get; set; } = new List<ClassCharacter>();
         }
 
         public class Origin
@@ -93,12 +81,14 @@ namespace APIRickAndMorty
             public string Url { get; set; }
         }
 
+        // HttpClient
         public static class GetHttpClient
         {
             private static readonly HttpClient client = new HttpClient();
             public static HttpClient CreateHttpClient() => client;
         }
 
+        // Modelo de la lista de favoritos
         public class FavoriteItemList
         {
             public int Id { get; set; }

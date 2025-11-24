@@ -2,9 +2,15 @@
 using System.Collections.Generic;
 
 // Importar static
+using static APIRickAndMorty.Program;
 using static APIRickAndMorty.Models;
+using static APIRickAndMorty.APIControllers;
+using static APIRickAndMorty.APIFavoriteList;
+using static APIRickAndMorty.APIFiltersControllers;
+using static APIRickAndMorty.APILoadFavoriteListFromJson;
+using static APIRickAndMorty.APISaveFavoriteListJson;
 using static APIRickAndMorty.Helpers;
-
+using static APIRickAndMorty.Views;
 
 namespace APIRickAndMorty
 {
@@ -38,8 +44,6 @@ namespace APIRickAndMorty
             Console.WriteLine("=====================================");
             return;
         }
-        public static void PrintOnlyLane() => Console.WriteLine("-----------------------------------");
-
         // Metodos Solo de impresión
         public static void PrintWaitForPressKey()
         {
@@ -79,26 +83,15 @@ namespace APIRickAndMorty
         public static void PrintNotFoundIdInList(int id) => Console.WriteLine($"El id {id} no se encuentra en la lista de favoritos.");
 
         public static void PrintNotFountId() => Console.WriteLine("Id no encontrado");
-        
         public static void PrintAskId() => Console.Write("Ingrese el Id que desea Guardar: ");
 
         public static void PrintAskIdToRemove() => Console.Write("Ingrese el Id que desea Eliminar: ");
 
-        public static void PrintNoData() => Console.WriteLine("No hay datos disponibles para mostrar.");
-
-        public static void PrintSelectOption() {
-            Console.WriteLine("\n[B] Anterior <= | => [N] Siguiente | [Q] Salir");
-            Console.Write("Opción: ");
-        }
-
         // Paginado
-        public static void PrintCountPages(int countPages) {
-            Console.WriteLine($"\nPagina: {countPages+1}");
+        public static void PrintCountPages(int countPages)
+        {
+            Console.WriteLine($"\nPagina: {countPages++}");
             Console.WriteLine("-----------------------");
-        }
-        public static void PrintCountPagesAll(int currentPage, int totalPages) {
-            Console.WriteLine($"Página {currentPage +1}/{totalPages}");
-            Console.WriteLine("=====================================");
         }
 
         // JSON
@@ -116,9 +109,10 @@ namespace APIRickAndMorty
                     $"\nLocation: {pers.Location.Name}"
                     );
         }
+
         public static void PrintFormattedJson(ClassRoot objJson)
         {
-            foreach (var pers in objJson.ResultsList)
+            foreach (var pers in objJson.FavoriteList)
             {
                 PrintJson(pers);
                 Console.WriteLine("--------------------------");
