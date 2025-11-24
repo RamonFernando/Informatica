@@ -1,0 +1,10 @@
+[
+  {
+    "Id": 6,
+    "Name": "charizard",
+    "Height": 17,
+    "Weight": 905,
+    "Types": "fire, flying",
+    "SpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png"
+  }
+]

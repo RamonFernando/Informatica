@@ -1,0 +1,83 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+
+using static APIPokeAPI.Views;
+using static APIPokeAPI.HttpClientService;
+using static APIPokeAPI.APIControllers;
+using static APIPokeAPI.APIFavoriteListController;
+using static APIPokeAPI.APIFiltersControllers;
+using static APIPokeAPI.Helpers;
+using static APIPokeAPI.APILoadFavoriteListFromJson;
+using static APIPokeAPI.APISaveFavoriteListJson;
+
+
+namespace APIPokeAPI
+{
+    internal class Program
+    {       
+            static async Task Main(string[] args)
+            {
+                LoadFavoritesFromJson();
+
+                while (true)
+                {
+                    try
+                    {
+                        ShowMenu();
+
+                        int? opc = ValidateInput(ReadInput());
+                        if (opc is null)
+                            continue;
+
+                        switch (opc)
+                        {
+                            case 1:
+                                Console.WriteLine("Mostrando listado de 20 Pokémon...");
+                                await ExecuteHttpRequest();
+                                break;
+                            case 2:
+                                Console.WriteLine("Buscar Pokémon por Id");
+                                await SearchById();
+                                break;
+                            case 3:
+                                Console.WriteLine("Buscar Pokémon por Nombre");
+                                await SearchByName();
+                                break;
+                            case 4:
+                                Console.WriteLine("Agregar Pokémon a Favoritos (por Id)");
+                                await RequestAddToFavoriteList();
+                                break;
+                            case 5:
+                                Console.WriteLine("Eliminar Pokémon de Favoritos");
+                                RequestRemoveToFavoriteList();
+                                break;
+                            case 6:
+                                Console.WriteLine("Mostrar Lista de Favoritos");
+                                PrintFavoritesList(FavoriteList);
+                                break;
+                            case 7:
+                                Console.WriteLine("Borrar toda la Lista de Favoritos");
+                                RequestClearFavoriteList();
+                                break;
+                            case 8:
+                                Console.WriteLine("Mostrando todos los Pokémon (No recomendado)...");
+                                await GetAllPages();
+                                break;
+                            case 0:
+                                ExitMenu();
+                                return;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        HandlerException(ex);
+                    }
+                }
+            }
+        
+    }
+}

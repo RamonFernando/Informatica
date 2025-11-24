@@ -29,7 +29,7 @@ namespace APIRickAndMorty
                     {
                         case 1:
                             Console.WriteLine("Mostramos consulta API");
-                            await ExecuteHttpRequest(); // ApiControllers                                
+                            await ExecuteHttpRequest(); // ApiControllers
                             break;
                         case 2:
                             Console.WriteLine("Filtramos Id API");
