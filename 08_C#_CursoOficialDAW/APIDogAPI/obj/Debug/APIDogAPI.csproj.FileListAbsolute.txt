@@ -1,0 +1,11 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIDogAPI\obj\Debug\APIDogAPI.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIDogAPI\obj\Debug\APIDogAPI.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIDogAPI\bin\Debug\APIDogAPI.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIDogAPI\bin\Debug\APIDogAPI.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIDogAPI\bin\Debug\APIDogAPI.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIDogAPI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIDogAPI\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIDogAPI\obj\Debug\APIDogAPI.csproj.Up2Date
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIDogAPI\obj\Debug\APIDogAPI.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIDogAPI\obj\Debug\APIDogAPI.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIDogAPI\obj\Debug\APIDogAPI.exe.config

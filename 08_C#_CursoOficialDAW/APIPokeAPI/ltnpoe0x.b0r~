@@ -17,7 +17,7 @@ namespace APIPokeAPI
     {
         public static int? ValidateInput(string input)
         {
-            if (!int.TryParse(input, out int opc) || opc < 0 || opc > 8)
+            if (!int.TryParse(input, out int opc) || opc < 0 || opc > 7)
             {
                 Console.WriteLine("Opción no válida.");
                 Console.WriteLine("Presione cualquier tecla para continuar...");

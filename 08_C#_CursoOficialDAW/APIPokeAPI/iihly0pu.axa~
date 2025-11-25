@@ -1,0 +1,117 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+using static APIPokeAPI.Views;
+using static APIPokeAPI.HttpClientService;
+using static APIPokeAPI.APIControllers;
+using static APIPokeAPI.APIFavoriteListController;
+using static APIPokeAPI.APIFiltersControllers;
+using static APIPokeAPI.Helpers;
+using static APIPokeAPI.Models;
+
+namespace APIPokeAPI
+{
+    internal class APIFiltersControllers
+    {
+        public static async Task SearchById()
+        {
+            PrintSearchById();
+            string id = ReadInput();
+
+            if (ValidateIsNumberId(id) == -1)
+            {
+                PrintCancelOperation();
+                PrintWaitForPressKey();
+                return;
+            }
+
+            var response = await GetRequestById(id);
+            if (!ValidatedHttpResponse(response))
+                return;
+
+            string json = await GetJson(response);
+            var pokemon = DeserializedPokemon(json);
+
+            if (!ValidatePokemon(pokemon))
+                return;
+
+            PrintPokemon(pokemon);
+
+            PrintAskAddToFavoriteList();
+            var confirm = ConfirmOperationFavoriteList(ReadInputUpper());
+            if (!confirm)
+            {
+                PrintCancelOperation();
+                PrintWaitForPressKey();
+                return;
+            }
+
+            if (!Add(pokemon.Id, pokemon)) {   
+                PrintCancelOperation();
+                PrintWaitForPressKey();
+                return;
+            }
+            PrintSuccessOperation();
+            PrintWaitForPressKey();
+        }
+
+        public static async Task SearchByName()
+        {
+            PrintSearchByName();
+            string name = ReadInput();
+
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                PrintResponseInvalidInput();
+                PrintWaitForPressKey();
+                return;
+            }
+
+            var response = await GetRequestByName(name);
+            if (!ValidatedHttpResponse(response))
+                return;
+
+            string json = await GetJson(response);
+            var pokemon = DeserializedPokemon(json);
+
+            if (!ValidatePokemon(pokemon))
+                return;
+
+            PrintPokemon(pokemon);
+
+            PrintAskAddToFavoriteList();
+            var confirm = ConfirmOperationFavoriteList(ReadInputUpper());
+            if (!confirm)
+            {
+                PrintCancelOperation();
+                PrintWaitForPressKey();
+                return;
+            }
+
+            Add(pokemon.Id, pokemon);
+            PrintSuccessOperation();
+            PrintWaitForPressKey();
+        }
+
+        public static async Task<HttpResponseMessage> GetRequestById(string id) =>
+            await GetHttpClient().GetAsync($"{GetUrl()}/{id}");
+
+        public static async Task<HttpResponseMessage> GetRequestByName(string name) =>
+            await GetHttpClient().GetAsync($"{GetUrl()}/{name.ToLower()}");
+
+        public static bool ValidatePokemon(Pokemon pokemon)
+        {
+            if (pokemon == null || pokemon.Id <= 0)
+            {
+                PrintNotFound();
+                PrintWaitForPressKey();
+                return false;
+            }
+
+            return true;
+        }
+    }
+}

@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using static APIPokeAPI.Views;
 using static APIPokeAPI.HttpClientService;
 using static APIPokeAPI.APIControllers;
@@ -14,19 +13,23 @@ using static APIPokeAPI.Helpers;
 
 namespace APIPokeAPI
 {
-    internal class APISaveFavoriteListJson
+    internal class APILoadFavoriteListFromJson
     {
-        public static void SaveFavoritesToJson()
+        public static void LoadFavoritesFromJson()
         {
             try
             {
                 string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "favorites_pokemon.json");
 
-                string json = FormattedJsonFavoriteList(FavoriteList);
+                if (!File.Exists(filePath))
+                {
+                    PrintNoFile();
+                    return;
+                }
 
-                File.WriteAllText(filePath, json);
+                string json = File.ReadAllText(filePath);
 
-                PrintSaveToJson(filePath);
+                FavoriteList = DeserializedJsonFavoriteList(json);
             }
             catch (Exception ex)
             {
@@ -34,8 +37,6 @@ namespace APIPokeAPI
             }
         }
 
-        public static void PrintSaveToJson(string filePath) =>
-            Console.WriteLine($"Favoritos guardados en: {filePath}");
+        
     }
 }
-

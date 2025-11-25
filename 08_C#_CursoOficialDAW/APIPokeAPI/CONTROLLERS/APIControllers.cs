@@ -17,7 +17,7 @@ namespace APIPokeAPI
 {
     internal class APIControllers
     {
-        private const string BaseUrl = "https://pokeapi.co/api/v2/pokemon";
+        public const string BaseUrl = "https://pokeapi.co/api/v2/pokemon";
 
         public static string GetUrl() => BaseUrl;
 
@@ -57,6 +57,23 @@ namespace APIPokeAPI
 
             return fullList;
         }
+
+        public static async Task<List<PokemonListItem>> GetAllPokemonListFull()
+        {
+            string url = $"{BaseUrl}?limit=2000&offset=0";
+
+            HttpResponseMessage response = await GetHttpClient().GetAsync(url);
+
+            if (!response.IsSuccessStatusCode)
+                return new List<PokemonListItem>();
+
+            string json = await response.Content.ReadAsStringAsync();
+            PokemonListRoot data = JsonConvert.DeserializeObject<PokemonListRoot>(json);
+
+            return data?.Results ?? new List<PokemonListItem>();
+        }
+
+
         public static async Task GetAllPages()
         {
             var listItems = await GetAllPokemonList();
@@ -75,7 +92,6 @@ namespace APIPokeAPI
 
             PrintWaitForPressKey();
         }
-
 
         public static async Task<List<PokemonListItem>> GetAllPokemonList()
         {
@@ -132,8 +148,6 @@ namespace APIPokeAPI
                 }
             }
         }
-
-
 
         public static bool ValidatedHttpResponse(HttpResponseMessage response)
         {

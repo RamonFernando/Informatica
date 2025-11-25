@@ -9,6 +9,8 @@ using static APIPokeAPI.HttpClientService;
 using static APIPokeAPI.APIControllers;
 using static APIPokeAPI.APIFavoriteListController;
 using static APIPokeAPI.APIFiltersControllers;
+using static APIPokeAPI.APILoadFavoriteListFromJson;
+using static APIPokeAPI.APISaveFavoriteListJson;
 using static APIPokeAPI.Helpers;
 using static APIPokeAPI.Models;
 
@@ -26,12 +28,12 @@ namespace APIPokeAPI
             Console.WriteLine("====================================");
             Console.WriteLine("1. Mostrar lista (20 Pokémon)");
             Console.WriteLine("2. Buscar Pokémon por Id");
-            Console.WriteLine("3. Buscar Pokémon por Nombre");
-            Console.WriteLine("4. Agregar Pokémon a Favoritos (por Id)");
-            Console.WriteLine("5. Eliminar Pokémon de Favoritos");
-            Console.WriteLine("6. Mostrar Lista de Favoritos");
-            Console.WriteLine("7. Borrar toda la Lista de Favoritos");
-            Console.WriteLine("8. Mostrar PokéAPI completa (No recomendado)");
+            Console.WriteLine("3. Buscar Pokémon por Nombre Exacto");
+            Console.WriteLine("4. Buscar Pokémon por Nombre Aprox.");
+            Console.WriteLine("5. Agregar Pokémon a Favoritos (Id)");
+            Console.WriteLine("6. Eliminar Pokémon de Favoritos");
+            Console.WriteLine("7. Mostrar Lista de Favoritos");
+            Console.WriteLine("8. Borrar toda la Lista de Favoritos");
             Console.WriteLine("0. Salir");
             Console.WriteLine("====================================");
             PrintOptionMenu();
@@ -77,8 +79,18 @@ namespace APIPokeAPI
 
         public static void PrintNoData() => Console.WriteLine("No hay datos disponibles para mostrar.");
 
-        public static void PrintSelectOption()
-        {
+        public static void PrintResultSearch(string input) {
+            Console.Clear();
+            Console.WriteLine($"Resultados aproximados para '{input}':");
+            Console.WriteLine("=====================================");
+        }
+        public static void PrintApproximateMatches(List<(string Name, int Score)> matches) {
+            foreach (var item in matches)
+                Console.WriteLine($"{item.Name}  (Similitud: {item.Score})");
+        }
+
+
+        public static void PrintSelectOption() {
             Console.WriteLine("\n[B] Anterior <= | => [N] Siguiente | [Q] Salir");
             Console.Write("Opción: ");
         }
@@ -95,10 +107,7 @@ namespace APIPokeAPI
         public static void PrintNotFoundIdInList(int id) =>
             Console.WriteLine($"El Id {id} no se encuentra en la lista de favoritos.");
 
-        public static void PrintNotFound() => Console.WriteLine("No se ha encontrado el Pokémon.");
-
-        public static void PrintNoFile() =>
-            Console.WriteLine("El archivo no existe o no se ha creado aún.");
+        public static void PrintNotFound() => Console.WriteLine("No se ha encontrado el Pokémon.");        
 
         public static void PrintCountPagesAll(int currentPage, int totalPages)
         {
@@ -123,6 +132,7 @@ namespace APIPokeAPI
             );
         }
 
+        // Listas
         public static void PrintPokemonListItem(PokemonListItem p) =>
             Console.WriteLine($"Name: {p.Name}");
 
@@ -161,8 +171,21 @@ namespace APIPokeAPI
                 );
                 PrintOnlyLane();
             }
-
-            PrintWaitForPressKey();
+            
+        PrintWaitForPressKey();
         }
+
+        public static void PrintListWithIndex(IEnumerable<dynamic> items) {
+            int index = 1;
+            foreach (var item in items)
+                Console.WriteLine($"{index++}. {item.Name}");
+        }
+
+        // Save o Load
+        public static void PrintSaveToJson(string filePath) =>
+            Console.WriteLine($"Favoritos guardados en: {filePath}");
+        public static void PrintNoFile() =>
+            Console.WriteLine("El archivo no existe o no se ha creado aún.");
+
     }
 }
