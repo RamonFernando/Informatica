@@ -57,21 +57,21 @@ namespace APIPokeAPI
 
             return fullList;
         }
+
+
         public static async Task GetAllPages()
         {
-            var listItems = await GetAllPokemonList();
+            var allPokemon = await GetAllPokemonList(); // lista completa de LIST ITEMS
 
-            if (listItems.Count == 0)
+            if (allPokemon.Count == 0)
             {
                 PrintNoData();
                 PrintWaitForPressKey();
                 return;
             }
 
-            PaginateIndex(listItems.Count, 20, pageIndex =>
-            {
-                LoadPokemonPage(pageIndex, 20).Wait();
-            });
+            // Usa impresión de lista, no impresión de Pokémon completo
+            PaginateListApi(allPokemon, PrintPokemonListItem, 20);
 
             PrintWaitForPressKey();
         }
@@ -110,27 +110,6 @@ namespace APIPokeAPI
 
             string json = await response.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<Pokemon>(json);
-        }
-        public static async Task LoadPokemonPage(int pageIndex, int pageSize)
-        {
-            int start = pageIndex * pageSize;
-
-            var listItems = await GetAllPokemonList();
-
-            var page = listItems
-                .Skip(start)
-                .Take(pageSize)
-                .ToList();
-
-            foreach (var item in page)
-            {
-                var pokemon = await GetPokemonFull(item.Url);
-                if (pokemon != null)
-                {
-                    PrintPokemon(pokemon);
-                    PrintOnlyLane();
-                }
-            }
         }
 
 

@@ -26,3 +26,4 @@ C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOfici
 C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIPokeAPI\obj\Debug\APIPokeAPI.csproj.Up2Date
 C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIPokeAPI\obj\Debug\APIPokeAPI.exe
 C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIPokeAPI\obj\Debug\APIPokeAPI.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIPokeAPI\obj\Debug\APIPokeAPI.exe.config

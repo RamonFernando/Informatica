@@ -48,5 +48,34 @@ namespace APIPokeAPI
 
             return input.Trim().ToUpper() == "S";
         }
+
+        // Paginado
+        public static void PaginateIndex(int totalItems, int pageSize, Action<int> LoadPageAction)
+        {
+            int currentPage = 0;
+            int totalPages = (int)Math.Ceiling(totalItems / (double)pageSize);
+
+            while (true)
+            {
+                Console.Clear();
+                PrintCountPagesAll(currentPage + 1, totalPages);
+
+                // carga la página actual (20 Pokémon completos)
+                LoadPageAction(currentPage);
+
+                PrintSelectOption();
+                string key = Console.ReadKey(true).Key.ToString().ToUpper();
+
+                if (key == "N" && currentPage < totalPages - 1)
+                    currentPage++;
+                else if (key == "B" && currentPage > 0)
+                    currentPage--;
+                else if (key == "Q")
+                    break;
+            }
+        }
+
+
+
     }
 }

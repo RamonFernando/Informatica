@@ -118,11 +118,10 @@ namespace APIPokeAPI
                 $"\nName: {pokemon.Name}" +
                 $"\nHeight: {pokemon.Height}" +
                 $"\nWeight: {pokemon.Weight}" +
-                $"\nTypes: {string.Join(", ", pokemon.Types?.Select(t => t.Type.Name) ?? new List<string>())}" +
+                $"\nTypes: {string.Join(", ", pokemon.Types?.ConvertAll(t => t.Type.Name) ?? new System.Collections.Generic.List<string>())}" +
                 $"\nSprite: {pokemon.Sprites?.FrontDefault}"
             );
         }
-
         public static void PrintPokemonListItem(PokemonListItem p) =>
             Console.WriteLine($"Name: {p.Name}");
 
