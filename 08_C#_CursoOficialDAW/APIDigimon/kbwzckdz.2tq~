@@ -1,0 +1,157 @@
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Net.WebRequestMethods;
+using static APIDigimon.Models;
+
+namespace APIDigimon
+{
+    internal class Program
+    {
+        public static readonly HttpClient client = new HttpClient();
+        public static string Url => "https://digimon-api.vercel.app/api/digimon";
+        static async Task Main(string[] args)
+        {
+            
+            try
+            {
+                Console.Clear();
+                Console.WriteLine("**================================**");
+                Console.WriteLine($"  Bienvenido a la API de Digimon");
+                Console.WriteLine("====================================");
+                Console.WriteLine("         MENU PRINCIPAL");
+                Console.WriteLine("====================================");
+                Console.WriteLine("1. Mostrar API (20 Personajes)");
+                Console.WriteLine("2. Buscar API (Id)");
+                Console.WriteLine("3. Buscar API (Nombre)");
+                Console.WriteLine("6. Mostrar Lista API");
+
+                Console.WriteLine("0. Salir");
+                Console.WriteLine("**=================================**");
+                Console.WriteLine("Introduce una opcion: ");
+                var input = ValidateInput(Console.ReadLine());
+
+                switch (input)
+                {
+                    case 1:
+                        await GetRequestDigimon();
+                        break;
+                    case 2:
+                        Console.WriteLine("Introduce el Id: ");
+                        int id = ValidateInput(Console.ReadLine());
+                        await SearchById(id);
+                        break;
+                    case 3:
+                        Console.WriteLine("Introduce el Nombre: ");
+                        string name = Console.ReadLine();
+                        Console.WriteLine(await SearchByName(name));
+                        await AddToFavoriteList(name);
+                        break;
+                    case 0:
+                        Console.WriteLine("Adios");
+                        break;
+                    default:
+                        Console.WriteLine("Opcion no valida");
+                        break;
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine($"{ex.Message}\nInfo: {ex.StackTrace}");
+            }
+        }
+        
+        public static int ValidateInput(string input)
+        {
+            if (!int.TryParse(input, out int opc))
+            {
+                Console.WriteLine("Opcion no valida");
+                PrintWaitForPressKey();
+                return -1;
+            }
+            return opc;
+        }
+        public static void PrintWaitForPressKey()
+        {
+            Console.WriteLine("Presiona cualquier tecla para continuar...");
+            Console.ReadKey();
+        }
+
+        // Hacemos la peticion a la API
+        public static async Task GetRequestDigimon()
+        {
+            // 1. Hacemos la consulta
+            HttpResponseMessage response = await client.GetAsync(Url);
+
+            // 3. Validamos
+            if (!response.IsSuccessStatusCode)
+            {
+                Console.WriteLine($"Error: Codigo: {response.StatusCode}\n Info: {response.ReasonPhrase}");
+                PrintWaitForPressKey();
+                return;
+            }
+            // 2. Obtenemos el contenido de la consulta
+            string stringJson = await response.Content.ReadAsStringAsync();
+
+            // 4. Mostramos el contenido
+            // Console.WriteLine(contentJson);
+
+            // 5. Deserializamos el JSON
+            var json = JArray.Parse(stringJson);
+            foreach (var item in stringJson)
+            {
+                Console.WriteLine(JsonConvert.SerializeObject(json[item], Formatting.Indented));
+            }
+            
+
+            // 6. Mostramos el JSON
+            // Console.WriteLine(digimon);
+        }
+        public static async Task SearchById(int id)
+        {
+
+        }
+
+        public static async Task<JArray> SearchByName(string name)
+        {   
+            var Url = $"https://digimon-api.vercel.app/api/digimon/name/{name}";
+            var response = await client.GetAsync(Url);
+            if (!response.IsSuccessStatusCode)
+            {
+                Console.WriteLine($"Error: Codigo: {response.StatusCode}\n Info: {response.ReasonPhrase}");
+                PrintWaitForPressKey();
+                return null;
+            }
+            string stringJson = await response.Content.ReadAsStringAsync();
+            return JArray.Parse(stringJson);
+        }
+        public static async Task<List<FavoriteItemList>> AddToFavoriteList(string stringJson)
+        {   
+            List<FavoriteItemList> favoriteItemLists = new List<FavoriteItemList>();
+            Console.WriteLine("Desea agregar el Digimon a la lista de favoritos S/N?");
+            string inputAnswer = Console.ReadLine();
+
+            if (inputAnswer != "S" && inputAnswer != "s")
+            {
+                Console.WriteLine("Digimon no agregado a la lista de favoritos");
+                PrintWaitForPressKey();
+                return favoriteItemLists;
+                
+            }
+            // Convierte el JSON en un array
+            var array = JArray.Parse(stringJson); 
+
+            // Convierte el primer elemento del array en un objeto FavoriteItemList
+            var json = array[0].ToObject<FavoriteItemList>(); 
+            
+            favoriteItemLists.Add(json);
+            return favoriteItemLists;
+        }
+    }
+}

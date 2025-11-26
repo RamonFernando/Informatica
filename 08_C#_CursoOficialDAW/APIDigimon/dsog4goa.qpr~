@@ -1,0 +1,52 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace APIDigimon
+{
+    internal class Program
+    {
+        public static readonly HttpClient Client = new HttpClient();
+        static async Task Main(string[] args)
+        {
+            var url = "https://digimon-api.vercel.app/api/digimon/";
+            Console.Clear();
+            Console.WriteLine("**================================**");
+            Console.WriteLine($"  Bienvenido a la API de Digimon");
+            Console.WriteLine("====================================");
+            Console.WriteLine("         MENU PRINCIPAL");
+            Console.WriteLine("====================================");
+            Console.WriteLine("1. Mostrar API (20 Personajes)");
+            Console.WriteLine("2. Buscar API (Id)");
+            Console.WriteLine("3. Buscar API (Nombre)");
+            Console.WriteLine("6. Mostrar Lista API");
+
+            Console.WriteLine("0. Salir");
+            Console.WriteLine("**=================================**");
+            Console.WriteLine("Introduce una opcion: ");
+            var input = ValidateInput(Console.ReadLine());
+
+
+        }
+        public static void ValidateInput(string input)
+        {
+            if (!int.TryParse(input, out int opc))
+            {
+                Console.WriteLine("Opcion no valida");
+                PrintWaitForPressKey();
+                return;
+            }
+        }
+        public static void PrintWaitForPressKey()
+        {
+            Console.WriteLine("Presiona cualquier tecla para continuar...");
+            Console.ReadKey();
+        }
+
+            
+    }
+}

@@ -1,0 +1,32 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace APIDigimon
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string url = "https://digimon-api.vercel.app/api/digimon/";
+            Console.Clear();
+            Console.WriteLine("**================================**");
+            Console.WriteLine($"  Bienvenido a la API de Digimon");
+            Console.WriteLine("====================================");
+            Console.WriteLine("         MENU PRINCIPAL");
+            Console.WriteLine("====================================");
+            Console.WriteLine("1. Mostrar API (20 Personajes)");
+            Console.WriteLine("2. Buscar API (Id)");
+            Console.WriteLine("3. Buscar API (Nombre)");
+            Console.WriteLine("4. Agregar a Lista API");
+            Console.WriteLine("5. Eliminar de Lista API");
+            Console.WriteLine("6. Mostrar Lista API");
+            Console.WriteLine("7. Borrar toda la Lista API");
+            Console.WriteLine("8. Mostrar API Completa (No Recomendado)");
+            Console.WriteLine("0. Salir");
+            Console.WriteLine("**=================================**");
+        }
+    }
+}

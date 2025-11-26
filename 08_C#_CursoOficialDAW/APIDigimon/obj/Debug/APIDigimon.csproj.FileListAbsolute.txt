@@ -1,0 +1,11 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIDigimon\obj\Debug\APIDigimon.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIDigimon\obj\Debug\APIDigimon.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIDigimon\bin\Debug\APIDigimon.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIDigimon\bin\Debug\APIDigimon.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIDigimon\bin\Debug\APIDigimon.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIDigimon\obj\Debug\APIDigimon.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIDigimon\obj\Debug\APIDigimon.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIDigimon\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIDigimon\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIDigimon\obj\Debug\APIDigimon.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIDigimon\obj\Debug\APIDigimon.csproj.Up2Date
