@@ -2,24 +2,26 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
 using System.Threading.Tasks;
-using static System.Net.WebRequestMethods;
+
 using static APIDigimon.Models;
+using static APIDigimon.APILoadJson;
+using static APIDigimon.APISaveJson;
+using static APIDigimon.Controllers;
 
 namespace APIDigimon
 {
     internal class Program
     {
         public static readonly HttpClient client = new HttpClient();
-        public static string Url => "https://digimon-api.vercel.app/api/digimon";       
-        static List<FavoriteItemList> favoriteItemLists = new List<FavoriteItemList>();
+        public static string Url => "https://digimon-api.vercel.app/api/digimon";   
+        
+        public static List<FavoriteItemList> favoriteLists = new List<FavoriteItemList>();
 
         static async Task Main(string[] args)
         {
+            APILoadFavoriteList();
             while (true)
             {
                 try
@@ -30,44 +32,45 @@ namespace APIDigimon
                     Console.WriteLine("====================================");
                     Console.WriteLine("         MENU PRINCIPAL");
                     Console.WriteLine("====================================");
-                    Console.WriteLine("1. Mostrar API (20 Personajes)");
-                    Console.WriteLine("2. Buscar API (Id)");
-                    Console.WriteLine("3. Buscar API (Nombre)");
+                    Console.WriteLine("1. Mostrar API");
+                    Console.WriteLine("2. Buscar (Nombre y Add a Favoritos)");
+                    Console.WriteLine("3. Borrar Digimon Favorito");
                     Console.WriteLine("4. Mostrar Lista API");
                     Console.WriteLine("0. Salir");
                     Console.WriteLine("**=================================**");
                     Console.WriteLine("Introduce una opcion: ");
                     var input = ValidateInput(Console.ReadLine());
-
+                    
+                    if(input < 0 || input > 4){
+                        Console.WriteLine("\nEntrada no valida");
+                        PrintWaitForPressKey();
+                        continue;
+                    }
+                        
                     switch (input)
                     {
                         case 1:
+                            Console.WriteLine("Cargando API...");
                             await GetRequestDigimon();
                             break;
                         case 2:
-                            Console.Write("Introduce el Id: ");
-                            int id = ValidateInput(Console.ReadLine());
-                            await SearchById(id);
+                            // Buscar por nombre
+                            await RequestSearchByName();
                             break;
                         case 3:
-                            Console.Write("Introduce el Nombre: ");
-                            string name = Console.ReadLine();
-
-                            // Console.WriteLine("Buscando...");
-                            Console.WriteLine(await SearchByName(name));
-
-                            var result = await SearchByName(name);
-                            AddToFavoriteList(result.ToString());
+                            RemoveFavoriteList();
                             break;
                         case 4:
+                            // Mostrar la lista de favoritos
                             ShowFavoriteList();
                             
                             break;
                         case 0:
                             Console.WriteLine("Saliendo del programa...");
-                            PrintWaitForPressKey();
-                            return;
-                            
+                            Environment.Exit(0);
+                            // PrintWaitForPressKey();
+                            // return;
+                            break;
                         default:
                             Console.WriteLine("Opcion no valida");
                             break;
@@ -75,28 +78,39 @@ namespace APIDigimon
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"{ex.Message}\nInfo: {ex.StackTrace}");
+                    HandlerException(ex);
                 }
-            }
-            
+            }          
         }
         
-        public static int ValidateInput(string input)
+        // Metodo que llama a SearchByName para buscar un digimon
+        public static async Task RequestSearchByName()
         {
-            if (!int.TryParse(input, out int opc))
+            Console.Write("Introduce el Nombre: ");
+            string name = Console.ReadLine();
+
+            Console.WriteLine("Buscando...");
+            var result = await SearchByName(name);
+            // Console.WriteLine(result);
+            if (result is null)
             {
-                Console.WriteLine("Opcion no valida");
+                Console.WriteLine("Digimon no encontrado");
                 PrintWaitForPressKey();
-                return -1;
+                return;
             }
-            return opc;
-        }
-        public static void PrintWaitForPressKey()
-        {
-            Console.WriteLine("\nPresiona cualquier tecla para continuar...");
-            Console.ReadKey();
+            var item = result[0];
+
+            Console.WriteLine($"-------------------------\n" +
+            $"Nombre: {item["name"]}\n" +
+            $"Tipo: {(item["type"] == null ? "Unknown" : item["type"])}\n" +
+            $"Nivel: {item["level"]}\n");
+
+            AddToFavoriteList(result.ToString());
+            APISaveFavoriteList();
         }
 
+        
+        
         // Hacemos la peticion a la API
         public static async Task GetRequestDigimon()
         {
@@ -104,10 +118,9 @@ namespace APIDigimon
             HttpResponseMessage response = await client.GetAsync(Url);
 
             // 3. Validamos
-            if (!response.IsSuccessStatusCode)
-            {
+            if (!response.IsSuccessStatusCode) {
                 Console.WriteLine($"Error: Codigo: {response.StatusCode}\n Info: {response.ReasonPhrase}");
-                PrintWaitForPressKey();
+                // PrintWaitForPressKey();
                 return;
             }
             // 2. Obtenemos el contenido de la consulta
@@ -118,91 +131,14 @@ namespace APIDigimon
 
             // 5. Deserializamos el JSON
             var json = JArray.Parse(stringJson);
-            foreach (var item in stringJson)
-            {
-                Console.WriteLine(JsonConvert.SerializeObject(json[item], Formatting.Indented));
-            }
+            
+            // 5.1. Mostramos el JSON
+            Console.WriteLine(JsonConvert.SerializeObject(json, Formatting.Indented));
+            PrintWaitForPressKey();
             
 
             // 6. Mostramos el JSON
             // Console.WriteLine(digimon);
-        }
-        public static async Task SearchById(int id)
-        {
-
-        }
-
-        public static async Task<JArray> SearchByName(string name)
-        {   
-            var Url = $"https://digimon-api.vercel.app/api/digimon/name/{name}";
-            var response = await client.GetAsync(Url);
-            if (!response.IsSuccessStatusCode)
-            {
-                Console.WriteLine($"Error: Codigo: {response.StatusCode}\n Info: {response.ReasonPhrase}");
-                PrintWaitForPressKey();
-                return null;
-            }
-            string stringJson = await response.Content.ReadAsStringAsync();
-            return JArray.Parse(stringJson);
-        }
-
-        public static List<FavoriteItemList> AddToFavoriteList(string stringJson)
-        {              
-            Console.WriteLine("Desea agregar el Digimon a la lista de favoritos S/N?");
-            string inputAnswer = Console.ReadLine();
-
-            if (inputAnswer != "S" && inputAnswer != "s")
-            {
-                Console.WriteLine("Digimon no agregado a la lista de favoritos");
-                PrintWaitForPressKey();
-                return favoriteItemLists;
-                
-            }
-            // Convierte el JSON en un array
-            var array = JArray.Parse(stringJson);
-
-            // Convierte el primer elemento del array en un objeto FavoriteItemList
-            var digimon = array[0];
-
-            FavoriteItemList atributes = new FavoriteItemList()
-            {
-                Id = digimon["id"] != null ? (int)digimon["id"] : 0,
-                Name = (string)digimon["name"],
-                Type = (string)digimon["type"],
-                Level = (string)digimon["level"],
-            };
-
-            if (favoriteItemLists.Any(d => d.Name == atributes.Name))
-            {
-                Console.WriteLine($"El digimon {atributes.Name} ya esta en la lista de favoritos");
-                PrintWaitForPressKey();
-                return favoriteItemLists;
-            }
-            favoriteItemLists.Add(atributes);
-            Console.WriteLine("Digimon agregado a la lista de favoritos");
-            PrintWaitForPressKey();
-            return favoriteItemLists;
-        }
-
-        public static void ShowFavoriteList()
-        {
-            Console.WriteLine("Mostrando lista de favoritos");
-            Console.WriteLine("====================================");
-            if (favoriteItemLists.Count == 0)
-            {
-                Console.WriteLine("La lista de favoritos esta vacia");
-                PrintWaitForPressKey();
-                return;
-            }
-            int count = 0;
-            foreach (var item in favoriteItemLists)
-            {   
-                Console.WriteLine($"\n{count+1}ºFavorite:" +
-                    $"\n-------------------------" +
-                    $"\nId: {item.Id}\nName: {item.Name}\nType: {item.Type}\nLevel: {item.Level}");
-            }
-            PrintWaitForPressKey();
-            
-        }
+        }    
     }
 }

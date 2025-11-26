@@ -33,9 +33,8 @@ namespace APIDigimon
         // Raíz del JSON que devuelve la API: info + results
         public class ClassRoot
         {
-            public List<FavoriteItemList> FavoriteList { get; set; } = new List<FavoriteItemList>();
+            public static List<FavoriteItemList> FavoriteList { get; set; } = new List<FavoriteItemList>();
         }
-
 
         // Modelo de la lista de favoritos
         public class FavoriteItemList

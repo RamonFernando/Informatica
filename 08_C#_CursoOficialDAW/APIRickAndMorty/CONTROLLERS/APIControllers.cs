@@ -74,7 +74,7 @@ namespace APIRickAndMorty
         
         // Obtener todas las paginas de la API
         public static async Task GetAllPages()
-        {            
+        {
             string url = GetUrl();
             // int countPages = 1;
 

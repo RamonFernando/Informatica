@@ -91,8 +91,8 @@ namespace APIRickAndMorty
                 return false;
             }
             
-            FavoriteList.Add(new FavoriteItemList { 
-                Id = character.Id, 
+            FavoriteList.Add(new FavoriteItemList {
+                Id = character.Id,
                 Name = character.Name,
                 Status = character.Status,
                 Species = character.Species,

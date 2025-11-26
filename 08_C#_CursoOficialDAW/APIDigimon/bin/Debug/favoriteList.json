@@ -1,0 +1,20 @@
+[
+  {
+    "Id": 0,
+    "Name": "Agumon",
+    "Type": null,
+    "Level": "Rookie"
+  },
+  {
+    "Id": 0,
+    "Name": "Betamon",
+    "Type": null,
+    "Level": "Rookie"
+  },
+  {
+    "Id": 0,
+    "Name": "Submarimon",
+    "Type": null,
+    "Level": "Armor"
+  }
+]
