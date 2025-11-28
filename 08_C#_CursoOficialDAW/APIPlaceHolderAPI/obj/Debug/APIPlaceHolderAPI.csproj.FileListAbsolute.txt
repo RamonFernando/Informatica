@@ -1,0 +1,11 @@
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIPlaceHolderAPI\bin\Debug\APIPlaceHolderAPI.exe.config
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIPlaceHolderAPI\bin\Debug\APIPlaceHolderAPI.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIPlaceHolderAPI\bin\Debug\APIPlaceHolderAPI.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIPlaceHolderAPI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIPlaceHolderAPI\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIPlaceHolderAPI\obj\Debug\APIPlaceHolderAPI.csproj.AssemblyReference.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIPlaceHolderAPI\obj\Debug\APIPlaceHolderAPI.csproj.CoreCompileInputs.cache
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIPlaceHolderAPI\obj\Debug\APIPlace.15866D96.Up2Date
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIPlaceHolderAPI\obj\Debug\APIPlaceHolderAPI.exe
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIPlaceHolderAPI\obj\Debug\APIPlaceHolderAPI.pdb
+C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APIPlaceHolderAPI\obj\Debug\APIPlaceHolderAPI.exe.config
