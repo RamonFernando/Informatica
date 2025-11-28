@@ -1,14 +1,14 @@
 [
   {
-    "name": "Luke Skywalker",
-    "height": 172,
+    "name": "Obi-Wan Kenobi",
+    "height": 182,
     "mass": 77,
     "gender": "male"
   },
   {
-    "name": "Obi-Wan Kenobi",
-    "height": 182,
-    "mass": 77,
+    "name": "Yoda",
+    "height": 66,
+    "mass": 17,
     "gender": "male"
   }
 ]

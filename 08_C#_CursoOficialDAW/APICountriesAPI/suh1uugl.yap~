@@ -10,16 +10,6 @@ using static APICountriesAPI.APILoadJson;
 using static APICountriesAPI.APISaveJson;
 using static APICountriesAPI.APIControllers;
 
-// Nota para el profesor:
-// Instalar en Nuget: Newtonsoft.Json (Proyecto -> Administrar paquetes NuGet... -> Examinar -> Buscar(Ctrl + L) -> Newtonsoft.Json)
-
-/*
- * Index
- * 1. (39) APILoadFavoriteList()    -> Cargar Json
- * 2. (105) RequestSearchByName()   -> Buscar por nombre (LLama al metodo SearchByName)
- * 3. (135) GetRequestAPI()         -> Mostrar la API
- */
-
 namespace APICountriesAPI
 {
     internal class Program
@@ -49,7 +39,7 @@ namespace APICountriesAPI
                     Console.WriteLine("===========================================");
                     Console.WriteLine("1. Mostrar API");
                     Console.WriteLine("2. Buscar (Nombre y Add a Favoritos)");
-                    Console.WriteLine("3. Borrar Pais de Favoritos");
+                    Console.WriteLine("3. Borrar Digimon Favorito");
                     Console.WriteLine("4. Mostrar Lista API");
                     Console.WriteLine("0. Salir");
                     Console.WriteLine("**=======================================**");
@@ -123,7 +113,7 @@ namespace APICountriesAPI
             // *ajustar el formato a la api Propiedades del objeto o array*
             Console.WriteLine($"-------------------------\n" +
             $"Nombre Comun: {(item["name"]["common"] == null ? "Unknown" : item["name"]["common"])}\n" +
-            $"Nombre Oficial: {(item["name"]["official"] == null ? "Unknown" : item["name"]["official"])}\n\n" +
+            $"Nombre Oficial: {item["name"]["official"]}\n\n" +
             $"Informacion Extra: {item["name"]}\n");
 
             AddToFavoriteList(result.ToString());

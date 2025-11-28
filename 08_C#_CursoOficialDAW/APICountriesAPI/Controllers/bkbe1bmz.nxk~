@@ -1,43 +1,23 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
-using static APIStarWarsAPI.Models;
-using static APIStarWarsAPI.Program;
-using static APIStarWarsAPI.APISaveJson;
+using static APICountriesAPI.Models;
+using static APICountriesAPI.Program;
 
-/*
- * Index
- * 1. (34) SearchByName(string name)            -> BUSCAR por nombre
- * 2. (75) AddToFavoriteList(string stringJson) -> AGREGAR a la lista de favoritos
- * 3. (114) ShowFavoriteList()                   -> MOSTRAR la lista de favoritos
- * 4. (140) RemoveFavoriteList()                -> BORRAR de la lista de favoritos
- * 5. (161) ValidateInput(string input)         -> VALIDAR Input
- * 6. (173) PrintWaitForPressKey()              -> PRINT (esperar tecla)
- * 7. (180) HandlerException(Exception ex)     -> Manejo de EXCEPCIONES
- */
-
-/*
- * Metodo de empleo
- * 1. (37) cambiar la url con el parametro que se quiere buscar (name)
- * 2. (91) cambiar los nombres de los atributos de la clase FavoriteItemList (ADDFavoriteList)(atributes))
- * 3. (130) cambiar los nombres de los atributos de la clase FavoriteItemList (ShowFavoriteList (atributes))
- */
-
-namespace APIStarWarsAPI
+namespace APICountriesAPI
 {
     internal class APIControllers
     {
         // 1. BUSCAR por nombre
-        public static async Task<JObject> SearchByName(string name) 
+        public static async Task<JArray> SearchByName(string name) // *si es objeto cambiar de JArray a JObject*
         {
 
-            var Url = $"https://swapi.dev/api/people/?search={name.ToLower()}"; // *cambiar url*
-
+            var Url = $"https://restcountries.com/v3.1/name/{name.ToLower()}"; // *cambiar url*
             var response = await client.GetAsync(Url);
 
             // Validamos la respuesta del servidor
@@ -52,25 +32,17 @@ namespace APIStarWarsAPI
             string stringJson = await response.Content.ReadAsStringAsync();
 
             // Valida que el Json no empiece con un [corchete] (demuestra que no se ha encontrado el digimon)
-            /*if (!stringJson.TrimStart().StartsWith("["))
+            if (!stringJson.TrimStart().StartsWith("["))
             {
-                Console.WriteLine($"{NameProperty} no encontrado o error de formato");
+                Console.WriteLine($"{NameProperty} no encontrado");
                 PrintWaitForPressKey();
                 return null;
-            }*/
+            }
 
             // Conviertimos el JSON en un array y luego creamos un nuevo array para almacenar los digimons
-            JObject objectJson = JObject.Parse(stringJson);
+            JArray arrayJson = JArray.Parse(stringJson); // *cambiar de JArray a JObject*
 
-            if ((int)objectJson["count"] == 0) return null; // Comprobamos si se ha encontrado el personaje
-
-            // Convierte el JSON en un array
-            JArray arrayResults = (JArray)objectJson["results"];
-
-            // Convierte el primer elemento del array en un objeto
-            JObject character = (JObject)arrayResults[0];
-
-            return character;
+            return arrayJson;
         } // SearchByName
 
         // 2. AGREGAR a la lista de favoritos
@@ -87,27 +59,35 @@ namespace APIStarWarsAPI
 
             }
             // Convierte el JSON en un array
-            var character = JObject.Parse(stringJson); // Error examen
+            var array = JArray.Parse(stringJson); // Error examen
+
+            // Convierte el primer elemento del array en un objeto FavoriteItemList
+            var character = array[0];
 
             // *Cambiar atributos de la clase FavoriteItemList*
             FavoriteItemList atributes = new FavoriteItemList()
             {
-                Name = (string)character["name"],
-                Height = int.TryParse((string)character["height"], out int height) ? height : 0,
-                Mass = int.TryParse((string)character["mass"], out int mass) ? mass : 0,
-                Gender = (string)character["gender"]
+                
+                Common = (string)character["name"]["common"],
+                Official = (string)character["name"]["official"],
+
+                // * Cambiar este atributo si hay una clase objeto con parametros dentro Ej. Name: {common: Spain, official: Spain}
+                Name = new ClassName
+                {
+                    Common = (string)character["name"]["common"],
+                    Official = (string)character["name"]["official"]
+                }
 
             };
 
             // Comprobamos si el digimon ya esta en la lista
-            if (favoriteList.Any(d => d.Name == atributes.Name))
+            if (favoriteList.Any(d => (d.Name != null) && (atributes.Name != null) && (d.Name.Common == atributes.Name.Common)))
             {
                 Console.WriteLine($"El {NameProperty} {atributes.Name} ya esta en la lista de favoritos");
                 PrintWaitForPressKey();
                 return favoriteList;
             }
             favoriteList.Add(atributes);
-            
             Console.WriteLine($"\n{NameProperty} agregado a la lista de favoritos");
             PrintWaitForPressKey();
             return favoriteList;
@@ -131,10 +111,9 @@ namespace APIStarWarsAPI
             {
                 Console.WriteLine($"\n{count++}ºFavorite:" +
                     $"\n-------------------------" +
-                    $"\nName: {item.Name}" +
-                    $"\nHeight: {item.Height} cm" +
-                    $"\nMass: {item.Mass} kg"+
-                    $"\nGender: {(item.Gender == "" || item.Gender == null ? "Unknown" : item.Gender)}");
+                    $"\nNombre oficial: {(item.Name.Official == null ? "Unknown" : item.Name.Official)}" +
+                    $"\nNombre comun: {(item.Name.Common == null ? "Unknown" : item.Name.Common)}"                   
+                    );
             }
             PrintWaitForPressKey();
         } // ShowFavoriteList
@@ -157,7 +136,6 @@ namespace APIStarWarsAPI
 
             favoriteList.RemoveAt(index);
             Console.WriteLine($"\n{NameProperty} borrado de la lista de favoritos");
-            APISaveFavoriteList();
             PrintWaitForPressKey();
         } // RemoveFavoriteList
 
@@ -229,6 +207,6 @@ namespace APIStarWarsAPI
                 return;
             }
             Console.WriteLine($"\nError desconocido: {ex.Message}\n Info: {ex.HResult}");
-        }
-    }
+        } // HandlerException
+    } // APIController
 }

@@ -14,5 +14,13 @@
     },
     "common": "Spain",
     "official": "Kingdom of Spain"
+  },
+  {
+    "name": {
+      "common": "Cuba",
+      "official": "Republic of Cuba"
+    },
+    "common": "Cuba",
+    "official": "Republic of Cuba"
   }
 ]

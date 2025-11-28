@@ -1,13 +1,24 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 using static APICountriesAPI.Models;
 using static APICountriesAPI.Program;
+
+/*
+ * Index
+ * 1. (28) SearchByName(string name)            -> BUSCAR por nombre
+ * 2. (61) AddToFavoriteList(string stringJson) -> AGREGAR a la lista de favoritos
+ * 3. (109) ShowFavoriteList()                  -> MOSTRAR la lista de favoritos
+ * 4. (134) RemoveFavoriteList()                -> BORRAR de la lista de favoritos
+ * 5. (160) ValidateInput(string input)         -> VALIDAR Input
+ * 6. (173) PrintWaitForPressKey()              -> PRINT (esperar tecla)
+ * 7. (180) HandlerException(Exception ex)      -> Manejo de EXCEPCIONES
+ */
 
 namespace APICountriesAPI
 {
@@ -17,13 +28,14 @@ namespace APICountriesAPI
         public static async Task<JArray> SearchByName(string name) // *si es objeto cambiar de JArray a JObject*
         {
 
-            var Url = $"https://restcountries.com/v3.1/name/{name}"; // *cambiar url*
+            var Url = $"https://restcountries.com/v3.1/name/{name.ToLower()}"; // *cambiar url*
             var response = await client.GetAsync(Url);
 
             // Validamos la respuesta del servidor
             if (!response.IsSuccessStatusCode)
             {
                 if (response.StatusCode == System.Net.HttpStatusCode.BadRequest) return null;
+                if (response.StatusCode == System.Net.HttpStatusCode.NotFound) return null;
 
                 Console.WriteLine($"Error: Codigo: {response.StatusCode}\n Info: {response.ReasonPhrase}");
                 PrintWaitForPressKey();
@@ -31,7 +43,7 @@ namespace APICountriesAPI
             }
             string stringJson = await response.Content.ReadAsStringAsync();
 
-            // Valida que el Json no empiece con un [corchete] (demuestra que no se ha encontrado el digimon)
+            // Valida que el Json no empiece con un [corchete] (demuestra que no se ha encontrado el pais)
             if (!stringJson.TrimStart().StartsWith("["))
             {
                 Console.WriteLine($"{NameProperty} no encontrado");
@@ -83,7 +95,7 @@ namespace APICountriesAPI
             // Comprobamos si el digimon ya esta en la lista
             if (favoriteList.Any(d => (d.Name != null) && (atributes.Name != null) && (d.Name.Common == atributes.Name.Common)))
             {
-                Console.WriteLine($"El {NameProperty} {atributes.Name} ya esta en la lista de favoritos");
+                Console.WriteLine($"El {NameProperty} {atributes.Name.Common} ya esta en la lista de favoritos");
                 PrintWaitForPressKey();
                 return favoriteList;
             }
@@ -130,10 +142,16 @@ namespace APICountriesAPI
                 PrintWaitForPressKey();
                 return;
             }
-            Console.Write($"\nDesea borrar el {NameProperty} {favoriteList[index].Name} de la lista de favoritos S/N?");
+            Console.Write($"\nDesea borrar el {NameProperty} {favoriteList[index].Name.Common} de la lista de favoritos S/N?");
+            
             string inputResp = Console.ReadLine();
-            if (inputResp != "S" && inputResp != "s") return;
-
+            if (inputResp != "S" && inputResp != "s")
+            {   
+                Console.WriteLine($"\n{NameProperty} no borrado de la lista de favoritos");
+                PrintWaitForPressKey();
+                return;
+            } 
+                
             favoriteList.RemoveAt(index);
             Console.WriteLine($"\n{NameProperty} borrado de la lista de favoritos");
             PrintWaitForPressKey();
