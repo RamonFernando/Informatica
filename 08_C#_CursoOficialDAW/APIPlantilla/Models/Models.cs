@@ -3,11 +3,11 @@ using Newtonsoft.Json;
 
 /*
  * Index
- * 1. Clase Digimon
- * 2. Level
- * 3. Type
- * 4. Root Lista de favoritos
- * 5. Modelo de la lista de favoritos
+ * 1. (31) Clase Digimon
+ * 2. (42) Level
+ * 3. (52) Type
+ * 4. (63) Root Lista de favoritos
+ * 5. (69) Modelo de la lista de favoritos
  */
 
 /*
@@ -51,7 +51,7 @@ namespace APIPlantilla
 
         // 3. Type
         public class Types
-        {   
+        {
             [JsonProperty("id")]
             public static int Id { get; set; }
 
@@ -67,7 +67,7 @@ namespace APIPlantilla
 
         // 5. Modelo de la lista de favoritos
         public class FavoriteItemList // *poner atributos del metodo AddToFavoriteList y ShowFavoriteList*
-        {   
+        {
             [JsonProperty("id")]
             public int Id { get; set; }
 

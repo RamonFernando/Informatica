@@ -33,7 +33,7 @@ namespace APIPlantilla
         // 1. BUSCAR por nombre
         public static async Task<JArray> SearchByName(string name) // *si es objeto cambiar de JArray a JObject*
         {
- 
+
             var Url = $"https://digimon-api.vercel.app/api/digimon/name/{name}"; // *cambiar url*
             var response = await client.GetAsync(Url);
 

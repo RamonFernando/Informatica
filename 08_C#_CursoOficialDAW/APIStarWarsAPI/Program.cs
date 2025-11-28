@@ -1,18 +1,32 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System;
 using System.Net.Http;
-
 using System.Threading.Tasks;
-
+using System.Collections.Generic;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 using static APIStarWarsAPI.Models;
 using static APIStarWarsAPI.APISaveJson;
 using static APIStarWarsAPI.APILoadJson;
 using static APIStarWarsAPI.APIControllers;
 
+// Nota para el profesor:
+// Instalar en Nuget: Newtonsoft.Json (Proyecto -> Administrar paquetes NuGet... -> Examinar -> Buscar(Ctrl + L) -> Newtonsoft.Json)
+
+/*
+ * Metodo de empleo
+ * * Importar las clases Models, APISaveJson, APILoadJson, APIControllers, Newtonsoft.Json.Linq, Newtonsoft.Json, System.Net.Http
+ * 1. Cambiar la url de la API (31)
+ * 2. Nombre de la Pripiedad (36) para que aparezca el nombre de la API
+ * 3. Cambar el nombre de la vista del objeto a mostrar (123)
+ */
+
+/*
+ * Index
+ * 1. (47) APILoadFavoriteList()    -> Cargar Json
+ * 2. (113) RequestSearchByName()    -> Buscar por nombre (LLama al metodo SearchByName)
+ * 3. (143) GetRequestAPI()         -> Mostrar la API
+ */
 
 namespace APIStarWarsAPI
 {
@@ -26,7 +40,6 @@ namespace APIStarWarsAPI
 
         public static string NameProperty => "Personaje";
         public static string NameApi => "Star Wars SWAPI";
-
 
         static async Task Main(string[] args)
         {
@@ -117,8 +130,8 @@ namespace APIStarWarsAPI
             // *ajustar el formato a la api Propiedades del objeto o array*
             Console.WriteLine($"-------------------------\n" +
             $"Nombre: {item["name"]}\n" +
-            $"Altura: {item["height"]}\n" +
-            $"Peso: {item["mass"]}\n" +
+            $"Altura: {item["height"]} cm\n" +
+            $"Peso: {item["mass"]} kg\n" +
             $"Genero: {item["gender"]}");
 
             AddToFavoriteList(result.ToString());

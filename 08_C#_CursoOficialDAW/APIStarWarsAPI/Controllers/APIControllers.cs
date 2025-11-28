@@ -1,13 +1,31 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
 using System.Net.Http;
-
 using System.Threading.Tasks;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+
 using static APIStarWarsAPI.Models;
 using static APIStarWarsAPI.Program;
+
+/*
+ * Index
+ * 1. (34) SearchByName(string name)            -> BUSCAR por nombre
+ * 2. (75) AddToFavoriteList(string stringJson) -> AGREGAR a la lista de favoritos
+ * 3. (114) ShowFavoriteList()                   -> MOSTRAR la lista de favoritos
+ * 4. (140) RemoveFavoriteList()                -> BORRAR de la lista de favoritos
+ * 5. (161) ValidateInput(string input)         -> VALIDAR Input
+ * 6. (173) PrintWaitForPressKey()              -> PRINT (esperar tecla)
+ * 7. (180) HandlerException(Exception ex)     -> Manejo de EXCEPCIONES
+ */
+
+/*
+ * Metodo de empleo
+ * 1. (37) cambiar la url con el parametro que se quiere buscar (name)
+ * 2. (91) cambiar los nombres de los atributos de la clase FavoriteItemList (ADDFavoriteList)(atributes))
+ * 3. (130) cambiar los nombres de los atributos de la clase FavoriteItemList (ShowFavoriteList (atributes))
+ */
 
 namespace APIStarWarsAPI
 {
@@ -112,8 +130,8 @@ namespace APIStarWarsAPI
                 Console.WriteLine($"\n{count++}ºFavorite:" +
                     $"\n-------------------------" +
                     $"\nName: {item.Name}" +
-                    $"\nHeight: {item.Height}" +
-                    $"\nMass: {item.Mass}"+
+                    $"\nHeight: {item.Height} cm" +
+                    $"\nMass: {item.Mass} kg"+
                     $"\nGender: {(item.Gender == "" || item.Gender == null ? "Unknown" : item.Gender)}");
             }
             PrintWaitForPressKey();

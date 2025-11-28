@@ -10,5 +10,11 @@
     "height": 172,
     "mass": 77,
     "gender": "male"
+  },
+  {
+    "name": "Obi-Wan Kenobi",
+    "height": 182,
+    "mass": 77,
+    "gender": "male"
   }
 ]
