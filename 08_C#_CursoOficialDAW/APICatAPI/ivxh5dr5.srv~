@@ -1,0 +1,175 @@
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+
+using static APICatAPI.Program;
+using static APICatAPI.Models;
+
+// Metodos
+// 1. (25)  SearchByName()          : Buscar por Nombre
+// 2. (54)  AddToFavoriteList()     : Agrega a la lista de favoritos
+// 3. (90)  ShowFavoriteList()      : Mostrar la lista de favoritos
+// 4. (113) RemoveFavoriteList()    : Elimina de la lista de favoritos
+// 5. (133) ValidateInput()         : Valida el input
+// 6. (143) PrintWaitForPressKey()  : Tocar para continuar
+// 7. (150) HandlerException()      : Manejo de EXCEPCIONES
+
+namespace APICatAPI
+{
+    internal class Controllers
+    {
+        
+
+        // Metodos
+
+        // 1. Buscar por Nombre
+        public static async Task<JArray> SearchByName(string name)
+        {
+            var Url = $"https://digimon-api.vercel.app/api/digimon/name/{name}";
+            var response = await client.GetAsync(Url);
+
+            // Validamos la respuesta del servidor
+            if (!response.IsSuccessStatusCode)
+            {
+                if (response.StatusCode == System.Net.HttpStatusCode.BadRequest) return null;
+
+                Console.WriteLine($"Error: Codigo: {response.StatusCode}\n Info: {response.ReasonPhrase}");
+                PrintWaitForPressKey();
+                return null;
+            }
+            string stringJson = await response.Content.ReadAsStringAsync();
+
+            // Valida que el Json no empiece con un [corchete] (demuestra que no se ha encontrado el digimon)
+            if (!stringJson.TrimStart().StartsWith("["))
+            {
+                Console.WriteLine("Digimon no encontrado");
+                PrintWaitForPressKey();
+                return null;
+            }
+
+            // Conviertimos el JSON en un array y luego creamos un nuevo array para almacenar los digimons
+            JArray arrayJson = JArray.Parse(stringJson);
+
+            return arrayJson;
+        } // SearchByName
+
+        // 2. AGREGAR a la lista de favoritos
+        public static List<FavoriteItemList> AddToFavoriteList(string stringJson)
+        {
+            Console.WriteLine("Desea agregar el Digimon a la lista de favoritos S/N?");
+            string inputAnswer = Console.ReadLine();
+
+            if (inputAnswer != "S" && inputAnswer != "s")
+            {
+                Console.WriteLine("Digimon no agregado a la lista de favoritos");
+                PrintWaitForPressKey();
+                return favoriteList;
+
+            }
+            // Convierte el JSON en un array
+            var array = JArray.Parse(stringJson); // Error examen
+
+            // Convierte el primer elemento del array en un objeto FavoriteItemList
+            var digimon = array[0];
+
+            FavoriteItemList atributes = new FavoriteItemList()
+            {
+                Name = (string)digimon["name"],
+                Type = (string)digimon["type"],
+                Level = (string)digimon["level"],
+            };
+
+            // Comprobamos si el digimon ya esta en la lista
+            if (favoriteList.Any(d => d.Name == atributes.Name))
+            {
+                Console.WriteLine($"El digimon {atributes.Name} ya esta en la lista de favoritos");
+                PrintWaitForPressKey();
+                return favoriteList;
+            }
+            favoriteList.Add(atributes);
+            Console.WriteLine("Digimon agregado a la lista de favoritos");
+            PrintWaitForPressKey();
+            return favoriteList;
+        } // AddToFavoriteList
+
+        // 3. MOSTRAR la lista de favoritos
+        public static void ShowFavoriteList()
+        {
+            Console.WriteLine("Mostrando lista de favoritos");
+            Console.WriteLine("====================================");
+            if (favoriteLists.Count == 0)
+            {
+                Console.WriteLine("La lista de favoritos esta vacia");
+                PrintWaitForPressKey();
+                return;
+            }
+            int count = 1;
+
+            // *poner atributos de lista de favoritos (FavoriteItemList)*
+            foreach (var item in favoriteLists)
+            {
+                Console.WriteLine($"\n{count++}ºFavorite:" +
+                    $"\n-------------------------" +
+                    $"\nName: {item.Name}" +
+                    $"\nType: {(item.Type == null ? "Unknown" : item.Type)}" +
+                    $"\nNivel: {item.Level}");
+            }
+            PrintWaitForPressKey();
+        } // ShowFavoriteList
+
+        public static void RemoveFavoriteList()
+        {
+            Console.WriteLine("RemoveFavoriteList");
+            PrintWaitForPressKey();
+        }
+        public static void ShowFavoriteList()
+        {
+            Console.WriteLine("ShowFavoriteList");
+            PrintWaitForPressKey();
+        }
+
+        
+
+        // Validar Input
+        public static int ValidateInput(string input)
+        {
+            if (!int.TryParse(input, out int num))
+            {
+                Console.WriteLine("Opcion no valida");
+                PrintWaitForPressKey();
+                return -1;
+            }
+            return num;
+        }
+
+        // Print (esperar tecla)
+        public static void PrintWaitForPressKey()
+        {
+            Console.WriteLine("\nPresiona cualquier tecla para continuar...");
+            Console.ReadKey();
+        }
+
+        // 7. Manejo de EXCEPCIONES
+        public static void HandlerException(Exception ex)
+        {
+            if (ex is HttpRequestException HttpEx)
+            {
+                Console.WriteLine($"Error de Peticion HTTP: {HttpEx.Message}\n Info: {HttpEx.HResult}");
+                return;
+            }
+            if (ex is JsonException JsonEx)
+            {
+                Console.WriteLine($"Error de Lectura JSON: {JsonEx.Message}\n Info: {JsonEx.HResult}");
+                return;
+            }
+            Console.WriteLine($"Error desconocido: {ex.Message}\n Info: {ex.HResult}");
+        }
+
+
+    } // controllers
+}

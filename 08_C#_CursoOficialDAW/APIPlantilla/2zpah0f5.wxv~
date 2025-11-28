@@ -1,0 +1,150 @@
+﻿using System;
+using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+
+using static APIPlantilla.Models;
+using static APIPlantilla.APISaveJson;
+using static APIPlantilla.APILoadJson;
+using static APIPlantilla.APIControllers;
+
+
+namespace APIPlantilla
+{
+    internal class Program
+    {
+        public static readonly HttpClient client = new HttpClient();
+        // *Cambiar url*
+        public static string Url => "https://digimon-api.vercel.app/api/digimon"; // *cambiar url*
+
+        public static List<FavoriteItemList> favoriteLists = new List<FavoriteItemList>();
+
+        public static string NameApi => "nombreDeLaAPI";
+
+        static async Task Main(string[] args)
+        {
+            // 1. Cargar Json
+            APILoadFavoriteList();
+            while (true)
+            {
+                try
+                {
+                    Console.Clear();
+                    Console.WriteLine("**================================**");
+                    Console.WriteLine($"  Bienvenido a la API de {NameApi}");
+                    Console.WriteLine("====================================");
+                    Console.WriteLine("         MENU PRINCIPAL");
+                    Console.WriteLine("====================================");
+                    Console.WriteLine("1. Mostrar API");
+                    Console.WriteLine("2. Buscar (Nombre y Add a Favoritos)");
+                    Console.WriteLine("3. Borrar Digimon Favorito");
+                    Console.WriteLine("4. Mostrar Lista API");
+                    Console.WriteLine("0. Salir");
+                    Console.WriteLine("**=================================**");
+                    Console.Write("Introduce una opcion: ");
+                    var input = ValidateInput(Console.ReadLine());
+
+                    if (input == -1 || input < 0 || input > 4)
+                    {
+                        Console.WriteLine("\nEntrada no valida");
+                        PrintWaitForPressKey();
+                        continue;
+                    }
+
+                    switch (input)
+                    {
+                        case 1:
+                            Console.WriteLine("Cargando API...");
+                            await GetRequestDigimon();
+                            break;
+                        case 2:
+                            // Buscar por nombre
+                            await RequestSearchByName();
+                            break;
+                        case 3:
+                            RemoveFavoriteList();
+                            break;
+                        case 4:
+                            // Mostrar la lista de favoritos
+                            ShowFavoriteList();
+
+                            break;
+                        case 0:
+                            Console.WriteLine("Saliendo del programa...");
+                            Environment.Exit(0);
+                            // PrintWaitForPressKey();
+                            // return;
+                            break;
+                        default:
+                            Console.WriteLine("Opcion no valida");
+                            break;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    HandlerException(ex);
+                }
+            }
+        } // main
+
+        // 2. Busqueda por nombre
+        // Metodo que llama a SearchByName para buscar un digimon
+        public static async Task RequestSearchByName()
+        {
+            Console.Write("Introduce el Nombre: ");
+            string name = Console.ReadLine();
+
+            Console.WriteLine("Buscando...");
+            var result = await SearchByName(name);
+            // Console.WriteLine(result);
+            if (result is null || result.Count == 0) // Comprobamos que no este vacio
+            {
+                Console.WriteLine($"{nameApi} no encontrado");
+                PrintWaitForPressKey();
+                return;
+            }
+            var item = result[0];
+
+            // *ajustar el formato a la api Propiedades del objeto o array*
+            Console.WriteLine($"-------------------------\n" +
+            $"Nombre: {item["name"]}\n" +
+            $"Tipo: {(item["type"] == null ? "Unknown" : item["type"])}\n" +
+            $"Nivel: {item["level"]}\n");
+
+            AddToFavoriteList(result.ToString());
+            APISaveFavoriteList();
+        } // RequestSearchByName
+
+        // 3. Mostrar API
+        // Hacemos la peticion a la API
+        public static async Task GetRequestDigimon()
+        {
+            // 1. Hacemos la consulta
+            HttpResponseMessage response = await client.GetAsync(Url);
+
+            // 3. Validamos
+            if (!response.IsSuccessStatusCode)
+            {
+                Console.WriteLine($"Error: Codigo: {response.StatusCode}\n Info: {response.ReasonPhrase}");
+                // PrintWaitForPressKey();
+                return;
+            }
+            // 2. Obtenemos el contenido de la consulta
+            string stringJson = await response.Content.ReadAsStringAsync();
+
+            // 4. Mostramos el contenido
+            // Console.WriteLine(contentJson);
+
+            // 5. Deserializamos el JSON
+            var json = JArray.Parse(stringJson);
+
+            // 5.1. Mostramos el JSON
+            Console.WriteLine(JsonConvert.SerializeObject(json, Formatting.Indented));
+            PrintWaitForPressKey();
+
+        } // GetRequest
+    }
+}

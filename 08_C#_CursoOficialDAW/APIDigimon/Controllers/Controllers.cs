@@ -8,13 +8,23 @@ using System.Threading.Tasks;
 using static APIDigimon.Models;
 using static APIDigimon.Program;
 
+// Metodos
+// 1. (25)  SearchByName()          : Buscar por Nombre
+// 2. (54)  AddToFavoriteList()     : Agrega a la lista de favoritos
+// 3. (92)  ShowFavoriteList()      : Mostrar la lista de favoritos
+// 4. (113) RemoveFavoriteList()    : Elimina de la lista de favoritos
+// 5. (133) ValidateInput()         : Valida el input
+// 6. (143) PrintWaitForPressKey()  : Tocar para continuar
+// 7. (150) HandlerException()      : Manejo de EXCEPCIONES
+
 namespace APIDigimon
 {
     internal class Controllers
-    {   
-        // Busqueda por nombre
+    {
+        // 1. BUSCAR por nombre
         public static async Task<JArray> SearchByName(string name)
         {
+            // *cambiar url*
             var Url = $"https://digimon-api.vercel.app/api/digimon/name/{name}";
             var response = await client.GetAsync(Url);
 
@@ -39,9 +49,9 @@ namespace APIDigimon
             JArray arrayJson = JArray.Parse(stringJson);
 
             return arrayJson;
-        }
+        } // SearchByName
 
-        // Agrega a la lista de favoritos
+        // 2. AGREGAR a la lista de favoritos
         public static List<FavoriteItemList> AddToFavoriteList(string stringJson)
         {
             Console.WriteLine("Desea agregar el Digimon a la lista de favoritos S/N?");
@@ -58,7 +68,8 @@ namespace APIDigimon
 
             // Convierte el primer elemento del array en un objeto FavoriteItemList
             var digimon = array[0];
-
+            
+            // *Cambiar atributos de la clase FavoriteItemList*
             FavoriteItemList atributes = new FavoriteItemList() {
                 Name = (string)digimon["name"],
                 Type = (string)digimon["type"],
@@ -75,9 +86,9 @@ namespace APIDigimon
             Console.WriteLine("Digimon agregado a la lista de favoritos");
             PrintWaitForPressKey();
             return favoriteLists;
-        }
+        } // AddToFavoriteList
 
-        // Muestra la lista de favoritos
+        // 3. MOSTRAR la lista de favoritos
         public static void ShowFavoriteList()
         {
             Console.WriteLine("Mostrando lista de favoritos");
@@ -89,6 +100,8 @@ namespace APIDigimon
                 return;
             }
             int count = 1;
+
+            // *poner atributos de lista de favoritos (FavoriteItemList)*
             foreach (var item in favoriteLists)
             {
                 Console.WriteLine($"\n{count ++}ºFavorite:" +
@@ -98,33 +111,16 @@ namespace APIDigimon
                     $"\nNivel: {item.Level}");
             }
             PrintWaitForPressKey();
-        }
+        } // ShowFavoriteList
 
-        // Validar Input
-        public static int ValidateInput(string input) {
-            if (!int.TryParse(input, out int num)) {
-                Console.WriteLine("Opcion no valida");
-                PrintWaitForPressKey();
-                return -1;
-            }
-            return num;
-        }
-
-        // Print (esperar tecla)
-        public static void PrintWaitForPressKey()
-        {
-            Console.WriteLine("\nPresiona cualquier tecla para continuar...");
-            Console.ReadKey();
-        }
-
-        // Borrar digimon de la lista de favoritos
+        // 4. BORRAR digimon de la lista de favoritos
         public static void RemoveFavoriteList()
         {
             Console.Write("Ingrese el id de la Lista de favoritos que desea borrar: ");
             int index = ValidateInput(Console.ReadLine()) - 1;
 
             if (index < 0 || index >= favoriteLists.Count) { // Comprobamos que el index sea valido
-                Console.WriteLine("\nEl id ingrsado no se encontro el la lista de favoritos");
+                Console.WriteLine("\nEl id ingresado no se encontro el la lista de favoritos o no es valido");
                 PrintWaitForPressKey();
                 return;
             }
@@ -135,9 +131,26 @@ namespace APIDigimon
             favoriteLists.RemoveAt(index);
             Console.WriteLine("\nDigimon borrado de la lista de favoritos");
             PrintWaitForPressKey();
+        } // RemoveFavoriteList
+
+        // 5. VALIDAR Input
+        public static int ValidateInput(string input) {
+            if (!int.TryParse(input, out int num)) {
+                // Console.WriteLine("Opcion no valida");
+                // PrintWaitForPressKey();
+                return -1;
+            }
+            return num;
         }
 
-        // Manejo de Excepciones
+        // 6. PRINT (esperar tecla)
+        public static void PrintWaitForPressKey()
+        {
+            Console.WriteLine("\nPresiona cualquier tecla para continuar...");
+            Console.ReadKey();
+        }
+
+        // 7. Manejo de EXCEPCIONES
         public static void HandlerException(Exception ex)
         {
             if (ex is HttpRequestException HttpEx) {
@@ -150,5 +163,5 @@ namespace APIDigimon
             }
             Console.WriteLine($"Error desconocido: {ex.Message}\n Info: {ex.HResult}");
         }
-    }
+    } // Controllers
 }

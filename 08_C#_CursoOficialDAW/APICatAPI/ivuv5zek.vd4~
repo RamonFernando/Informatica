@@ -1,0 +1,83 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Security.Policy;
+using System.Text;
+using System.Threading.Tasks;
+
+using static APICatAPI.Controllers;
+
+namespace APICatAPI
+{
+    internal class Program
+    {   
+        public static readonly HttpClient  client = new HttpClient();
+        public static string url = "https://api.thecatapi.com/v1/images/search";
+        public static List<string> favoriteList = new List<string>();
+
+        static async Task Main(string[] args)
+        {
+            while (true)
+            {
+                try
+                {
+                    Console.Clear();
+                    Console.WriteLine("**================================**");
+                    Console.WriteLine($"  Bienvenido a la API de Digimon");
+                    Console.WriteLine("====================================");
+                    Console.WriteLine("         MENU PRINCIPAL");
+                    Console.WriteLine("====================================");
+                    Console.WriteLine("1. Mostrar API");
+                    Console.WriteLine("2. Buscar (Nombre y Add a Favoritos)");
+                    Console.WriteLine("3. Borrar Digimon Favorito");
+                    Console.WriteLine("4. Mostrar Lista API");
+                    Console.WriteLine("0. Salir");
+                    Console.WriteLine("**=================================**");
+                    Console.Write("Introduce una opcion: ");
+                    var input = ValidateInput(Console.ReadLine());
+
+                    if (input < 0 || input > 4)
+                    {
+                        Console.WriteLine("\nEntrada no valida");
+                        PrintWaitForPressKey();
+                        continue;
+                    }
+
+                    switch (input)
+                    {
+                        case 1:
+                            Console.WriteLine("Cargando API...");
+                            // await GetRequestDigimon();
+                            break;
+                        case 2:
+                            // Buscar por nombre
+                            await RequestSearchByName();
+                            break;
+                        case 3:
+                            RemoveFavoriteList();
+                            break;
+                        case 4:
+                            // Mostrar la lista de favoritos
+                            ShowFavoriteList();
+
+                            break;
+                        case 0:
+                            Console.WriteLine("Saliendo del programa...");
+                            Environment.Exit(0);
+                            // PrintWaitForPressKey();
+                            // return;
+                            break;
+                        default:
+                            Console.WriteLine("Opcion no valida");
+                            break;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+        }
+    }
+}

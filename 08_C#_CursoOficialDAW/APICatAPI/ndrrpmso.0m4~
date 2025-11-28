@@ -1,0 +1,67 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+
+namespace APICatAPI
+{
+    internal class Models
+    {
+        public class ClassDigimon
+        {
+
+            [JsonProperty("Id")]
+            public int Id { get; set; }
+
+            [JsonProperty("name")]
+            public string Name { get; set; }
+
+            [JsonProperty("origin")]
+            public string Origin { get; set; }
+
+            [JsonProperty("description")]
+            public string Description { get; set; }
+
+        }
+
+        // 2. Level
+        public class Weight
+        {
+            public static int imperial { get; set; }
+            public static int metric { get; set; }
+
+        }
+
+        // 3. Type
+        public class Types
+        {
+            public static int Id { get; set; }
+            public static string Type { get; set; }
+        }
+
+        // 4. Root Lista de favoritos
+        public class ClassRoot
+        {
+            public static List<FavoriteItemList> FavoriteList { get; set; } = new List<FavoriteItemList>();
+        }
+
+        // 5. Modelo de la lista de favoritos
+        public class FavoriteItemList
+        {
+            [JsonProperty("Id")]
+            public int Id { get; set; }
+
+            [JsonProperty("name")]
+            public string Name { get; set; }
+
+            [JsonProperty("origin")]
+            public string Origin { get; set; }
+
+            [JsonProperty("description")]
+            public string Description { get; set; }
+
+        }
+    } // Models
+}

@@ -35,6 +35,6 @@ namespace APIDigimon
             }catch(Exception ex) {
                 HandlerException(ex);
             }
-        }
+        } // APILoadFavoriteList
     }
 }

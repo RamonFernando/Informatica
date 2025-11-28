@@ -1,0 +1,77 @@
+﻿using System;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+
+namespace APIStarWarsAPI
+{
+    public class Models
+    {
+
+        // Nombre de la clase, propiedades de la API
+
+        // 1. Clase Digimon (objeto modelo)
+        public class ClassCharacter
+        {
+
+            [JsonProperty("name")]
+            public string Name { get; set; }
+
+            [JsonProperty("height")]
+            public int Height { get; set; }
+
+            [JsonProperty("mass")]
+            public int Mass { get; set; }
+            
+            [JsonProperty("gender")]
+            public string Gender { get; set; }
+
+        }
+
+        // 2. Level
+        public class Levels
+        {
+            public static int Id { get; set; }
+            public static int Level { get; set; }
+
+        }
+
+        // 3. Type
+        public class ClassRoot
+        {
+            [JsonProperty("count")]
+            public static int Count { get; set; }
+
+            [JsonProperty("next")]
+            public static string Next { get; set; }
+
+            [JsonProperty("previous")]
+            public static string Previous { get; set; }
+
+            [JsonProperty("results")]
+            public static List<ClassCharacter> Results { get; set; }
+        }
+
+        // 4. Root Lista de favoritos
+        public class ClassRoot
+        {
+            public static List<FavoriteItemList> FavoriteItemList { get; set; } = new List<FavoriteItemList>();
+        }
+
+        // 5. Modelo de la lista de favoritos
+        public class FavoriteItemList // *poner atributos del metodo AddToFavoriteList y ShowFavoriteList*
+        {
+            [JsonProperty("name")]
+            public string Name { get; set; }
+
+            [JsonProperty("height")]
+            public int Height { get; set; }
+
+            [JsonProperty("mass")]
+            public int Mass { get; set; }
+
+            [JsonProperty("gender")]
+            public string Gender { get; set; }
+
+        }
+    } // Fin de la clase
+}

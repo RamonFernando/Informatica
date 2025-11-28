@@ -27,9 +27,9 @@ namespace APIDigimon
 
                 Console.WriteLine(json);
             
-            }catch(Exception ex) { 
-                HandlerException(ex); 
+            }catch(Exception ex) {
+                HandlerException(ex);
             }
-        }
+        } // APISaveFavoriteList
     }
 }

@@ -1,0 +1,76 @@
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
+
+/*
+ * Index
+ * 1. Clase Digimon
+ * 2. Level
+ * 3. Type
+ * 4. Root Lista de favoritos
+ * 5. Modelo de la lista de favoritos
+ */
+
+/*
+ * Metodo de empleo
+ * 1. Comprobar la url y extraer los atributos de la API (id, nombre y tipo, level, desscripcion etc.)
+ * 2. Comprobar si la clase tiene objetos extras tipo digimon (id y name), level (id y level) y type (id y type) etc. y crear los objetos (class)
+ * 3. Insertar los objetos en la lista de favoritos (FavoriteItemList) del objeto modelo (ClassDigimon)
+ * 4. Comprobar si hay un objeto que tiene el objeto modelo dentro o es un array 
+ * Ej. JObject:  info {digimon{id, name} page{id}, limit, count}
+ * JArray : [{digimons 1{id, name...} digimons 2{id, name...} ]}]
+ */
+
+namespace APIPlantilla
+{
+    public class Models
+    {
+
+        // Nombre de la clase, propiedades de la API
+
+        // 1. Clase Digimon (objeto modelo)
+        public class ClassDigimon
+        {
+            [JsonProperty("id")]
+            public int Id { get; set; }
+
+            [JsonProperty("name")]
+            public string Name { get; set; }
+
+        }
+
+        // 2. Level
+        public class Levels
+        {
+            public static int Id { get; set; }
+            public static int Level { get; set; }
+
+        }
+
+        // 3. Type
+        public class Types
+        {
+            public static int Id { get; set; }
+            public static string Type { get; set; }
+        }
+
+        // 4. Root Lista de favoritos
+        public class ClassRoot
+        {
+            public static List<FavoriteItemList> FavoriteItemList { get; set; } = new List<FavoriteItemList>();
+        }
+
+        // 5. Modelo de la lista de favoritos
+        public class FavoriteItemList // *poner atributos del metodo AddToFavoriteList y ShowFavoriteList*
+        {
+            public int Id { get; set; }
+
+            public string Name { get; set; }
+
+            public string Type { get; set; }
+
+            public string Level { get; set; }
+
+        }
+    } // Fin de la clase
+    
+}

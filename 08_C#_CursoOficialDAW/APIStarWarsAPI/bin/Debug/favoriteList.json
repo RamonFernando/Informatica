@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Agumon",
+    "height": 0,
+    "mass": 0,
+    "gender": null
+  },
+  {
+    "name": "Luke Skywalker",
+    "height": 172,
+    "mass": 77,
+    "gender": "male"
+  }
+]
