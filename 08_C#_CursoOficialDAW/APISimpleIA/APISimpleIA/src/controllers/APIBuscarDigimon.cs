@@ -4,6 +4,7 @@ using static APISimpleIA.Services;
 using static APISimpleIA.Views;
 using static APISimpleIA.Helpers;
 using static APISimpleIA.APISaveJson;
+using System.Text.Json;
 
 namespace APISimpleIA
 {
@@ -27,49 +28,83 @@ namespace APISimpleIA
                 return;
             }
 
-            var root = json.RootElement[0];
+            List<JsonElement> results = new List<JsonElement>();
+            
+            // En caso de que la API devolviera un array dentro de "results"
+            /*if (!json.RootElement.TryGetProperty("results", out var resultsArray) ||
+                resultsArray.GetArrayLength() == 0)*/
 
-            // string digimonName = root.GetProperty("name").GetString()!;
-            // string level = root.GetProperty("levels")[0].GetProperty("level").GetString()!;
+            // Comprueba si el JSON es un array y si lo es, comprueba si está vacío
+            if(json.RootElement.ValueKind == JsonValueKind.Array && json.RootElement.GetArrayLength() == 0)
+            {
+                Console.WriteLine($"Digimon '{name}' no encontrado.\n");
+                PrintWaitForPressKey();
+                return;
+            }
+            
+            // Si es un array, añadimos todos los elementos a la lista de resultados y si no, añadimos el unico elemento
+            if(json.RootElement.ValueKind == JsonValueKind.Array)
+                foreach (var item in json.RootElement.EnumerateArray())
+                    results.Add(item);
+            else
+                results.Add(json.RootElement);
+                        
+            Console.WriteLine($"\n === RESULTADOS DE LA BUSQUEDA ===");
+            string digimonName = "";
+            string level = "";
             
 
-            // Validar que el Digimon tenga los campos requeridos
-            string digimonName = root.GetProperty("name").GetString()!;
-            string level = root.TryGetProperty("level", out var digimonLevel)
+            for (int i = 0; i < results.Count; i++)
+            {
+                // Validar que el Digimon tenga los campos requeridos
+            string currentName = results[i].TryGetProperty("name", out var nameProp)
+                ? nameProp.GetString() ?? "unknown"
+                : "unknown";
+            string currentLevel = results[i].TryGetProperty("level", out var digimonLevel)
                 ? digimonLevel.GetString() ?? "unknown"
                 : "unknown";
-            
-            // Mostramos y pedimos confirmacion para guardar
-            Console.WriteLine($"\nNombre: {digimonName}");
-            Console.WriteLine($"Nivel: {level}");
-            
+
+                if (i == 0) // Guardamos el primero para luego ofrecer guardarlo
+                {
+                    digimonName = currentName;
+                    level = currentLevel;
+                }
+                Console.WriteLine($"\nResultado {i + 1}:");
+                Console.WriteLine("-----------------------");
+                Console.WriteLine($"Nombre: {currentName}");
+                Console.WriteLine($"Nivel: {currentLevel}");
+            }
+
             Console.Write($"\n¿Quieres guardar al Digimon '{digimonName}'? (s/n): ");
             string? respuesta = Console.ReadLine();
 
             respuesta = respuesta?.Trim().ToLower();
 
-            // Comprobamos que no exista y agregamos a la lista
-            if (respuesta == "s")
+            if (respuesta != "s")
             {
-                if (MisDigimons.Any(d => d.Name == digimonName))
-                {
-                    Console.WriteLine($"El Digimon '{digimonName}' ya esta guardado.\n");
-                    PrintWaitForPressKey();
-                    return;
-                }
-                MisDigimons.Add(new Digimon
-                {
-                    Id = MisDigimons.Count,
-                    Name = digimonName,
-                    Level = level,
-                });
-
-                Console.WriteLine($"Digimon '{digimonName}' Guardado.\n");
-                APISaveFavoriteList();
+                Console.WriteLine($"Digimon '{digimonName}' no guardado.\n");
                 PrintWaitForPressKey();
                 return;
             }
-            Console.WriteLine($"Digimon '{digimonName}' no guardado.\n");
+
+            // Evitar duplicados
+            if (MisDigimons.Any(d => d.Name == digimonName))
+            {
+                Console.WriteLine($"El Digimon '{digimonName}' ya esta guardado.\n");
+                PrintWaitForPressKey();
+                return;
+            }
+
+            // Guardar SOLO uno
+            MisDigimons.Add(new Digimon
+            {
+                Id = MisDigimons.Count,
+                Name = digimonName,
+                Level = level
+            });
+
+            Console.WriteLine($"Digimon '{digimonName}' Guardado.\n");
+            APISaveFavoriteList();
             PrintWaitForPressKey();
             return;
         }
