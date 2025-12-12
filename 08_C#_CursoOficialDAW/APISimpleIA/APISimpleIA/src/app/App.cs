@@ -3,6 +3,8 @@ using static APISimpleIA.APIBuscarDigimon;
 using static APISimpleIA.APIListarGuardados;
 using static APISimpleIA.Views;
 using static APISimpleIA.Helpers;
+using static APISimpleIA.APIEliminarDigimon;
+using static APISimpleIA.APILoadJson;
 
 namespace APISimpleIA
 {
@@ -12,30 +14,27 @@ namespace APISimpleIA
 
         public static async Task Run()
         {
+            APILoadFavoriteList();
             while (true)
             {
                 PrintMenu();
 
                 string? input = Console.ReadLine();
-                int opcion = ValidarOpcion(input, 0, 2);
+                int opcion = ValidarOpcion(input, 0, 3); // Pos: min:0 a max:3 != -1
                 
-                if(opcion == -1) // Numero entre 0 y 2
-                {
-                    Console.WriteLine("Entrada no valida o fuera de rango");
-                    PrintWaitForPressKey();
-                    continue;
-                }
+                PrintEntradaNoValida(opcion); // -1 Entrada no valida
 
                 switch (opcion)
                 {
                     case 1:
                         await BuscarDigimon();
                         break;
-
                     case 2:
                         ListarGuardados();
                         break;
-
+                    case 3:
+                        EliminarDigimon();
+                        break;
                     case 0:
                         Console.WriteLine("Saliendo...");
                         Environment.Exit(0);

@@ -2,14 +2,14 @@ using System.Text.Json;
 
 using static APISimpleIA.Services;
 using static APISimpleIA.App;
+using static APISimpleIA.ManejoExcepciones;
 using System.Net;
 
 
 namespace APISimpleIA
 {
-    public static class APIGetDigimonAsync
+    public class APIGetDigimonAsync
     {
-        
         public static async Task<JsonDocument?> GetDigimonAsync(string name)
         {
             try
@@ -27,9 +27,10 @@ namespace APISimpleIA
                 var content = await response.Content.ReadAsStringAsync();
                 return JsonDocument.Parse(content);
             }
-            catch
+            catch (Exception ex)
             {
                 Console.WriteLine("La API devolvió datos inválidos o no es JSON.\n");
+                HandlerException(ex);
                 return null;
             }
         }

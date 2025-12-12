@@ -3,6 +3,7 @@ using static APISimpleIA.APIGetDigimonAsync;
 using static APISimpleIA.Services;
 using static APISimpleIA.Views;
 using static APISimpleIA.Helpers;
+using static APISimpleIA.APISaveJson;
 
 namespace APISimpleIA
 {
@@ -10,15 +11,11 @@ namespace APISimpleIA
     {
         public static async Task BuscarDigimon()
         {
+            Console.WriteLine("\n=== BUSCAR DIGIMON NOMBRE ===");
             Console.Write("Escribe el nombre del Digimon: ");
             string? name = Console.ReadLine();
 
-            if (!ValidarString(name))
-            {
-                Console.WriteLine("Entrada no valida.\n");
-                Console.ReadKey();
-                return;
-            }
+            ValidarInputString(name); // null o "" = Entrada no valida
             
             // Buscamos el Digimon en la API
             var json = await GetDigimonAsync(name!); // no null
@@ -49,13 +46,7 @@ namespace APISimpleIA
             Console.Write($"\n¿Quieres guardar al Digimon '{digimonName}'? (s/n): ");
             string? respuesta = Console.ReadLine();
 
-            if (string.IsNullOrWhiteSpace(respuesta))
-            {
-                Console.WriteLine("Respuesta no valida.\n");
-                PrintWaitForPressKey();
-                return;
-            }
-            respuesta = respuesta.Trim().ToLower();
+            respuesta = respuesta?.Trim().ToLower();
 
             // Comprobamos que no exista y agregamos a la lista
             if (respuesta == "s")
@@ -68,11 +59,13 @@ namespace APISimpleIA
                 }
                 MisDigimons.Add(new Digimon
                 {
+                    Id = MisDigimons.Count,
                     Name = digimonName,
                     Level = level,
                 });
 
                 Console.WriteLine($"Digimon '{digimonName}' Guardado.\n");
+                APISaveFavoriteList();
                 PrintWaitForPressKey();
                 return;
             }

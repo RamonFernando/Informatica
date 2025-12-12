@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("APISimpleIA")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3bc2a1f72fa5c45577d431e8a480af4d0beb1afc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b32bf8353361e9beeee7d0f122b2512b8abe5f8e")]
 [assembly: System.Reflection.AssemblyProductAttribute("APISimpleIA")]
 [assembly: System.Reflection.AssemblyTitleAttribute("APISimpleIA")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
