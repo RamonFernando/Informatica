@@ -12,21 +12,21 @@ namespace APISimpleIA
         {
             try
             {
-                string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "favoriteDigimons.json");
+                string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "favoriteItems.json");
 
                 if (!File.Exists(filePath))
                 {
                     Console.WriteLine("El archivo no existe. Se creara uno nuevo.");
-                    File.WriteAllText(filePath, JsonSerializer.Serialize(new List<Digimon>()));
+                    File.WriteAllText(filePath, JsonSerializer.Serialize(new List<ApiItem>()));
                     PrintWaitForPressKey();
                     return;
                 }
 
                 var json = File.ReadAllText(filePath);
-                var MisDigimonLoaded = JsonSerializer.Deserialize<List<Digimon>>(json) ?? new List<Digimon>();
+                var ls_MisItemsLoaded = JsonSerializer.Deserialize<List<ApiItem>>(json) ?? new List<ApiItem>();
 
-                MisDigimons.Clear();
-                MisDigimons.AddRange(MisDigimonLoaded);
+                MisFavorites.Clear();
+                MisFavorites.AddRange(ls_MisItemsLoaded);
 
             }
             catch (Exception ex)

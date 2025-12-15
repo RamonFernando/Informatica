@@ -8,9 +8,9 @@ using System.Net;
 
 namespace APISimpleIA
 {
-    public class APIGetDigimonAsync
+    public class APIGetItemAsync
     {
-        public static async Task<JsonDocument?> GetDigimonAsync(string name)
+        public static async Task<JsonDocument?> GetItemApiAsync(string name)
         {
             try
             {

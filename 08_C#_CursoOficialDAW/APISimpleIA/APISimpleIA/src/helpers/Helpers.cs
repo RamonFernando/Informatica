@@ -1,4 +1,5 @@
 using static APISimpleIA.Views;
+using static APISimpleIA.App;
 
 namespace APISimpleIA
 {
@@ -44,18 +45,18 @@ namespace APISimpleIA
                 return;
             }
         }
-        public static void ListaVacia(List<Digimon> MisDigimons)
+        public static void ListaVacia(List<ApiItem> MisFavorites)
         {
-            if (MisDigimons.Count == 0)
+            if (MisFavorites.Count == 0)
             {
-                Console.WriteLine("\nNo tienes Digimon guardados.\n");
+                Console.WriteLine($"\nNo tienes {NAME_PROP} guardados.\n");
                 PrintWaitForPressKey();
                 return;
             }
         }
-        public static int FueraDeRango(List<Digimon> MisDigimons, int index)
+        public static int FueraDeRango(List<ApiItem> MisFavorites, int index)
         {
-            if (index < 1 || index > MisDigimons.Count)
+            if (index < 1 || index > MisFavorites.Count)
             {
                 Console.WriteLine($"El Id '{index}' esta fuera de rango.\n");
                 PrintWaitForPressKey();

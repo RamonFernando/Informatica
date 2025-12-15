@@ -2,6 +2,7 @@
 using static APISimpleIA.Services;
 using static APISimpleIA.Views;
 using static APISimpleIA.Helpers;
+using static APISimpleIA.App;
 
 namespace APISimpleIA
 {
@@ -9,15 +10,15 @@ namespace APISimpleIA
     {
         public static void ListarGuardados()
         {
-            ListaVacia(MisDigimons);
-            if (MisDigimons.Count == 0) return;
+            ListaVacia(MisFavorites);
+            if (MisFavorites.Count == 0) return;
 
-            Console.WriteLine("\n=== MIS DIGIMON ===");
-            for (int i= 0; i < MisDigimons.Count; i++)
+            Console.WriteLine($"\n=== MIS {NAME_PROP.ToUpper()} ===");
+            for (int i= 0; i < MisFavorites.Count; i++)
             {
                 Console.WriteLine($"Index: {i+1}");
                 Console.WriteLine("------------------------");
-                Console.WriteLine($"Nombre: {MisDigimons[i].Name}\nNivel: {MisDigimons[i].Level}.\n");
+                Console.WriteLine($"Nombre: {MisFavorites[i].Name}\n{NAME_TYPE_PROP_ES}: {MisFavorites[i].Prop}.\n");
             }
             PrintWaitForPressKey();
             return;

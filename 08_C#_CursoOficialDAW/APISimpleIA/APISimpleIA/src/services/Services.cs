@@ -9,6 +9,6 @@ namespace APISimpleIA
             Client.Timeout = TimeSpan.FromSeconds(10);
             // Client.BaseAddress = new Uri("http://localhost:4000/");
         }
-        public static readonly List<Digimon> MisDigimons = new List<Digimon>();
+        public static readonly List<ApiItem> MisFavorites = new List<ApiItem>();
     }
 }

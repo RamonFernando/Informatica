@@ -12,9 +12,9 @@ namespace APISimpleIA
         {
             try
             {
-                string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "favoriteDigimons.json");
+                string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "favoriteItems.json");
 
-                var json = JsonSerializer.Serialize(MisDigimons, new JsonSerializerOptions { WriteIndented = true });
+                var json = JsonSerializer.Serialize(MisFavorites, new JsonSerializerOptions { WriteIndented = true });
 
                 File.WriteAllText(filePath, json);
                 // Console.WriteLine("Operacion realizada con exito");

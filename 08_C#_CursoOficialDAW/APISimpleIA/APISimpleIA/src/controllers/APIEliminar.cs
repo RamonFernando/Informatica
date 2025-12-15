@@ -2,28 +2,29 @@ using static APISimpleIA.Views;
 using static APISimpleIA.Helpers;
 using static APISimpleIA.Services;
 using static APISimpleIA.APISaveJson;
+using static APISimpleIA.App;
 
 namespace APISimpleIA
 {
-    internal class APIEliminarDigimon
+    internal class APIEliminar
     {
-        public static void EliminarDigimon()
+        public static void Eliminar()
         {
-            Console.WriteLine("\n=== ELIMINAR DIGIMON ===");
+            Console.WriteLine($"\n=== ELIMINAR {NAME_PROP.ToUpper()} ===");
             
-            Console.Write("Escribe el Index del Digimon a Eliminar: ");
+            Console.Write($"Escribe el Index del {NAME_PROP} a Eliminar: ");
             string? input = Console.ReadLine();
             int index = ValidarInput(input);
             ValidarInputString(input); // -1 = Entrada no valida
 
-            ListaVacia(MisDigimons);
-            index = FueraDeRango(MisDigimons, index); // < 1 o > count
+            ListaVacia(MisFavorites); // Lista vacia
+            index = FueraDeRango(MisFavorites, index); // < 1 o > count
             if(index == -1) return;
 
             int indexList = index -1; // Igualamos el index a la posicion en la lista
-            var digimon = MisDigimons[indexList];
+            var itemFavorite = MisFavorites[indexList];
             
-            Console.Write($"¿Estas seguro de que quieres eliminar el Digimon '{digimon.Name}'? (s/n): ");
+            Console.Write($"¿Estas seguro de que quieres eliminar el {NAME_PROP} '{itemFavorite.Name}'? (s/n): ");
             string? confirmation = Console.ReadLine();
             ValidarString(confirmation);
             if (confirmation?.ToLower() != "s")
@@ -33,8 +34,8 @@ namespace APISimpleIA
                 return;
             }
             
-            MisDigimons.RemoveAt(indexList);
-            Console.WriteLine($"Digimon '{digimon}' eliminado.\n");
+            MisFavorites.RemoveAt(indexList);
+            Console.WriteLine($"{NAME_PROP} '{itemFavorite.Name}' eliminado.\n");
             APISaveFavoriteList();
             PrintWaitForPressKey();
         }
