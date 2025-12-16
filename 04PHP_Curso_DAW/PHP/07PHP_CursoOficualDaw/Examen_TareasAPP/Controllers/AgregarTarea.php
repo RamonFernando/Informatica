@@ -36,7 +36,6 @@
         
         $completada = strtolower($completadaInput) === 'si' ? true : false;
         
-        echo "Tarea agregada exitosamente.\n";
         return new Tarea($titulo, $descripcion, $fecha, $completada);
     }
 ?>

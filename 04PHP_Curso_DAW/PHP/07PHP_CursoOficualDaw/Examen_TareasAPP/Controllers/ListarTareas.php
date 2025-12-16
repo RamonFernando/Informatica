@@ -1,10 +1,10 @@
 <?php
     function listarTareas($tareas) {
-        if (empty($tareas)) {
+        if (count($tareas) === 0) {
             echo "No hay tareas disponibles.\n";
             return;
         }
-        foreach ($tareas as $indice => $tarea) {
+        foreach ($tareas as $tarea) {
             echo $tarea->mostrarDetalles() . "\n";
         }
     }

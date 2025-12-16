@@ -4,10 +4,10 @@ class App {
         
     public function run(){
         
+        $tareas = [];
         while (true){
 
             printMenu();
-            $tareas = [];
             $opcion = trim(fgets(STDIN));
 
             switch ($opcion) {
@@ -16,11 +16,24 @@ class App {
                     echo "Ingrese la nueva tarea: ";
                     $nuevaTarea = nuevaTarea();
                     
+                    // Validar que la tarea no sea nula y que sea una instancia de Tarea
+                    if($nuevaTarea === null || !($nuevaTarea instanceof Tarea)){
+                        echo "\nNo se pudo agregar la tarea. Intente nuevamente.\n";
+                        break;
+                    }
+                    $exists = false;
+                    foreach($tareas as $tarea){
+                        if($tarea->getTitulo() === $nuevaTarea->getTitulo() && $tarea->getFecha() === $nuevaTarea->getFecha()){
+                            echo "\nLa tarea ya existe. No se puede agregar duplicados.\n";
+                            $exists = true;
+                            break;
+                        }
+                    }
+                    if($exists) break;
+                    
                     $tareas[] = $nuevaTarea;
-                    
-                    // printTitle("Tareas");
+                    echo "Tarea agregada exitosamente.\n";
                     listarTareas($tareas);
-                    
                     break;
                 case 2:
                     /*printTitle("Eliminar Tarea");
@@ -48,10 +61,10 @@ class App {
                     listarTareas($tareas);
                     break;
                 case 0:
-                    echo "Saliendo...</br>";
+                    echo "Saliendo...\n";
                     return;
                 default:
-                    echo "Opcion no valida.</br>";
+                    echo "Opcion no valida.\n";
                     break;
             }
         }
