@@ -28,12 +28,10 @@ require_once __DIR__ . '/../Helpers/Helpers.php';
             if(empty($fecha)) // fecha por defecto hoy
                 $fecha = date('Y-m-d');
             
-            if(!validarFecha($fecha)) // fecha real
+            if(!validarFecha($fecha) || !validarFormatoFecha($fecha)) // fecha real, regex
                 echo "La fecha no es valida. Por favor, ingresa una fecha en el formato YYYY-MM-DD.\n";
-            
-            if(!validarFormatoFecha($fecha)) // regex
-                echo "La fecha no es valida. Por favor, ingresa una fecha en el formato YYYY-MM-DD.\n";
-        }while(!validarFormatoFecha($fecha));
+    
+        }while(!validarFormatoFecha($fecha) || !validarFecha($fecha));
         
         // Tarea Completada
         do{
