@@ -51,10 +51,12 @@ class App {
                     break;
                 
                 case 4:
-                    /*printTitle("Marcar Tarea Completada");
+                    printTitle("Marcar Tarea Completada");
                     echo "Ingrese el Id de la tarea a marcar como completada: ";
                     $id = trim(fgets(STDIN));
-                    $tareas = marcarTareaCompletada($tareas, $id);*/
+                    if(empty($id) || !is_numeric($id)) break;
+                    
+                    $tareas = marcarTareaCompletada($tareas, $id);
                     break;
                 case 5:
                     printTitle("Listar Tareas");
