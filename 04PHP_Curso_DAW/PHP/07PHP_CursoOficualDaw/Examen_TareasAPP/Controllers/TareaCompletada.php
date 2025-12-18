@@ -4,13 +4,14 @@
             echo "El ID no puede estar vacio.\n";
             return $tareas;
         }
-        if(is_numeric($id) === false){
+        if(!ctype_digit($id)){ // valida digitos del 0-9
             echo "El ID debe ser un numero valido.\n";
             return $tareas;
         }
+        $id = (int)$id;
         foreach ($tareas as $tarea) {
             if($tarea->getId() === $id ){
-                $tarea->setCompletada(true);
+                $tarea->setCompletada("si");
                 echo "Tarea con ID '$id' marcada como completada correctamente.";
                 return $tareas;
             }

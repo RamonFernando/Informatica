@@ -48,6 +48,10 @@
         public function setCompletada($completada){
             $this->completada = $completada;
         }
+        public function getCompletada(){
+            return $this->completada;
+        }
+
 
         // Mostrar
         public function mostrarDetalles(){

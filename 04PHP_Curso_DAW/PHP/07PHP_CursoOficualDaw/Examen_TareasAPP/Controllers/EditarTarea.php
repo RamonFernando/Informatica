@@ -2,41 +2,54 @@
     function editarTarea($tareas, $id) {
         echo "Ingrese el Id de la tarea a editar: ";
         $id = trim(fgets(STDIN));
-        if($id === ''){
-            echo "El ID no puede estar vacio.\n";
+        if($id === '' || !ctype_digit($id)){ // valida digitos del 0-9
+            echo "El ID no puede estar vacio o debe ser numerico.\n";
             return $tareas;
         }
-        if(is_numeric($id) === false){
-            echo "El ID debe ser un numero valido.\n";
-            return $tareas;
-        }
+        
+        $id = (int)$id;
         foreach ($tareas as $tarea){
             if($tarea->getId() === $id){
                 echo "Ingrese el nuevo titulo: ";
                 $nuevoTitulo = mb_strtolower(trim(fgets(STDIN)));
                 if(empty($nuevoTitulo)){
-                    echo "El titulo no puede estar vacio.\n";
-                    return $tareas;
+                    $nuevoTitulo = $tarea->getTitulo();
                 }
                 $tarea->setTitulo($nuevoTitulo);
+
+                echo "Ingrese el nuevo descripcion: ";
                 $nuevaDescripcion = trim(fgets(STDIN));
                 if(empty($nuevaDescripcion)){
-                    echo "La descripcion no puede estar vacia.\n";
-                    return $tareas;
+                    $nuevaDescripcion = $tarea->getDescripcion();
                 }
                 $tarea->setDescripcion($nuevaDescripcion);
+
+                echo "Ingrese la nueva fecha (YYYY-MM-DD): ";
                 $nuevaFecha = trim(fgets(STDIN));
                 if(empty($nuevaFecha)){
-                    echo "La fecha no puede estar vacia.\n";
-                    return $tareas;
+                    $nuevaFecha = $tarea->getFecha();
                 }
                 if(!validarFormatoFecha($nuevaFecha) || !validarFecha($nuevaFecha)){
                     echo "La fecha no es valida. Por favor, ingresa una fecha en el formato YYYY-MM-DD.\n";
                     return $tareas;
                 }
                 $tarea->setFecha($nuevaFecha);
-                $tarea->setCompletada(false);
-                
+
+                do{
+                    echo "Ingrese el nuevo estado (si o no): ";
+                    $nuevoEstado = mb_strtolower(trim(fgets(STDIN)));
+
+                    if(empty($nuevoEstado)){
+                        $nuevoEstado = $tarea->getCompletada();
+                        break;
+                    }
+                    if($nuevoEstado !== 'si' && $nuevoEstado !== 'no'){
+                        echo "El estado debe ser 'si' o 'no'.\n";
+                        continue;
+                    }
+                }while(true);
+                $tarea->setCompletada($nuevoEstado);
+
                 echo "Tarea con ID '$id' editada correctamente.";
                 return $tareas;
             }
