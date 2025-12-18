@@ -2,7 +2,8 @@
 
 namespace APISimpleIA
 {
-    class Program
+    class MainAPI
+    
     {
         static async Task Main(string[] args)
         {
