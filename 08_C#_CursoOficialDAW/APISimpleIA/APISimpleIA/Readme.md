@@ -40,4 +40,4 @@ dotnet run --project 08_C#_CursoOficialDAW/APISimpleIA/APISimpleIA/APISimpleIA.c
 ## Notas
 
 - Este proyecto es una **app de consola** (`OutputType=Exe`).
-- Si el código consume servicios externos (por ejemplo, una API de IA), puede requerir configuración adicional (API keys, endpoints, etc.). Revisa el código de `Program.cs` o archivos de configuración si existen.
+- Si el código consume servicios externos (por ejemplo, una API de IA), puede requerir configuración adicional (API keys, endpoints, etc.). Revisa el código de `MainAPI.cs` o archivos de configuración si existen.
