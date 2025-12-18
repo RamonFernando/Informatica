@@ -1,10 +1,9 @@
-using static APISimpleIA.Views;
-using static APISimpleIA.App;
 
 namespace APISimpleIA
 {
     public static class Helpers
     {
+        // Valida que el input sea un entero
         public static int ValidarInput(string? input)
         {
             if(string.IsNullOrWhiteSpace(input))
@@ -14,6 +13,8 @@ namespace APISimpleIA
             
             return num;
         }
+
+        // Valida que la opción esté dentro del rango min-max
         public static int ValidarOpcion(string? num, int min, int max){
             int validatedNum = ValidarInput(num);
             
@@ -23,6 +24,8 @@ namespace APISimpleIA
             return (validatedNum >= min && validatedNum <= max)
                 ? validatedNum : -1;
         }
+
+        // Imprime el mensaje de entrada no valida
         public static void PrintEntradaNoValida(int num)
         {
             if(num == -1)
@@ -32,10 +35,14 @@ namespace APISimpleIA
                     return;
                 }
         }
+
+        // Valida que el string no sea null o vacío
         public static bool ValidarString(string? input){
             input = input?.Trim();
             return !string.IsNullOrWhiteSpace(input);
         }
+
+        // Valida el input string y muestra mensaje si no es valido
         public static void ValidarInputString(string? input)
         {
             if(!ValidarString(input))
@@ -45,6 +52,8 @@ namespace APISimpleIA
                 return;
             }
         }
+
+        // Valida si la lista está vacia y muestra mensaje
         public static void ListaVacia(List<ApiItem> MisFavorites)
         {
             if (MisFavorites.Count == 0)
@@ -54,6 +63,8 @@ namespace APISimpleIA
                 return;
             }
         }
+
+        // Valida si el index está fuera de rango y muestra mensaje
         public static int FueraDeRango(List<ApiItem> MisFavorites, int index)
         {
             if (index < 1 || index > MisFavorites.Count)

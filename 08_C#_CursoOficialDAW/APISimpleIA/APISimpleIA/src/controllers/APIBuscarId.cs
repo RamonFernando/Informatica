@@ -1,9 +1,3 @@
-using static APISimpleIA.Services;
-using static APISimpleIA.Helpers;
-using static APISimpleIA.APIGetItemAsync;
-using static APISimpleIA.Views;
-using System.Text.Json;
-using static APISimpleIA.App;
 
 namespace APISimpleIA
 {

@@ -1,12 +1,4 @@
 
-using static APISimpleIA.APIGetItemAsync;
-using static APISimpleIA.Services;
-using static APISimpleIA.Views;
-using static APISimpleIA.Helpers;
-using static APISimpleIA.APISaveJson;
-using static APISimpleIA.App;
-using System.Text.Json;
-
 namespace APISimpleIA
 {
     public static class APIBuscar
@@ -33,7 +25,7 @@ namespace APISimpleIA
             
             // En caso de que la API devolviera un array dentro de "results"
             /*if (!json.RootElement.TryGetProperty("results", out var resultsArray) ||
-                resultsArray.GetArrayLength() == 0)*/
+                resultsArray.GetArrayLength() == 0) return;*/
 
             // Comprueba si el JSON es un array y si lo es, comprueba si está vacío
             if(json.RootElement.ValueKind == JsonValueKind.Array && json.RootElement.GetArrayLength() == 0)

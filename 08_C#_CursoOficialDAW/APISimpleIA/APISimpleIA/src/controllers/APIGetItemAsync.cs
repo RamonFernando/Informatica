@@ -1,10 +1,3 @@
-using System.Text.Json;
-
-using static APISimpleIA.Services;
-using static APISimpleIA.App;
-using static APISimpleIA.ManejoExcepciones;
-using System.Net;
-
 
 namespace APISimpleIA
 {

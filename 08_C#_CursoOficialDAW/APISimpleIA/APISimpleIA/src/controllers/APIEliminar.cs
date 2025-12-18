@@ -1,8 +1,3 @@
-using static APISimpleIA.Views;
-using static APISimpleIA.Helpers;
-using static APISimpleIA.Services;
-using static APISimpleIA.APISaveJson;
-using static APISimpleIA.App;
 
 namespace APISimpleIA
 {

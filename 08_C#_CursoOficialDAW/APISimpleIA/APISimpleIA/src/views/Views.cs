@@ -1,15 +1,18 @@
+
 namespace APISimpleIA
 {
     public class Views
     {
         public static void PrintMenu()
         {
-            Console.WriteLine("\n=== MENU DIGIMON ===");
-            Console.WriteLine("1. Buscar Digimon");
+            Console.WriteLine($"\n  === MENU {NAME_PROP.ToUpper()} ===");
+            Console.WriteLine("--------------------------");
+            Console.WriteLine($"1. Buscar {NAME_PROP} (Nombre)");
             Console.WriteLine("2. Mostrar guardados");
             Console.WriteLine("3. Eliminar guardados");
             Console.WriteLine("0. Salir");
-            Console.Write("Opción: ");
+            Console.WriteLine("--------------------------");
+            Console.Write("Seleccione una Opción: ");
         }
         public static void PrintWaitForPressKey()
         {
