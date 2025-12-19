@@ -1,6 +1,6 @@
 <?php
     function marcarTareaCompletada($tareas, $id) {
-        if ($id === '') {
+        if ($id === '' || $id === null) {
             echo "El ID no puede estar vacio.\n";
             return $tareas;
         }
@@ -11,7 +11,7 @@
         $id = (int)$id;
         foreach ($tareas as $tarea) {
             if($tarea->getId() === $id ){
-                $tarea->setCompletada("si");
+                $tarea->setCompletada(true);
                 echo "Tarea con ID '$id' marcada como completada correctamente.";
                 return $tareas;
             }
