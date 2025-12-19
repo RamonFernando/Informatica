@@ -23,7 +23,8 @@ class App {
                     }
                     $exists = false;
                     foreach($tareas as $tarea){
-                        if($tarea->getTitulo() === $nuevaTarea->getTitulo() && $tarea->getFecha() === $nuevaTarea->getFecha()){
+                        if(mb_strtolower($tarea->getTitulo()) === mb_strtolower($nuevaTarea->getTitulo()) 
+                            && $tarea->getFecha() === $nuevaTarea->getFecha()){
                             echo "\nLa tarea ya existe. No se puede agregar duplicados.\n";
                             $exists = true;
                             break;
@@ -42,12 +43,11 @@ class App {
                     $tareas = eliminarTarea($tareas, $indice);*/
                     break;
                 case 3:
-                    /*printTitle("Editar Tarea");
+                    printTitle("Editar Tarea");
                     echo "Ingrese el Id de la tarea a editar: ";
                     $id = trim(fgets(STDIN));
-                    echo "Ingrese la nueva descripcion: ";
-                    $nuevaDescripcion = trim(fgets(STDIN));
-                    $tareas = editarTarea($tareas, $id, $nuevaDescripcion);*/
+                    
+                    $tareas = editarTarea($tareas, $id);
                     break;
                 
                 case 4:

@@ -3,15 +3,14 @@ require_once __DIR__ . '/../Models/Tarea.php';
 require_once __DIR__ . '/../Helpers/Helpers.php';
     
 function editarTarea($tareas, $id) {
-    echo "Ingrese el Id de la tarea a editar: ";
-    $input = trim(fgets(STDIN));
-        
-    if($input === '' || !ctype_digit($input)){ // valida digitos del 0-9
+    
+    if($id === '') return $tareas;
+    if(!ctype_digit($id)){ // valida digitos del 0-9
         echo "El ID no puede estar vacio o debe ser numerico.\n";
         return $tareas;
     }
         
-    $id = (int)$input;
+    $id = (int)$id;
     foreach ($tareas as $tarea){
         if($tarea->getId() === $id){
             echo "Ingrese el nuevo titulo: ";
@@ -44,15 +43,17 @@ function editarTarea($tareas, $id) {
                 $nuevoEstado = mb_strtolower(trim(fgets(STDIN)));
 
                 if(empty($nuevoEstado)){
-                    $nuevoEstado = $tarea->getCompletada();
+                    $estadoFinal = $tarea->getCompletada();
                     break;
                 }
                 if($nuevoEstado !== 'si' && $nuevoEstado !== 'no'){
                     echo "El estado debe ser 'si' o 'no'.\n";
                     continue;
                 }
+                $estadoFinal = ($nuevoEstado === 'si');
+                break;
             }while(true);
-            $tarea->setCompletada($nuevoEstado);
+            $tarea->setCompletada($estadoFinal);
 
             echo "Tarea con ID '$id' editada correctamente.";
             return $tareas;

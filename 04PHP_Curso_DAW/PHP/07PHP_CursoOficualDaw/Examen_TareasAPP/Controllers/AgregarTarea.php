@@ -7,7 +7,7 @@ require_once __DIR__ . '/../Helpers/Helpers.php';
         // Titulo
         do{
             echo "Ingresa el Titulo de la tarea: ";
-            $titulo = mb_strtolower(trim(fgets(STDIN)));
+            $titulo = trim(fgets(STDIN));
 
             if(empty($titulo))
                 echo "El titulo no puede estar vacio. Por favor, ingresa un titulo valido.\n";
