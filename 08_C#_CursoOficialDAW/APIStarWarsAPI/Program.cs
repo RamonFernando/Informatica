@@ -34,7 +34,7 @@ namespace APIStarWarsAPI
     {
         public static readonly HttpClient client = new HttpClient();
 
-        public static string Url => "https://swapi.dev/api/people/"; // *cambiar url*
+        public static string Url => "https://swapi-api.hbtn.io/api/people/"; // *cambiar url*
 
         public static List<FavoriteItemList> favoriteList = new List<FavoriteItemList>();
 
@@ -57,7 +57,7 @@ namespace APIStarWarsAPI
                     Console.WriteLine("===========================================");
                     Console.WriteLine("1. Mostrar API");
                     Console.WriteLine("2. Buscar (Nombre y Add a Favoritos)");
-                    Console.WriteLine("3. Borrar Digimon Favorito");
+                    Console.WriteLine("3. Borrar Personaje Favorito");
                     Console.WriteLine("4. Mostrar Lista API");
                     Console.WriteLine("0. Salir");
                     Console.WriteLine("**=======================================**");

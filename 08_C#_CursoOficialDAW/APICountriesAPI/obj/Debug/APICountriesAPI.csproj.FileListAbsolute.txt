@@ -8,4 +8,3 @@ C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOfici
 C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APICountriesAPI\obj\Debug\APICount.8FA9902E.Up2Date
 C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APICountriesAPI\obj\Debug\APICountriesAPI.exe
 C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APICountriesAPI\obj\Debug\APICountriesAPI.pdb
-C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APICountriesAPI\obj\Debug\APICountriesAPI.exe.config

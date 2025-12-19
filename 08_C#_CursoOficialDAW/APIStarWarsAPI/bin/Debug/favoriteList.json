@@ -10,5 +10,11 @@
     "height": 66,
     "mass": 17,
     "gender": "male"
+  },
+  {
+    "name": "R2-D2",
+    "height": 96,
+    "mass": 32,
+    "gender": "n/a"
   }
 ]

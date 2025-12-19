@@ -36,7 +36,7 @@ namespace APIStarWarsAPI
         public static async Task<JObject> SearchByName(string name) 
         {
 
-            var Url = $"https://swapi.dev/api/people/?search={name.ToLower()}"; // *cambiar url*
+            var Url = $"https://swapi-api.hbtn.io/api/people/?search={name.ToLower()}"; // *cambiar url*
 
             var response = await client.GetAsync(Url);
 
