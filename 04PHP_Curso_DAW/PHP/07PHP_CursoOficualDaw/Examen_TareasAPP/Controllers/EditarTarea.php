@@ -1,13 +1,14 @@
 <?php
     function editarTarea($tareas, $id) {
         echo "Ingrese el Id de la tarea a editar: ";
-        $id = trim(fgets(STDIN));
-        if($id === '' || !ctype_digit($id)){ // valida digitos del 0-9
+        $input = trim(fgets(STDIN));
+        
+        if($input === '' || !ctype_digit($input)){ // valida digitos del 0-9
             echo "El ID no puede estar vacio o debe ser numerico.\n";
             return $tareas;
         }
         
-        $id = (int)$id;
+        $id = (int)$input;
         foreach ($tareas as $tarea){
             if($tarea->getId() === $id){
                 echo "Ingrese el nuevo titulo: ";
