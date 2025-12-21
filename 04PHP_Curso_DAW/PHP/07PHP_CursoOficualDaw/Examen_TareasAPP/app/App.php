@@ -1,10 +1,16 @@
 <?php
 require_once __DIR__ . '/Require.php';
+
 class App {
         
     public function run(){
         
-        $tareas = [];
+        $ruta = (__DIR__ . '/../data/tareas.json');
+        $tareas = cargarJson($ruta);
+        if(empty($tareas)){
+            $tareas = [];
+        }
+        // $tareas = [];
         while (true){
 
             printMenu();
@@ -33,21 +39,46 @@ class App {
                     if($exists) break;
                     
                     $tareas[] = $nuevaTarea;
+                    guardarJson($ruta, $tareas);
+
                     echo "Tarea agregada exitosamente.\n";
                     listarTareas($tareas);
                     break;
+
                 case 2:
-                    /*printTitle("Eliminar Tarea");
+                    printTitle("Eliminar Tarea");
                     echo "Ingrese el Id de la tarea a eliminar: ";
-                    $indice = trim(fgets(STDIN));
-                    $tareas = eliminarTarea($tareas, $indice);*/
+                    $id = trim(fgets(STDIN));
+                    
+                    if(esEnter($id)) break;
+                    if(!validarId($id)){
+                        echo "El ID no puede estar vacio o debe ser numerico y mayor que 0.\n";
+                        break;
+                    }
+
+                    $id = (int)$id;
+                    $tareas = eliminarTarea($tareas, $id);
+                    
+                    guardarJson($ruta, $tareas);
+                    
+                    echo "Tarea eliminada exitosamente.\n";
+                    listarTareas($tareas);
                     break;
+
                 case 3:
                     printTitle("Editar Tarea");
                     echo "Ingrese el Id de la tarea a editar: ";
                     $id = trim(fgets(STDIN));
                     
+                    if(esEnter($id)) break;
+                    if(!validarId($id)){
+                        echo "El ID no puede estar vacio o debe ser numerico y mayor que 0.\n";
+                        break;
+                    }
+
+                    $id = (int)$id;
                     $tareas = editarTarea($tareas, $id);
+                    guardarJson($ruta, $tareas);
                     break;
                 
                 case 4:
@@ -57,11 +88,17 @@ class App {
                     if(empty($id) || !is_numeric($id)) break;
                     
                     $tareas = marcarTareaCompletada($tareas, $id);
+                    guardarJson($ruta, $tareas);
+
+                    echo "Tarea marcada como completada exitosamente.\n";
+                    listarTareas($tareas);
                     break;
+
                 case 5:
                     printTitle("Listar Tareas");
                     listarTareas($tareas);
                     break;
+
                 case 0:
                     echo "Saliendo...\n";
                     return;

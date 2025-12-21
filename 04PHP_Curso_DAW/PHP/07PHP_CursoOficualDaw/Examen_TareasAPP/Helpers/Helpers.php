@@ -17,6 +17,14 @@
         }
         return false;
     }
+    function esEnter(string $input): bool {
+        return $input === '';
+    }
 
+    function validarId(string $id): bool
+    {
+        if(empty($id)) return true; // Permitir id vacio para editarTarea
+        return ctype_digit($id) && (int)$id > 0;
+    }
 
 ?>
