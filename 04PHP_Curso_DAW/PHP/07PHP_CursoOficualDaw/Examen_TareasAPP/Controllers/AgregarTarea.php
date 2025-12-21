@@ -55,7 +55,7 @@ function nuevaTarea() {
 function agregarTareaWrapper() {
         
     $ruta = getRutaTareas();    // Ruta del archivo JSON
-    $tareas = cargarTareas();   // Cargas el Json (CargarJson)
+    $tareas = cargarJson($ruta);   // Cargas el Json (CargarJson)
 
     printTitle("Agregar Tarea");
     $nuevaTarea = nuevaTarea();

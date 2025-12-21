@@ -1,8 +1,6 @@
 <?php
     class Tarea{
 
-        private static $contadorId = 0;
-        private $id;
         private $titulo;
         private $descripcion;
         private $fecha;
@@ -10,7 +8,6 @@
 
         // Constructor
         public function __construct($titulo, $descripcion, $fecha, $completada = false){
-            $this->id = ++self::$contadorId;
             $this->titulo = $titulo;
             $this->descripcion = $descripcion;
             $this->fecha = $fecha;
@@ -18,12 +15,6 @@
         }
 
         // Getters y setters
-        public function getId(){
-            return $this->id;
-        }
-        public function setId($id){
-            $this->id = $id;
-        }
         public function getTitulo(){
             return $this->titulo;
         }
@@ -56,8 +47,7 @@
         // Mostrar
         public function mostrarDetalles(){
             return
-                "ID: " . $this->id .
-                "\nTitulo: " . $this->titulo .
+                "Titulo: " . $this->titulo .
                 "\nDescripcion: " . $this->descripcion .
                 "\nFecha: " . $this->fecha .
                 "\nCompletada: " . ($this->completada ? "Si" : "No") . "\n";

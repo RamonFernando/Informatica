@@ -1,28 +1,48 @@
 <?php
 
 require_once __DIR__ . '/../Helpers/Helpers.php';
+require_once __DIR__ . '/../Models/Tarea.php';
 
-function cargarJson(string $ruta): array
-{
-    // Si el archivo no existe, devolvemos array vacío
+function cargarJson(string $ruta): array {
+
     if (!file_exists($ruta)) {
         return [];
     }
 
-    $json = file_get_contents($ruta);
+    $contenido = file_get_contents($ruta);
+    $data = json_decode($contenido, true);
 
-    if ($json === false || empty($json)) {
-        return [];
-    }
-
-    $data = json_decode($json, true);
-
-    // Si el JSON está mal formado
     if (!is_array($data)) {
         return [];
     }
 
-    return $data;
-}
+    $tareas = [];
 
-?>
+    foreach ($data as $item) {
+
+        // Si el item no es un array, lo ignoramos
+        if (!is_array($item)) {
+            continue;
+        }
+
+        // Valores seguros (evita warnings)
+        $titulo = $item['titulo'] ?? '';
+        $descripcion = $item['descripcion'] ?? '';
+        $fecha = $item['fecha'] ?? date('Y-m-d');
+        $completada = $item['completada'] ?? false;
+
+        // No cargamos tareas sin título
+        if (empty($titulo)) {
+            continue;
+        }
+
+        $tareas[] = new Tarea(
+            $titulo,
+            $descripcion,
+            $fecha,
+            (bool)$completada
+        );
+    }
+
+    return $tareas;
+}

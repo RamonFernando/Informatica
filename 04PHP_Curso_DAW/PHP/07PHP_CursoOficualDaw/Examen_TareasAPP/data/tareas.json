@@ -1,0 +1,20 @@
+[
+    {
+        "titulo": "eqweq",
+        "descripcion": "eqeqwe",
+        "fecha": "2025-12-21",
+        "completada": false
+    },
+    {
+        "titulo": "dqweqwe",
+        "descripcion": "eqweqwe",
+        "fecha": "2025-12-21",
+        "completada": true
+    },
+    {
+        "titulo": "pepe",
+        "descripcion": "eqeq",
+        "fecha": "2025-12-21",
+        "completada": false
+    }
+]

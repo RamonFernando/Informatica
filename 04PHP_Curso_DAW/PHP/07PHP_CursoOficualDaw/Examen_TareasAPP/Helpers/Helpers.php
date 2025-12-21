@@ -28,7 +28,9 @@
     // *Cargar Tareas desde el JSON*
     // Obtener la ruta del archivo JSON
     function getRutaTareas(): string {
-        return __DIR__ . '/../data/tareas.json';
+        $ruta = __DIR__ . '/../data/tareas.json';
+        // echo "[DEBUG] Ruta JSON: $ruta\n";
+        return $ruta;
     }
 
     // Inicializar el array de tareas

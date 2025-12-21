@@ -1,20 +1,29 @@
 <?php
 
-    function eliminarTarea($tareas, $id) {
-        foreach ($tareas as $index => $tarea) {
-            if($tarea->getId() === $id ){
-                unset($tareas[$index]);
-                $tareas = array_values($tareas); // Reindexar el array
-                echo "Tarea con ID '$id' eliminada correctamente.";
-                return $tareas;
-            }
-        }
-        echo "Tarea con ID '$id' no encontrada.";
+function eliminarTarea($tareas, $id) {
+
+    if (!ctype_digit((string)$id) || $id <= 0) {
+        echo "ID no valido.\n";
         return $tareas;
     }
 
+    $index = (int)$id - 1;
+
+    if (!isset($tareas[$index])) {
+        echo "Tarea con ID '$id' no encontrada.\n";
+        return $tareas;
+    }
+
+    unset($tareas[$index]);
+    $tareas = array_values($tareas); // 🔑 clave
+
+    echo "Tarea con ID '$id' eliminada correctamente.\n";
+    return $tareas;
+}
+
+
     function eliminarTareaWrapper(){
-        
+
         $ruta = getRutaTareas();    // Ruta del archivo JSON
         $tareas = cargarTareas();   // Cargas el Json (CargarJson)
         
