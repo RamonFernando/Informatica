@@ -60,4 +60,28 @@ function editarTarea($tareas, $id) {
         }
     }
 }
+
+function editarTareaWrapper() {
+    
+    $ruta = getRutaTareas();    // Ruta del archivo JSON
+    $tareas = cargarTareas();   // Cargas el Json (CargarJson)
+    
+    printTitle("Editar Tarea");
+    echo "Ingrese el Id de la tarea a editar: ";
+    $id = trim(fgets(STDIN));
+                
+    if(esEnter($id)) return $tareas;
+    if(!validarId($id)){
+        echo "El ID no puede estar vacio o debe ser numerico y mayor que 0.\n";
+        return $tareas;
+    }
+
+    $id = (int)$id;
+    $tareas = editarTarea($tareas, $id);
+    guardarJson($ruta, $tareas);
+    
+    echo "Tarea editada exitosamente.\n";
+    listarTareas($tareas);
+}
+
 ?>
