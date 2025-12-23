@@ -1,13 +1,14 @@
 
 namespace APISimpleIA
 {
-    public static class APIListarGuardados
+    public static class APIListFavorites
     {
-        public static void ListarGuardados()
+        public static void ListFavorites()
         {
             ListaVacia(MisFavorites);
             if (MisFavorites.Count == 0) return;
 
+            // * Imprimir la lista de personajes guardados */
             Console.WriteLine($"\n  === MIS {NAME_PROP.ToUpper()} ===");
             Console.WriteLine("--------------------------\n");
             for (int i= 0; i < MisFavorites.Count; i++)
@@ -21,6 +22,8 @@ namespace APISimpleIA
                     $"{NAME_TYPE_PROP_GENERO}: {MisFavorites[i].Gender}\n"
                 );
             }
+            
+            PrintCountCharacter();
             PrintWaitForPressKey();
             return;
         }

@@ -34,6 +34,7 @@ namespace APISimpleIA
         
         // Nombres de las propiedades (español) de la lista
         // Nombre de la propiedad en español para mostrar
+        public static readonly string NAME_TYPE_PROP_ID = "Id"; // Mostrar propiedad ESP
         public static readonly string NAME_TYPE_PROP_NOMBRE = "Nombre"; // Mostrar propiedad ESP
         public static readonly string NAME_TYPE_PROP_ESTADO = "Estado";
         public static readonly string NAME_TYPE_PROP_ESPECIE = "Especie";

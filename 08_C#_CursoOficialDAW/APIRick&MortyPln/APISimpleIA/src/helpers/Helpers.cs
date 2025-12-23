@@ -58,7 +58,7 @@ namespace APISimpleIA
         {
             if (MisFavorites.Count == 0)
             {
-                Console.WriteLine($"\nNo tienes {NAME_PROP} guardados.\n");
+                Console.WriteLine($"\nNo tienes {NAME_PROP}s guardados.\n");
                 PrintWaitForPressKey();
                 return;
             }
@@ -69,11 +69,13 @@ namespace APISimpleIA
         {
             if (index < 1 || index > MisFavorites.Count)
             {
+                if(MisFavorites.Count == 0) return -1;
                 Console.WriteLine($"El Id '{index}' esta fuera de rango.\n");
                 PrintWaitForPressKey();
                 return -1;
             }
             return index;
         }
+        
     }
 }

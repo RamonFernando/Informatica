@@ -14,20 +14,23 @@ namespace APISimpleIA
                 PrintMenu();
 
                 string? input = Console.ReadLine();
-                int opcion = ValidarOpcion(input, 0, 3); // Pos: min:0 a max:3 != -1
+                int opcion = ValidarOpcion(input, 0, 4); // Pos: min:0 a max:4 != -1
                 
                 PrintEntradaNoValida(opcion); // -1 Entrada no valida
 
                 switch (opcion)
                 {
                     case 1:
-                        await Buscar();
+                        await SearchByName();
                         break;
                     case 2:
-                        ListarGuardados();
+                        await SearchById();
                         break;
                     case 3:
-                        Eliminar();
+                        ListFavorites();
+                        break;
+                    case 4:
+                        Delete();
                         break;
                     case 0:
                         Console.WriteLine("Saliendo...");

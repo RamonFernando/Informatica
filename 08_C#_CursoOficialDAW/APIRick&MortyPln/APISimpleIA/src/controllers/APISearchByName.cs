@@ -1,12 +1,12 @@
 
 namespace APISimpleIA
 {
-    public static class APIBuscar
+    public static class APISearchByName
     {
         
-        public static async Task Buscar()
+        public static async Task SearchByName()
         {
-            Console.WriteLine($"\n=== {NAME_PROP.ToUpper()} POR NOMBRE ===");
+            Console.WriteLine($"\n=== BUSCAR {NAME_PROP.ToUpper()} POR NOMBRE ===");
             Console.Write($"Escribe el nombre del {NAME_PROP}: ");
             string? inputName = Console.ReadLine();
 
@@ -30,7 +30,8 @@ namespace APISimpleIA
                 return;
             }
             
-            Console.WriteLine($"\n === RESULTADOS DE LA BUSQUEDA ===");
+            Console.WriteLine(resultSearch);
+            int id = -1;
             string name = "";
             string status = "";
             string species = "";
@@ -39,38 +40,46 @@ namespace APISimpleIA
 
             for (int i = 0; i < results.Count; i++)
             {
+                int currentId = results[i].TryGetProperty($"{NTP_ID}", out var idProp)
+                ? idProp.GetInt32() : -1;
                 // Validar que el JSON tenga los campos requeridos
-            string currentName = results[i].TryGetProperty(NTP_NAME, out var nameProp)
-                ? nameProp.GetString() ?? "unknown"
-                : "unknown";
-            string currentStatus = results[i].TryGetProperty(NTP_STATUS, out var statusProp)
-                ? statusProp.GetString() ?? "unknown"
-                : "unknown";
-            string currentSpecies = results[i].TryGetProperty(NTP_SPECIES, out var speciesProp)
-                ? speciesProp.GetString() ?? "unknown"
-                : "unknown";
-            string currentGender = results[i].TryGetProperty(NTP_GENDER, out var genderProp)
-                ? genderProp.GetString() ?? "unknown"
-                : "unknown";
+                string currentName = results[i].TryGetProperty(NTP_NAME, out var nameProp)
+                    ? nameProp.GetString() ?? "unknown"
+                    : "unknown";
 
-                if (i == 0) // Guardamos el primero para luego ofrecer guardarlo
+                string currentStatus = results[i].TryGetProperty(NTP_STATUS, out var statusProp)
+                    ? statusProp.GetString() ?? "unknown"
+                    : "unknown";
+
+                string currentSpecies = results[i].TryGetProperty(NTP_SPECIES, out var speciesProp)
+                    ? speciesProp.GetString() ?? "unknown"
+                    : "unknown";
+
+                string currentGender = results[i].TryGetProperty(NTP_GENDER, out var genderProp)
+                    ? genderProp.GetString() ?? "unknown"
+                    : "unknown";
+
+                if (i == 0) // Guardamos el primer personaje para luego ofrecer guardarlo
                 {
+                    id = currentId;
                     name = currentName;
                     status = currentStatus;
                     species = currentSpecies;
                     gender = currentGender;
                 }
-                Console.WriteLine($"\nResultado {i + 1}:");
-                Console.WriteLine("-----------------------");
-                Console.WriteLine($"{NAME_TYPE_PROP_NOMBRE}: {currentName}");
-                Console.WriteLine($"{NAME_TYPE_PROP_ESTADO}: {currentStatus}");
-                Console.WriteLine($"{NAME_TYPE_PROP_ESPECIE}: {currentSpecies}");
-                Console.WriteLine($"{NAME_TYPE_PROP_GENERO}: {currentGender}");
-                Console.WriteLine("-----------------------\n");
+
+                PrintCharacter(
+                    $"Resultado {i + 1}",
+                    currentId,
+                    currentName,
+                    currentStatus,
+                    currentSpecies,
+                    currentGender
+                );
             }
             Console.WriteLine($"Resultados encontrados: {results.Count}\n");
             if (results.Count > 1)
-                Console.WriteLine("Se guardará solo el primero de los resultados.\n");
+                Console.WriteLine("Se guardará solo el primer resultado de la lista.\n");
             
             Console.Write($"\n¿Quieres guardar al {NAME_PROP} '{name}'? (s/n): ");
             string? respuesta = Console.ReadLine();

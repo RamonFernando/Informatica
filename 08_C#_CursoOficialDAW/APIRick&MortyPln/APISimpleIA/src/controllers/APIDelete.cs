@@ -1,9 +1,9 @@
 
 namespace APISimpleIA
 {
-    internal class APIEliminar
+    internal class APIDelete
     {
-        public static void Eliminar()
+        public static void Delete()
         {
             Console.WriteLine($"\n=== ELIMINAR {NAME_PROP.ToUpper()} ===");
             

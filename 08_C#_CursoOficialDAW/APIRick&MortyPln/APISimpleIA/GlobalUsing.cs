@@ -19,10 +19,11 @@ global using static APISimpleIA.APIGetItemAsync;
 global using static APISimpleIA.APISaveJson;
 global using static APISimpleIA.Services;
 global using static APISimpleIA.ManejoExcepciones;
-global using static APISimpleIA.APIBuscar;
-global using static APISimpleIA.APIListarGuardados;
-global using static APISimpleIA.APIEliminar;
+global using static APISimpleIA.APISearchByName;
+global using static APISimpleIA.APIListFavorites;
+global using static APISimpleIA.APIDelete;
 global using static APISimpleIA.APILoadJson;
 global using static APISimpleIA.JsonResponse;
-
+global using static APISimpleIA.APISearchById;
+global using static APISimpleIA.Text;
 
