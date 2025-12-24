@@ -8,20 +8,21 @@ namespace APISimpleIA
             Console.WriteLine($"\n=== BUSQUEDA DE {NAME_PROP.ToUpper()} POR ID ===");
             Console.Write($"Ingrese el Id del {NAME_PROP} que desea buscar: ");
             string? input = Console.ReadLine();
+            
             int id = ValidarInput(input);
-            if(id == -1) return;
-            
-            var json = await GetItemApiAsync($"{BASE_URL_CHARACTERS}/{id}"); // no null
-            
-            if (json == null)
-            {
-                Console.WriteLine($"{NAME_PROP} con Id '{id}' no encontrado.\n");
+            if(id == -1) {
+                Console.WriteLine("\nEntrada no valida o caracteres no numéricos.\n");
                 PrintWaitForPressKey();
                 return;
             }
-            List<JsonElement> results = ExtractResults(json);
-
             
+            JsonDocument? json = await GetItemApiAsync($"{BASE_URL_CHARACTERS}/{id}"); // no null
+            
+            if(!ValidatorJsonNotNull(json, "Id", input)) return;
+            JsonDocument jsonNotNull = json!; // ya validado no null
+
+            List<JsonElement> results = ExtractResults(jsonNotNull);
+
             // Comprueba que el id exista
             if(results.Count == 0)
             {
@@ -30,7 +31,7 @@ namespace APISimpleIA
                 return;
             }
             
-            var root = json.RootElement;
+            var root = jsonNotNull.RootElement;
             
             int currentId = root.TryGetProperty($"{NTP_ID}", out var idProp)
                 ? idProp.GetInt32() : -1;

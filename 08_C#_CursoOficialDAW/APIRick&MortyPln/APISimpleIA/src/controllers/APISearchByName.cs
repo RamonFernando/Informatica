@@ -15,14 +15,13 @@ namespace APISimpleIA
             // Buscamos el Digimon en la API
             // /?name={name} /?status={status} /?species={species}&type={type}
             var json = await GetItemApiAsync($"{BASE_URL_CHARACTERS}/?name={inputName}"); // no null
-            if (json == null)
-            {
-                Console.WriteLine($"{NAME_PROP} '{inputName}' no encontrado.\n");
-                PrintWaitForPressKey();
-                return;
-            }
-            List<JsonElement> results = ExtractResults(json);
+            
+            if(!ValidatorJsonNotNull(json, "Nombre", inputName)) return;
+            JsonDocument jsonNotNull = json!; // ya validado no null
+            
+            List<JsonElement> results = ExtractResults(jsonNotNull);
 
+            // Comprueba que el name exista
             if (results.Count == 0)
             {
                 Console.WriteLine($"{NAME_PROP} '{inputName}' no encontrado.\n");
@@ -37,11 +36,13 @@ namespace APISimpleIA
             string species = "";
             string gender = "";
             
-
+            // Recorremos la lista de personajes encontrados
             for (int i = 0; i < results.Count; i++)
             {
                 int currentId = results[i].TryGetProperty($"{NTP_ID}", out var idProp)
-                ? idProp.GetInt32() : -1;
+                ? idProp.GetInt32()
+                : -1;
+
                 // Validar que el JSON tenga los campos requeridos
                 string currentName = results[i].TryGetProperty(NTP_NAME, out var nameProp)
                     ? nameProp.GetString() ?? "unknown"

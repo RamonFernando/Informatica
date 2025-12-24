@@ -9,7 +9,7 @@ namespace APISimpleIA
             if (json == null)
                 return results;
 
-            var root = json.RootElement;
+            var root = json.RootElement; // abre el documento JSON
 
             // CASO 1: array en la raíz
             if (root.ValueKind == JsonValueKind.Array)

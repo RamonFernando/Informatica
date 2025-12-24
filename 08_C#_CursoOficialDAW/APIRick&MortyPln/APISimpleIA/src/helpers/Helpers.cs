@@ -77,5 +77,21 @@ namespace APISimpleIA
             return index;
         }
         
+        public static bool ValidatorJsonNotNull(JsonDocument? json, string propName, string? input)
+        {
+            if(!ValidarString(input)) {
+                // Console.WriteLine("Entrada no valida.\n");
+                // PrintWaitForPressKey();
+                return false;
+            }
+            if (json == null)
+            {
+                Console.WriteLine($"No se ha encontrado el {NAME_PROP} con el " +
+                $"el {propName}: '{input}' en la API.\n");
+                PrintWaitForPressKey();
+                return false;
+            }
+            return true;
+        }
     }
 }
