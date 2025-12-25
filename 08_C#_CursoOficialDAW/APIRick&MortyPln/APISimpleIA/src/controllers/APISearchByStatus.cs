@@ -16,8 +16,8 @@ namespace APISimpleIA
             if(!ValidatorJsonNotNull(json, "Status", inputStatus)) return;
             JsonDocument jsonNotNull = json!; // ya validado no null
 
-            List<JsonElement> results = new();
-            results = ExtractResults(jsonNotNull);
+            // List<JsonElement> results = new();
+            var results = ExtractResults(jsonNotNull);
 
             if(results.Count == 0)
             {

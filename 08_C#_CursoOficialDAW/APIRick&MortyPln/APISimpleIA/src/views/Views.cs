@@ -11,8 +11,9 @@ namespace APISimpleIA
             Console.WriteLine($"1. Buscar {NAME_PROP} (Nombre)");
             Console.WriteLine($"2. Buscar {NAME_PROP} (Id)");
             Console.WriteLine($"3. Buscar {NAME_PROP} (Status)");
-            Console.WriteLine("4. Mostrar guardados");
-            Console.WriteLine("5. Eliminar guardados");
+            Console.WriteLine($"4. Buscar {NAME_PROP} (Especie)");
+            Console.WriteLine("5. Mostrar guardados");
+            Console.WriteLine("6. Eliminar guardados");
             Console.WriteLine("0. Salir");
             Console.WriteLine("--------------------------");
             Console.Write("Seleccione una Opción: ");
