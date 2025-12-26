@@ -1,28 +1,26 @@
 namespace APISimpleIA
 {
-    public class APISearchBySpecies
+    public class APISearchByOrigin
     {
-        public static async Task SearchBySpecies()
+        public static async Task SearchByOrigin()
         {
-            Console.WriteLine($"\n=== BUSCAR {NAME_PROP.ToUpper()} POR ESPECIE ===");
-            Console.Write($"Ingrese la especie del {NAME_PROP} a buscar: (Human, Alien, Robot): ");
-            string? inputSpecies = Console.ReadLine();
+            Console.WriteLine($"\n=== BUSCAR {NAME_PROP.ToUpper()} POR ORIGEN ===");
+            Console.Write($"Ingrese el origen del {NAME_PROP} a buscar: (Earth, Gazorpazorp, Abadango): ");
+            string? inputOrigin = Console.ReadLine();
 
-            ValidarInputString(inputSpecies); // null o "" = Entrada no valida
+            ValidarInputString(inputOrigin); // null o "" = Entrada no valida
 
-            var json = await GetItemApiAsync($"{BASE_URL_CHARACTERS}/?species={inputSpecies}"); // no null
-            
+            var json = await GetItemApiAsync($"{BASE_URL_CHARACTERS}/?origin={inputOrigin}"); // no null
 
-            if(!ValidatorJsonNotNull(json, "Especie", inputSpecies)) return;
+            if(!ValidatorJsonNotNull(json, "Origen", inputOrigin)) return;
             JsonDocument jsonNotNull = json!; // ya validado no null
-            
+
             List<JsonElement> results = ExtractResults(jsonNotNull);
-            if(!ValidatorResults(results, "Especie", inputSpecies)) return; // count 0 = no encontrado
+            if(!ValidatorResults(results, "Origen", inputOrigin)) return; // count 0 = no encontrado
             
             string currentOrigin = "unknown";
             string currentOriginUrl = "unknown";
             
-
             Console.WriteLine(resultSearch);
             for (int i = 0; i < results.Count; i++)
             {
@@ -45,7 +43,7 @@ namespace APISimpleIA
                 string currentGender = results[i].TryGetProperty("gender", out var GenderProp)
                     ? GenderProp.GetString() ?? "unknown"
                     : "unknown";
-                
+
                 // Origin es un objeto con name y url
                 if (results[i].TryGetProperty("origin", out var originProp))
                 {
@@ -55,7 +53,7 @@ namespace APISimpleIA
                     if (originProp.TryGetProperty("url", out var originUrlProp))
                         currentOriginUrl = originUrlProp.GetString() ?? "unknown";
                 }
-                
+
                 PrintCharacter(
                     $"Resultado {i + 1}",
                     currentId,
@@ -68,7 +66,6 @@ namespace APISimpleIA
             }
             Console.WriteLine($"Resultados encontrados: {results.Count}\n");
             PrintWaitForPressKey();
-            
         }
     }
 }

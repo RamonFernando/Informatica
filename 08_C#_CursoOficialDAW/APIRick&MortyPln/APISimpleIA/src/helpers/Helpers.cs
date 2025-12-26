@@ -93,5 +93,14 @@ namespace APISimpleIA
             }
             return true;
         }
+        public static bool ValidatorResults(List<JsonElement> results, string propName, string? input){
+            if(results.Count == 0)
+            {
+                Console.WriteLine($"{NAME_PROP} con {propName} '{input}' no encontrado.\n");
+                PrintWaitForPressKey();
+                return false;
+            }
+            return true;
+        }
     }
 }

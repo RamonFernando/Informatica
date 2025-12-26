@@ -12,8 +12,10 @@ namespace APISimpleIA
             Console.WriteLine($"2. Buscar {NAME_PROP} (Id)");
             Console.WriteLine($"3. Buscar {NAME_PROP} (Status)");
             Console.WriteLine($"4. Buscar {NAME_PROP} (Especie)");
-            Console.WriteLine("5. Mostrar guardados");
-            Console.WriteLine("6. Eliminar guardados");
+            Console.WriteLine($"5. Buscar {NAME_PROP} (Género)");
+            Console.WriteLine($"6. Buscar {NAME_PROP} (Origen)");
+            Console.WriteLine("7. Mostrar guardados");
+            Console.WriteLine("8. Eliminar guardados");
             Console.WriteLine("0. Salir");
             Console.WriteLine("--------------------------");
             Console.Write("Seleccione una Opción: ");
@@ -29,7 +31,8 @@ namespace APISimpleIA
             string name,
             string status,
             string species,
-            string gender
+            string gender,
+            Origin origin
         )
         {
             // * Imprimir detalles del personaje */;
@@ -42,6 +45,8 @@ namespace APISimpleIA
                 Console.WriteLine($"{NAME_TYPE_PROP_ESTADO}: {status}");
                 Console.WriteLine($"{NAME_TYPE_PROP_ESPECIE}: {species}");
                 Console.WriteLine($"{NAME_TYPE_PROP_GENERO}: {gender}");
+                Console.WriteLine($"{NAME_TYPE_PROP_ORIGEN}: " +
+                    $"\n Nombre: {origin.Name} \n Url: {origin.Url}");
                 Console.WriteLine("-----------------------");
         }
 

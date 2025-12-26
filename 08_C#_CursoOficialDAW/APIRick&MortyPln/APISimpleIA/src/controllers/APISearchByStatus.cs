@@ -18,14 +18,11 @@ namespace APISimpleIA
 
             // List<JsonElement> results = new();
             var results = ExtractResults(jsonNotNull);
-
-            if(results.Count == 0)
-            {
-                Console.WriteLine($"{NAME_PROP} con Status '{inputStatus}' no encontrado.\n");
-                PrintWaitForPressKey();
-                return;
-            }
+            if(!ValidatorResults(results, "Status", inputStatus)) return; // count 0 = no encontrado
             
+            string currentOrigin = "unknown";
+            string currentOriginUrl = "unknown";
+
             Console.WriteLine(resultSearch);
             for (int i = 0; i < results.Count; i++)
             {
@@ -48,6 +45,16 @@ namespace APISimpleIA
                 string currentGender = results[i].TryGetProperty(NTP_GENDER, out var genderProp)
                     ? genderProp.GetString() ?? "unknown"
                     : "unknown";
+                
+                // Origin es un objeto con name y url
+                if (results[i].TryGetProperty("origin", out var originProp))
+                {
+                    if (originProp.TryGetProperty("name", out var originNameProp))
+                        currentOrigin = originNameProp.GetString() ?? "unknown";
+
+                    if (originProp.TryGetProperty("url", out var originUrlProp))
+                        currentOriginUrl = originUrlProp.GetString() ?? "unknown";
+                }
 
                 PrintCharacter(
                     $"Resultado {i + 1}",
@@ -55,7 +62,8 @@ namespace APISimpleIA
                     currentName,
                     currentStatus,
                     currentSpecies,
-                    currentGender
+                    currentGender,
+                    new Origin { Name = currentOrigin, Url = currentOriginUrl }
                 );
             }
             Console.WriteLine($"Resultados encontrados: {results.Count}\n");

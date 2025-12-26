@@ -14,7 +14,7 @@ namespace APISimpleIA
                 PrintMenu();
 
                 string? input = Console.ReadLine();
-                int opcion = ValidarOpcion(input, 0, 6); // Pos: min:0 a max:6 != -1
+                int opcion = ValidarOpcion(input, 0, 9); // Pos: min:0 a max:9 != -1
                 
                 PrintEntradaNoValida(opcion); // -1 Entrada no valida
 
@@ -33,9 +33,18 @@ namespace APISimpleIA
                         await SearchBySpecies();
                         break;
                     case 5:
-                        ListFavorites();
+                        await SearchByGender();
                         break;
                     case 6:
+                        await SearchByOrigin();
+                        break;
+                    case 7:
+                        ListFavorites();
+                        break;
+                    case 8:
+                        await SearchByOrigin();
+                        break;
+                    case 9:
                         Delete();
                         break;
                     case 0:

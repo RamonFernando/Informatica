@@ -35,6 +35,8 @@ global using static APISimpleIA.APISearchByName;
 global using static APISimpleIA.APISearchById;
 global using static APISimpleIA.APISearchByStatus;
 global using static APISimpleIA.APISearchBySpecies;
+global using static APISimpleIA.APISearchByGender;
+global using static APISimpleIA.APISearchByOrigin;
 global using static APISimpleIA.APIDelete;
 global using static APISimpleIA.APIListFavorites;
 global using static APISimpleIA.APIGetItemAsync;

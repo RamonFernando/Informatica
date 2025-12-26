@@ -24,12 +24,7 @@ namespace APISimpleIA
             List<JsonElement> results = ExtractResults(jsonNotNull);
 
             // Comprueba que el id exista
-            if(results.Count == 0)
-            {
-                Console.WriteLine($"{NAME_PROP} con Id '{id}' no encontrado.\n");
-                PrintWaitForPressKey();
-                return;
-            }
+            if(!ValidatorResults(results, "Id", input)) return; // count 0 = no encontrado
             
             var root = jsonNotNull.RootElement;
             
@@ -52,6 +47,20 @@ namespace APISimpleIA
                 ? genderProp.GetString() ?? "unknown"
                 : "unknown";
 
+            // Origin es un objeto con name y url
+            string currentOrigin = "unknown";
+            string currentOriginUrl = "unknown";
+
+            if (root.TryGetProperty("origin", out var originProp))
+            {
+                if (originProp.TryGetProperty("name", out var originNameProp))
+                    currentOrigin = originNameProp.GetString() ?? "unknown";
+
+                if (originProp.TryGetProperty("url", out var originUrlProp))
+                    currentOriginUrl = originUrlProp.GetString() ?? "unknown";
+            }
+
+            // Imprimir la información del personaje
             Console.WriteLine(resultSearch);
             Console.WriteLine("-----------------------");
             PrintCharacter(
@@ -60,7 +69,8 @@ namespace APISimpleIA
                 currentName,
                 currentStatus,
                 currentSpecies,
-                currentGender
+                currentGender,
+                new Origin { Name = currentOrigin, Url = currentOriginUrl }
             );
 
             Console.Write($"\n¿Quieres guardar al {NAME_PROP} '{currentName}'? (s/n): ");
@@ -88,7 +98,11 @@ namespace APISimpleIA
                 Name = currentName,
                 Status = currentStatus,
                 Species = currentSpecies,
-                Gender = currentGender
+                Gender = currentGender,
+                Origin = new Origin {
+                    Name = currentOrigin,
+                    Url = currentOriginUrl
+                }
             });
 
             Console.WriteLine($"{NAME_PROP} '{currentName}' Guardado.\n");

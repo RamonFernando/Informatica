@@ -15,6 +15,8 @@ namespace APISimpleIA
         public const string FILTER_STATUS = "?status="; // Filtro por estado
         public const string FILTER_SPECIES = "?species="; // Filtro por especie
         public const string FILTER_TYPE = "?type="; // Filtro por tipo
+        public const string FILTER_GENDER = "?gender="; // Filtro por género
+        public const string FILTER_ORIGIN = "?origin="; // Filtro por origen
 
         
         // Nombres de las propiedades (str globales)

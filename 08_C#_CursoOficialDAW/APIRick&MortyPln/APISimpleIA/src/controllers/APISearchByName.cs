@@ -22,12 +22,7 @@ namespace APISimpleIA
             List<JsonElement> results = ExtractResults(jsonNotNull);
 
             // Comprueba que el name exista
-            if (results.Count == 0)
-            {
-                Console.WriteLine($"{NAME_PROP} '{inputName}' no encontrado.\n");
-                PrintWaitForPressKey();
-                return;
-            }
+            if(!ValidatorResults(results, "Nombre", inputName)) return; // count 0 = no encontrado
             
             Console.WriteLine(resultSearch);
             int id = -1;
@@ -35,6 +30,10 @@ namespace APISimpleIA
             string status = "";
             string species = "";
             string gender = "";
+            string origin = "";
+            
+            string currentOrigin = "unknown";
+            string currentOriginUrl = "unknown";
             
             // Recorremos la lista de personajes encontrados
             for (int i = 0; i < results.Count; i++)
@@ -59,6 +58,16 @@ namespace APISimpleIA
                 string currentGender = results[i].TryGetProperty(NTP_GENDER, out var genderProp)
                     ? genderProp.GetString() ?? "unknown"
                     : "unknown";
+                
+                // Origin es un objeto con name y url
+                if (results[i].TryGetProperty("origin", out var originProp))
+                {
+                    if (originProp.TryGetProperty("name", out var originNameProp))
+                        currentOrigin = originNameProp.GetString() ?? "unknown";
+
+                    if (originProp.TryGetProperty("url", out var originUrlProp))
+                        currentOriginUrl = originUrlProp.GetString() ?? "unknown";
+                }
 
                 if (i == 0) // Guardamos el primer personaje para luego ofrecer guardarlo
                 {
@@ -67,6 +76,7 @@ namespace APISimpleIA
                     status = currentStatus;
                     species = currentSpecies;
                     gender = currentGender;
+                    origin = currentOrigin;
                 }
 
                 PrintCharacter(
@@ -75,7 +85,8 @@ namespace APISimpleIA
                     currentName,
                     currentStatus,
                     currentSpecies,
-                    currentGender
+                    currentGender,
+                    new Origin { Name = currentOrigin, Url = currentOriginUrl }
                 );
             }
             Console.WriteLine($"Resultados encontrados: {results.Count}\n");
@@ -105,11 +116,16 @@ namespace APISimpleIA
             // Guardar SOLO uno
             MisFavorites.Add(new ApiItem
             {
-                Id = MisFavorites.Count,
+                Id = id,
                 Name = name,
                 Status = status,
                 Species = species,
-                Gender = gender
+                Gender = gender,
+
+                Origin = new Origin {
+                    Name = origin,
+                    Url = currentOriginUrl
+                }
                 
             });
 
