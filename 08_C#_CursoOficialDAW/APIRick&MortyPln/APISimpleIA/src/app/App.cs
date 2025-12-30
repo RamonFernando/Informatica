@@ -14,17 +14,17 @@ namespace APISimpleIA
                 PrintMenu();
 
                 string? input = Console.ReadLine();
-                int opcion = ValidarOpcion(input, 0, 9); // Pos: min:0 a max:9 != -1
+                int opcion = ValidateOption(input, 0, 8); // Pos: min:0 a max:8 != -1
                 
-                PrintEntradaNoValida(opcion); // -1 Entrada no valida
+                PrintValidateInput(opcion, 0, 8); // -1 Entrada no valida
 
                 switch (opcion)
                 {
                     case 1:
-                        await SearchByName();
+                        await SearchById();
                         break;
                     case 2:
-                        await SearchById();
+                        await SearchByName();
                         break;
                     case 3:
                         await SearchByStatus();
@@ -42,18 +42,14 @@ namespace APISimpleIA
                         ListFavorites();
                         break;
                     case 8:
-                        await SearchByOrigin();
-                        break;
-                    case 9:
                         Delete();
                         break;
                     case 0:
-                        Console.WriteLine("Saliendo...");
+                        Console.WriteLine(exitMessage);
                         Environment.Exit(0);
                         break;
-
                     default:
-                        Console.WriteLine("Opción no valida.\n");
+                        Console.WriteLine(errorOptionMsg);
                         break;
                 }
             }

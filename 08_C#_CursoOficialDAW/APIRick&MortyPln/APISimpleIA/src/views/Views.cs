@@ -8,12 +8,12 @@ namespace APISimpleIA
             Console.Clear();
             Console.WriteLine($"\n  === MENU {NAME_PROP_API.ToUpper()} ===");
             Console.WriteLine("--------------------------");
-            Console.WriteLine($"1. Buscar {NAME_PROP} (Nombre)");
-            Console.WriteLine($"2. Buscar {NAME_PROP} (Id)");
-            Console.WriteLine($"3. Buscar {NAME_PROP} (Status)");
-            Console.WriteLine($"4. Buscar {NAME_PROP} (Especie)");
-            Console.WriteLine($"5. Buscar {NAME_PROP} (Género)");
-            Console.WriteLine($"6. Buscar {NAME_PROP} (Origen)");
+            Console.WriteLine($"1. Buscar {NAME_PROP} ({NAME_TYPE_PROP_ID})");
+            Console.WriteLine($"2. Buscar {NAME_PROP} ({NAME_TYPE_PROP_NOMBRE})");
+            Console.WriteLine($"3. Buscar {NAME_PROP} ({NAME_TYPE_PROP_ESTADO})");
+            Console.WriteLine($"4. Buscar {NAME_PROP} ({NAME_TYPE_PROP_ESPECIE})");
+            Console.WriteLine($"5. Buscar {NAME_PROP} ({NAME_TYPE_PROP_GENERO})");
+            Console.WriteLine($"6. Buscar {NAME_PROP} ({NAME_TYPE_PROP_ORIGEN})");
             Console.WriteLine("7. Mostrar guardados");
             Console.WriteLine("8. Eliminar guardados");
             Console.WriteLine("0. Salir");
@@ -22,7 +22,7 @@ namespace APISimpleIA
         }
         public static void PrintWaitForPressKey()
         {
-            Console.WriteLine("\nPresiona cualquier tecla para continuar...");
+            Console.WriteLine(pressToContinueMsg);
             Console.ReadKey();
         }
         public static void PrintCharacter(
@@ -54,7 +54,7 @@ namespace APISimpleIA
         {
             Console.WriteLine(
                 MisFavorites.Count == 0
-                ? $"No tienes ningun {NAME_PROP} guardado.\n"
+                ? emptyListMessage
                 : MisFavorites.Count == 1
                     ? $"Tienes {MisFavorites.Count} {NAME_PROP} guardado.\n"
                     : $"Tienes {MisFavorites.Count} {NAME_PROP}s guardados.\n"

@@ -5,7 +5,7 @@ namespace APISimpleIA
     {
         public static void ListFavorites()
         {
-            ListaVacia(MisFavorites);
+            emptyList(MisFavorites);
             if (MisFavorites.Count == 0) return;
 
             // * Imprimir la lista de personajes guardados */

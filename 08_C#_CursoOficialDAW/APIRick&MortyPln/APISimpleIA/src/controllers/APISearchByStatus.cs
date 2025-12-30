@@ -6,55 +6,35 @@ namespace APISimpleIA
     {
         public static async Task SearchByStatus()
         {
-            Console.WriteLine($"\n=== BUSQUEDA DE {NAME_PROP.ToUpper()} POR ID ===");
-            Console.Write($"Ingrese el estado del {NAME_PROP} que desea buscar (Alive, Dead, unknown): ");
+            Console.WriteLine(string.Format(filterMessage, NAME_PROP, NAME_TYPE_PROP_ESTADO));
+            Console.Write(
+                string.Format(readOnlyMessage, NAME_TYPE_PROP_ESTADO, NAME_PROP) +
+                "(Alive, Dead, unknown): ");
             string? inputStatus = Console.ReadLine();
-            ValidarInputString(inputStatus); // (null o "") IsNullOrWhiteSpace = Entrada no valida
+            ValidateInputString(inputStatus); // (null o "") IsNullOrWhiteSpace = Entrada no valida
 
             var json = await GetItemApiAsync($"{BASE_URL_CHARACTERS}/?status={inputStatus}");
 
-            if(!ValidatorJsonNotNull(json, "Status", inputStatus)) return;
+            if(!isValidateJsonNotNull(json, NAME_TYPE_PROP_ESTADO, inputStatus)) return;
             JsonDocument jsonNotNull = json!; // ya validado no null
 
             // List<JsonElement> results = new();
             var results = ExtractResults(jsonNotNull);
-            if(!ValidatorResults(results, "Status", inputStatus)) return; // count 0 = no encontrado
+            if(!isValidateResults(results, NAME_TYPE_PROP_ESTADO, inputStatus)) return; // count 0 = no encontrado
             
-            string currentOrigin = "unknown";
-            string currentOriginUrl = "unknown";
-
-            Console.WriteLine(resultSearch);
+            Console.WriteLine(resultSearchMsg);
             for (int i = 0; i < results.Count; i++)
             {
-                int currentId = results[i].TryGetProperty("id", out var IdProp)
-                    ? IdProp.GetInt32()
-                    : -1;
-
-                string currentName = results[i].TryGetProperty("name", out var NameProp)
-                    ? NameProp.GetString() ?? "unknown"
-                    : "unknown";
-
-                string currentStatus = results[i].TryGetProperty(NTP_STATUS, out var statusProp)
-                    ? statusProp.GetString() ?? "unknown"
-                    : "unknown";
-
-                string currentSpecies = results[i].TryGetProperty(NTP_SPECIES, out var speciesProp)
-                    ? speciesProp.GetString() ?? "unknown"
-                    : "unknown";
-                
-                string currentGender = results[i].TryGetProperty(NTP_GENDER, out var genderProp)
-                    ? genderProp.GetString() ?? "unknown"
-                    : "unknown";
+                int currentId = GetIntProp(results[i], NTP_ID);
+                string currentName = GetStringProp(results[i], NTP_NAME);
+                string currentStatus = GetStringProp(results[i], NTP_STATUS);
+                string currentSpecies = GetStringProp(results[i], NTP_SPECIES);
+                string currentGender = GetStringProp(results[i], NTP_GENDER);
                 
                 // Origin es un objeto con name y url
-                if (results[i].TryGetProperty("origin", out var originProp))
-                {
-                    if (originProp.TryGetProperty("name", out var originNameProp))
-                        currentOrigin = originNameProp.GetString() ?? "unknown";
-
-                    if (originProp.TryGetProperty("url", out var originUrlProp))
-                        currentOriginUrl = originUrlProp.GetString() ?? "unknown";
-                }
+                var origin = GetObjectProps(results[i], NTP_ORIGIN, "name", "url");
+                string currentOriginName = origin["name"]?.ToString() ?? "unknown";
+                string currentOriginUrl = origin["url"]?.ToString() ?? "unknown";
 
                 PrintCharacter(
                     $"Resultado {i + 1}",
@@ -63,10 +43,13 @@ namespace APISimpleIA
                     currentStatus,
                     currentSpecies,
                     currentGender,
-                    new Origin { Name = currentOrigin, Url = currentOriginUrl }
+                    new Origin {
+                        Name = currentOriginName,
+                        Url = currentOriginUrl
+                    }
                 );
             }
-            Console.WriteLine($"Resultados encontrados: {results.Count}\n");
+            Console.WriteLine(string.Format(resultSearchCountMsg, results.Count));
             PrintWaitForPressKey();
         }
     }

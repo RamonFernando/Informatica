@@ -5,32 +5,28 @@ namespace APISimpleIA
     {
         public static void Delete()
         {
-            Console.WriteLine($"\n=== ELIMINAR {NAME_PROP.ToUpper()} ===");
+            Console.WriteLine(string.Format(removeFavoriteMsg, NAME_PROP.ToUpper()));
             
-            Console.Write($"Escribe el Index del {NAME_PROP} a Eliminar: ");
+            Console.Write(string.Format(removeToIndexMsg, NAME_PROP));
             string? input = Console.ReadLine();
-            int index = ValidarInput(input);
-            ValidarInputString(input); // -1 = Entrada no valida
+            int index = ValidateInput(input);
+            ValidateInputString(input); // -1 = Entrada no valida
 
-            ListaVacia(MisFavorites); // Lista vacia
-            index = FueraDeRango(MisFavorites, index); // < 1 o > count
+            emptyList(MisFavorites); // Lista vacia
+            index = OutOfRange(MisFavorites, index); // < 1 o > count
             if(index == -1) return;
 
             int indexList = index -1; // Igualamos el index a la posicion en la lista
             var itemFavorite = MisFavorites[indexList];
             
-            Console.Write($"¿Estas seguro de que quieres eliminar el {NAME_PROP} '{itemFavorite.Name}'? (s/n): ");
+            Console.Write(string.Format(confirmationRemoveFavoriteMsg, NAME_PROP, itemFavorite.Name));
             string? confirmation = Console.ReadLine();
-            ValidarString(confirmation);
-            if (confirmation?.ToLower() != "s")
-            {
-                Console.WriteLine("Operacion cancelada.\n");
-                PrintWaitForPressKey();
-                return;
-            }
+            ValidateInputString(confirmation);
+            
+            if(!confirmationSaveFavorite(confirmation)) return;
             
             MisFavorites.RemoveAt(indexList);
-            Console.WriteLine($"{NAME_PROP} '{itemFavorite.Name}' eliminado.\n");
+            Console.WriteLine(string.Format(favoriteRemovedMsg, NAME_PROP, itemFavorite.Name));
             APISaveFavoriteList();
             PrintWaitForPressKey();
         }

@@ -6,68 +6,48 @@ namespace APISimpleIA
         
         public static async Task SearchByName()
         {
-            Console.WriteLine($"\n=== BUSCAR {NAME_PROP.ToUpper()} POR NOMBRE ===");
-            Console.Write($"Escribe el nombre del {NAME_PROP}: ");
+            Console.WriteLine(
+                String.Format(filterMessage, NAME_PROP.ToUpper(), NAME_TYPE_PROP_NOMBRE.ToUpper()));
+            
+            Console.Write(string.Format(readOnlyMessage, NAME_TYPE_PROP_NOMBRE, NAME_PROP));
             string? inputName = Console.ReadLine();
 
-            ValidarInputString(inputName); // null o "" = Entrada no valida
+            if(!ValidateInputString(inputName)) return; // null o "" = Entrada no valida
             
-            // Buscamos el Digimon en la API
+            // Hacemos la peticion
             // /?name={name} /?status={status} /?species={species}&type={type}
             var json = await GetItemApiAsync($"{BASE_URL_CHARACTERS}/?name={inputName}"); // no null
             
-            if(!ValidatorJsonNotNull(json, "Nombre", inputName)) return;
+            if(!isValidateJsonNotNull(json, NAME_TYPE_PROP_NOMBRE, inputName)) return;
             JsonDocument jsonNotNull = json!; // ya validado no null
             
             List<JsonElement> results = ExtractResults(jsonNotNull);
 
             // Comprueba que el name exista
-            if(!ValidatorResults(results, "Nombre", inputName)) return; // count 0 = no encontrado
+            if(!isValidateResults(results, NAME_TYPE_PROP_NOMBRE, inputName)) return; // count 0 = no encontrado
             
-            Console.WriteLine(resultSearch);
+            Console.WriteLine(resultSearchMsg);
             int id = -1;
             string name = "";
             string status = "";
             string species = "";
             string gender = "";
-            string origin = "";
-            
-            string currentOrigin = "unknown";
-            string currentOriginUrl = "unknown";
+            string originName = "";
+            string originUrl = "";
             
             // Recorremos la lista de personajes encontrados
             for (int i = 0; i < results.Count; i++)
             {
-                int currentId = results[i].TryGetProperty($"{NTP_ID}", out var idProp)
-                ? idProp.GetInt32()
-                : -1;
-
-                // Validar que el JSON tenga los campos requeridos
-                string currentName = results[i].TryGetProperty(NTP_NAME, out var nameProp)
-                    ? nameProp.GetString() ?? "unknown"
-                    : "unknown";
-
-                string currentStatus = results[i].TryGetProperty(NTP_STATUS, out var statusProp)
-                    ? statusProp.GetString() ?? "unknown"
-                    : "unknown";
-
-                string currentSpecies = results[i].TryGetProperty(NTP_SPECIES, out var speciesProp)
-                    ? speciesProp.GetString() ?? "unknown"
-                    : "unknown";
-
-                string currentGender = results[i].TryGetProperty(NTP_GENDER, out var genderProp)
-                    ? genderProp.GetString() ?? "unknown"
-                    : "unknown";
+                int currentId = GetIntProp(results[i], NTP_ID);
+                string currentName = GetStringProp(results[i], NTP_NAME);
+                string currentStatus = GetStringProp(results[i], NTP_STATUS);
+                string currentSpecies = GetStringProp(results[i], NTP_SPECIES);
+                string currentGender = GetStringProp(results[i], NTP_GENDER);
                 
                 // Origin es un objeto con name y url
-                if (results[i].TryGetProperty("origin", out var originProp))
-                {
-                    if (originProp.TryGetProperty("name", out var originNameProp))
-                        currentOrigin = originNameProp.GetString() ?? "unknown";
-
-                    if (originProp.TryGetProperty("url", out var originUrlProp))
-                        currentOriginUrl = originUrlProp.GetString() ?? "unknown";
-                }
+                var origin = GetObjectProps(results[i], NTP_ORIGIN, "name", "url");
+                string currentOriginName = origin["name"]?.ToString() ?? "unknown";
+                string currentOriginUrl = origin["url"]?.ToString() ?? "unknown";
 
                 if (i == 0) // Guardamos el primer personaje para luego ofrecer guardarlo
                 {
@@ -76,7 +56,9 @@ namespace APISimpleIA
                     status = currentStatus;
                     species = currentSpecies;
                     gender = currentGender;
-                    origin = currentOrigin;
+                    originName = currentOriginName;
+                    originUrl = currentOriginUrl;
+                    
                 }
 
                 PrintCharacter(
@@ -86,32 +68,25 @@ namespace APISimpleIA
                     currentStatus,
                     currentSpecies,
                     currentGender,
-                    new Origin { Name = currentOrigin, Url = currentOriginUrl }
+                    new Origin {
+                        Name = currentOriginName,
+                        Url = currentOriginName
+                    }
                 );
             }
-            Console.WriteLine($"Resultados encontrados: {results.Count}\n");
+            Console.WriteLine(string.Format(resultSearchCountMsg, results.Count));
             if (results.Count > 1)
-                Console.WriteLine("Se guardará solo el primer resultado de la lista.\n");
+                Console.WriteLine(saveFirstResultMsg);
             
-            Console.Write($"\n¿Quieres guardar al {NAME_PROP} '{name}'? (s/n): ");
+            Console.Write(string.Format(confirmationSaveFavoriteMsg, NAME_PROP, name));
             string? respuesta = Console.ReadLine();
 
             respuesta = respuesta?.Trim().ToLower();
 
-            if (respuesta != "s")
-            {
-                Console.WriteLine($"{NAME_PROP} '{name}' no guardado.\n");
-                PrintWaitForPressKey();
-                return;
-            }
+            if(!confirmationSaveFavorite(respuesta)) return;
 
             // Evitar duplicados
-            if (MisFavorites.Any(d => d.Name == name))
-            {
-                Console.WriteLine($"El {NAME_PROP} '{name}' ya esta guardado.\n");
-                PrintWaitForPressKey();
-                return;
-            }
+            if(!existsFavorite(id, name, MisFavorites)) return;
 
             // Guardar SOLO uno
             MisFavorites.Add(new ApiItem
@@ -123,13 +98,12 @@ namespace APISimpleIA
                 Gender = gender,
 
                 Origin = new Origin {
-                    Name = origin,
-                    Url = currentOriginUrl
+                    Name = originName,
+                    Url = originUrl
                 }
-                
             });
 
-            Console.WriteLine($"{NAME_PROP} '{name}' Guardado.\n");
+            Console.WriteLine(string.Format(favoriteSavedMsg, NAME_PROP, name));
             APISaveFavoriteList();
             PrintWaitForPressKey();
             return;

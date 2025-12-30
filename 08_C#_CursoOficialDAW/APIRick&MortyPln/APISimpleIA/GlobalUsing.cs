@@ -6,9 +6,10 @@ global using System.Net;
 global using System.Linq;
 global using System.Text.Json;
 global using System.Threading.Tasks;
-global using static APISimpleIA.Text;
 global using System.Collections.Generic;
 global using System.Text.Json.Serialization;
+
+global using static APISimpleIA.Messages;
 
 // Proyecto
 global using APISimpleIA;
