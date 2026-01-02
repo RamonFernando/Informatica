@@ -24,7 +24,7 @@ namespace APICountriesIA
                         await SearchByName();
                         break;
                     case 2:
-                        //await SearchByCapital();
+                        await SearchByCapital();
                         break;
                     case 3:
                         //await SearchByRegion();

@@ -9,7 +9,8 @@ namespace APICountriesIA
             Console.WriteLine(
                 String.Format(filterMessage, NAME_PROP.ToUpper(), NAME_TYPE_PROP_NOMBRE.ToUpper()));
             
-            Console.Write(string.Format(readOnlyMessage, NAME_TYPE_PROP_NOMBRE, NAME_PROP));
+            Console.Write(string.Format(readOnlyMessage, NAME_TYPE_PROP_NOMBRE, NAME_PROP) +
+            "(Spain, Italy, etc): ");
             string? inputName = Console.ReadLine();
 
             if(!ValidateInputString(inputName)) return; // null o "" = Entrada no valida

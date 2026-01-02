@@ -34,7 +34,7 @@ global using static APICountriesIA.ManejoExcepciones;
 // Controllers
 global using static APICountriesIA.APISearchByName;
 global using static APICountriesIA.APISearchBySpecies;
-global using static APICountriesIA.APISearchByOrigin;
+global using static APICountriesIA.APISearchByCapital;
 global using static APICountriesIA.APIDelete;
 global using static APICountriesIA.APIListFavorites;
 global using static APICountriesIA.APIGetItemAsync;
