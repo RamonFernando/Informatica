@@ -54,7 +54,8 @@ namespace APICountriesIA
         public static string outOfRangeMsg = "El Id '{0}' esta fuera de rango.\n";
 
         // Busqueda
-        public static string notFoundMsg = "\nNo se ha encontrado el {0} con el {1}: '{2}'.\n";
+        public static string notFoundMsg = "\nNo se ha encontrado el {0} con el/la {1}: '{2}'.\n";
+        public static string notFoundMsg1 = "\nNo se ha encontrado el {0} con la {1}: '{2}'.\n";
         public static string apiErrorMsg = "\nError de JSON en la respuesta de la API. Por favor, intente nuevamente.\n";
     }
 }

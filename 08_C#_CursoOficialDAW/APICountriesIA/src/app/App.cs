@@ -14,9 +14,9 @@ namespace APICountriesIA
                 PrintMenu();
 
                 string? input = Console.ReadLine();
-                int opcion = ValidateOption(input, 0, 8); // Pos: min:0 a max:8 != -1
+                int opcion = ValidateOption(input, 0, 6); // Pos: min:0 a max:6 != -1
                 
-                PrintValidateInput(opcion, 0, 8); // -1 Entrada no valida
+                PrintValidateInput(opcion, 0, 6); // -1 Entrada no valida
 
                 switch (opcion)
                 {
@@ -27,18 +27,15 @@ namespace APICountriesIA
                         await SearchByCapital();
                         break;
                     case 3:
-                        //await SearchByRegion();
+                        await SearchByRegion();
                         break;
                     case 4:
-                        //await SearchByLanguages();
+                        await SearchByLanguages();
                         break;
                     case 5:
-                        //await SearchByPopulation();
-                        break;
-                    case 6:
                         ListFavorites();
                         break;
-                    case 7:
+                    case 6:
                         Delete();
                         break;
                     case 0:

@@ -13,9 +13,8 @@ namespace APICountriesIA
             Console.WriteLine($"2. Buscar {NAME_PROP} ({NAME_TYPE_PROP_CAPITAL})");
             Console.WriteLine($"3. Buscar {NAME_PROP} ({NAME_TYPE_PROP_REGION})");
             Console.WriteLine($"4. Buscar {NAME_PROP} ({NAME_TYPE_PROP_LENGUAJE})");
-            Console.WriteLine($"5. Buscar {NAME_PROP} ({NAME_TYPE_PROP_POBLACION})");
-            Console.WriteLine("6. Mostrar guardados");
-            Console.WriteLine("7. Eliminar guardados");
+            Console.WriteLine("5. Mostrar guardados");
+            Console.WriteLine("6. Eliminar guardados");
             Console.WriteLine("0. Salir");
             Console.WriteLine("--------------------------");
             Console.Write("Seleccione una Opción: ");

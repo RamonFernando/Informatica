@@ -12,11 +12,11 @@ namespace APICountriesIA
         
         // Nombres de los recursos
         public const string FILTER_NAME = "name/"; // Filtro por nombre
-        /*public const string FILTER_STATUS = "?status="; // Filtro por estado
-        public const string FILTER_SPECIES = "?species="; // Filtro por especie
-        public const string FILTER_TYPE = "?type="; // Filtro por tipo
-        public const string FILTER_GENDER = "?gender="; // Filtro por género
-        public const string FILTER_ORIGIN = "?origin="; // Filtro por origen*/
+        /*public const string FILTER_STATUS = "capital/"; // Filtro por estado
+        public const string FILTER_SPECIES = "region/"; // Filtro por especie
+        public const string FILTER_TYPE = "language/"; // Filtro por tipo
+        public const string FILTER_GENDER = "population/"; // Filtro por género
+        */
 
         
         // Nombres de las propiedades (str globales)
