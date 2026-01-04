@@ -16,7 +16,7 @@ dotnet --list-sdks
 
 ### Opción 1: Desde la carpeta del proyecto (recomendado)
 
-Colócate en la carpeta donde está `APISimpleIA.csproj` y ejecuta:
+Colócate en la carpeta donde está `APICountriesIA.csproj` y ejecuta:
 
 ```bash
 dotnet restore
@@ -25,16 +25,16 @@ dotnet run
 
 ### Opción 2: Desde la carpeta de la solución
 
-Desde la carpeta donde está `APISimpleIA.sln`:
+Desde la carpeta donde está `APICountriesIA.sln`:
 
 ```bash
 dotnet restore
-dotnet run --project 08_C#_CursoOficialDAW/APISimpleIA/APISimpleIA/APISimpleIA.csproj
+dotnet run --project C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\Informatica\08_C#_CursoOficialDAW\APICountriesIA
 ```
 
 ## Abrir en Visual Studio / VS Code
 
-- **Visual Studio**: abre `APISimpleIA.sln` y ejecuta el proyecto `APISimpleIA`.
+- **Visual Studio**: abre `APICountriesIA.sln` y ejecuta el proyecto `APICountriesIA`.
 - **VS Code**: abre la carpeta del proyecto y lanza los comandos anteriores en la terminal integrada.
 
 ## Notas
