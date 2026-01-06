@@ -32,6 +32,10 @@ global using static APICountriesIA.JsonResponse;
 global using static APICountriesIA.ManejoExcepciones;
 
 // Controllers
+global using static APICountriesIA.Controllers;
+global using static APICountriesIA.ValidationControllers;
+
+// global using static APICountriesIA.APISearchById;
 global using static APICountriesIA.APISearchByName;
 global using static APICountriesIA.APISearchByRegion;
 global using static APICountriesIA.APISearchByCapital;

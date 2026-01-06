@@ -26,22 +26,23 @@ namespace APICountriesIA
         }
         public static void PrintCharacter(
             string title,
-            CountryName? name,
-            string capital,
-            string region,
-            string languages,
-            int population
+            CountryName? name = null,
+            List<string>? capital = null,
+            string? region = "unknown",
+            string? languages = "unknown",
+            long population = -1
         )
         {
             // * Imprimir detalles del personaje */;
             Console.WriteLine($"\n{title}");
             Console.WriteLine("-----------------------");
 
-            if (name != null)
+            if (name != null){
                 // Console.WriteLine($"{NAME_TYPE_PROP_ID}: {id}");
                 Console.WriteLine($"{NAME_TYPE_PROP_NOMBRE}: " +
                     $"\n Nombre: {name.Common} \n Oficial: {name.Official}");
-                Console.WriteLine($"{NAME_TYPE_PROP_CAPITAL}: {capital}");
+            }
+                Console.WriteLine($"{NAME_TYPE_PROP_CAPITAL}: {ListToString(capital)}");
                 Console.WriteLine($"{NAME_TYPE_PROP_REGION}: {region}");
                 Console.WriteLine($"{NAME_TYPE_PROP_LENGUAJE}: {languages}");
                 Console.WriteLine($"{NAME_TYPE_PROP_POBLACION}: {population}");

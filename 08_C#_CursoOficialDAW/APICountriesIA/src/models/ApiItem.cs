@@ -20,7 +20,7 @@ namespace APICountriesIA
         public Dictionary<string, string>? Languages { get; set; } = new ();
 
         [JsonPropertyName("population")]
-        public int? Population { get; set; }
+        public long? Population { get; set; }
     }
 
     public class CountryName

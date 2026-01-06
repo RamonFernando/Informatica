@@ -1,3 +1,19 @@
+/*
+ValidateInput                   // Valida que el input sea un entero
+ValidateOption                  // Valida que la opción esté dentro del rango min-max
+ValidateString                  // Valida que el string no sea null o vacío
+isValidateInputString           // Valida el input string y muestra mensaje si no es valido
+OutOfRange                      // Valida si el index está fuera de rango y muestra mensaje
+GetIntProp                      // Obtiene propiedades de un JsonElement (int o -1 si no existe)
+GetStringProp                   // Obtiene propiedades de un JsonElement (string o "unknown" si no existe)
+GetFirstStringFromArray         // Obtiene el primer string de un array en un JsonElement (string o "unknown" si no existe)
+GetElementByPath                // Obtiene un JsonElement anidado por una ruta de propiedades separadas por puntos
+GetObjectAsString               // Convierte un JsonElement de tipo objeto a una cadena de texto
+GetObjectPropAsString           // Convierte una propiedad de un JsonElement de tipo objeto a una cadena de texto
+GetObjectPropAsDictionary       // Convierte una propiedad de un JsonElement de tipo objeto a un diccionario
+ListToString                    // Mostrar listas como strings
+DictionaryToString              // Mostrar diccionarios como strings
+*/
 
 namespace APICountriesIA
 {
@@ -25,17 +41,6 @@ namespace APICountriesIA
                 ? validatedNum : -1;
         }
 
-        // Imprime el mensaje de entrada no valida
-        public static void PrintValidateInput(int num,int min, int max)
-        {
-            if(num == -1)
-                {
-                    Console.WriteLine(string.Format(validarOpcionMsg, min, max));
-                    PrintWaitForPressKey();
-                    return;
-                }
-        }
-
         // Valida que el string no sea null o vacío
         public static bool ValidateString(string? input){
             input = input?.Trim();
@@ -43,7 +48,7 @@ namespace APICountriesIA
         }
 
         // Valida el input string y muestra mensaje si no es valido
-        public static bool ValidateInputString(string? input)
+        public static bool isValidateInputString(string? input)
         {
             if(!ValidateString(input))
             {
@@ -54,16 +59,7 @@ namespace APICountriesIA
             return true;
         }
 
-        // Valida si la lista está vacia y muestra mensaje
-        public static void emptyList(List<ApiItem> MisFavorites)
-        {
-            if (MisFavorites.Count == 0)
-            {
-                Console.WriteLine(string.Format(emptyListMessage, NAME_PROP));
-                PrintWaitForPressKey();
-                return;
-            }
-        }
+        
 
         // Valida si el index está fuera de rango y muestra mensaje
         public static int OutOfRange(List<ApiItem> MisFavorites, int index)
@@ -78,85 +74,12 @@ namespace APICountriesIA
             return index;
         }
         
-        // Valida que el JsonDocument no sea null y muestra mensaje
-        public static bool isValidateJsonNotNull(JsonDocument? json, string propName, string? input)
-        {
-            if(!ValidateString(input)) {
-                // Console.WriteLine("Entrada no valida.\n");
-                // PrintWaitForPressKey();
-                return false;
-            }
-            if (json == null)
-            {
-                Console.WriteLine(string.Format(notFoundMsg, NAME_PROP, propName, input));
-                PrintWaitForPressKey();
-                return false;
-            }
-            return true;
-        }
-
-        // Valida que la lista de resultados no esté vacia y muestra mensaje
-        public static bool isValidateResults(List<JsonElement> results, string propName, string? input){
-            if(results.Count == 0)
-            {
-                Console.WriteLine(string.Format(notFoundMsg, NAME_PROP, propName, input));
-                PrintWaitForPressKey();
-                return false;
-            }
-            return true;
-        }
-
-        // Valida la confirmación para guardar en favoritos
-        public static bool confirmationSaveFavorite(string? input)
-        {
-            if (input?.ToLower() != "s")
-            {
-                Console.WriteLine(cancelOperationMsg);
-                PrintWaitForPressKey();
-                return false;
-            }
-            return true;
-        }
-
-        // Valida si el favorito ya existe en la lista ignorando mayusculas/minusculas y espacios
-        public static bool existsFavorite(string? prop, List<ApiItem> MisFavorites)
-        {
-            if(!ValidateString(prop)) return false;
-
-            bool exists = MisFavorites.Any(fav =>
-                fav.Name?.Common != null &&
-                fav.Name.Common.Trim().
-                    Equals(prop!.Trim(), StringComparison.OrdinalIgnoreCase)
-            );
-
-            if (exists)
-            {
-                Console.WriteLine(string.Format(saveFavoriteExistsMsg, NAME_PROP, prop?.Trim()));
-                PrintWaitForPressKey();
-                return false;
-            }
-            return true;
-        }
-
-        // Agrega un favorito a la lista si no es null
-        public static bool TryAddFavorite(ApiItem firstResultToSave)
-        {
-            // if(!existsFavorite(firstResultToSave.Name?.Common, MisFavorites)) return false;
-            if (firstResultToSave != null)
-            {
-                MisFavorites.Add(firstResultToSave);
-                return true;
-            }
-            
-            return false;
-        }
-
         // Int
         // Obtiene propiedades de un JsonElement (int o -1 si no existe)
-        public static int GetIntProp(JsonElement element, string propName)
+        public static long GetIntProp(JsonElement element, string propName)
         {
             return element.TryGetProperty(propName, out var prop)
-                ? prop.GetInt32()
+                ? prop.GetInt64()
                 : -1;
         }
 
@@ -314,6 +237,6 @@ namespace APICountriesIA
                 ? string.Join(", ", dict.Values)
                 : "unknown";
         }
-
+    
     }
 }

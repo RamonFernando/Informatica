@@ -10,7 +10,7 @@ namespace APICountriesIA
             Console.Write(string.Format(removeToIndexMsg, NAME_PROP));
             string? input = Console.ReadLine();
             int index = ValidateInput(input);
-            ValidateInputString(input); // -1 = Entrada no valida
+            if(!isValidateInputString(input)) return; // -1 = Entrada no valida
 
             emptyList(MisFavorites); // Lista vacia
             index = OutOfRange(MisFavorites, index); // < 1 o > count
@@ -21,7 +21,7 @@ namespace APICountriesIA
             
             Console.Write(string.Format(confirmationRemoveFavoriteMsg, NAME_PROP, itemFavorite.Name?.Common ?? "unknown"));
             string? confirmation = Console.ReadLine();
-            ValidateInputString(confirmation);
+            if(!isValidateInputString(confirmation)) return;
             
             if(!confirmationSaveFavorite(confirmation)) return;
             
