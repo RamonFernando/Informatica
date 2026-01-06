@@ -35,7 +35,7 @@ namespace APICountriesIA
             int population = 0;
             ApiItem? firstResultToSave = null;
             
-            // Recorremos la lista de personajes encontrados
+            // Recorremos la lista de personajes encontrados (posible metodo aparte)
             for (int i = 0; i < results.Count; i++)
             {
                 var nameObj = GetObjectProps(results[i], $"{NTP_NAME}.{NTP_COMMON}", $"{NTP_NAME}.{NTP_OFFICIAL}");
@@ -80,12 +80,13 @@ namespace APICountriesIA
                     languages = currentLanguageStr,
                     population = currentPopulation
                 );
-            } // for
+            } // for // fin del metodo
 
             Console.WriteLine(string.Format(resultSearchCountMsg, results.Count));
             if (results.Count > 1)
                 Console.WriteLine(saveFirstResultMsg);
             
+            // Guardar favorito (posible metodo aparte)
             common = firstResultToSave?.Name?.Common ?? "unknown";
             Console.Write(string.Format(confirmationSaveFavoriteMsg, NAME_PROP, common));
             string? respuesta = Console.ReadLine();
@@ -101,7 +102,10 @@ namespace APICountriesIA
             if(firstResultToSave == null) return; // seguridad null
             MisFavorites.Add(firstResultToSave);
 
-            Console.WriteLine(string.Format(favoriteSavedMsg, NAME_PROP, common));
+            if(TryAddFavorite(firstResultToSave))
+                Console.WriteLine(string.Format(favoriteSavedMsg, NAME_PROP, common));
+            // fin del metodo
+
             APISaveFavoriteList();
             PrintWaitForPressKey();
             return;

@@ -119,23 +119,36 @@ namespace APICountriesIA
         }
 
         // Valida si el favorito ya existe en la lista ignorando mayusculas/minusculas y espacios
-        public static bool existsFavorite(string? common, List<ApiItem> MisFavorites)
+        public static bool existsFavorite(string? prop, List<ApiItem> MisFavorites)
         {
-            if(!ValidateString(common)) return false;
+            if(!ValidateString(prop)) return false;
 
             bool exists = MisFavorites.Any(fav =>
                 fav.Name?.Common != null &&
                 fav.Name.Common.Trim().
-                    Equals(common!.Trim(), StringComparison.OrdinalIgnoreCase)
+                    Equals(prop!.Trim(), StringComparison.OrdinalIgnoreCase)
             );
 
             if (exists)
             {
-                Console.WriteLine(string.Format(saveFavoriteExistsMsg, NAME_PROP, common?.Trim()));
+                Console.WriteLine(string.Format(saveFavoriteExistsMsg, NAME_PROP, prop?.Trim()));
                 PrintWaitForPressKey();
                 return false;
             }
             return true;
+        }
+
+        // Agrega un favorito a la lista si no es null
+        public static bool TryAddFavorite(ApiItem firstResultToSave)
+        {
+            // if(!existsFavorite(firstResultToSave.Name?.Common, MisFavorites)) return false;
+            if (firstResultToSave != null)
+            {
+                MisFavorites.Add(firstResultToSave);
+                return true;
+            }
+            
+            return false;
         }
 
         // Int

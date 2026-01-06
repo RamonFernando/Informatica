@@ -32,6 +32,7 @@ namespace APICountriesIA
         public static string saveFavoriteExistsMsg = "\nEl {0} '{1}' ya existe en la lista de favoritos.\n";
         
         public static string favoriteSavedMsg = "\nEl {0} '{1}' ha sido guardado en la lista de favoritos.\n";
+        public static string favoriteNotSavedMsg = "\nEl {0} '{1}' no se ha guardado en la lista de favoritos.\n";
 
         public static string favoriteRemovedMsg = "\nSe ha eliminado el {0} '{1}' de la lista de favoritos.\n";
         public static string saveFirstResultMsg =
