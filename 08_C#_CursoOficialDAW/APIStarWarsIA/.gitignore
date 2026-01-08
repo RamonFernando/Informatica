@@ -1,0 +1,98 @@
+############################
+# .NET / C#
+############################
+bin/
+obj/
+[Bb]uild/
+[Bb]uild[Ll]og.*
+
+# MSBuild artifacts
+*.tmp
+*.log
+*.tlog
+*.cache
+*.ilk
+*.pdb
+*.mdb
+
+############################
+# Visual Studio
+############################
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.VC.VC.opendb
+
+# Visual Studio Code
+# (Si quieres versionar la carpeta .vscode, comenta la línea siguiente)
+.vscode/
+
+############################
+# JetBrains Rider / IDEA
+############################
+.idea/
+*.sln.iml
+
+############################
+# NuGet
+############################
+*.nupkg
+*.snupkg
+# packages/   # descomenta si usas packages.config
+
+############################
+# Test results / coverage
+############################
+TestResults/
+*.trx
+coverage/
+coverage*/
+*.coverage
+*.coveragexml
+*.opencover.xml
+
+############################
+# Publish / Packaging
+############################
+publish/
+artifacts/
+
+############################
+# ASP.NET / Config (si aplica)
+############################
+# No subas configuraciones locales con secretos
+**/appsettings.Development.json
+**/appsettings.Local.json
+**/secrets.json
+**/*secrets*.json
+
+############################
+# Certificates / Keys
+############################
+*.pfx
+*.cer
+*.pem
+*.key
+
+############################
+# OS junk
+############################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+############################
+# Misc
+############################
+*.swp
+*.bak
+*.old
+*.orig
