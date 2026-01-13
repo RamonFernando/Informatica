@@ -49,7 +49,7 @@ namespace APIStarWarsIA
         
         // *Controllers (Filters)* (id, Name, Status, Species, Gender, Origin)
         public static string filterMessage = "\n=== BUSCAR {0} POR {1} ===";
-        public static string readOnlyMessage = "\nEscribe el {0} del {1} a buscar: ";
+        public static string readOnlyMessage = "\nEscribe el/la {0} del {1} a buscar: ";
         
         // Validadores
         public static string outOfRangeMsg = "El Id '{0}' esta fuera de rango.\n";

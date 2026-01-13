@@ -22,7 +22,7 @@ namespace APIStarWarsIA
             
             List<JsonElement> results = ExtractResults(jsonNotNull);
             
-            results = FilterByNameContains(results, inputName!); // Filtramos por nombre (busqueda parcial)
+            results = FilterByPropertyContains(results, inputName!, "name"); // Filtramos por nombre (busqueda parcial)
             
             // Comprueba que el name exista
             if(!isValidateResults(results, NTP_ES_NOMBRE, inputName!)) return; // count 0 = no encontrado
@@ -32,13 +32,11 @@ namespace APIStarWarsIA
             // Recorremos la lista de personajes encontrados (posible metodo aparte)
             for (int i = 0; i < results.Count; i++)
             {
-                ApiItem item = MapCountryFromElement(results[i]);
+                ApiItem item = MapCharacterFromElement(results[i]);
                 
                 if (i == 0) // Guardamos el primer personaje para luego ofrecer guardarlo
-                {
                     firstResultToSave = item;
-                }
-
+                
                 PrintCharacter(
                     $"Resultado {i + 1}",
                     item.Name,

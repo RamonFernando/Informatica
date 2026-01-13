@@ -59,6 +59,29 @@ namespace APIStarWarsIA
             return true;
         }
 
+        // Valida que el input sea un entero
+        public static bool TryValidateInt(string? input, out int num)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                num = 0;
+                return false;
+            }
+            return int.TryParse(input, out num); // devuelve true / false
+        }
+
+        // Valida el input int y muestra mensaje si no es valido
+        public static bool isValidateInputInt(string? input, out int num)
+        {
+            if(!TryValidateInt(input, out num))
+            {
+                Console.WriteLine(validarInputMsg);
+                PrintWaitForPressKey();
+                return false;
+            }
+            return true;
+        }
+
         // Valida si el index está fuera de rango y muestra mensaje
         public static int OutOfRange(List<ApiItem> MisFavorites, int index)
         {
@@ -151,32 +174,6 @@ namespace APIStarWarsIA
             }
 
             return result;
-        }
-
-        // Filtrar por nombre exacto (case insensitive)
-        public static List<JsonElement> FilterByExactName( List<JsonElement> results, string inputName)
-        {
-            return results
-                .Where(e =>
-                    e.TryGetProperty("name", out var nameProp) &&
-                    nameProp.GetString() != null &&
-                    nameProp.GetString()!
-                        .Equals(inputName, StringComparison.OrdinalIgnoreCase)
-                
-                ).ToList();
-        }
-
-        // Filtrar por nombre que contenga busqueda parcial (case insensitive)
-        public static List<JsonElement> FilterByNameContains(List<JsonElement> results,string inputName)
-        {
-            return results
-                .Where(e =>
-                    e.TryGetProperty("name", out var nameProp) &&
-                    nameProp.GetString() != null &&
-                    nameProp.GetString()!
-                        .Contains(inputName, StringComparison.OrdinalIgnoreCase)
-                )
-                .ToList();
         }
 
         // Object (diccionario)
@@ -311,6 +308,53 @@ namespace APIStarWarsIA
                 ? string.Join(", ", dict.Values)
                 : "unknown";
         }
-    
+
+    // *Filters*
+    // Filtrar por propiedad (case insensitive)
+        public static List<JsonElement> FilterByExactName(
+            List<JsonElement> results,
+            string inputName) // valor a buscar
+        {
+            return results
+                .Where(e =>
+                    e.TryGetProperty("name", out var nameProp) &&
+                    nameProp.GetString() != null &&
+                    nameProp.GetString()!
+                        .Equals(inputName, StringComparison.OrdinalIgnoreCase)
+                
+                ).ToList();
+        }
+
+        // Filtrar por nombre que contenga busqueda parcial (case insensitive)
+        public static List<JsonElement> FilterByPropertyContains(
+            List<JsonElement> results,
+            string inputName, // valor a buscar
+            string propertyName) // propiedad donde buscar
+        {
+            return results
+                .Where(e =>
+                    e.TryGetProperty(propertyName, out var nameProp) &&
+                    nameProp.GetString() != null &&
+                    nameProp.GetString()!
+                        .Contains(inputName, StringComparison.OrdinalIgnoreCase)
+                
+                ).ToList();
+        }
+
+        public static List<JsonElement> FilterByPropertyNumber(
+        List<JsonElement> results,
+        int inputValue, // valor a buscar
+        string propertyName
+        )
+        {
+            return results
+                .Where(e =>
+                    e.TryGetProperty(propertyName, out var prop) &&
+                    int.TryParse(prop.GetString(), out int value) &&
+                    value == inputValue
+                
+                ).ToList();
+        }
+
     }
 }

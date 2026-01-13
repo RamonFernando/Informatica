@@ -7,7 +7,7 @@ namespace APIStarWarsIA
     public class Controllers
     {
         // *Mapeo de un JsonElement a un ApiItem*
-        public static ApiItem MapCountryFromElement(JsonElement element)
+        public static ApiItem MapCharacterFromElement(JsonElement element)
         {
             string name = GetStringProp(element, NTP_NAME);
             int height = GetIntProp(element, NTP_HEIGHT);
@@ -17,7 +17,6 @@ namespace APIStarWarsIA
             string homeworld = GetFirstStringFromArray(element,NTP_HOMEWORLD);
             List<string> vehicles = GetListFromArray(element,NTP_VEHICLES);
             List<string> starships = GetListFromArray(element,NTP_STARSHIPS);
-
             
             return new ApiItem
             {

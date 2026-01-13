@@ -37,9 +37,10 @@ global using static APIStarWarsIA.ValidationControllers;
 
 // global using static APIStarWarsIA.APISearchById;
 global using static APIStarWarsIA.APISearchByName;
-global using static APIStarWarsIA.APISearchByRegion;
+global using static APIStarWarsIA.APISearchByMass;
+global using static APIStarWarsIA.APISearchByHeight;
+global using static APIStarWarsIA.APISearchByGender;
 
-global using static APIStarWarsIA.APISearchByLanguages;
 global using static APIStarWarsIA.APIDelete;
 global using static APIStarWarsIA.APIListFavorites;
 global using static APIStarWarsIA.APIGetItemAsync;

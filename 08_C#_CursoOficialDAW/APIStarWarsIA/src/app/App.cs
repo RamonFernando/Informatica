@@ -1,10 +1,8 @@
 
-
 namespace APIStarWarsIA
 {
     public static class App
     {
-        
 
         public static async Task Run()
         {
@@ -24,10 +22,10 @@ namespace APIStarWarsIA
                         await SearchByName();
                         break;
                     case 2:
-                        // await SearchByCapital();
+                        await SearchByHeight();
                         break;
                     case 3:
-                        await SearchByHeight();
+                        await SearchByMass();
                         break;
                     case 4:
                         await SearchByGender();
